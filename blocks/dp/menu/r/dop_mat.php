@@ -1,0 +1,2 @@
+<?php
+$dop_mat='<div class="r_menu rel"><div class="r_menu_title">Доп.материалы</div><nav><ul><li><a href="/скороговорки-для-малышей">Скороговорки для малышей</a></li><li><a href="/считалки/">Считалочки</a></li><li><a href="/колыбельные/">Колыбельные песенки</a></li></ul></nav></div>';

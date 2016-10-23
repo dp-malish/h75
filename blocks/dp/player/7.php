@@ -1,0 +1,2 @@
+<?php
+$main_content.='<div class="video-responsive" id="v_player"></div><script type="text/javascript">var title="'.$res['caption'].'";var style_p="/player/style/style.php";var url_p="/'.$uri_id_seriya.'.flv";var vplay="/player/uppod.swf";var idplayer="v_player";var pwidth="100%";var params={bgcolor:"#fefee2",allowFullScreen:"true",allowScriptAccess:"always"};var vp7="black";</script>';

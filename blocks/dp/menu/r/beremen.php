@@ -1,0 +1,3 @@
+<?php
+$beremen='<div class="r_menu rel"><div class="r_menu_title">Беременность и роды</div><nav><ul><li><a href="/беременность/планирование/">Планирование, подготовка</a></li><li><a href="/беременность/красота/">Красота и уход</a></li><li><a href="/беременность/здоровье/">Забота о здоровье</a></li></ul></nav></div>';
+$uhod='<div class="r_menu rel"><div class="r_menu_title">Уход за младенцем</div><nav><ul><li><a href="/новорожденный/">Новорожденный</a></li><li><a href="/детское-здоровье/">Детское здоровье</a></li></ul></nav></div>';

@@ -1,0 +1,1 @@
+<div id="m_col" class="rel"><!--Пр кол--><div id="r_col" class="fr rel"><?php echo $dop_mat.$beremen.$uhod.$right_content;?><div class="cl"></div></div><!--Центр кол--><div id="c_col" class="rel"><main><?php echo $main_content;?></main><div class="cl"></div></div><!--Конец Центр кола--><div class="cl"></div></div><!--end m_col--><div class="cl"></div></div><!--end maxw-->

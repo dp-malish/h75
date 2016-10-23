@@ -1,0 +1,1 @@
+ALTER TABLE default_content ADD comment INT NULL;

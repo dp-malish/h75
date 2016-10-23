@@ -1,0 +1,1 @@
+<div id="wrap"class="maxw"><!--l_c--><div id="l_col"class="fl rel"><?php echo $remont.$left_content;?><div class="cl"></div></div><!--End l_c-->

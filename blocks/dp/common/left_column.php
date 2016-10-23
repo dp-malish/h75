@@ -1,0 +1,1 @@
+<div id="wrap" class="maxw"><div id="l_col" class="fl rel"><?php echo $w240.$game.$mat.$teach.$umor.$left_content.$dp_l_bottom;?><div class="cl"></div></div>
