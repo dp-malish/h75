@@ -1,0 +1,68 @@
+h1,h2,h3,h4{color:#004e6f;}
+
+A:link{color:#5c3317;text-decoration:underline;}
+A:active{color:#5c3317}
+A:visited{color:#520c0e}
+A:hover{color:#B2251F;text-decoration:blink;}
+
+.fon_c,.tb2_l_col,.tb2_r_col{/*общий фон обводки*/
+	border:#004e6f 2px solid;
+	border-radius:4px;
+}
+.fon_c,.tb2_l_col,.tb2_r_col{
+	background:#fefee2;
+	background:rgba(254,254,226,0.88);
+	border-radius:4px;}
+.h_field{color:#004e6f;font-size:16px}
+	
+
+.tb2_img img{border:#FF8E00 2px solid;border-radius:9px 9px 0 0;}
+
+#bh{/*background-color:#966;*/}
+
+#header{/*background-color:#069;*/}
+
+	#logo{/*background-color:#060;*/}
+	.h_field{
+		/*background-color:#999;
+		border:#000000 thin solid;*/
+	}
+
+#ah{/*background-color:#A66;*/}
+
+#wrap{
+	/*background:#fefee2;
+	background:rgba(254,254,226,0.8);*/
+}
+
+	#l_col{
+		/*background-color:#9F3;*/
+	}
+
+	#m_col{
+		/*background-color:#060;*/
+	}
+
+		#c_col{
+		/*background-color:#9CF;*/
+		}
+
+		#r_col{
+		/*background:#129;*/
+		}
+
+
+#bf{
+	/*background-color:#30F;*/
+}
+
+#foot{
+	background:#fefee2;
+	background:rgba(254,254,226,0.8);
+}
+#copy{
+	/*background-color:#FFC;*/
+}
+#informer{
+	/*background:#FF6;*/
+}

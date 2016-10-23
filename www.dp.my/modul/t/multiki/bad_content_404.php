@@ -1,0 +1,2 @@
+﻿<?php
+if(!defined('MAIN_FILE')){exit;}$main_content='<section><h2>'.$uri_parts[0].'</h2><div class="fon_c ac"><p>Вы пытаетесь загрузить несуществующую страницу.<br>Пожалуйста, убедитесь, что ссылка указанна правильно!</p><br><p><a href="/">Проследовать на главную страницу</a></p></div></section><script type="text/javascript">setTimeout(\'location.replace("/мультики/")\',7000);</script>';

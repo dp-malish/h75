@@ -1,0 +1,5 @@
+User-agent: *
+
+Host: dp-malish.com
+
+Sitemap: http://dp-malish.com/sitemap.xml

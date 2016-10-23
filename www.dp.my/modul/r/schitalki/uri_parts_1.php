@@ -1,0 +1,5 @@
+<?php
+if(!defined('MAIN_FILE')){exit;}
+if(!preg_match("/^[0-9а-яёa-z\-]+$/u",$uri_parts[1])){$module='404';}else{
+$res=$DB->strSQL('SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,short_text FROM schitalki WHERE link='.$DB->realEscapeStr($uri_parts[1]));
+if($res['title']!=''){$title=$res['title'].' - '.$title;$description=$res['meta_d'].'. '.$description;$keywords=$res['meta_k'].','.$keywords;$main_content.='<div class="fon_c"><article><h2>Детские считалочки</h2><br><h3>'.$res['caption'].'</h3>'.$caption1.$caption2.'<div class="cl"></div><p class="ac">'.htmlspecialchars_decode($res['short_text'],ENT_QUOTES).'</p><br><p><a href="/считалки/" onclick="button_back(\'считалки/\');return false;" rel="nofollow">&#9668;&mdash; Вернуться к списку считалок</a></p></article></div>';}else{include $root.'/modul/r/schitalki/bad_content_404.php';}}
