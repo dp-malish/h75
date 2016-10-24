@@ -39,3 +39,11 @@ CREATE TABLE IF NOT EXISTS mag_kurs_valut(
   )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
   INSERT INTO mag_kurs_valut VALUES('usd', 2620);
+
+CREATE TABLE IF NOT EXISTS mag_ustavnoy_capital(
+  data INT NOT NULL,
+  kapital INT NULL,
+  PRIMARY KEY(data)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+  INSERT INTO mag_ustavnoy_capital VALUES('1477344953',3120);

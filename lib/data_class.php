@@ -9,4 +9,7 @@ class Data{
     public static function IntToStrDateTime($int){
         return date('H:i:s d-m-Y',$int);
     }
+    public static function StrDateTimeToInt($str){
+        return strtotime($str);//"2006-07-31 22:45:59"
+    }
 }
