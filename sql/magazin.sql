@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS mag_filter(
+/*CREATE TABLE IF NOT EXISTS mag_filter(
   id INT NOT NULL AUTO_INCREMENT,
   section_name VARCHAR(70) NOT NULL,
   str1 VARCHAR(70) NULL DEFAULT NULL,
@@ -30,4 +30,12 @@ CREATE TABLE IF NOT EXISTS mag_filter(
   UNIQUE INDEX section_name_UNIQUE (section_name ASC))
   ENGINE = InnoDB;
 
-INSERT INTO `mag_filter` (`id`, `section_name`, `str1`, `str2`, `str3`, `str4`, `str5`, `str6`, `str7`, `str8`, `str9`, `str10`, `bool1`, `bool2`, `bool3`, `int_1`, `int1_kind`, `int_2`, `int2_kind`, `int_3`, `int3_kind`, `float1`, `float1_kind`, `float2`, `float2_kind`, `float3`, `float3_kind`) VALUES (NULL, 'Раздел 1', 'Стр 1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Бул 1', NULL, NULL, 'Инт 1', '2', NULL, NULL, NULL, NULL, 'Флоат 1', '2', NULL, NULL, NULL, NULL);
+INSERT INTO `mag_filter` (`id`, `section_name`, `str1`, `str2`, `str3`, `str4`, `str5`, `str6`, `str7`, `str8`, `str9`, `str10`, `bool1`, `bool2`, `bool3`, `int_1`, `int1_kind`, `int_2`, `int2_kind`, `int_3`, `int3_kind`, `float1`, `float1_kind`, `float2`, `float2_kind`, `float3`, `float3_kind`) VALUES (NULL, 'Раздел 1', 'Стр 1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Бул 1', NULL, NULL, 'Инт 1', '2', NULL, NULL, NULL, NULL, 'Флоат 1', '2', NULL, NULL, NULL, NULL);*/
+
+CREATE TABLE IF NOT EXISTS mag_kurs_valut(
+  valuta VARCHAR(5) NOT NULL,
+  cena INT DEFAULT NULL,
+  PRIMARY KEY(valuta)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+  INSERT INTO mag_kurs_valut VALUES('usd', 2620);

@@ -12,6 +12,8 @@ $uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
 		$count_uri_parts=count($uri_parts);
 		if($count_uri_parts>4){throw new Exception();}else{
 			switch($uri_parts[0]){
+//admin
+				case'учёт':include'../modul/win/admin/main_admin.php';break;
 //top_menu
 //left_menu
 			default:include('../modul/win/def/def.php');

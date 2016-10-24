@@ -5,7 +5,9 @@ $HTTP_ACCEPT_ENCODING=htmlspecialchars($_SERVER["HTTP_ACCEPT_ENCODING"],ENT_QUOT
 if(strpos($HTTP_ACCEPT_ENCODING,'x-gzip')!==false)$encoding='x-gzip';
 else if(strpos($HTTP_ACCEPT_ENCODING,'gzip')!==false)$encoding='gzip';
 else $encoding=false;
-$all_default_css=array('default','frame','common','menu','color','colorbox','form');
+
+$common_default_css=['default'];
+$all_default_css=['frame','common','menu','color','colorbox','form'];
 
 $cache_dir='cache/';
 //далее обрабатываем условие по умолчанию баз GET запроса
@@ -16,9 +18,9 @@ if(!isset($_GET['add'])){$cache_file='Def';
 		echo("\x1f\x8b\x08\x00\x00\x00\x00\x00");
 		$css=gzcompress($css,3);}
 	}else{ob_start();
-		//if(!ob_start("ob_gzhandler")) ob_start();
-	foreach($all_default_css as $value){include $value.'.css';}	
-	$css=ob_get_contents();ob_end_clean();
+	foreach($common_default_css as $val){include'../../css/'.$val.'.css';}
+	foreach($all_default_css as $val){include $val.'.css';}
+		$css=ob_get_contents();ob_end_clean();
 	$css=preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!','',$css);
 	$css=str_replace(array("\r\n","\r","\n","\t",'  ','    ','    '),'',$css);
 	$css='@charset "utf-8";'.$css;
@@ -59,7 +61,8 @@ if(!isset($_GET['add'])){$cache_file='Def';
 				$css=gzcompress($css,3);}
 			}else{//нет tmp вообще
 				ob_start();
-				foreach($all_default_css as $value){include $value.'.css';}	
+				foreach($common_default_css as $val){include'../../css/'.$val.'.css';}
+				foreach($all_default_css as $val){include $val.'.css';}
 				include $special_css.'.css';
 				$css=ob_get_contents();ob_end_clean();
 				$css=preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!','',$css);
