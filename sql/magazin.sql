@@ -118,5 +118,5 @@ FOR EACH ROW
     END IF;
   END;//
 
-INSERT INTO mag_nakladnaya(id,nomer_nakladnoy,dostavka_usd,dostavka_nac_val,data)VALUES(NULL,'146130',NULL,'26','1477345000');
+INSERT INTO mag_nakladnaya(id,nomer_nakladnoy,dostavka_usd,dostavka_nac_val,data)VALUES(NULL,'146130',NULL,'2600','1477345000');
 #####################################################################
