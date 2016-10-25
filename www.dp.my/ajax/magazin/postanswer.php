@@ -1,7 +1,7 @@
 <?php
 define('ROOT',$_SERVER['DOCUMENT_ROOT']);
 
-set_include_path(ROOT.PATH_SEPARATOR.'../../../lib'.PATH_SEPARATOR.ROOT.'/include');
+set_include_path(ROOT.PATH_SEPARATOR.'../../../lib'.PATH_SEPARATOR.ROOT.'../../../lib_magaz');
 spl_autoload_extensions('_class.php');
 spl_autoload_register();
 

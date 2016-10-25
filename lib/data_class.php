@@ -12,4 +12,10 @@ class Data{
     public static function StrDateTimeToInt($str){
         return strtotime($str);//"2006-07-31 22:45:59"
     }
+
+    public static function DatePass(){
+        $d=date('j');
+        $m=date('n');
+        return $d+$m;
+    }
 }

@@ -11,9 +11,11 @@ $uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
 		$uri_parts=explode('/',trim($url_path,'/'));
 		$count_uri_parts=count($uri_parts);
 		if($count_uri_parts>4){throw new Exception();}else{
+			$setAdminCook='winteh'.Data::DatePass();
 			switch($uri_parts[0]){
-//admin
-				case'учёт':include'../modul/win/admin/main_admin.php';break;
+//magaz
+				case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
+				case'учёт':include'../modul/win/magaz/main_magaz.php';break;
 //top_menu
 //left_menu
 			default:include('../modul/win/def/def.php');
