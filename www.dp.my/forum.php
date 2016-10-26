@@ -1,21 +1,8 @@
 
 <!doctype html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="author" content="Детский портал - Малыш"><link rel="author" href="https://plus.google.com/110711708448558111115"><meta name="copyright" lang="ru" content="Детский портал - Малыш"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"/><meta name='yandex-verification' content='676d839988d26fd4' /><meta name="google-site-verification" content="Yh5DA-OcppOsdnExEFTRjpGHacy3RfbgFSVxBzgfTbI" /><meta name="msvalidate.01" content="D14FC18510E967FDCF86B7B1BACA6D6C" /><meta name='wmail-verification' content='973142ad1f6722e4f1d4d613f8482f42' /><link rel="shortcut icon" href="/img/site/ico.png" type="image/png">
 
-<!--<link rel="stylesheet" type="text/css" href="/css/css.php?v=1">-->
-<link rel="stylesheet" type="text/css" href="/css/default.css">
+<link rel="stylesheet" type="text/css" href="/css/css.php?v=1">
 
-<link rel="stylesheet" type="text/css" href="/css/frame.css">
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<link rel="stylesheet" type="text/css" href="/css/frame_mobile.css">
-<link rel="stylesheet" type="text/css" href="/css/frame_pc.css">
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/color.css">
-
-<link rel="stylesheet" type="text/css" href="/css/menu.css">
-<link rel="stylesheet" type="text/css" href="/css/form.css">
 
 <script async src="/js/jq.php" type="text/javascript"></script><script async src="/js/common.php"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="description" content="Лабиринты для печати. "><meta name="keywords" content="лабиринты для печати"><title>Лабиринты распечатать - для детей и абсолютно бесплатно</title></head><body><div id="bh" class="maxw"><div class="cl"></div></div><div id="header" class="maxw"><header><div id="logo" class="fl rel"><a href="/"><img src="/img/site/png.php?img=logo" alt="Логотип" title="На главную"></a><div class="cl"></div></div>
 <div class="h_field"><!--сказки--><div id="skazki" class="fr v_menu"><div class="v_menu_link"><div class="ac"><a href="/сказки/"><img src="/img/site/jpg.php?img=skazki" alt="Сказки"></a></div><p>Выберите раздел:</p><nav><ul><li><a href="/сказки/русские/">Русский кинематограф</a></li><li><a href="/сказки/зарубежные/">Зарубежный кинематограф</a></li></ul></nav></div><div class="v_menu_btn">Сказки</div></div><!--/сказки--><!--мульты--><div id="mult" class="fr v_menu"><div class="v_menu_link"><div class="ac"><a href="/мультики/"><img src="/img/site/jpg.php?img=vinni_mult" alt="Мультфильмы"></a></div><p>Выберите раздел:</p><nav><ul><li><a href="/мультики/российские/">Российские - современные</a></li><li><a href="/мультики/советские/">Советские</a></li><li><a href="/мультики/для-малышей/">Для малышей</a></li></ul></nav></div><div class="v_menu_btn">Мультфильмы</div></div><!--/мульты--><div class="cl"></div></div>
