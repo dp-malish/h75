@@ -9,7 +9,13 @@ if(PostRequest::issetPostArr()){
     if(!$user->loginAdmin())exit;
 
     //magazine
-    if(!empty($_POST['razdel'])){
+    if(!empty($_POST['namenklatura'])){
+        $mag=new Mag_postrequest_admin();
+
+    }
+
+
+    elseif(!empty($_POST['addrazdel'])){
         $mag=new Mag_postrequest_admin();
         $res=$mag->addRazdel();
 

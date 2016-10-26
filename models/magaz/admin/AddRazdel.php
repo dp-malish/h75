@@ -8,19 +8,17 @@
         var f=this;
         evt.preventDefault();
         modalload();
-        var sendurl="name="+f.name.value+"&razdel=1";
+        var sendurl="name="+f.name.value+"&addrazdel=1";
         ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
     },false);
     function answerFeedback(arr){
         modalloadclose();
-        alert(arr.answer);
+        //alert(arr.answer);
         var f = document.getElementById("add-razdel");
         var theDiv = document.createElement("div");
         theDiv.className = "fon_c five_";
         theDiv.innerHTML = "<a href='?upd="+arr.answer+"'>"+f.name.value+"</a>";
         document.getElementById("allrazdel").appendChild(theDiv);
         start_show(1, theDiv);
-        f.sms.removeAttribute("value");
-        f.sms.value = "";
-        f.captcha.value = "";
+        f.name.value="";
     }</script>

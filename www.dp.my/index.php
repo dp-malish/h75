@@ -6,7 +6,7 @@ Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 set_include_path(get_include_path().PATH_SEPARATOR."../lib");spl_autoload_extensions("_class.php");spl_autoload_register();
 $Cash=new Cache_File();$bot=new UserAgent();
 
-if(!$bot->isBot()){include'../blocks/dp/rek/google.php';}
+//if(!$bot->isBot()){include'../blocks/dp/rek/google.php';}
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
     try{$uri=urldecode($uri);

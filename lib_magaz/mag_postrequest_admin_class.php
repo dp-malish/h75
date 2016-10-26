@@ -21,7 +21,6 @@ class Mag_postrequest_admin{
             }
         }else{$err=true;}
         return($err)?false:$res;
-
     }
 
 }

@@ -27,6 +27,21 @@
   box-shadow: 0 1px 2px -1px rgba(0,0,0,.2) inset, 0 0 4px rgba(35,146,243,.5);
   transition:.2s linear;
 }
+.form .chislo{
+  width: 57px;
+  margin-right:12px;
+}
+.form .mesyac{
+  width: 100px;margin-right:12px;
+}
+.form .god{
+  width: 70px;
+}
+.form .nakladn{
+  width: 120px;
+}
+
+
 .form input[type="submit"],.form .formbtn{
   padding:1.5%;
   border-radius:3px;
