@@ -120,3 +120,9 @@ FOR EACH ROW
 
 INSERT INTO mag_nakladnaya(id,nomer_nakladnoy,dostavka_usd,dostavka_nac_val,data)VALUES(NULL,'146130',NULL,'2600','1477345000');
 #####################################################################
+CREATE TABLE IF NOT EXISTS mag_razde(
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  razdel VARCHAR(100) NULL,
+  PRIMARY KEY(id),
+  UNIQUE KEY razdel (razdel)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

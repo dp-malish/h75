@@ -24,9 +24,18 @@ class User{
 
 
     public function loginAdmin(){
-        return Validator::issetCookie('min');
+        $cook=Validator::issetCookie('min');
+        if($cook){return($cook==$this->adminCookie()?true:false);}else return false;
     }
     public function setCookieAdmin(){
-        setcookie('min','1',time()+604800,'/','.'.$this->site);//неделя
+        $val=$this->adminCookie();
+        if($val)setcookie('min',$val,time()+604800,'/','.'.$this->site);//неделя
+    }
+    private function adminCookie(){
+        $ip=Validator::getIp();
+        if($ip){
+            $ip=md5($ip.Opt::COOKIE_SALT);
+            return md5($ip);
+        }else{return false;}
     }
 }

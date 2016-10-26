@@ -14,6 +14,8 @@ try{if($count_uri_parts>2 || !$user->loginAdmin()){throw new Exception();}else{
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         switch($uri_parts[1]){
             case'наменклатура':include'uri1/namenklatura.php';break;
+
+            case'':include'uri1/namenklatura.php';break;
             default:$module='404';
         }
     }

@@ -23,4 +23,9 @@ public function StopCacheWithOut($cache_file){
 $cache_file=$this->dir.$cache_file;
 $handle=fopen($cache_file,'w');
 fwrite($handle,ob_get_contents());fclose($handle);ob_end_flush();}
+//-------------------------------
+public function SendHTML($f){
+ob_start();include $f;$f=ob_get_contents();ob_end_clean();
+return $f;
+}
 }

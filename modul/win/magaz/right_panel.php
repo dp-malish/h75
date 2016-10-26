@@ -11,3 +11,9 @@ $right_content_up='<div class="r_menu rel"><div class="r_menu_title">Админ�
 <li><a href="/'.$uri_parts[0].'/наменклатура">Наменклатура</a></li>
 
 </ul></nav></div>';
+
+$right_content_up.='<div class="r_menu rel"><div class="r_menu_title">Настройки</div><nav><ul>
+
+<li><a href="/'.$uri_parts[0].'/раздел">Раздел</a></li>
+
+</ul></nav></div>';
