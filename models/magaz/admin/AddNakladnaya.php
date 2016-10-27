@@ -48,11 +48,18 @@
 </div>
         <div class="cl"></div>
 
-        <p>Название раздела:</p>
-        <input type="text" name="name" required placeholder="Название раздела *" maxlength="95">
+        <div id="tovar"></div>
+        <br>
+        <div id="tovarbtn" class="formbtn">Добавить товар</div>
+        <script type="application/javascript" src="/js/magazin/admin/addtovar.js"></script>
 
 
 
+
+        <br>
+        <br>
+        <br>
+        <br>
         <input type="submit" value="Добавить раздел"></form>
     <p class="note">Примечание: поля, помеченные * звездочкой - обязательны для заполнения</p></div>
 <script type="text/javascript">document.getElementById("add-razdel").addEventListener("submit", function(evt){

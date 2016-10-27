@@ -84,17 +84,24 @@ function start_show(res,obj,res_s){
     show_element(res);
 }
 //*************************show_element**************************
-function modalload(){
+function modalload(form){
     var d=document.createElement("div");
     d.setAttribute("id","modalload");
     d.setAttribute("class","modalload");
     document.body.appendChild(d);
+    if(form !== undefined){modalloadForm();}
 }
 function modalloadclose(){
     try{
         var e = document.getElementById("modalload");
         e.parentNode.removeChild(e);
     }catch(e){}
+}
+function modalloadForm(){
+    var d=document.createElement("div");
+    d.setAttribute("id","modalloadform");
+    d.setAttribute("class","modalloadform fon_c");
+    modalload.appendChild(d);
 }
 //*************************show_element**************************
 (window.onload=function(){
