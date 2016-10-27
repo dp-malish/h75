@@ -6,8 +6,8 @@
 <link rel="shortcut icon" href="/img/site/ico.png" type="image/png">
 
     <script async src="/js/jq.php" type="text/javascript"></script>
-    <script async src="/js/common.php"></script>
-    <link rel="stylesheet" type="text/css" href="/css/css.php">
+    <script async src="/js/common.php?v1"></script>
+    <link rel="stylesheet" type="text/css" href="/css/css.php?v1">
 
-    <?php
+<?php
 echo'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';?></head>

@@ -2,6 +2,8 @@ var my_protocol = window.location.protocol;
 var my_host = window.location.hostname;
 var referal = document.referrer;
 var temp_obj;//для проявления объекта
+var loaderImg=new Image();
+loaderImg.src="/img/site/loader.gif";
 
 
 function button_back(page_link) {
@@ -84,24 +86,38 @@ function start_show(res,obj,res_s){
     show_element(res);
 }
 //*************************show_element**************************
-function modalload(form){
+function modalload(loadimg){
     var d=document.createElement("div");
     d.setAttribute("id","modalload");
-    d.setAttribute("class","modalload");
+    d.setAttribute("class","modalload ac");
+    if(loadimg!==undefined)d.innerHTML='<img src="'+loaderImg.src+'" alt="загрузка">';
     document.body.appendChild(d);
-    if(form !== undefined){modalloadForm();}
+}
+function modalloadForm(html){
+    modalload();
+    var d=document.createElement("div");
+    d.setAttribute("id","modalloadform");
+    d.setAttribute("class","modalloadform");
+    document.body.appendChild(d);
+        var df=document.createElement("div");
+        df.setAttribute("id","modalloadformcanvas");
+        df.setAttribute("class","modalloadformcanvas");
+    if(html!==undefined)df.innerHTML=html;
+        d.appendChild(df);
+    d=document.createElement("div");
+    d.setAttribute("class","closex");
+    d.innerHTML='X';
+    df.appendChild(d);
+    d.addEventListener("click",modalloadclose);
+
+
 }
 function modalloadclose(){
     try{
         var e = document.getElementById("modalload");
         e.parentNode.removeChild(e);
+        if(modalloadform!==null){modalloadform.parentNode.removeChild(modalloadform);}
     }catch(e){}
-}
-function modalloadForm(){
-    var d=document.createElement("div");
-    d.setAttribute("id","modalloadform");
-    d.setAttribute("class","modalloadform fon_c");
-    modalload.appendChild(d);
 }
 //*************************show_element**************************
 (window.onload=function(){

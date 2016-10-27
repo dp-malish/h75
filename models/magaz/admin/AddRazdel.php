@@ -7,7 +7,7 @@
 <script type="text/javascript">document.getElementById("add-razdel").addEventListener("submit", function(evt){
         var f=this;
         evt.preventDefault();
-        modalload();
+        modalload(true);
         var sendurl="name="+f.name.value+"&addrazdel=1";
         ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
     },false);
