@@ -93,24 +93,27 @@ function modalload(loadimg){
     if(loadimg!==undefined)d.innerHTML='<img src="'+loaderImg.src+'" alt="загрузка">';
     document.body.appendChild(d);
 }
-function modalloadForm(html){
+function modalloadForm(html,obj){
     modalload();
+    if(html===undefined){html=null;obj=null}
     var d=document.createElement("div");
     d.setAttribute("id","modalloadform");
     d.setAttribute("class","modalloadform");
     document.body.appendChild(d);
-        var df=document.createElement("div");
-        df.setAttribute("id","modalloadformcanvas");
-        df.setAttribute("class","modalloadformcanvas");
-    if(html!==undefined)df.innerHTML=html;
-        d.appendChild(df);
+
+    var canvas=document.createElement("div");
+    canvas.setAttribute("id","modalloadformcanvas");
+    canvas.setAttribute("class","modalloadformcanvas");
+    d.appendChild(canvas);
+
+    if(html!==null)canvas.innerHTML=html;
+    if(obj!==null)canvas.appendChild(obj);
+
     d=document.createElement("div");
     d.setAttribute("class","closex");
     d.innerHTML='X';
-    df.appendChild(d);
+    canvas.appendChild(d);
     d.addEventListener("click",modalloadclose);
-
-
 }
 function modalloadclose(){
     try{

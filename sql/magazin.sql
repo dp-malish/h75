@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS mag_tovar(
 
 CREATE TABLE IF NOT EXISTS mag_namenklatura(
   id INT(11) NOT NULL AUTO_INCREMENT,
+  id_razdel INT NULL,
   razdel VARCHAR(100) NULL,
   podrazdel VARCHAR(100) NULL,
   id_nakladnaya INT NULL,

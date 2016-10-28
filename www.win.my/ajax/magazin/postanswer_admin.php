@@ -15,6 +15,12 @@ if(PostRequest::issetPostArr()){
     }
 
 
+    elseif(!empty($_POST['addtovar'])){
+        $mag=new Mag_postrequest_admin();
+
+    }
+
+
     elseif(!empty($_POST['addrazdel'])){
         $mag=new Mag_postrequest_admin();
         $res=$mag->addRazdel();
