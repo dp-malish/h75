@@ -11,13 +11,19 @@ if(PostRequest::issetPostArr()){
     //magazine
     if(!empty($_POST['namenklatura'])){
         $mag=new Mag_postrequest_admin();
-
+        $res=$mag->getRazdel();
+        if($res){}
     }
 
 
-    elseif(!empty($_POST['addtovar'])){
+    elseif(!empty($_POST['getrazdel'])){
         $mag=new Mag_postrequest_admin();
-
+        $res=$mag->getRazdel();
+        if($res){
+            $answer=['err'=>false];
+            $answer['contents']=$res;
+            echo json_encode($answer);
+        }else{PostRequest::answerErrJson();}
     }
 
 

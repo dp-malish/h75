@@ -8,6 +8,16 @@ class Mag_postrequest_admin{
     }
 
 
+
+//********************************
+    public function getRazdel(){
+        $res=$this->DB->arrSQL('SELECT id,razdel FROM mag_razdel');
+        if($res){return $res;
+        }else{
+            Validator::$ErrorForm[]='Разделы отсутствуют';
+            return false;
+        }
+    }
     public function addRazdel(){
         $err=false;
         if(PostRequest::issetPostKey(['name'])){

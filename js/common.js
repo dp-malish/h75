@@ -64,10 +64,10 @@ function ajaxPostSend(urlparts, callback, json, asinc, url) {
 function ajaxPostErr(answer,callback){
     var json=JSON.parse(answer);
     if(json.err){
-        alert(json.errText[0]);
+        alert(json.errText[0]);modalloadclose();
     }
     else{callback(json)}
-    modalloadclose();
+
 }
 //*************************show_element**************************
 function show_element(res){
@@ -95,7 +95,7 @@ function modalload(loadimg){
 }
 function modalloadForm(html,obj){
     modalload();
-    if(html===undefined){html=null;obj=null}
+    if(html===undefined){html=null}
     var d=document.createElement("div");
     d.setAttribute("id","modalloadform");
     d.setAttribute("class","modalloadform");
@@ -107,7 +107,7 @@ function modalloadForm(html,obj){
     d.appendChild(canvas);
 
     if(html!==null)canvas.innerHTML=html;
-    if(obj!==null)canvas.appendChild(obj);
+    if(obj!==undefined)canvas.appendChild(obj);
 
     d=document.createElement("div");
     d.setAttribute("class","closex");

@@ -1,6 +1,4 @@
-/**
- * Created by WinTeh on 27.10.2016.
- */
+
 
 tovarbtn.addEventListener("click",addTovar);
 
@@ -10,7 +8,9 @@ my_ajax.razdel=null;
 //--------------------------------------------------
 function addTovar(){
     if(my_ajax.razdel!=null){
-        //ajaxPostSend(url,)
+        ajaxPostSend('getrazdel=1',getRazdel,true,true,'/ajax/magazin/postanswer_admin.php');
+    }else{
+        setRazdel();
     }
 
     var d=document.createElement("div");
@@ -20,7 +20,9 @@ function addTovar(){
     //booldiv.appendChild(d);
     //boolBtn.addEventListener("click",showBoolFilter);
 
-    modalloadForm('ui',d);
+    //modalloadForm('ui',d);
+
+
     /*var select = document.createElement("select");
     select.setAttribute("id","razdel");
     filterRes.appendChild(select);
@@ -32,7 +34,14 @@ function addTovar(){
     //if(modalloadformcanvas!==null)alert('есть');else alert('нету');
 }
 
+function getRazdel(arr){
+    my_ajax.razdel=arr.contents;
+    setRazdel();
+}
+function setRazdel(){
+    my_ajax.razdel;
 
-
+    modalloadForm(arrCont[6].razdel);
+}
 
 //--------------------------------------------------
