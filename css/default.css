@@ -99,6 +99,9 @@ img {
     color:#333;
     font-size:90%}
 
+.link{
+    cursor:pointer;
+}
 /*Video*/
 .video-responsive {
     position: relative;

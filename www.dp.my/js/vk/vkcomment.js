@@ -58,7 +58,7 @@ function loadVkForm(){//без регистрации капча
         divcaptcha.appendChild(i);
     }
     if(vkextform.getAttribute('data-idcomment')>0){
-        alert('add load comments')
+        //alert('add load comments')
         //ajaxPostSend(url,addComment,true,true,'/ajax/site/vkcomment.php');
     }
 }

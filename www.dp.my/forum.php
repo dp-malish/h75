@@ -4,7 +4,20 @@
 <link rel="stylesheet" type="text/css" href="/css/css.php?v=1">
 
 
-<script async src="/js/jq.php" type="text/javascript"></script><script async src="/js/common.php"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="description" content="Лабиринты для печати. "><meta name="keywords" content="лабиринты для печати"><title>Лабиринты распечатать - для детей и абсолютно бесплатно</title></head><body><div id="bh" class="maxw"><div class="cl"></div></div><div id="header" class="maxw"><header><div id="logo" class="fl rel"><a href="/"><img src="/img/site/png.php?img=logo" alt="Логотип" title="На главную"></a><div class="cl"></div></div>
+<script async src="/js/jq.php" type="text/javascript"></script><script async src="/js/common.php"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="description" content="Лабиринты для печати. "><meta name="keywords" content="лабиринты для печати"><title>Лабиринты распечатать - для детей и абсолютно бесплатно</title></head>
+
+
+<body>
+
+
+<div id="bh" class="maxw">
+
+
+<div class="cl"></div></div>
+<script type="application/javascript" src="/js/reg.js"></script>
+
+
+<div id="header" class="maxw"><header><div id="logo" class="fl rel"><a href="/"><img src="/img/site/png.php?img=logo" alt="Логотип" title="На главную"></a><div class="cl"></div></div>
 <div class="h_field"><!--сказки--><div id="skazki" class="fr v_menu"><div class="v_menu_link"><div class="ac"><a href="/сказки/"><img src="/img/site/jpg.php?img=skazki" alt="Сказки"></a></div><p>Выберите раздел:</p><nav><ul><li><a href="/сказки/русские/">Русский кинематограф</a></li><li><a href="/сказки/зарубежные/">Зарубежный кинематограф</a></li></ul></nav></div><div class="v_menu_btn">Сказки</div></div><!--/сказки--><!--мульты--><div id="mult" class="fr v_menu"><div class="v_menu_link"><div class="ac"><a href="/мультики/"><img src="/img/site/jpg.php?img=vinni_mult" alt="Мультфильмы"></a></div><p>Выберите раздел:</p><nav><ul><li><a href="/мультики/российские/">Российские - современные</a></li><li><a href="/мультики/советские/">Советские</a></li><li><a href="/мультики/для-малышей/">Для малышей</a></li></ul></nav></div><div class="v_menu_btn">Мультфильмы</div></div><!--/мульты--><div class="cl"></div></div>
 <div class="h_field">&nbsp;<div class="cl"></div></div>
 <div class="cl"></div></header></div><div id="ah" class="maxw"><div class="cl"></div></div><div id="wrap" class="maxw"><div id="l_col" class="fl rel"><div class="l_menu rel"><div class="l_menu_title">Игровая</div><nav><ul><li><a href="/лабиринты-распечатать/">Лабиринты на печать</a></li></ul></nav></div><div class="l_menu rel"><div class="l_menu_title">Математика</div><nav><ul><li><a href="/математика/соседи-числа/">Соседи числа</a></li><li><a href="/математика/сложение/">Сложение</a></li><li><a href="/математика/вычитание/">Вычитание</a></li></ul></nav></div><div class="l_menu rel"><div class="l_menu_title">Обучающие слайды</div><nav><ul><li><a href="/обучающие-слайды/алфавит-звуки-и-буквы">Алфавит, звуки и буквы</a></li></ul></nav></div><div class="cl"></div></div><div id="m_col" class="rel">
