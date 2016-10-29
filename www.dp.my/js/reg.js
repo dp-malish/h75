@@ -5,16 +5,16 @@ function mylogin(){
 }
 
 
-addLogin();
+//addLogin();addLogin
 
-function addLogin(){
+(function (){
     var sp=document.createElement("span");
     sp.setAttribute("id","loginlink");
     sp.setAttribute("class","link fr mr");
     sp.innerHTML="Вход";
     bh.insertBefore(sp,bh.firstChild);
     sp.addEventListener('click',mylogin);
-}
+})();
 
 
 //addEventListener('click', function(){ ololo(q)  })
@@ -24,10 +24,11 @@ function addLogin(){
 
 var arrReg=[
 
-
-
-
 ];
+
+
+myreg.fio=true;
+
 
 addRegLink();
 
@@ -42,6 +43,25 @@ function addRegLink(){
 function myreg(){
 
     var reg=document.createElement("div");
+    reg.setAttribute("class","vkform");
+    reg.innerHTML = "<h4>Регистрация на сайте</h4>";
+    if(myreg.fio){
+        var regname=document.createElement("div");
+        regname.setAttribute("id","regdiv");
+        regname.setAttribute("class","formbtn");
+        regname.innerHTML = "<p>Ваше имя:</p>";
+
+        var inp = document.createElement("input");
+        inp.setAttribute("type", "text");
+        inp.setAttribute("name", "newname");
+        inp.setAttribute("id", "newname");
+        inp.setAttribute("title", "Не обязательное поле для заполнения");
+        inp.setAttribute("placeholder", "Введите новое название раздела");
+        regname.appendChild(inp);
+
+
+        reg.appendChild(regname);
+    }
 
     var fio=["Ваше имя:","Ваше отчество","Пароль","Подтверждение пароля"];
 
@@ -66,4 +86,4 @@ function myreg(){
     modalloadForm(null,reg);
 }
 
-
+myreg.fio=true;
