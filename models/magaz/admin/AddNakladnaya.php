@@ -9,14 +9,14 @@
         </span>
         <span>
         <p>от:</p>
-        <select id="razdel" class="chislo fl">
+        <select id="chislo" class="chislo fl">
             <?php
             for($i=1;$i<32;$i++){
                 echo '<option value="'.$i.'">'.$i.'</option>';
             }
             ?>
         </select>
-        <select id="razdel" class="mesyac fl">
+        <select id="mesyac" class="mesyac fl">
             <?php
             for($i=1;$i<13;$i++){
                 switch($i){
@@ -37,7 +37,7 @@
             }
             ?>
         </select>
-        <select id="razdel" class="god fl">
+        <select id="god" class="god fl">
             <?php
             for($i=2016;$i<2025;$i++){
                 echo '<option value="'.$i.'">'.$i.'</option>';

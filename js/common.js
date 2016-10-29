@@ -4,7 +4,7 @@ var referal = document.referrer;
 var temp_obj;//для проявления объекта
 var loaderImg=new Image();
 loaderImg.src="/img/site/loader.gif";
-
+var mesyacstr=["месяц","января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
 
 function button_back(page_link) {
 
