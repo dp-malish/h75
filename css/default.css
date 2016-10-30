@@ -62,8 +62,7 @@ img {
     min-width: 100px;
     max-width: 480px;
     position: relative;
-    margin: 7% auto;
-    padding:1px;
+    margin: 25px auto;
     border-radius:10px;
     background:#fefee2;
     background:rgba(254,254,226,0.88);

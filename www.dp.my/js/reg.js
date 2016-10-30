@@ -17,17 +17,13 @@ function addLogin(){
 }
 
 
-//addEventListener('click', function(){ ololo(q)  })
-
 
 //*************************************************************************
 
-var arrReg=[
-
-];
 
 
 myreg.fio=true;
+myreg.tel=true;
 
 
 addRegLink();
@@ -48,11 +44,6 @@ function myreg(){
     reg.setAttribute("method","post");
     reg.innerHTML = "<h4>Регистрация на сайте</h4>";
 
-    reg.addEventListener("submit",function(evt){
-        evt.preventDefault();
-        alert('90');
-        //ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
-    },false);
 
     //*************имя
     var regname=document.createElement("div");
@@ -68,7 +59,7 @@ function myreg(){
 
     reg.appendChild(regname);
     //***********/имя
-    if(myreg.fio){
+    if(myreg.fio!=undefined){
         //отчество
         var regpatronymic=document.createElement("div");
         regpatronymic.innerHTML = "<p>Ваше отчество:</p>";
@@ -142,25 +133,79 @@ function myreg(){
     d=document.createElement("div");
     d.setAttribute("class","cl");
     reg.appendChild(d);
-    /*var regname=document.createElement("div");
-    regname.setAttribute("id","regdiv");
-    regname.setAttribute("class","formbtn");
-    reg.innerHTML = "<p>Ваше имя:</p>";
-    regname.innerHTML = "<p>рега имя:</p>";
-    reg.appendChild(regname);
-    //reg.innerHTML = "<p>Ваше имя2:</p>";
+    //****************************
+    if(myreg.tel!=undefined){
+    d=document.createElement("div");
+    d.innerHTML = "<p>Номер телефона:</p>";
+    inp = document.createElement("input");
+    inp.setAttribute("type","text");
+    inp.setAttribute("id", "telreg");
+    inp.setAttribute("maxlength","20");
+    inp.setAttribute("title", "Обязательное поле для заполнения");
+    inp.setAttribute("required","");
+    inp.setAttribute("placeholder", "Введите Ваш телефон *");
+    d.appendChild(inp);
+    reg.appendChild(d);
+    }
+    //*****************************
+    d=document.createElement("div");
+    d.innerHTML = "<p>Электронная почта:</p>";
+    inp = document.createElement("input");
+    inp.setAttribute("type","email");
+    inp.setAttribute("id", "mailreg");
+    inp.setAttribute("maxlength","20");
+    inp.setAttribute("title", "Обязательное поле для заполнения");
+    inp.setAttribute("required","");
+    inp.setAttribute("placeholder", "Введите Вашу электронную почту *");
+    d.appendChild(inp);
+    reg.appendChild(d);
+    //*****************************
+    d=document.createElement("div");
+    d.innerHTML = "<p>Пароль:</p>";
+    inp = document.createElement("input");
+    inp.setAttribute("type","password");
+    inp.setAttribute("id", "passreg");
+    inp.setAttribute("maxlength","30");
+    inp.setAttribute("title", "Обязательное поле для заполнения");
+    inp.setAttribute("required","");
+    inp.setAttribute("placeholder", "Введите Ваш пароль *");
+    d.appendChild(inp);
+    reg.appendChild(d);
 
-    //d.innerHTML = "Флаговый фильтр";
-    //booldiv.appendChild(d);
-    //boolBtn.addEventListener("click",showBoolFilter);*/
-
+    d=document.createElement("div");
+    d.innerHTML = "<p>Подтверждение пароля:</p>";
+    inp = document.createElement("input");
+    inp.setAttribute("type","password");
+    inp.setAttribute("id", "passreg2");
+    inp.setAttribute("maxlength","30");
+    inp.setAttribute("title", "Обязательное поле для заполнения");
+    inp.setAttribute("required","");
+    inp.setAttribute("placeholder", "Введите Ваш пароль повторно *");
+    d.appendChild(inp);
+    reg.appendChild(d);
+    //*****************************
+    d=document.createElement("div");
     inp=document.createElement("input");
+    inp.setAttribute("id","submitreg");
     inp.setAttribute("type","submit");
     inp.setAttribute("value", "Зарегистрироваться");
-    inp.setAttribute("class","vkbtn")
-    reg.appendChild(inp);
+    //inp.setAttribute("class","vkbtn");
+    d.appendChild(inp);
+    reg.appendChild(d);
 
+    reg.addEventListener("submit",function(evt){
+        evt.preventDefault();
+        inp.setAttribute('disabled','');
 
+        alert(reg.offsetHeight);
+        //ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
+
+        setTimeout("submitreg.removeAttribute('disabled')",2000);
+    },false);
+
+    //reg.style.height=420+'px';
+    reg.style.overflowX='auto';
+    //height=screen.height; // высота
 
     modalloadForm(null,reg);
 }
