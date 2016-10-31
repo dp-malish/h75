@@ -61,38 +61,38 @@ function myreg(){
     //***********/имя
     if(myreg.fio!=undefined){
         //отчество
-        var regpatronymic=document.createElement("div");
-        //regpatronymic.innerHTML = "<p>Ваше отчество:</p>";
+        d=document.createElement("div");
+        //d.innerHTML = "<p>Ваше отчество:</p>";
 
-        inp = document.createElement("input");
+        inp=document.createElement("input");
         inp.setAttribute("type","text");
         inp.setAttribute("id", "regpatronymic");
         inp.setAttribute("title", "Обязательное поле для заполнения");
         inp.setAttribute("required","");
         inp.setAttribute("placeholder", "Введите Ваше отчество *");
-        regpatronymic.appendChild(inp);
+        d.appendChild(inp);
 
-        reg.appendChild(regpatronymic);
+        reg.appendChild(d);
         //фамилия
-        var regsurname=document.createElement("div");
-        //regsurname.innerHTML = "<p>Ваша фамилия:</p>";
+        d=document.createElement("div");
+        //d.innerHTML = "<p>Ваша фамилия:</p>";
 
-        inp = document.createElement("input");
+        inp=document.createElement("input");
         inp.setAttribute("type","text");
         inp.setAttribute("id", "regsurname");
         inp.setAttribute("title", "Обязательное поле для заполнения");
         inp.setAttribute("required","");
         inp.setAttribute("placeholder", "Введите Вашу фамилию *");
-        regsurname.appendChild(inp);
+        d.appendChild(inp);
 
-        reg.appendChild(regsurname);
+        reg.appendChild(d);
     }
 //***********
     d=document.createElement("div");
     d.innerHTML = "<p>Дата рождения:</p>";
     //***
     var select = document.createElement("select");
-    select.setAttribute("id","chislo");
+    select.setAttribute("id","regchislo");
     select.setAttribute("class","fl chislo")
     d.appendChild(select);
     var newOption = document.createElement('option');
@@ -104,7 +104,7 @@ function myreg(){
     }
     //***
     select = document.createElement("select");
-    select.setAttribute("id","mesyac");
+    select.setAttribute("id","regmesyac");
     select.setAttribute("class","fl mesyac")
     d.appendChild(select);
     newOption = document.createElement('option');
@@ -116,7 +116,7 @@ function myreg(){
     }
     //***
     select = document.createElement("select");
-    select.setAttribute("id","god");
+    select.setAttribute("id","reggod");
     select.setAttribute("class","fl god")
     d.appendChild(select);
     newOption = document.createElement('option');
@@ -152,7 +152,7 @@ function myreg(){
     d.innerHTML = "<p>Электронная почта:</p>";
     inp = document.createElement("input");
     inp.setAttribute("type","email");
-    inp.setAttribute("id", "mailreg");
+    inp.setAttribute("id", "regmail");
     inp.setAttribute("maxlength","20");
     inp.setAttribute("title", "Обязательное поле для заполнения");
     inp.setAttribute("required","");
@@ -164,7 +164,7 @@ function myreg(){
     d.innerHTML = "<p>Пароль:</p>";
     inp = document.createElement("input");
     inp.setAttribute("type","password");
-    inp.setAttribute("id", "passreg");
+    inp.setAttribute("id", "regpass");
     inp.setAttribute("maxlength","30");
     inp.setAttribute("title", "Обязательное поле для заполнения");
     inp.setAttribute("required","");
@@ -176,7 +176,7 @@ function myreg(){
     //d.innerHTML = "<p>Подтверждение пароля:</p>";
     inp = document.createElement("input");
     inp.setAttribute("type","password");
-    inp.setAttribute("id", "passreg2");
+    inp.setAttribute("id", "regpass2");
     inp.setAttribute("maxlength","30");
     inp.setAttribute("title", "Обязательное поле для заполнения");
     inp.setAttribute("required","");
@@ -189,7 +189,6 @@ function myreg(){
     inp.setAttribute("id","submitreg");
     inp.setAttribute("type","submit");
     inp.setAttribute("value", "Зарегистрироваться");
-    //inp.setAttribute("class","vkbtn");
     d.appendChild(inp);
     reg.appendChild(d);
 
@@ -197,12 +196,11 @@ function myreg(){
         evt.preventDefault();
         inp.setAttribute('disabled','');
         //**********************
-        if(passreg.value!=passreg2.value){passreg.focus();alert("Пароли не совпадают");
+        if(regpass.value!=regpass2.value){regpass.focus();alert("Пароли не совпадают");
         }else{
-            var url="reg=1&name="+regname.value;
-
-            if(myreg.fio!=undefined)url+="&patronymic"+regpatronymic.value+"&surname"+regsurname.value;
-            if(myreg.tel!=undefined)url+="&tel"+regtel.value;
+            var url="reg=1&name="+regname.value+"&chislo="+regchislo.value+"&mesyac="+regmesyac.value+"&god="+reggod.value+"&mail="+regmail.value+"&pass="+regpass.value;
+            if(myreg.fio!=undefined)url+="&patronymic="+regpatronymic.value+"&surname="+regsurname.value;
+            if(myreg.tel!=undefined)url+="&tel="+regtel.value;
             ajaxPostSend(url,regUser);
         }
         setTimeout("submitreg.removeAttribute('disabled')",2000);

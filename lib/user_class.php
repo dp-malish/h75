@@ -25,11 +25,20 @@ class User{
     }
     //*********************************************************
     public function regUser(){
-        if(PostRequest::issetPostKey(['name','captcha','sms','idcomment'])){
+        if(PostRequest::issetPostKey(['name','chislo','mesyac','god','mail',"pass"])){}
+            $name=$_POST['name'];
+            $chislo=$_POST['chislo'];
+            $mesyac=$_POST['mesyac'];
+            $god=$_POST['god'];
+            $mail=$_POST['mail'];
+            $pass=$_POST['pass'];
 
+            $patronymic=$_POST['patronymic'];
+            $surname=$_POST['surname'];
 
-        }
-        $this->temp='Рега';
+        $tel=$_POST['tel'];
+
+        $this->temp=$name.$chislo.$mesyac.$god.$mail.$pass.'Рега'.$patronymic.$surname.'    '.$tel;
         return true;
     }
     //*********************************************************
