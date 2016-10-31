@@ -115,6 +115,15 @@ function modalloadForm(html,obj){
     canvas.appendChild(d);
     d.addEventListener("click",modalloadclose);
 }
+function modalloadFormAnswer(html,obj){
+    modalloadformcanvas.removeChild(modalloadformcanvas.firstChild);
+
+    if(html===undefined){html=null}
+    var d=document.createElement("div");
+    if(html!==null)d.innerHTML=html;
+    if(obj!==undefined)d.appendChild(obj);
+    modalloadformcanvas.insertBefore(d,modalloadformcanvas.firstChild);
+}
 function modalloadclose(){
     try{
         var e = document.getElementById("modalload");

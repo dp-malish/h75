@@ -11,6 +11,8 @@ class User{
 
     private $site;
 
+    public $temp=null;
+
     function __construct(){
         $this->site=$_SERVER['SERVER_NAME'];
     }
@@ -22,12 +24,14 @@ class User{
         setcookie('user_name',$val,time()+2500000,'/','.'.$this->site);
     }
     //*********************************************************
+    public function regUser(){
+        if(PostRequest::issetPostKey(['name','captcha','sms','idcomment'])){
 
 
-
-
-
-
+        }
+        $this->temp='Рега';
+        return true;
+    }
     //*********************************************************
     public function loginAdmin(){
         $cook=Validator::issetCookie('min');

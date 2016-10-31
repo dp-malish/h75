@@ -16,8 +16,10 @@ if(PostRequest::issetPostArr()){
     }
     //-------------------------------------------------------------------
     elseif(!empty($_POST['reg'])){
-
-
+        $user=new User();
+        if($user->regUser()){
+            echo json_encode(['err'=>false,'answer'=>'Регистрация произведена! Необходимо подтверждение электронной почты...'.$user->temp]);
+        }else{PostRequest::answerErrJson();}
     }
     //-------------------------------------------------------------------
     elseif(!empty($_POST['feedback'])){

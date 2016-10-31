@@ -51,7 +51,7 @@ function myreg(){
 
     var inp = document.createElement("input");
     inp.setAttribute("type","text");
-    inp.setAttribute("id", "newname");
+    inp.setAttribute("id", "regname");
     inp.setAttribute("title", "Обязательное поле для заполнения");
     inp.setAttribute("required","");
     inp.setAttribute("placeholder", "Введите Ваше имя *");
@@ -66,7 +66,7 @@ function myreg(){
 
         inp = document.createElement("input");
         inp.setAttribute("type","text");
-        inp.setAttribute("id", "newpatronymic");
+        inp.setAttribute("id", "regpatronymic");
         inp.setAttribute("title", "Обязательное поле для заполнения");
         inp.setAttribute("required","");
         inp.setAttribute("placeholder", "Введите Ваше отчество *");
@@ -79,7 +79,7 @@ function myreg(){
 
         inp = document.createElement("input");
         inp.setAttribute("type","text");
-        inp.setAttribute("id", "newsurname");
+        inp.setAttribute("id", "regsurname");
         inp.setAttribute("title", "Обязательное поле для заполнения");
         inp.setAttribute("required","");
         inp.setAttribute("placeholder", "Введите Вашу фамилию *");
@@ -139,7 +139,7 @@ function myreg(){
     d.innerHTML = "<p>Номер телефона:</p>";
     inp = document.createElement("input");
     inp.setAttribute("type","text");
-    inp.setAttribute("id", "telreg");
+    inp.setAttribute("id", "regtel");
     inp.setAttribute("maxlength","20");
     inp.setAttribute("title", "Обязательное поле для заполнения");
     inp.setAttribute("required","");
@@ -199,14 +199,14 @@ function myreg(){
         //**********************
         if(passreg.value!=passreg2.value){passreg.focus();alert("Пароли не совпадают");
         }else{
-            var url="reg=1";
-            //ajaxPostSend(url,answerFeedback);
-            //alert(reg.offsetHeight);
-        }
+            var url="reg=1&name="+regname.value;
 
+            if(myreg.fio!=undefined)url+="&patronymic"+regpatronymic.value+"&surname"+regsurname.value;
+            if(myreg.tel!=undefined)url+="&tel"+regtel.value;
+            ajaxPostSend(url,regUser);
+        }
         setTimeout("submitreg.removeAttribute('disabled')",2000);
         //**********************
-
     },false);
 
     if(screen.height<530){
@@ -216,5 +216,8 @@ function myreg(){
     modalloadForm(null,reg);
 }
 function regUser(arr){
+    //alert(arr.answer);
+    modalloadFormAnswer("<h4>Регистрация на сайте</h4><p>"+arr.answer+"</p>");
+    //modalloadForm(arr.answer);
 
 }
