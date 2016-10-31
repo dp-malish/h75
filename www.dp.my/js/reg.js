@@ -46,8 +46,8 @@ function myreg(){
 
 
     //*************имя
-    var regname=document.createElement("div");
-    regname.innerHTML = "<p>Ваше имя:</p>";
+    var d=document.createElement("div");
+    d.innerHTML = "<p>Как к Вам обращаться:</p>";
 
     var inp = document.createElement("input");
     inp.setAttribute("type","text");
@@ -55,14 +55,14 @@ function myreg(){
     inp.setAttribute("title", "Обязательное поле для заполнения");
     inp.setAttribute("required","");
     inp.setAttribute("placeholder", "Введите Ваше имя *");
-    regname.appendChild(inp);
+    d.appendChild(inp);
 
-    reg.appendChild(regname);
+    reg.appendChild(d);
     //***********/имя
     if(myreg.fio!=undefined){
         //отчество
         var regpatronymic=document.createElement("div");
-        regpatronymic.innerHTML = "<p>Ваше отчество:</p>";
+        //regpatronymic.innerHTML = "<p>Ваше отчество:</p>";
 
         inp = document.createElement("input");
         inp.setAttribute("type","text");
@@ -75,7 +75,7 @@ function myreg(){
         reg.appendChild(regpatronymic);
         //фамилия
         var regsurname=document.createElement("div");
-        regsurname.innerHTML = "<p>Ваша фамилия:</p>";
+        //regsurname.innerHTML = "<p>Ваша фамилия:</p>";
 
         inp = document.createElement("input");
         inp.setAttribute("type","text");
@@ -88,7 +88,7 @@ function myreg(){
         reg.appendChild(regsurname);
     }
 //***********
-    var d=document.createElement("div");
+    d=document.createElement("div");
     d.innerHTML = "<p>Дата рождения:</p>";
     //***
     var select = document.createElement("select");
@@ -173,7 +173,7 @@ function myreg(){
     reg.appendChild(d);
 
     d=document.createElement("div");
-    d.innerHTML = "<p>Подтверждение пароля:</p>";
+    //d.innerHTML = "<p>Подтверждение пароля:</p>";
     inp = document.createElement("input");
     inp.setAttribute("type","password");
     inp.setAttribute("id", "passreg2");
@@ -196,16 +196,25 @@ function myreg(){
     reg.addEventListener("submit",function(evt){
         evt.preventDefault();
         inp.setAttribute('disabled','');
-
-        alert(reg.offsetHeight);
-        //ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
+        //**********************
+        if(passreg.value!=passreg2.value){passreg.focus();alert("Пароли не совпадают");
+        }else{
+            var url="reg=1";
+            //ajaxPostSend(url,answerFeedback);
+            //alert(reg.offsetHeight);
+        }
 
         setTimeout("submitreg.removeAttribute('disabled')",2000);
+        //**********************
+
     },false);
 
-    //reg.style.height=420+'px';
+    if(screen.height<530){
+    reg.style.height=400+'px';
     reg.style.overflowX='auto';
-    //height=screen.height; // высота
-
+    }
     modalloadForm(null,reg);
+}
+function regUser(arr){
+
 }

@@ -14,8 +14,11 @@ if(PostRequest::issetPostArr()){
             echo json_encode(['err'=>false,'answer'=>$t.' - '.$vk->vkext()]);
             //if($vk->vkext()){}else{PostRequest::answerErrJson();}
     }
+    //-------------------------------------------------------------------
+    elseif(!empty($_POST['reg'])){
 
 
+    }
     //-------------------------------------------------------------------
     elseif(!empty($_POST['feedback'])){
         if(PostRequest::feedback()){

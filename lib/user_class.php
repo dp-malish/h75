@@ -21,8 +21,14 @@ class User{
     private function setCookieUserName($val){
         setcookie('user_name',$val,time()+2500000,'/','.'.$this->site);
     }
+    //*********************************************************
 
 
+
+
+
+
+    //*********************************************************
     public function loginAdmin(){
         $cook=Validator::issetCookie('min');
         if($cook){return($cook==$this->adminCookie()?true:false);}else return false;
