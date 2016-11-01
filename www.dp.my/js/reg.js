@@ -214,8 +214,5 @@ function myreg(){
     modalloadForm(null,reg);
 }
 function regUser(arr){
-    //alert(arr.answer);
-    modalloadFormAnswer("<h4>Регистрация на сайте</h4><p>"+arr.answer+"</p>");
-    //modalloadForm(arr.answer);
-
+    modalloadFormAnswer("<h4>Регистрация на сайте</h4><br><p>"+arr.answer+"</p>");
 }
