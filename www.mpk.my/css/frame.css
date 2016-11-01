@@ -1,0 +1,163 @@
+
+html,body{height:100%;
+	font:15px Verdana,Geneva,sans-serif;
+	text-align:justify;
+	cursor:default;}
+
+.maxw{
+	margin:2px auto;
+	min-width:240px;
+	max-width:1400px/*1500px*/
+}
+
+#bh{
+	min-height:15px;
+}	
+
+#header{
+	min-height:150px
+}
+	#logo{
+	max-width:240px;
+	overflow:hidden;
+	min-height:inherit
+	}
+	.h_field{
+	min-width:240px;
+	max-width:1260px;
+	overflow:hidden
+	}
+
+#ah{
+	min-height:13px
+}
+/**************************/
+/**************************/
+#wrap{
+	border-radius:9px 9px 0 0
+}
+
+#l_col{
+	width:240px;
+	overflow:hidden
+}
+
+#m_col{
+	min-width:480px;/*+120px;*/
+	max-width:1260px;
+	overflow:hidden
+}
+/**************************/
+/*  m_col_child Start */
+#c_col{
+	min-width:240px;/*+120px;*/
+	max-width: 1020px;
+	overflow:hidden
+}
+
+#r_col{
+	width:240px;
+	overflow:hidden
+}
+
+/*  m_col_child End */
+/**************************/
+/**************************/
+#bf{min-height:5px}
+#foot{min-height:45px;}#copy{font-size:70%;}
+
+
+@media screen and (min-width: 801px) and (max-width: 1920px){
+	#share{
+		z-index:333;
+		position:fixed;
+		left:50px;
+		bottom:50px
+	}
+}
+@media screen and (min-width: 721px) and (max-width: 740px){
+	.maxw {
+		min-width: 240px;
+		max-width: 740px
+	}
+	#logo {
+		width: 100%
+	}
+	#l_col {
+		width: 100%;
+	}
+	#m_col {
+		min-width: 240px;
+		max-width: 740px
+	}
+	#c_col {
+		width: 100%
+	}
+	.fon, .fon_c {
+		margin: 0 0 7px;
+	}
+	#r_col {
+		width: 100%
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 720px){
+	.maxw {
+		min-width: 240px;
+		max-width: 720px
+	}
+	#logo {
+		max-width: 100%
+	}
+	#l_col {
+		width: 100%
+	}
+	#m_col {
+		min-width: 240px;
+		max-width: 720px
+	}
+	#c_col {
+		min-width: 240px;
+		max-width: 720px
+	}
+	.fon, .fon_c {
+		margin: 0 0 7px;
+	}
+	#r_col {
+		width: 100%
+	}
+}
+/*Для отображения на устройствах меньше 480px*/
+@media screen and (min-width:320px) and (max-width:480px){
+	.maxw{min-width:240px;max-width:480px}
+	#logo{max-width:100%}
+	#mult,#skazki{
+		width:100%;
+		margin:5px 0
+	}
+	#l_col{width:100%}
+	#m_col{min-width:240px;max-width:480px}
+	#c_col{min-width:240px;max-width:480px}
+	.fon,.fon_c{margin:0 0 7px;}
+	.tb2_l_col,.tb2_r_col{width:99.1%;}
+	#r_col{width:100%}
+}
+/*Для отображения на устройствах меньше 480px*/
+@media screen and (min-width:240px) and (max-width:319px){
+	.maxw{
+		min-width:240px;
+		max-width:240px
+	}
+	#mult,#skazki{
+		margin:5px 0;}
+	#m_col {
+		min-width:240px;
+		max-width:240px
+	}
+	#c_col{
+		min-width:240px;
+		max-width:240px
+	}
+	.fon,.fon_c{margin:0 0 7px;}
+	.tb2_l_col,.tb2_r_col{width:99.1%;}
+	#r_col{width:100%}
+}
