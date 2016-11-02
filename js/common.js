@@ -47,24 +47,26 @@ function ajaxPostSend(urlparts, callback, json, asinc, url) {
     var http = new XMLHttpRequest();
     http.open("POST",url, true);
     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    if (asinc) {
-        urlparts += '&catche=' + Math.random();
+    if(asinc){
+        urlparts+='&catche=' + Math.random();
     }
     http.send(urlparts);
-    http.onreadystatechange = function () {
+    http.onreadystatechange=function() {
         if (http.readyState == 4 && http.status == 200){
             if(json){ajaxPostErr(http.responseText,callback)}
             else{callback(http.responseText)}
         }
     }
-    http.onerror = function () {
+    http.onerror=function () {
         alert('Извините, данные не были переданы. Проверьте подключение к интернету и обновите страницу...');
     }
 }
 function ajaxPostErr(answer,callback){
     var json=JSON.parse(answer);
     if(json.err){
-        alert(json.errText[0]);modalloadclose();
+        alert(json.errText[0]);
+        try{if(document.getElementById("modalloadform")===null){modalloadclose();}
+        }catch(e){modalloadclose();}
     }
     else{callback(json)}
 

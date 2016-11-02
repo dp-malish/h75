@@ -1,12 +1,3 @@
-
-
-function mylogin(){
-    alert('login');
-}
-
-
-addLogin();
-
 function addLogin(){
     var sp=document.createElement("span");
     sp.setAttribute("id","loginlink");
@@ -15,29 +6,80 @@ function addLogin(){
     bh.insertBefore(sp,bh.firstChild);
     sp.addEventListener('click',mylogin);
 }
+function mylogin(){
+    var reg=document.createElement("form");
+    reg.setAttribute("id","formreg");
+    reg.setAttribute("class","form");
+    reg.setAttribute("method","post");
+    reg.innerHTML = "<h4>Вход на сайт</h4>";
+    //***************
+    var d=document.createElement("div");
+    d.innerHTML = "<p>Электронная почта:</p>";
+    var inp = document.createElement("input");
+    inp.setAttribute("type","email");
+    inp.setAttribute("id", "mail");
+    inp.setAttribute("maxlength","20");
+    inp.setAttribute("title", "Обязательное поле для заполнения");
+    inp.setAttribute("required","");
+    inp.setAttribute("placeholder", "Введите Вашу электронную почту *");
+    d.appendChild(inp);
+    reg.appendChild(d);
+    //***************
+    d=document.createElement("div");
+    d.innerHTML = "<p>Пароль:</p>";
+    inp = document.createElement("input");
+    inp.setAttribute("type","password");
+    inp.setAttribute("id", "pass");
+    inp.setAttribute("maxlength","30");
+    inp.setAttribute("title", "Обязательное поле для заполнения");
+    inp.setAttribute("required","");
+    inp.setAttribute("placeholder", "Введите Ваш пароль *");
+    d.appendChild(inp);
+    reg.appendChild(d);
+    //***************
+    d=document.createElement("div");
+    inp=document.createElement("input");
+    inp.setAttribute("id","submitlogin");
+    inp.setAttribute("type","submit");
+    inp.setAttribute("value", "Войти");
+    d.appendChild(inp);
+    reg.appendChild(d);
+
+    reg.addEventListener("submit",function(evt){
+        evt.preventDefault();
+        inp.setAttribute('disabled','');
+        //**********************
+        var url="login=1&mail="+mail.value+"&pass="+pass.value;
+        ajaxPostSend(url,loginUser,true,true,"/ajax/site/user.php");
+        setTimeout("submitlogin.removeAttribute('disabled')",2000);
+        //**********************
+    },false);
+
+
+    modalloadForm(null,reg);
+}
+
+function loginUser(arr){
+    modalloadFormAnswer("<h4>"+arr.answer+"</h4>");
+    //modalloadclose();
+    //setTimeout(function(){modalloadclose},1300);
+}
+
+
 
 
 
 //*************************************************************************
-
-
-
-myreg.fio=true;
-myreg.tel=true;
-
-
-addRegLink();
-
 function addRegLink(){
     var sp=document.createElement("span");
     sp.setAttribute("id","reglink");
     sp.setAttribute("class","link fr ml");
     sp.innerHTML="Регистрация";
     bh.insertBefore(sp,bh.firstChild);
-    sp.addEventListener('click',myreg);
+    sp.addEventListener('click',myReg);
 }
-function myreg(){
 
+function myReg(){
     var reg=document.createElement("form");
     reg.setAttribute("id","formreg");
     reg.setAttribute("class","form");
@@ -58,8 +100,8 @@ function myreg(){
     d.appendChild(inp);
 
     reg.appendChild(d);
-    //***********/имя
-    if(myreg.fio!=undefined){
+    //***********имя
+    if(myReg.fio!=undefined){
         //отчество
         d=document.createElement("div");
         //d.innerHTML = "<p>Ваше отчество:</p>";
@@ -134,7 +176,7 @@ function myreg(){
     d.setAttribute("class","cl");
     reg.appendChild(d);
     //****************************
-    if(myreg.tel!=undefined){
+    if(myReg.tel!=undefined){
     d=document.createElement("div");
     d.innerHTML = "<p>Номер телефона:</p>";
     inp = document.createElement("input");
@@ -199,9 +241,9 @@ function myreg(){
         if(regpass.value!=regpass2.value){regpass.focus();alert("Пароли не совпадают");
         }else{
             var url="reg=1&name="+regname.value+"&chislo="+regchislo.value+"&mesyac="+regmesyac.value+"&god="+reggod.value+"&mail="+regmail.value+"&pass="+regpass.value;
-            if(myreg.fio!=undefined)url+="&patronymic="+regpatronymic.value+"&surname="+regsurname.value;
-            if(myreg.tel!=undefined)url+="&tel="+regtel.value;
-            ajaxPostSend(url,regUser);
+            if(myReg.fio!=undefined)url+="&patronymic="+regpatronymic.value+"&surname="+regsurname.value;
+            if(myReg.tel!=undefined)url+="&tel="+regtel.value;
+            ajaxPostSend(url,regUser,true,true,"/ajax/site/user.php");
         }
         setTimeout("submitreg.removeAttribute('disabled')",2000);
         //**********************
@@ -213,6 +255,15 @@ function myreg(){
     }
     modalloadForm(null,reg);
 }
+
 function regUser(arr){
     modalloadFormAnswer("<h4>Регистрация на сайте</h4><br><p>"+arr.answer+"</p>");
 }
+
+
+myReg.fio=true;
+myReg.tel=true;
+
+addLogin();
+
+addRegLink();

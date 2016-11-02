@@ -9,14 +9,30 @@ class User{
     private $user_name;
     private $pass;
 
-    private $reg_ext=['fio'=>false,'tel'=>false];
-
     private $site;
 
     public $temp=null;
 
     function __construct(){
         $this->site=$_SERVER['SERVER_NAME'];
+    }
+
+    public function loginUser(){$err=false;
+        if(PostRequest::issetPostKey(['mail','pass'])){
+            $mail=Validator::auditMail($_POST['mail']);
+            if(!$mail){$err=true;}
+            $pass=Validator::auditText($_POST['pass'],'пароль',60);
+            if(!$pass){$err=true;}
+            if(!$err){//добавить в БД
+            $DB=new SQLi();
+                $res=$DB->strSQL('SELECT id,user_name,pass,data_reg FROM user WHERE mail='.$DB->realEscapeStr($mail));
+                if($res){
+                    $this->temp=$res['id'];
+
+                }else{$err=true;Validator::$ErrorForm[]='Данный почтовый ящик не зарегистрирован...';}
+            }
+        }
+        return($err?false:true);
     }
 
     private function setCookieUserId($val){
@@ -31,40 +47,37 @@ class User{
             $this->user_name=Validator::auditText($_POST['name'],'имя',50);
             if(!$this->user_name){$err=true;}
 
-            $chislo=Validator::paternInt(Validator::html_cod($_POST['chislo']));
-            if(!$chislo){$err=true;}
-            $mesyac=Validator::paternInt(Validator::html_cod($_POST['mesyac']));
-            if(!$mesyac){$err=true;}
-            $god=Validator::paternInt(Validator::html_cod($_POST['god']));;
-            if(!$god){$err=true;}
+            $chislo=Validator::html_cod($_POST['chislo']);
+            if(!Validator::paternInt($chislo)){$err=true;}
+            $mesyac=Validator::html_cod($_POST['mesyac']);
+            if(!Validator::paternInt($mesyac)){$err=true;}
+            $god=Validator::html_cod($_POST['god']);
+            if(!Validator::paternInt($god)){$err=true;}
 
             $mail=Validator::auditMail($_POST['mail']);
             if(!$mail){$err=true;}
 
             $pass=Validator::auditText($_POST['pass'],'пароль',60);
             if(!$pass){$err=true;}
-
+            $patronymic='';$surname='';
             if(PostRequest::issetPostKey(['patronymic','surname'])){
-                $this->reg_ext['fio']=true;
                 $patronymic=Validator::auditText($_POST['patronymic'],'отчество',50);
                 if(!$patronymic){$err=true;}
                 $surname=Validator::auditText($_POST['surname'],'фамилия',60);
                 if(!$surname){$err=true;}
 
             }
+            $tel='';
             if(isset($_POST['tel'])){
-                $this->reg_ext['tel']=true;
-                $tel=Validator::auditText($_POST['tel'],'фамилия',25);
+                $tel=Validator::auditText($_POST['tel'],'телефон',25);
                 if(!$tel){$err=true;}
             }
             if(!$err){//добавить в БД
                 $ip=Validator::getIp();
                 $DB=new SQLi();
-                $mail=$DB->realEscapeStr($mail);
-                $sql='SELECT id FROM user WHERE mail='.$mail;
-
+                $sql='SELECT id FROM user WHERE mail='.$DB->realEscapeStr($mail);
                 $res=$DB->strSQL($sql);
-                if($res){$err=true;Validator::$ErrorForm[]='Данная электронная почта зарегистрирован! Если Вы не помните пароль - воспользуйтесь формой востановления пароля...';
+                if($res){$err=true;Validator::$ErrorForm[]='Акаунт с такой электронной почтой зарегистрирован! Если Вы не помните пароль - воспользуйтесь формой востановления пароля...';
                 }else{
 
                     $ip=$DB->realEscapeStr($ip);
@@ -73,13 +86,17 @@ class User{
 
                     if($res>2){$err=true;Validator::$ErrorForm[]='С одного айпи адреса запрещено регистрировать более трёх неподтверждённых акаунтов';
                     }else{
-                        $sql='';
-                        $sql=$DB->realEscape($sql, Validator::$captcha);
+                        $data_rogden=$god.'-'.$mesyac.'-'.$chislo;
+                        $time=time();
+                        $sql='INSERT INTO user (ip,user_name,user_patronymic,user_surname,pass,mail,tel,den_rogden,data_reg) VALUES ('.$ip.',?,?,?,?,?,?,?,\''.$time.'\')';
+                        $sql=$DB->realEscape($sql,[$this->user_name,$patronymic,$surname,$pass,$mail,$tel,$data_rogden]);
+                        if($DB->boolSQL($sql)){
+                            //вызвать ф-цию мыла
+                        }
                     }
                 }
             }
         }
-        $this->temp=$sql;
         return($err?false:true);
     }
     //*********************************************************

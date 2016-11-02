@@ -77,7 +77,7 @@ class Validator {
 		if($l==0){self::$ErrorForm[]='Незаполненное поле '.$errField;return false;}
 		elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$errField.' - '.$printDlina.' символов';return false;}
 		else{
-			if(self::paternStrRusText($str)){return	$str;}else{
+			if(self::paternStrRusText($str)){return $str;}else{
 				self::$ErrorForm[]='В поле '.$errField.' используются недопустимые символы';
 				return false;
 			}
