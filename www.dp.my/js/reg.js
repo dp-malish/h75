@@ -54,19 +54,12 @@ function mylogin(){
         setTimeout("submitlogin.removeAttribute('disabled')",2000);
         //**********************
     },false);
-
-
     modalloadForm(null,reg);
 }
 
 function loginUser(arr){
     modalloadFormAnswer("<h4>"+arr.answer+"</h4>");
-    //modalloadclose();
-    //setTimeout(function(){modalloadclose},1300);
 }
-
-
-
 
 
 //*************************************************************************
