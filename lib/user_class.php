@@ -60,17 +60,25 @@ class User{
             if(!$err){//добавить в БД
                 $ip=Validator::getIp();
                 $DB=new SQLi();
-                $ip=$DB->realEscapeStr($ip);
+                $mail=$DB->realEscapeStr($mail);
+                $sql='SELECT id FROM user WHERE mail='.$mail;
 
-                $sql='SELECT COUNT(id) FROM user WHERE status=0 AND ip='.$ip;
+                $res=$DB->strSQL($sql);
+                if($res){$err=true;Validator::$ErrorForm[]='Данная электронная почта зарегистрирован! Если Вы не помните пароль - воспользуйтесь формой востановления пароля...';
+                }else{
 
+                    $ip=$DB->realEscapeStr($ip);
+                    $sql='SELECT COUNT(id) FROM user WHERE status=0 AND ip='.$ip;
+                    $res=$DB->intSQL($sql);
 
-                $sql=$DB->realEscape($sql, Validator::$captcha);
+                    if($res>2){$err=true;Validator::$ErrorForm[]='С одного айпи адреса запрещено регистрировать более трёх неподтверждённых акаунтов';
+                    }else{
+                        $sql='';
+                        $sql=$DB->realEscape($sql, Validator::$captcha);
+                    }
+                }
             }
-
         }
-
-
         $this->temp=$sql;
         return($err?false:true);
     }
