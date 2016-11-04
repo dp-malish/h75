@@ -252,8 +252,8 @@ function getUserName(){
     var r=document.cookie.match("(^|;) ?un=([^;]*)(;|$)");
     return(r)?decodeURI(r[2]):false;
 }
-function getUserId(){
-    var r=document.cookie.match("(^|;) ?ui=([^;]*)(;|$)");
+function getUserPass(){
+    var r=document.cookie.match("(^|;) ?up=([^;]*)(;|$)");
     return(r)?r[2]:false;
 }
 function addUserName(img){
@@ -315,7 +315,7 @@ function clearLoginLink(){
 function startLoginUser(){
     if(!getUserName()){addLogin();addRegLink();
     }else{
-        if(!getUserId()){addUserName(true)}else{addUserName(false)}
+        if(!getUserPass()){addUserName(true)}else{addUserName(false)}
     }
 }
 //*************************************************************************

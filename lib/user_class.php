@@ -1,8 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: WinTeh
- */
 class User{
     private $user_id;
     private $user_name;
@@ -10,11 +6,7 @@ class User{
 
     private $site;
 
-    public $temp=null;
-
-    function __construct(){
-        $this->site=$_SERVER['SERVER_NAME'];
-    }
+    function __construct(){$this->site=$_SERVER['SERVER_NAME'];}
 
     public function loginUser(){$err=false;
         if(PostRequest::issetPostKey(['mail','pass'])){
@@ -30,9 +22,9 @@ class User{
                     }else{
                         $this->user_name=$res['user_name'];
                         $this->setCookieUserName($this->user_name);
+                        $this->user_id=$res['id'];
+                        $this->setCookieUserId($this->user_id);
                         if($res['status']){
-                            $this->user_id=$res['id'];
-                            $this->setCookieUserId($this->user_id);
                             $this->pass=$this->createMd5Pass($this->user_id,$res['pass'],$res['data_reg']);
                             $this->setCookieUserPass($this->pass);
                         }
@@ -42,29 +34,17 @@ class User{
         }
         return($err?false:true);
     }
-    private function createMd5Pass($id,$pass,$data_reg){
-        $pass=md5($id.$pass.$data_reg);
-        return md5($pass.Opt::COOKIE_SALT);
-    }
 
-    public function exitUser(){
-        $this->setCookieUserId(0,0);
-        $this->setCookieUserName(0,0);
-        $this->setCookieUserPass(0,0);
-        return true;
-    }
+//*********************************************************
+    private function createMd5Pass($id,$pass,$data_reg){return md5((md5($id.$pass.$data_reg)).Opt::COOKIE_SALT);}
+    private function mailKay($id,$data_reg){return md5((md5($id.$data_reg)).$id.Opt::COOKIE_SALT);}
 
-    private function setCookieUserId($val,$interval=2500000){
-        setcookie('ui',$val,time()+$interval,'/','.'.$this->site);
-    }
-    private function setCookieUserName($val,$interval=2500000){
-        setcookie('un',$val,time()+$interval,'/','.'.$this->site);
-    }
-    private function setCookieUserPass($val,$interval=2500000){
-        setcookie('up',$val,time()+$interval,'/','.'.$this->site);
-    }
-
-    //*********************************************************
+    private function setCookieUserId($val,$interval=2500000){setcookie('ui',$val,time()+$interval,'/','.'.$this->site);}
+    private function setCookieUserName($val,$interval=2500000){setcookie('un',$val,time()+$interval,'/','.'.$this->site);}
+    private function setCookieUserPass($val,$interval=2500000){setcookie('up',$val,time()+$interval,'/','.'.$this->site);}
+//*********************************************************
+    public function exitUser(){$this->setCookieUserId(0,0);$this->setCookieUserName(0,0);$this->setCookieUserPass(0,0);return true;}
+//*********************************************************
     public function regUser(){$err=false;
         if(PostRequest::issetPostKey(['name','chislo','mesyac','god','mail','pass'])){
             $this->user_name=Validator::auditText($_POST['name'],'имя',50);
@@ -115,6 +95,8 @@ class User{
                         $sql=$DB->realEscape($sql,[$this->user_name,$patronymic,$surname,$pass,$mail,$tel,$data_rogden]);
                         if($DB->boolSQL($sql)){
                             //вызвать ф-цию мыла
+                            $id=$DB->lastId();
+                            Mail::confirmMail($mail,$id,$this->user_name,$pass,$this->mailKay($id,$time));
                         }
                     }
                 }
@@ -123,20 +105,14 @@ class User{
         return($err?false:true);
     }
     //*********************************************************
-    public function loginAdmin(){
-        $cook=Validator::issetCookie('min');
+    public function loginAdmin(){$cook=Validator::issetCookie('min');
         if($cook){return($cook==$this->adminCookie()?true:false);}else return false;
     }
-    public function setCookieAdmin(){
-        $val=$this->adminCookie();
+    public function setCookieAdmin(){$val=$this->adminCookie();
         if($val)setcookie('min',$val,time()+604800,'/','.'.$this->site);//неделя
     }
-    private function adminCookie(){
-        $ip=Validator::getIp();
-        if($ip){
-            $ip=md5($ip.Opt::COOKIE_SALT);
-            return md5($ip);
-        }else{return false;}
+    private function adminCookie(){$ip=Validator::getIp();
+        if($ip){$ip=md5($ip.Opt::COOKIE_SALT);return md5($ip);}else{return false;}
     }
     //*********************************************************
 }
