@@ -56,13 +56,11 @@ function mylogin(){
     },false);
     modalloadForm(null,reg);
 }
-
 function loginUser(arr){
     modalloadFormAnswer("<h4>"+arr.answer+"</h4>");
-
+    clearLoginLink();
+    startLoginUser();
 }
-
-
 //*************************************************************************
 function addRegLink(){
     var sp=document.createElement("span");
@@ -72,15 +70,12 @@ function addRegLink(){
     bh.insertBefore(sp,bh.firstChild);
     sp.addEventListener('click',myReg);
 }
-
 function myReg(){
     var reg=document.createElement("form");
     reg.setAttribute("id","formreg");
     reg.setAttribute("class","form");
     reg.setAttribute("method","post");
     reg.innerHTML = "<h4>Регистрация на сайте</h4>";
-
-
     //*************имя
     var d=document.createElement("div");
     d.innerHTML = "<p>Как к Вам обращаться:</p>";
@@ -249,7 +244,6 @@ function myReg(){
     }
     modalloadForm(null,reg);
 }
-
 function regUser(arr){
     modalloadFormAnswer("<h4>Регистрация на сайте</h4><br><p>"+arr.answer+"</p>");
 }
@@ -263,7 +257,6 @@ function getUserId(){
     return(r)?r[2]:false;
 }
 function addUserName(img){
-    //var d
     var sp=document.createElement("span");
     sp.setAttribute("id","usernamelink");
     sp.setAttribute("class","link fr ml rel");
@@ -272,26 +265,60 @@ function addUserName(img){
     sp.addEventListener('click',showUserMenu);
 }
 function showUserMenu(){
+    if(showUserMenu.show==undefined){
     var d=document.createElement("div");
     d.setAttribute("id","usernamelinkmenu");
     d.setAttribute("class","userlinkmenu border");
-    d.innerHTML="dfghjk";
     usernamelink.appendChild(d);
-    //usernamelink.addEventListener('click',showUserMenu);
+        var dchild=document.createElement("div");
+        dchild.style.height='39px';
+        dchild.style.lineHeight="39px";
+
+        var sp=document.createElement("span");
+        sp.setAttribute("id","exitlink");
+        sp.setAttribute("class","link ac");
+        sp.innerHTML="Личный кабинет";
+        sp.style.display="block";
+        sp.style.width="100%";
+        sp.style.height="100%";
+        sp.addEventListener('click',privateOffice);
+        dchild.appendChild(sp);
+        d.appendChild(dchild);
+
+        dchild.style.height='39px';
+        dchild.style.lineHeight="39px";
+        sp=document.createElement("span");
+        sp.setAttribute("id","exitlink");
+        sp.setAttribute("class","link ac");
+        sp.innerHTML="Выход";
+        sp.style.display="block";
+        sp.style.width="100%";
+        sp.style.height="100%";
+        sp.addEventListener('click',exitUser);
+        dchild.appendChild(sp);
+        d.appendChild(dchild);
+    showUserMenu.show=true;
+    }else{
+        if(showUserMenu.show==true){usernamelinkmenu.style.display="none";showUserMenu.show=false;}
+        else{usernamelinkmenu.style.display="block";showUserMenu.show=true;}
+    }
 }
+function exitUser(){ajaxPostSend("exit=1",exitUserRes,true,true,"/ajax/site/user.php");}
+function exitUserRes(arr){clearLoginLink();startLoginUser();}
+function privateOffice(){document.location.href = "/личный-кабинет/";}
 //*************************************************************************
-
-myReg.fio=true;
-myReg.tel=true;
-
-
-
-
-(window.onload=function(){
-    try{
-        if(!getUserName()){addLogin();addRegLink();
+function clearLoginLink(){
+    try{if(document.getElementById("loginlink")!==null){bh.removeChild(document.getElementById("loginlink"));}}catch(e){}
+    try{if(document.getElementById("reglink")!==null){bh.removeChild(document.getElementById("reglink"));}}catch(e){}
+    try{if(document.getElementById("usernamelink")!==null){bh.removeChild(document.getElementById("usernamelink"));showUserMenu.show=undefined;}}catch(e){}
+}
+function startLoginUser(){
+    if(!getUserName()){addLogin();addRegLink();
     }else{
         if(!getUserId()){addUserName(true)}else{addUserName(false)}
     }
-    }catch(e){}
-})();
+}
+//*************************************************************************
+(window.onload=function(){try{startLoginUser();}catch(e){}})();
+myReg.fio=true;
+myReg.tel=true;

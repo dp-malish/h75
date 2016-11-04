@@ -6,6 +6,19 @@
  */
 class Mail{
 
+    public function mailHTML2(){
+        //http://www.spravkaweb.ru/php/sovet/mail
+        $subject="Тема письма";
+        $header="Content-type: text/html; charset=\"utf-8\"";
+        $header.="From: Evgen <evgen@mail.ru>";
+        $header.="Subject: ".$subject;
+        $header.="Content-type: text/html; charset=\"utf-8\"";
+        $msg="<ul><li>Сторака 1</li><li>Сторака 2</li><li>Сторака 3</li></ul></evgen@mail.ru>
+";
+        mail("name@mail.ru", $subject, $msg, $header);
+
+    }
+
     public function mailHTML(){
 //http://php5.kiev.ua/manual/ru/function.mail.html
 // несколько получателей

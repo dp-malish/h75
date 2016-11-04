@@ -2,11 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: WinTeh
- * Date: 12.10.2016
  */
 class User{
-    public $user_id='';
-    public $user_name;
+    private $user_id;
+    private $user_name;
     private $pass;
 
     private $site;
@@ -48,14 +47,21 @@ class User{
         return md5($pass.Opt::COOKIE_SALT);
     }
 
-    private function setCookieUserId($val){
-        setcookie('ui',$val,time()+2500000,'/','.'.$this->site);
+    public function exitUser(){
+        $this->setCookieUserId(0,0);
+        $this->setCookieUserName(0,0);
+        $this->setCookieUserPass(0,0);
+        return true;
     }
-    private function setCookieUserName($val){
-        setcookie('un',$val,time()+2500000,'/','.'.$this->site);
+
+    private function setCookieUserId($val,$interval=2500000){
+        setcookie('ui',$val,time()+$interval,'/','.'.$this->site);
     }
-    private function setCookieUserPass($val){
-        setcookie('up',$val,time()+2500000,'/','.'.$this->site);
+    private function setCookieUserName($val,$interval=2500000){
+        setcookie('un',$val,time()+$interval,'/','.'.$this->site);
+    }
+    private function setCookieUserPass($val,$interval=2500000){
+        setcookie('up',$val,time()+$interval,'/','.'.$this->site);
     }
 
     //*********************************************************
