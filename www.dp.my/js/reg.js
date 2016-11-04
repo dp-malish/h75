@@ -263,6 +263,7 @@ function getUserId(){
     return(r)?r[2]:false;
 }
 function addUserName(img){
+    //var d
     var sp=document.createElement("span");
     sp.setAttribute("id","usernamelink");
     sp.setAttribute("class","link fr ml rel");
