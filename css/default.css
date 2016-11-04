@@ -83,6 +83,14 @@ img {
     box-shadow:1px 1px 3px #000;
 }
 .closex:hover{background:#ffe100}
+.userlinkmenu{
+    position:absolute;
+    top:17px;
+    right:0;
+    z-index:15;
+    min-height: 100px;
+    width: 150px;
+}
 /* /Default */
 #up{
     width:85px;

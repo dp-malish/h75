@@ -7,14 +7,14 @@ if(PostRequest::issetPostArr()){
     if(!empty($_POST['login'])){
         $user=new User();
         if($user->loginUser()){
-            echo json_encode(['err'=>false,'answer'=>'Вход выполнен'.$user->temp]);
+            echo json_encode(['err'=>false,'answer'=>'Вход выполнен','n'=>$user->user_name,'i'=>$user->user_id]);
         }else{PostRequest::answerErrJson();}
     }
     //-------------------------------------------------------------------
     elseif(!empty($_POST['reg'])){
         $user=new User();
         if($user->regUser()){
-            echo json_encode(['err'=>false,'answer'=>'Регистрация произведена! Необходимо подтверждение электронной почты...'.$user->temp]);
+            echo json_encode(['err'=>false,'answer'=>'Регистрация произведена!<br>Необходимо подтверждение электронной почты...']);
         }else{PostRequest::answerErrJson();}
     }
 

@@ -5,8 +5,8 @@
  * Date: 12.10.2016
  */
 class User{
-    private $user_id;
-    private $user_name;
+    public $user_id='';
+    public $user_name;
     private $pass;
 
     private $site;
@@ -25,22 +25,39 @@ class User{
             if(!$pass){$err=true;}
             if(!$err){//добавить в БД
             $DB=new SQLi();
-                $res=$DB->strSQL('SELECT id,user_name,pass,data_reg FROM user WHERE mail='.$DB->realEscapeStr($mail));
+                $res=$DB->strSQL('SELECT id,user_name,pass,status,data_reg FROM user WHERE mail='.$DB->realEscapeStr($mail));
                 if($res){
-                    $this->temp=$res['id'];
-
+                    if($res['pass']!=$pass){$err=true;Validator::$ErrorForm[]='Неправильный пароль...';
+                    }else{
+                        $this->user_name=$res['user_name'];
+                        $this->setCookieUserName($this->user_name);
+                        if($res['status']){
+                            $this->user_id=$res['id'];
+                            $this->setCookieUserId($this->user_id);
+                            $this->pass=$this->createMd5Pass($this->user_id,$res['pass'],$res['data_reg']);
+                            $this->setCookieUserPass($this->pass);
+                        }
+                    }
                 }else{$err=true;Validator::$ErrorForm[]='Данный почтовый ящик не зарегистрирован...';}
             }
         }
         return($err?false:true);
     }
+    private function createMd5Pass($id,$pass,$data_reg){
+        $pass=md5($id.$pass.$data_reg);
+        return md5($pass.Opt::COOKIE_SALT);
+    }
 
     private function setCookieUserId($val){
-        setcookie('user_id',$val,time()+2500000,'/','.'.$this->site);
+        setcookie('ui',$val,time()+2500000,'/','.'.$this->site);
     }
     private function setCookieUserName($val){
-        setcookie('user_name',$val,time()+2500000,'/','.'.$this->site);
+        setcookie('un',$val,time()+2500000,'/','.'.$this->site);
     }
+    private function setCookieUserPass($val){
+        setcookie('up',$val,time()+2500000,'/','.'.$this->site);
+    }
+
     //*********************************************************
     public function regUser(){$err=false;
         if(PostRequest::issetPostKey(['name','chislo','mesyac','god','mail','pass'])){

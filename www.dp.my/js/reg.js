@@ -59,6 +59,7 @@ function mylogin(){
 
 function loginUser(arr){
     modalloadFormAnswer("<h4>"+arr.answer+"</h4>");
+
 }
 
 
@@ -252,11 +253,44 @@ function myReg(){
 function regUser(arr){
     modalloadFormAnswer("<h4>Регистрация на сайте</h4><br><p>"+arr.answer+"</p>");
 }
-
+//*************************************************************************
+function getUserName(){
+    var r=document.cookie.match("(^|;) ?un=([^;]*)(;|$)");
+    return(r)?decodeURI(r[2]):false;
+}
+function getUserId(){
+    var r=document.cookie.match("(^|;) ?ui=([^;]*)(;|$)");
+    return(r)?r[2]:false;
+}
+function addUserName(img){
+    var sp=document.createElement("span");
+    sp.setAttribute("id","usernamelink");
+    sp.setAttribute("class","link fr ml rel");
+    sp.innerHTML=(img==true?"<img src='/img/site/warning-small.png' alt='' title='Необходимо подтверждения электронной почты'>  ":"")+getUserName();
+    bh.insertBefore(sp,bh.firstChild);
+    sp.addEventListener('click',showUserMenu);
+}
+function showUserMenu(){
+    var d=document.createElement("div");
+    d.setAttribute("id","usernamelinkmenu");
+    d.setAttribute("class","userlinkmenu border");
+    d.innerHTML="dfghjk";
+    usernamelink.appendChild(d);
+    //usernamelink.addEventListener('click',showUserMenu);
+}
+//*************************************************************************
 
 myReg.fio=true;
 myReg.tel=true;
 
-addLogin();
 
-addRegLink();
+
+
+(window.onload=function(){
+    try{
+        if(!getUserName()){addLogin();addRegLink();
+    }else{
+        if(!getUserId()){addUserName(true)}else{addUserName(false)}
+    }
+    }catch(e){}
+})();

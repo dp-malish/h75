@@ -5,7 +5,7 @@ A:active{color:#5c3317}
 A:visited{color:#520c0e}
 A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 
-.fon_c,.tb2_l_col,.tb2_r_col{/*общий фон обводки*/
+.fon_c,.tb2_l_col,.tb2_r_col,.border{/*общий фон обводки*/
 	border:#1c7a05 2px solid;
 	border-radius:10px;
 	background:#fefee2;
