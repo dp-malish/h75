@@ -6,15 +6,15 @@ A:visited{color:#520c0e}
 A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 
 /*body{background:#eae1b8;}*/
-.pesok{
-	background:#703e1c url(../img/site/jpg.php?i=pesok);
+.pesok,.caption{
+	background:#EFA850 url(../img/site/jpg.php?i=pesok);
 }
 .fon_c,.fon_c0{/*общий фон обводки*/
-	background:#fefefe;
-	/*background:rgba(254, 254, 226,0.8);*/
+	background:#fdde6c;
+	background:rgba(253, 222, 108,0.8);
 }
-.border{border:#edcdb7 thin solid;}
-
+.border{border:#aa5901 1px solid;}
+.caption{border-bottom:#aa5901 1px solid;}
 
 
 .header_c{

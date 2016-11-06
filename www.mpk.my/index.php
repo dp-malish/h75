@@ -73,8 +73,12 @@
     
     <div id="ah" class="maxw"><div class="cl"></div></div>
     
-    <div id="wrap" class="maxw fon_c0">
+    <div id="wrap" class="maxw fon_c0 br">
     	<div id="l_col" class="fl rel">
+            <div class="border fon_c0 br">
+                <div class="caption"><h3>Заголовок</h3></div>
+
+                Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка</div>
         <div class="cl"></div>
         </div>
 
@@ -86,7 +90,7 @@
             
             <div id="c_col" class="rel">
             <main>
-            dfh
+                <div class="border">Привет Пи</div>
             </main>
             <div class="cl"></div>
             </div>
