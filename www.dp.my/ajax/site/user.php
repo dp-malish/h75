@@ -17,4 +17,10 @@ if(PostRequest::issetPostArr()){
         if($user->regUser()){echo json_encode(['err'=>false,'answer'=>'Регистрация произведена!<br>Необходимо подтверждение электронной почты...']);
         }else{PostRequest::answerErrJson();}
     }
+    //-------------------------------------------------------------------
+    elseif(!empty($_POST['remember'])){
+        $user=new User();
+        if($user->rememberPass()){echo json_encode(['err'=>false,'answer'=>'На Ваш адрес электронной почты высланы логин и пароль.<br><br>Пожалуйста, проверьте электронный ящик...']);
+        }else{PostRequest::answerErrJson();}
+    }
 }

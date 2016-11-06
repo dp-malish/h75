@@ -1,38 +1,21 @@
-h1,h2,h3,h4{color:#B2251F;}
+h1,h2,h3,h4{color:#b2251a/*004e6f*/;}
 
 A:link,.link{color:#5c3317;text-decoration:underline;}
 A:active{color:#5c3317}
 A:visited{color:#520c0e}
 A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 
-body,#foot{background:#F5F9B8}
-
-.maxw{background:url("../img/fon.jpg") repeat;}
-
-
-#wrap{background:#FEFEFE}
-
-.fon_c,.tb2_l_col,.tb2_r_col{/*общий фон обводки*/
-	border:#1c7a05 2px solid;
-	border-radius:10px;
-	background:#fefee2;
-	background:rgba(254,254,226,0.8);
+/*body{background:#eae1b8;}*/
+.pesok{
+	background:#703e1c url(../img/site/jpg.php?i=pesok);
 }
-.ap{border:#1c7a05 2px solid;
-	border-radius:0 10px 10px 0;
-	background:#FF8E00;
-	background:linear-gradient(to bottom,#FF8E00,#ffe100,#FF8E00);
+.fon_c,.fon_c0{/*общий фон обводки*/
+	background:#fefefe;
+	/*background:rgba(254, 254, 226,0.8);*/
 }
+.border{border:#edcdb7 thin solid;}
 
-#wiev_ap{border-left:#1c7a05 2px solid;}
-#wiev_ap:hover{background:linear-gradient(to bottom,#ffe100,#FF8E00,#ffe100);border-radius:0 10px 10px 0;}
-.img_btn:hover,.ap_btn:hover,.vksmilebox img:hover{box-shadow:2px 2px 10px 3px #66FF00;}
-#apload{background-color:#CCC}
 
-.tb2_img img{border:#FF8E00 2px solid;border-radius:9px 9px 0 0;}
-
-.view_all{background:#FEE904}
-.all_serii,.all_serii a{color:#FD7E02}
 
 .header_c{
 	background:rgba(157,227,189,0.42);

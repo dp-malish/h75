@@ -34,7 +34,23 @@ class User{
         }
         return($err?false:true);
     }
-
+//*********************************************************
+    public function rememberPass(){$err=false;
+        if(PostRequest::issetPostKey(['mail','chislo','mesyac','god'])){
+            $mail=Validator::auditMail($_POST['mail']);
+            if(!$mail){$err=true;}
+            $chislo=Validator::html_cod($_POST['chislo']);
+            if(!Validator::paternInt($chislo)){$err=true;}
+            $mesyac=Validator::html_cod($_POST['mesyac']);
+            if(!Validator::paternInt($mesyac)){$err=true;}
+            $god=Validator::html_cod($_POST['god']);
+            if(!Validator::paternInt($god)){$err=true;}
+            if(!$err){
+                //добавить в БД
+            }
+        }
+        return($err?false:true);
+    }
 //*********************************************************
     private function createMd5Pass($id,$pass,$data_reg){return md5((md5($id.$pass.$data_reg)).Opt::COOKIE_SALT);}
     private function mailKay($id,$data_reg){return md5((md5($id.$data_reg)).$id.Opt::COOKIE_SALT);}
@@ -82,11 +98,9 @@ class User{
                 $res=$DB->strSQL($sql);
                 if($res){$err=true;Validator::$ErrorForm[]='Акаунт с такой электронной почтой зарегистрирован! Если Вы не помните пароль - воспользуйтесь формой востановления пароля...';
                 }else{
-
                     $ip=$DB->realEscapeStr($ip);
                     $sql='SELECT COUNT(id) FROM user WHERE status=0 AND ip='.$ip;
                     $res=$DB->intSQL($sql);
-
                     if($res>2){$err=true;Validator::$ErrorForm[]='С одного айпи адреса запрещено регистрировать более трёх неподтверждённых акаунтов';
                     }else{
                         $data_rogden=$god.'-'.$mesyac.'-'.$chislo;
@@ -104,7 +118,7 @@ class User{
         }
         return($err?false:true);
     }
-    //*********************************************************
+//*********************************************************
     public function loginAdmin(){$cook=Validator::issetCookie('min');
         if($cook){return($cook==$this->adminCookie()?true:false);}else return false;
     }
@@ -114,5 +128,4 @@ class User{
     private function adminCookie(){$ip=Validator::getIp();
         if($ip){$ip=md5($ip.Opt::COOKIE_SALT);return md5($ip);}else{return false;}
     }
-    //*********************************************************
 }

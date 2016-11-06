@@ -9,4 +9,4 @@ set_include_path('../lib');spl_autoload_extensions('_class.php');spl_autoload_re
 
 $mail=new Mail();
 
-if($mail->confirmMail('puaris83@rambler.ru',1,'Саша','password','ключ'))echo 'да';else echo 'нет';
+if($mail->confirmMail('oksi0184@gmail.com',1,'Пиксик','password','ключ'))echo 'да';else echo 'нет';

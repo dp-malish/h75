@@ -44,7 +44,7 @@ function mylogin(){
     inp.setAttribute("value", "Войти");
     d.appendChild(inp);
     reg.appendChild(d);
-
+    //***************
     reg.addEventListener("submit",function(evt){
         evt.preventDefault();
         inp.setAttribute('disabled','');
@@ -54,6 +54,26 @@ function mylogin(){
         setTimeout("submitlogin.removeAttribute('disabled')",2000);
         //**********************
     },false);
+    //***************
+    d=document.createElement("div");
+    d.setAttribute("class","five");
+    var sp=document.createElement("span");
+    sp.setAttribute("class","link fr");
+    sp.innerHTML="Забыли пароль?";
+    d.insertBefore(sp,d.firstChild);
+    sp.addEventListener('click',rememberPass);
+
+    sp=document.createElement("span");
+    sp.setAttribute("class","link fl");
+    sp.innerHTML="Регистрация";
+    d.insertBefore(sp,d.firstChild);
+    sp.addEventListener('click',myRegToo);
+    reg.appendChild(d);
+
+    d=document.createElement("div");
+    d.setAttribute("class","cl");
+    reg.appendChild(d);
+    //***************
     modalloadForm(null,reg);
 }
 function loginUser(arr){
@@ -234,7 +254,7 @@ function myReg(){
             if(myReg.tel!=undefined)url+="&tel="+regtel.value;
             ajaxPostSend(url,regUser,true,true,"/ajax/site/user.php");
         }
-        setTimeout("submitreg.removeAttribute('disabled')",2000);
+        setTimeout("submitreg.removeAttribute('disabled')",2200);
         //**********************
     },false);
 
@@ -306,6 +326,97 @@ function showUserMenu(){
 function exitUser(){ajaxPostSend("exit=1",exitUserRes,true,true,"/ajax/site/user.php");}
 function exitUserRes(arr){clearLoginLink();startLoginUser();}
 function privateOffice(){document.location.href = "/личный-кабинет/";}
+//*************************************************************************
+function rememberPass(){
+    try{
+        modalloadclose();
+
+        var reg=document.createElement("form");
+        reg.setAttribute("id","formremember");
+        reg.setAttribute("class","form");
+        reg.setAttribute("method","post");
+        reg.innerHTML = "<h4>Восстановление пароля</h4>";
+        //***************
+        var d=document.createElement("div");
+        d.innerHTML = "<p>Электронная почта:</p>";
+        var inp = document.createElement("input");
+        inp.setAttribute("type","email");
+        inp.setAttribute("id", "remembermail");
+        inp.setAttribute("maxlength","20");
+        inp.setAttribute("title", "Обязательное поле для заполнения");
+        inp.setAttribute("required","");
+        inp.setAttribute("placeholder", "Введите Вашу электронную почту *");
+        d.appendChild(inp);
+        reg.appendChild(d);
+
+//***********
+        d=document.createElement("div");
+        d.innerHTML = "<p>Дата рождения:</p>";
+        //***
+        var select = document.createElement("select");
+        select.setAttribute("id","regchislo");
+        select.setAttribute("class","fl chislo")
+        d.appendChild(select);
+        var newOption = document.createElement('option');
+        for(var i=1;i<32;i++) {
+            newOption = document.createElement('option');
+            newOption.setAttribute("value",i);
+            newOption.innerHTML=i;
+            select.appendChild(newOption);
+        }
+        //***
+        select = document.createElement("select");
+        select.setAttribute("id","regmesyac");
+        select.setAttribute("class","fl mesyac")
+        d.appendChild(select);
+        newOption = document.createElement('option');
+        for(i=1;i<13;i++){
+            newOption = document.createElement('option');
+            newOption.setAttribute("value",i);
+            newOption.innerHTML=mesyacstr[i];
+            select.appendChild(newOption);
+        }
+        //***
+        select = document.createElement("select");
+        select.setAttribute("id","reggod");
+        select.setAttribute("class","fl god")
+        d.appendChild(select);
+        newOption = document.createElement('option');
+        var date=new Date();
+        for(i=date.getFullYear();i>1900;i--){
+            newOption = document.createElement('option');
+            newOption.setAttribute("value",i);
+            newOption.innerHTML=i;
+            select.appendChild(newOption);
+        }
+        //***
+        reg.appendChild(d);
+        //див клеар добавить
+        d=document.createElement("div");
+        d.setAttribute("class","cl");
+        reg.appendChild(d);
+        //*****************************
+        d=document.createElement("div");
+        inp=document.createElement("input");
+        inp.setAttribute("id","submitremember");
+        inp.setAttribute("type","submit");
+        inp.setAttribute("value", "Восстановить пароль");
+        d.appendChild(inp);
+        reg.appendChild(d);
+        reg.addEventListener("submit",function(evt){
+            evt.preventDefault();
+            inp.setAttribute('disabled','');
+            //**********************
+                var url="remember=1&chislo="+regchislo.value+"&mesyac="+regmesyac.value+"&god="+reggod.value+"&mail="+remembermail.value;
+                ajaxPostSend(url,rememberPassRes,true,true,"/ajax/site/user.php");
+            setTimeout("submitremember.removeAttribute('disabled')",2200);
+            //**********************
+        },false);
+        modalloadForm(null,reg);
+    }catch(e){alert("Ошибка загрузки страницы. Необходимо перезагрузить страницу...");}
+}
+function rememberPassRes(arr){modalloadFormAnswer("<h4>Восстановление пароля</h4><br><p>"+arr.answer+"</p>");}
+function myRegToo(){try{modalloadclose();myReg();}catch(e){alert("Ошибка загрузки страницы. Необходимо перезагрузить страницу...");}}
 //*************************************************************************
 function clearLoginLink(){
     try{if(document.getElementById("loginlink")!==null){bh.removeChild(document.getElementById("loginlink"));}}catch(e){}
