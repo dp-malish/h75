@@ -1,19 +1,18 @@
 .main_nav{
-	min-height: 33px;
-
+	min-height:32px;
 }
 .main_nav span{
 	margin: 6px 5px 2px;
-	min-width: 80px;
+	min-width: 90px;
 	text-align: center;
 	display: inline-block;
 	background: #5c3317;
 	background:rgba(254,254,226,0.8);
 	padding:7px;
+	border:#aa5901 1px solid;
 	border-radius: 3px;
 	cursor: pointer;
 	box-shadow: 2px 2px 1px #235645;
-	/*transition-property:transform;*/
 	transition-duration: .6s;
 }
 .main_nav span a{

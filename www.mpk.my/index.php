@@ -34,7 +34,7 @@
 			<div class="cl"></div>
             </div>
 
-            <div class="h_field pesok br five_">
+            <div id="board_top" class="h_field pesok br five_">
                 <div class="dwfe">
                     <div class="ac">
                         <b>Телефон</b>
@@ -43,59 +43,56 @@
                             <li><a class="vodafon" href="tel:+380664785753">+38 (066) 478 57 53</a></li>
                         </ul>
                     </div>
-                    <div> fon_c0 border</div>
+                    <div><p>ООО "<abbr title="Мариупольский профессиональный колледж">МПК</abbr>" - лидер консалтинговой отрасли<br>в регионе </p></div>
                     <div class="ac">
                         <b>Режим работы:</b>
                         <ul>
-                            <li>пн-пт: 08:00 - 16:00</li>
-                            <li>сб: 08:00 - 12:00</li>
+                            <li>пн-пт: 08:00 - 17:00</li>
+                            <li>сб-вс: выходной</li>
                         </ul>
                     </div>
-
                 </div>
-
                 <div class="cl"></div>
             </div>
-
-
             <div class="h_field">
                 <nav><div class="dwfe main_nav">
-
-                        <a href="/"><span class="border">Главная</span></a>
+                        <a href="/"><span>Главная</span></a>
+                        <a href="#news"><span>Новости</span></a>
                         <a href="#about"><span>О нас</span></a>
-                        <a href="#delivery"><span>Доставка</span></a>
                         <a href="#contact"><span>Контакты</span></a>
-
-
                 </nav></div>
                 <div class="cl"></div>
             </div>
-
 			<div class="cl"></div>
 		</header>
-   </div>
-    
-    
+    </div>
     <div id="ah" class="maxw"><div class="cl"></div></div>
     
     <div id="wrap" class="maxw fon_c0 br">
     	<div id="l_col" class="fl rel">
             <div class="border fon_c0 br">
-                <div class="caption"><h3>Заголовок</h3></div>
+                <div class="caption"><h3>Обучение</h3></div>
 
-                Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка</div>
+                Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка
+            </div>
         <div class="cl"></div>
         </div>
 
 
 		<div id="m_col" class="rel"><!--Пр кол-->
         	<div id="r_col" class="fr rel">
+                <div class="border fon_c br">
+                    <div class="caption"><h3>Обучение</h3></div>
+
+                    Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка
+                </div>
         	<div class="cl"></div>
             </div><!--Центр кол-->
             
             <div id="c_col" class="rel">
             <main>
-                <div class="border">
+                <div class="fon_c">
+                    <h3>Заголовок</h3>
                     Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br></div>
             </main>
             <div class="cl"></div>

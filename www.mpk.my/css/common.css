@@ -3,8 +3,12 @@ p,ol,ul{margin:5px;}
 ul{list-style:none;}
 ul li{margin:5px;}
 
-.fon,.fon_c{margin:0 0 7px 5px;}
-#l_col .fon,#l_col .fon_c{margin:0 0 7px;}
+.fon,.fon_c{margin:0 5px 7px;}
+#l_col .fon,#l_col .fon_c,#r_col .fon,#r_col .fon_c{margin:0 0 7px;}
+
+#board_top{
+	margin:6px 0;
+}
 
 .caption{
 	border-radius:5px 5px 0 0;
