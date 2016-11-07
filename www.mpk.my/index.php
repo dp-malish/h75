@@ -28,7 +28,6 @@
             <div class="cl"></div>
             </div>
             
-            
 			<div class="h_field pesok br five_">
                 <h2>Мариупольский профессиональный колледж</h2>
 			<div class="cl"></div>
@@ -43,7 +42,7 @@
                             <li><a class="vodafon" href="tel:+380664785753">+38 (066) 478 57 53</a></li>
                         </ul>
                     </div>
-                    <div><p>ООО "<abbr title="Мариупольский профессиональный колледж">МПК</abbr>" - лидер консалтинговой отрасли<br>в регионе </p></div>
+                    <div id="slogan"><p>ООО "<abbr title="Мариупольский профессиональный колледж">МПК</abbr>" - лидер консалтинговой отрасли<br>в регионе </p></div>
                     <div class="ac">
                         <b>Режим работы:</b>
                         <ul>
@@ -58,8 +57,8 @@
                 <nav><div class="dwfe main_nav">
                         <a href="/"><span>Главная</span></a>
                         <a href="#news"><span>Новости</span></a>
-                        <a href="#about"><span>О нас</span></a>
                         <a href="#contact"><span>Контакты</span></a>
+                        <a href="#about"><span>О нас</span></a>
                 </nav></div>
                 <div class="cl"></div>
             </div>
@@ -69,12 +68,20 @@
     <div id="ah" class="maxw"><div class="cl"></div></div>
     
     <div id="wrap" class="maxw fon_c0 br">
-    	<div id="l_col" class="fl rel">
+    	<div id="l_col" class="rel">
             <div class="border fon_c0 br">
                 <div class="caption"><h3>Обучение</h3></div>
 
                 Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка
             </div>
+
+            <div class="l_menu rel">
+                <div class="l_menu_title">Математика</div>
+                <nav><ul>
+                        <li><a href="/математика/соседи-числа/">Соседи числа</a></li>
+                        <li><a href="/математика/сложение/">Сложение</a></li>
+                        <li><a href="/математика/вычитание/">Вычитание</a></li>
+                    </ul></nav></div>
         <div class="cl"></div>
         </div>
 
@@ -86,6 +93,8 @@
 
                     Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка
                 </div>
+
+
         	<div class="cl"></div>
             </div><!--Центр кол-->
             

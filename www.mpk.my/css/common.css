@@ -4,11 +4,16 @@ ul{list-style:none;}
 ul li{margin:5px;}
 
 .fon,.fon_c{margin:0 5px 7px;}
+@media screen and (max-width: 920px){.fon,.fon_c{margin:0 0 7px}}
 #l_col .fon,#l_col .fon_c,#r_col .fon,#r_col .fon_c{margin:0 0 7px;}
 
 #board_top{
 	margin:6px 0;
 }
+@media screen and (max-width:1045px){
+	#slogan{display:none}
+}
+
 
 .caption{
 	border-radius:5px 5px 0 0;
