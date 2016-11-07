@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="/css/frame.css">
 <link rel="stylesheet" type="text/css" href="/css/color.css">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
+
+<link rel="stylesheet" type="text/css" href="/css/menu.css">
+
 <link rel="stylesheet" type="text/css" href="/css/temp.css">
 
 </head>
@@ -56,13 +59,15 @@
 
 
             <div class="h_field">
-                <div class="dwfe">
-                    <div> fon_c0 border</div>
-                    <div> fon_c0 border</div>
-                    <div> fon_c0 border</div>
+                <nav><div class="dwfe main_nav">
 
-                </div>
+                        <a href="/"><span class="border">Главная</span></a>
+                        <a href="#about"><span>О нас</span></a>
+                        <a href="#delivery"><span>Доставка</span></a>
+                        <a href="#contact"><span>Контакты</span></a>
 
+
+                </nav></div>
                 <div class="cl"></div>
             </div>
 
@@ -90,7 +95,8 @@
             
             <div id="c_col" class="rel">
             <main>
-                <div class="border">Привет Пи</div>
+                <div class="border">
+                    Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br></div>
             </main>
             <div class="cl"></div>
             </div>
