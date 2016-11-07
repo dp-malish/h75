@@ -3,17 +3,11 @@
 <head>
 <meta charset="utf-8">
 <title>Документ без названия</title>
-<link rel="stylesheet" type="text/css" href="/css/default.css">
 
-<link rel="stylesheet" type="text/css" href="/css/frame.css">
-<link rel="stylesheet" type="text/css" href="/css/color.css">
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-
-<link rel="stylesheet" type="text/css" href="/css/menu.css">
-
-<link rel="stylesheet" type="text/css" href="/css/temp.css">
-
+    <link rel="stylesheet" type="text/css" href="/css.php">
 </head>
+
+
 
 <body>
 
@@ -69,31 +63,35 @@
     
     <div id="wrap" class="maxw fon_c0 br">
     	<div id="l_col" class="rel">
-            <div class="border fon_c0 br">
-                <div class="caption"><h3>Обучение</h3></div>
-
-                Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка
+            <div class="l_menu rel">
+                <div class="l_menu_title">Спецкурсы</div>
+                <nav><ul>
+                        <li><a href="#">Соседи числа</a></li>
+                        <li><a href="#">Сложение</a></li>
+                        <li><a href="#">Вычитание</a></li>
+                    </ul>
+                </nav>
             </div>
 
-            <div class="l_menu rel">
-                <div class="l_menu_title">Математика</div>
-                <nav><ul>
-                        <li><a href="/математика/соседи-числа/">Соседи числа</a></li>
-                        <li><a href="/математика/сложение/">Сложение</a></li>
-                        <li><a href="/математика/вычитание/">Вычитание</a></li>
-                    </ul></nav></div>
+            <div class="border fon_c br">
+                <div class="caption"><h3>Обучение</h3></div>
+                <p>Ведутся технические работы...</p>
+
+            </div>
+
+
         <div class="cl"></div>
         </div>
 
 
 		<div id="m_col" class="rel"><!--Пр кол-->
         	<div id="r_col" class="fr rel">
+
+
                 <div class="border fon_c br">
-                    <div class="caption"><h3>Обучение</h3></div>
-
-                    Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка<br>Левая колонка
+                    <div class="caption"><h3>Новости</h3></div>
+                    <p>Ведутся технические работы...</p>
                 </div>
-
 
         	<div class="cl"></div>
             </div><!--Центр кол-->
@@ -102,7 +100,7 @@
             <main>
                 <div class="fon_c">
                     <h3>Заголовок</h3>
-                    Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br>Привет Пи<br></div>
+                    <p>Ведутся технические работы...</p>
             </main>
             <div class="cl"></div>
             </div>

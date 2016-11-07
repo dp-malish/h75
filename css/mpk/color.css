@@ -1,4 +1,4 @@
-h1,h2,h3,h4{color:#b2251a/*004e6f*/;}
+h1,h2,h3,h4,.tegh{color:#b2251a}
 
 A:link,.link{color:#5c3317;text-decoration:underline;}
 A:active{color:#5c3317}
@@ -16,8 +16,8 @@ A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 	background:#FEFEE4;
 
 }
-.border,.fon_c{border:#aa5901 1px solid;}
-.caption{border-bottom:#aa5901 1px solid;}
+.border,.fon_c{border:#aa5901 1px solid}
+.caption{border-bottom:#aa5901 1px solid}
 
 
 .header_c{
