@@ -19,7 +19,7 @@ $uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
 				case'учёт':include'../modul/win/magaz/main_magaz.php';break;
 //top_menu
 //left_menu
-			default:include('../modul/win/def/def.php');
+			default:include'../modul/win/def/def.php';
 			}//switch
 			}//else
 	}catch(Exception $e){$module='404';}

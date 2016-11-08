@@ -1,122 +1,34 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Документ без названия</title>
+<?php
+$site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
+Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
-    <link rel="stylesheet" type="text/css" href="/css.php">
-</head>
+set_include_path(get_include_path().PATH_SEPARATOR."../lib");spl_autoload_extensions("_class.php");spl_autoload_register();
+$Cash=new Cache_File();$bot=new UserAgent();
 
+if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
+    try{$uri=urldecode($uri);
+        $url_path=parse_url($uri,PHP_URL_PATH);$uri_parts=explode('/',trim($url_path,'/'));$count_uri_parts=count($uri_parts);
+        if($count_uri_parts>4){throw new Exception();}else{
+            $uri_parts0_id=explode('-',$uri_parts[0],2);
+            $count_uri0_parts=count($uri_parts0_id);
+            if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
+                $setAdminCook='mpk'.Data::DatePass();
+                switch($uri_parts[0]){
+                    case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
+                    default:include'../modul/mpk/def/def.php';
+                }
+            }
+            if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
+                switch($uri_parts0_id[0]){
 
+                    //case'детское':include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
+                    default:include'../modul/mpk/def/def.php';
+                }
+            }
+        }
+    }catch(Exception $e){$module='404';}
+}else{$index=1;}if($module=='404'){Route::modul404();}
 
-<body>
+if($index){include'../modul/mpk/main.php';}
 
-	<div id="bh" class="maxw"><div class="cl"></div></div>
-    
-    
-    <div id="header" class="maxw">
-    	<header>
-        	
-            <div id="logo" class="fl rel">
-            <a href="/"><img src="/img/site/pngext.php?i=mpk" alt="Логотип" title="На главную"></a>
-            <div class="cl"></div>
-            </div>
-            
-			<div class="h_field pesok br five_">
-                <h2>Мариупольский профессиональный колледж</h2>
-			<div class="cl"></div>
-            </div>
-
-            <div id="board_top" class="h_field pesok br five_">
-                <div class="dwfe">
-                    <div class="ac">
-                        <b>Телефон</b>
-                        <ul class="nav_link">
-                            <li><a class="telkiev" href="tel:+380677467564">+38 (067) 746 75 64</a></li>
-                            <li><a class="vodafon" href="tel:+380664785753">+38 (066) 478 57 53</a></li>
-                        </ul>
-                    </div>
-                    <div id="slogan"><p>ООО "<abbr title="Мариупольский профессиональный колледж">МПК</abbr>" - лидер консалтинговой отрасли<br>в регионе </p></div>
-                    <div class="ac">
-                        <b>Режим работы:</b>
-                        <ul>
-                            <li>пн-пт: 08:00 - 17:00</li>
-                            <li>сб-вс: выходной</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cl"></div>
-            </div>
-            <div class="h_field">
-                <nav><div class="dwfe main_nav">
-                        <a href="/"><span>Главная</span></a>
-                        <a href="#news"><span>Новости</span></a>
-                        <a href="#contact"><span>Контакты</span></a>
-                        <a href="#about"><span>О нас</span></a>
-                </nav></div>
-                <div class="cl"></div>
-            </div>
-			<div class="cl"></div>
-		</header>
-    </div>
-    <div id="ah" class="maxw"><div class="cl"></div></div>
-    
-    <div id="wrap" class="maxw fon_c0 br">
-    	<div id="l_col" class="rel">
-            <div class="l_menu rel">
-                <div class="l_menu_title">Спецкурсы</div>
-                <nav><ul>
-                        <li><a href="#">Соседи числа</a></li>
-                        <li><a href="#">Сложение</a></li>
-                        <li><a href="#">Вычитание</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="border fon_c br">
-                <div class="caption"><h3>Обучение</h3></div>
-                <p>Ведутся технические работы...</p>
-
-            </div>
-
-
-        <div class="cl"></div>
-        </div>
-
-
-		<div id="m_col" class="rel"><!--Пр кол-->
-        	<div id="r_col" class="fr rel">
-
-
-                <div class="border fon_c br">
-                    <div class="caption"><h3>Новости</h3></div>
-                    <p>Ведутся технические работы...</p>
-                </div>
-
-        	<div class="cl"></div>
-            </div><!--Центр кол-->
-            
-            <div id="c_col" class="rel">
-            <main>
-                <div class="fon_c">
-                    <h3>Заголовок</h3>
-                    <p>Ведутся технические работы...</p>
-            </main>
-            <div class="cl"></div>
-            </div>
-            
-            
-      <!--Конец Центр кола-->
-      <div class="cl"></div>
-      </div><!--end m_col-->
-    <div class="cl"></div></div><!--end maxw-->
-    
-    
-    <div id="foot" class="rel maxw"><footer>
-    
-    
-    <div id="copy" class="ac">Copyright &copy;<?php echo $site;?> - Детский портал - &laquo;Малыш&raquo; 2015<?php if(date('Y')>2015) echo '-'.date('Y');?><br><br>Использование материалов сайта без разрешения правообладателя запрещено</div>
-    <div id="up"> ^ Наверх </div><div class="cl"></div></footer></div>    
-
-</body>
-</html>
+require'../blocks/mpk/common/head.php';require'../blocks/mpk/common/befor_header.php';require'../blocks/mpk/common/header.php';require'../blocks/mpk/common/after_header.php';require'../blocks/mpk/common/left_column.php';include'../blocks/mpk/common/body_two_ext.php';require'../blocks/mpk/common/foot.php';
