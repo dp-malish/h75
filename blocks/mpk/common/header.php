@@ -30,9 +30,9 @@
             <nav><div class="dwfe main_nav">
                     <a href="/"><span>Главная</span></a>
                     <a href="#news"><span>Новости</span></a>
-                    <a href="#contact"><span>Контакты</span></a>
+                    <a href="/контакты"><span>Контакты</span></a>
                     <a href="#about"><span>О нас</span></a>
-            </nav></div>
+            </div></nav>
         <div class="cl"></div>
 </div>
 <div class="cl"></div>
