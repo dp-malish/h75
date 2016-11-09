@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
             $count_uri0_parts=count($uri_parts0_id);
             if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
                 switch($uri_parts[0]){
-                    case 'sanja':$DB=new SQLi();include $root.'/modul/set/main_set.php';break;
+                    //case 'sanja':$DB=new SQLi();include $root.'/modul/set/main_set.php';break;
 //top_menu
                     case'мультики':include $root.'/modul/t/multiki/main_mult.php';break;
                     case'сказки':$MySQLsel=new SQL_select();
@@ -47,6 +47,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                     case'скороговорки':$DB=new SQLi();include $root.'/modul/r/skorogovorki/main_skorogovorki.php';break;
                     case'детское':$MySQLsel=new SQL_select();
                         include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
+                    case'советы':include'../modul/dp/r/uhod_za_mladencem/novorogden.php';break;//родителям
                     default:$DB=new SQLi();include $root.'/modul/def.php';
                 }
             }
