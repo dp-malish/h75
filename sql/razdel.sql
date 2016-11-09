@@ -15,10 +15,12 @@ CREATE TABLE IF NOT EXISTS uhod_sovet_rodit(
   img_alt varchar(255) DEFAULT NULL,
   img_title varchar(255) DEFAULT NULL,
   full_text text NOT NULL,
+  full_text_for_bot text DEFAULT NULL,
+  ref_link varchar(255) DEFAULT NULL,
   player tinyint(4) DEFAULT NULL,
   player_link varchar(255) DEFAULT NULL,
   data date NOT NULL,
   comment INT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY link(link)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

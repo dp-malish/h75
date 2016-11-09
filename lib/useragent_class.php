@@ -1,6 +1,7 @@
 <?php
 class UserAgent{
     public static $HTTP_USER_AGENT;
+    public static $isBot=false;
     function __construct(){self::$HTTP_USER_AGENT=Validator::html_cod($_SERVER['HTTP_USER_AGENT']);}
 
     public function insertUserAgent($DB){//переработать иначе двоятся записи
@@ -12,10 +13,9 @@ class UserAgent{
         }
     }
     public function isBot(){
-        $is_bot=false;
         $bots=['rambler','googlebot','mediapartners','aport','yahoo','msnbot','mail.ru',
             'yetibot','ask.com','liveinternet.ru','yandexbot','google page speed','bing.com'];
-        foreach($bots as $bot){if(mb_stripos(self::$HTTP_USER_AGENT,$bot)!==false){$is_bot=true;}}
-        return $is_bot;
+        foreach($bots as $bot){if(mb_stripos(self::$HTTP_USER_AGENT,$bot)!==false){self::$isBot=true;}}
+        return self::$isBot;
     }
 }
