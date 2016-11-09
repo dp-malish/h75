@@ -6,7 +6,7 @@ Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 set_include_path(get_include_path().PATH_SEPARATOR."../lib");spl_autoload_extensions("_class.php");spl_autoload_register();
 $Cash=new Cache_File();$bot=new UserAgent();
 
-if(!$bot->isBot()){/*include'../blocks/dp/rek/google.php';*/}
+if(!$bot->isBot()){include'../blocks/dp/rek/google.php';}
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
     try{$uri=urldecode($uri);
@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                     case'беременность':$MySQLsel=new SQL_select();
                         include $root.'/modul/r/beremennost/main_beremennost.php';break;
                     case'новорожденный':$MySQLsel=new SQL_select();
-                        include $root.'/modul/r/uhod_za_mladencem/main.php';break;
+                        include $root.'/modul/r/uhod_za_mladencem/novorogden.php';break;
                     default:$index=1;
                 }
             }
@@ -47,8 +47,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                     case'скороговорки':$DB=new SQLi();include $root.'/modul/r/skorogovorki/main_skorogovorki.php';break;
                     case'детское':$MySQLsel=new SQL_select();
                         include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
-                    case'советы':
-                        include '../modul/dp/r/uhod_za_mladencem/main.php';break;//родителям
+                    case'советы':include'../modul/dp/r/uhod_za_mladencem/main.php';break;//родителям
                     default:$DB=new SQLi();include $root.'/modul/def.php';
                 }
             }
