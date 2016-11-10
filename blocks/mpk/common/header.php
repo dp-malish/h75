@@ -29,9 +29,9 @@
         <div class="h_field">
             <nav><div class="dwfe main_nav">
                     <a href="/"><span>Главная</span></a>
-                    <a href="#news"><span>Новости</span></a>
+                    <a href="/новости/"><span>Новости</span></a>
                     <a href="/контакты"><span>Контакты</span></a>
-                    <a href="#about"><span>О нас</span></a>
+                    <a href="/о-нас"><span>О нас</span></a>
             </div></nav>
         <div class="cl"></div>
 </div>

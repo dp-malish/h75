@@ -15,14 +15,15 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                 $setAdminCook='mpk'.Data::DatePass();
                 switch($uri_parts[0]){
                     case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
-                    default:include'../modul/mpk/def/def.php';
+                    case'новости':include'../modul/mpk/news.php';break;
+                    default:include'../modul/mpk/def.php';
                 }
             }
             if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
                 switch($uri_parts0_id[0]){
 
                     //case'детское':include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
-                    default:include'../modul/mpk/def/def.php';
+                    default:include'../modul/mpk/def.php';
                 }
             }
         }

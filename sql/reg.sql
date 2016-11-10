@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS user(
   id INT(11) NOT NULL AUTO_INCREMENT,
   ip VARCHAR(50) NULL,
+  role SMALLINT DEFAULT 0,
   user_name VARCHAR(50) NULL,
   user_patronymic VARCHAR(50) NULL,
   user_surname VARCHAR(60) NULL,
