@@ -20,6 +20,13 @@ echo $map->DBUrlMap('детское-здоровье/',$cont['data']);
 $cont=$DB->arrSQL('SELECT link,data FROM uhod_det_zdorov');
 foreach($cont as $it=>$v){echo $map->DBUrlMap('детское-здоровье/'.$v['link'],$v['data']);}
 
+/*советы-родителям*/
+$cont=$DB->strSQL('SELECT data FROM uhod_sovet_rodit ORDER BY id DESC LIMIT 1');
+echo $map->DBUrlMap('советы-родителям/',$cont['data']);
+
+$cont=$DB->arrSQL('SELECT link,data FROM uhod_sovet_rodit');
+foreach($cont as $it=>$v){echo $map->DBUrlMap('советы-родителям/'.$v['link'],$v['data']);}
+
 echo $map->EndSiteMap();
 $map->StopCache('uhodzamladencem.xml');
 Route::location('/uhodzamladencem.xml');

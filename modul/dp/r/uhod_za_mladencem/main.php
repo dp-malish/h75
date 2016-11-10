@@ -8,9 +8,21 @@ try{if($count_uri_parts>2){throw new Exception();}else{
 			$keywords='уход за младенцем, советы родителям';
 			$table_name='uhod_sovet_rodit';
 			$img_dir='uhodzamlad/sovet';
-			$back_link='советы-родителям';
 			$back_link_name='Советы родителям';break;
-
+		case'детское-здоровье':$bad_link=0;
+			$title='Детское здоровье - Уход за младенцем';
+			$description='Детское здоровье. Практические советы и наставления по уходу за младенцем. Рассматриваемые темы: ';
+			$keywords='уход за младенцем, детское здоровье';
+			$table_name='uhod_det_zdorov';
+			$img_dir='uhodzamlad/det_zdorov';
+			$back_link_name='Детское здоровье';break;
+		case'новорожденный':$bad_link=0;
+			$title='Новорожденный - Уход за младенцем';
+			$description='Уход за младенцем. Практические советы и наставления для новорождённых. Рассматриваемые темы: ';
+			$keywords='уход за младенцем, новорожденный';
+			$table_name='uhod_novorogden';
+			$img_dir='uhodzamlad/novorogd';
+			$back_link_name='Новорожденный';break;
 		default:$module='404';$bad_link=1;
 	}
 if(!isset($uri_parts[1]) && !$bad_link){$DB=new SQLi();Str_navigation::navigation($uri_parts[0],$table_name,1,$msg,true);
@@ -49,9 +61,9 @@ $res=$DB->strSQL('SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,
 	$description=$res['meta_d'];
 	$keywords.=', '.$res['meta_k'];
 	if($res['img']!=''){$img='<img class="fl five br" src="/img/'.$img_dir.'/dbpic.php?id='.$res['img'].'" alt="'.$res['img_alt'].'" title="'.$res['img_title'].'">';}else{$img='';}
-	$main_content.='<article><div class="fon_c"><h4>Уход за младенцем</h4><article><h3>'.$res['caption'].'</h3>'.$caption1.$caption2.'<div class="cl"></div><p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$back_link.'/\');return false;" rel="nofollow">&#9668;&mdash;</a><br></p>'.$img.$res['full_text'];
+	$main_content.='<article><div class="fon_c"><h4>Уход за младенцем</h4><article><h3>'.$res['caption'].'</h3>'.$caption1.$caption2.'<div class="cl"></div><p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$uri_parts[0].'/\');return false;" rel="nofollow">&#9668;&mdash;</a><br></p>'.$img.$res['full_text'];
 		if(!UserAgent::$isBot){$main_content.=$res['ref_link'];}
-		$main_content.='<p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$back_link.'/\');return false;" rel="nofollow">&#9668;&mdash; Вернуться в меню «'.$back_link_name.'»</a></p></article><div class="cl"></div></div></article>';
+		$main_content.='<p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$uri_parts[0].'/\');return false;" rel="nofollow">&#9668;&mdash; Вернуться в меню «'.$back_link_name.'»</a></p></article><div class="cl"></div></div></article>';
 }else{$bad_link=1;}//$res['title']
 			}
 		}//preg_match
