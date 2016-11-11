@@ -1,10 +1,10 @@
 <?php
 class SQLi{public static $mysql_link=null;
-    function __construct($host=Optsql::DB_HOST,$user=null,$pass=null,$db_name=null,$charset=Optsql::DB_CHARSET){
-        self::connectDB($host,$user,$pass,$db_name,$charset);}
-    protected static function connectDB($host=Optsql::DB_HOST,$user=null,$pass=null,$db_name=null,$charset=Optsql::DB_CHARSET){
+    function __construct($ext=false,$host=Optsql::DB_HOST,$user=null,$pass=null,$db_name=null,$charset=Optsql::DB_CHARSET){
+        self::connectDB($ext,$host,$user,$pass,$db_name,$charset);}
+    protected static function connectDB($ext=false,$host=Optsql::DB_HOST,$user=null,$pass=null,$db_name=null,$charset=Optsql::DB_CHARSET){
         if(self::$mysql_link==null){
-            if(is_null($user)){$upn=new Optsql();$user=$upn->db_con[0];$pass=$upn->db_con[1];$db_name=$upn->db_con[2];}
+            if(is_null($user)){$upn=new Optsql($ext);$user=$upn->db_con[0];$pass=$upn->db_con[1];$db_name=$upn->db_con[2];}
             self::$mysql_link=mysqli_connect($host,$user,$pass,$db_name);
             if(self::$mysql_link){return(self::$mysql_link->set_charset($charset))?true:false;}
         }else{return true;}
