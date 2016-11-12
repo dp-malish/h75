@@ -3,7 +3,7 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
 Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
 set_include_path(get_include_path().PATH_SEPARATOR."../lib");spl_autoload_extensions("_class.php");spl_autoload_register();
-$Cash=new Cache_File();$bot=new UserAgent();
+$Cash=new Cache_File('../cache_all/mpk/');$bot=new UserAgent();
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
     try{$uri=urldecode($uri);
@@ -31,5 +31,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 }else{$index=1;}if($module=='404'){Route::modul404();}
 
 if($index){include'../modul/mpk/main.php';}
+
+require'../modul/mpk/common/news.php';
 
 require'../blocks/mpk/common/head.php';require'../blocks/mpk/common/befor_header.php';require'../blocks/mpk/common/header.php';require'../blocks/mpk/common/after_header.php';require'../blocks/mpk/common/left_column.php';include'../blocks/mpk/common/body_two_ext.php';require'../blocks/mpk/common/foot.php';
