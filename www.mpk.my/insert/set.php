@@ -27,8 +27,9 @@
 
 <h2>Просмотр изображений</h2>
 <ul>
-    <li><a href="/img/multiki/dbpic.php?id=1" target="_blank">Мультики</a></li>
-    <li><a href="/img/skazki/dbjpg.php?id=1" target="_blank">Сказки</a></li>
+    <li><a href="/img/site/dbpic.php?id=1" target="_blank">Деф таблица</a></li>
+    <li><a href="/img/news/dbpic.php?id=1" target="_blank">Новости</a></li>
+
     <li>-----------</li>
 </ul>
 

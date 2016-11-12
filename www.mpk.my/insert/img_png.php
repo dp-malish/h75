@@ -54,7 +54,7 @@ if(!empty($_FILES)){
 					case'2':$DBTable='news_img';break;
 				default:exit('Какая-то странная цифра, не правда ли!!!');break;
 				}//switch
-				try{$Link=@mysql_connect('localhost','root','root');
+				try{$Link=@mysql_connect('localhost','mpk_img','YPQI1ZbX');
 				if (!$Link)exit("К сожалению, не доступен сервер MySQL: ".mysql_error());
 				@mysql_select_db('mpk_img',$Link);@mysql_query("SET NAMES utf8");
 				$sql='INSERT INTO '.$DBTable.' VALUES(NULL,\''.$file_name.'\',1,\''.$content.'\');';

@@ -56,7 +56,7 @@ if(!isset($uri_parts[1]) && !$bad_link){$DB=new SQLi();Str_navigation::navigatio
 				$description.='подробнее...';
 			}else{
 $res=$DB->strSQL('SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,ref_link FROM '.$table_name.' WHERE link='.$DB->realEscapeStr($uri_parts[1]));
-	if($res['title']!=''){
+	if($res){
 	$title=$res['title'].' - '.$title;
 	$description=$res['meta_d'];
 	$keywords.=', '.$res['meta_k'];

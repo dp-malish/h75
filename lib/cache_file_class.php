@@ -1,9 +1,10 @@
 <?php
 class Cache_File{
 
-	protected $dir='cache_all/';
+	protected $dir;
+	function __construct($dir='cache_all/'){$this->dir=$dir;}
 
-public function IsSetCacheFile($cache_file){$cache_file=$this->dir.$cache_file;
+	public function IsSetCacheFile($cache_file){$cache_file=$this->dir.$cache_file;
 if(file_exists($cache_file))return file_get_contents($cache_file);else return 0;}
 
 public function IsSetCacheFileTime($cache_time,$cache_file){
