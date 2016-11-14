@@ -1,0 +1,2 @@
+<?php
+$lm2='<div class="l_menu rel"><div class="l_menu_title">Спецкурсы</div><nav><ul><li><a href="/оператор-компьютерного-набора" title="Оператор компьютерного набора">Оператор ПК</a></li></ul></nav></div>';

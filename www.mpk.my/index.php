@@ -32,6 +32,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 
 if($index){include'../modul/mpk/main.php';}
 
+require'../blocks/mpk/menu/l.php';
 require'../modul/mpk/common/news.php';
 
 require'../blocks/mpk/common/head.php';require'../blocks/mpk/common/befor_header.php';require'../blocks/mpk/common/header.php';require'../blocks/mpk/common/after_header.php';require'../blocks/mpk/common/left_column.php';include'../blocks/mpk/common/body_two_ext.php';require'../blocks/mpk/common/foot.php';
