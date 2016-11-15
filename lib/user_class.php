@@ -133,10 +133,22 @@ class User{
         $cook=Validator::issetCookie('af');
         if($cook){return($cook==$this->adminCookieForm($login,$pass)?true:false);}else return false;
     }
-    public function setCookieAdminForm($login,$pass){
-        setcookie('af',$this->adminCookieForm($login,$pass),time()+172800,'/','.'.$this->site);//два дня
+    public function setCookieAdminForm($login,$pass,$time=172800){
+        setcookie('af',$this->adminCookieForm($login,$pass),time()+$time,'/','.'.$this->site);//два дня
     }
     private function adminCookieForm($login,$pass){
         return md5(md5($login.Opt::COOKIE_SALT.$pass));
+    }
+    public function loginAdminFormIn($l,$p){$err=false;
+        if(PostRequest::issetPostKey(['name','pass'])){
+            $login=Validator::auditText($_POST['name'],'логин',100);
+            if(!$login){$err=true;}
+            $pass=Validator::auditText($_POST['pass'],'пароль',100);
+            if(!$pass){$err=true;}
+            if(!$err){//добавить как в БД
+                if($l!=$login || $p!=$pass){$err=true;}else{$this->setCookieAdminForm($login,$pass);}
+            }
+        }else{$err=true;}
+        return($err?false:true);
     }
 }
