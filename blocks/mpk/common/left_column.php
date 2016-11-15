@@ -1,1 +1,1 @@
-<div id="wrap" class="maxw br"><div id="l_col" class="rel"><?=$lm2.$left_content?><div class="cl"></div></div>
+<div id="wrap" class="maxw br"><div id="l_col" class="rel"><?=$left_content_up.$lm2.$left_content?><div class="cl"></div></div>
