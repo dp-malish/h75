@@ -7,7 +7,7 @@ else if(strpos($HTTP_ACCEPT_ENCODING,'gzip')!==false)$encoding='gzip';
 else $encoding=false;
 
 $common_default_css=['default'];
-$all_default_css=['frame','common','menu','color'];//,'colorbox','form'
+$all_default_css=['frame','common','menu','color','form'];//,'colorbox',
 
 $cache_dir='../cache_all/mpk/css/';
 //далее обрабатываем условие по умолчанию баз GET запроса

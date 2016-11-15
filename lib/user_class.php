@@ -128,4 +128,15 @@ class User{
     private function adminCookie(){$ip=Validator::getIp();
         if($ip){$ip=md5($ip.Opt::COOKIE_SALT);return md5($ip);}else{return false;}
     }
+//*********************************************************
+    public function loginAdminForm($login,$pass){
+        $cook=Validator::issetCookie('af');
+        if($cook){return($cook==$this->adminCookieForm($login,$pass)?true:false);}else return false;
+    }
+    public function setCookieAdminForm($login,$pass){
+        setcookie('af',$this->adminCookieForm($login,$pass),time()+172800,'/','.'.$this->site);//два дня
+    }
+    private function adminCookieForm($login,$pass){
+        return md5(md5($login.Opt::COOKIE_SALT.$pass));
+    }
 }

@@ -15,6 +15,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                 $setAdminCook='mpk'.Data::DatePass();
                 switch($uri_parts[0]){
                     case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
+                    case'set':include'../modul/mpk/admin/main.php';break;
                     case'новости':include'../modul/mpk/news.php';break;
                     default:include'../modul/mpk/def.php';
                 }
