@@ -1,13 +1,12 @@
 <?php
 try{if($count_uri_parts>2){throw new Exception();}else{
     //all_page
-    $left_content_up='$left_content_up';
-
-
+    require'../modul/'.$dir_site.'/admin/common/clear_cache.php';
+    require'../modul/'.$dir_site.'/admin/common/sitemap.php';
+    require'../modul/'.$dir_site.'/admin/common/img.php';
 
     if(!isset($uri_parts[1])){
-        //$Cash->clearGroupFile($admin_dir.'common/');
-        $main_content='роут1'.$Cash->clearGroupFile('common/');;
+        $main_content='<div class="fon_c">С чего начать?</div>';
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         $main_content.='роут2';
     }

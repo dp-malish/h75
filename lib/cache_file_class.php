@@ -27,8 +27,5 @@ fwrite($handle,ob_get_contents());fclose($handle);ob_end_flush();}
 //-------------------------------
 public function SendHTML($f){ob_start();include $f;$f=ob_get_contents();ob_end_clean();return $f;}
 //-------------------------------
-public function clearGroupFile($dir,$ext_file='html'){
-	$col_vo_element=count(array_map("unlink",glob($this->dir.$dir.'*'.$ext_file)));
-	return '<p>Было удалено '.$col_vo_element.' элементов</p>';
-}
+public function clearGroupFile($dir,$ext_file='html'){return count(array_map("unlink",glob($this->dir.$dir.'*'.$ext_file)));}
 }

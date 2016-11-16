@@ -62,6 +62,7 @@
 	text-decoration:none;
 	line-height:30px;
 	padding:0 2px 0 7px;
+	cursor:pointer;
 }
 @media screen and (min-width:240px) and (max-width:480px){
 	.l_menu ul li a{line-height:45px;font-size:120%}

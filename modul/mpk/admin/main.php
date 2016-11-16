@@ -1,6 +1,7 @@
 <?php
 $login='mpk';
 $pass='1234';
+$dir_site='mpk';
 
 $user=new User();
 if(!$user->loginAdmin()){$module='404';}else{
