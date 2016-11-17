@@ -21,4 +21,11 @@ class Img{
             }
         }catch(Exception $e){}
     }
+
+    public static function insImg(){
+        try{
+
+
+        }catch(Exception $e){return false;}
+    }
 }
