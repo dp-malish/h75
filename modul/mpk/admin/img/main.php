@@ -1,7 +1,7 @@
 <?php
 if(PostRequest::issetPostArr()){
     if(isset($_POST['imgadd'])){
-        if(Img::insImg()){$main_content.='<div class="fon_c">Изображение добавлено - <code><img src="/"></code></div>';}
+        if(Img::insImg()){$main_content.='<div class="fon_c">Изображение добавлено - <xmp><img src="/"><br></xmp></div>';}
     }
     $main_content.='<div class="fon_c">есть пост</div>';
 }

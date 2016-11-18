@@ -26,6 +26,8 @@ class Img{
         try{
 
 
+
+            return true;
         }catch(Exception $e){return false;}
     }
 }
