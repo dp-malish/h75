@@ -1,5 +1,6 @@
 <?php
 class Img{
+    static $temp='xxx';
     
     public static function getImg($id=1,$DBTable='default_img',$font='../../../img/font/Rosamunda Two.ttf'){
         try{$DB=new SQLi(true);$mob=new UserAgent();$mob=$mob->isMobile();
@@ -22,12 +23,47 @@ class Img{
         }catch(Exception $e){}
     }
 
-    public static function insImg(){
+    public function insImg($postTable,$postImg){
         try{
+            $err=false;
+            if(PostRequest::issetPostKey([$postTable]) && !empty($_FILES)){
+                $table=$this->getImgTableName($_POST[$postTable]);
+                if($table){
+                    if($this->auditBlackListImg($postImg)){
+                        $extFile=$this->getImgExt($postImg);
+                        if($extFile===false){$err=true;
+                        }else{
+                            //self::$temp.=$extFile.$_FILES[$postImg]['tmp_name'] ;
 
+                            $DB=new SQLi(true);
+                            $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name']));
 
+                            self::$temp.=$table.'---'.$file_name;
 
-            return true;
+                        }
+                    }else{$err=true;}
+                }else{$err=true;}
+            }else{$err=true;}
+            return($err)?false:true;
         }catch(Exception $e){return false;}
+    }
+    private function getImgTableName($post){
+        $table=Validator::html_cod($post);
+        $count=count(SqlTable::IMG);
+        if(!Validator::paternInt($table)){return false;
+        }elseif($count>=0 && $count<$table){return false;
+        }else{return SqlTable::IMG[$table][0];}
+    }
+    private function auditBlackListImg($postName){$err=false;
+      $badf=[".php",".phtml",".php3",".php4",".html"];
+      foreach($badf as $item){
+      if(preg_match("/$item\$/i",$_FILES[$postName]['name'])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл.';$err=true;}
+      }return($err)?false:true;
+    }
+    private function getImgExt($postName){
+        $imgInfo=getimagesize($_FILES[$postName]['tmp_name']);
+        if($imgInfo['mime']=='image/png'){return 1;
+        }elseif($imgInfo['mime']=='image/jpeg'){return'';
+        }else{Validator::$ErrorForm[]='Не доустимое расширение изображения';return false;}
     }
 }

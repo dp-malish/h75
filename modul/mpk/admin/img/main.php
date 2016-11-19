@@ -1,7 +1,9 @@
 <?php
 if(PostRequest::issetPostArr()){
     if(isset($_POST['imgadd'])){
-        if(Img::insImg()){$main_content.='<div class="fon_c">Изображение добавлено - <xmp><img src="/"><br></xmp></div>';}
+        $img=new Img();
+        if($img->insImg('tableimg','imgfile')){$main_content.='<div class="fon_c">Изображение добавлено - <xmp><img src="/"><br></xmp></div>'.Img::$temp;}
+        else{$main_content.=Validator::$ErrorForm[0].' '.Img::$temp;}
     }
     $main_content.='<div class="fon_c">есть пост</div>';
 }
