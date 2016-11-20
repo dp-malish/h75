@@ -1,8 +1,8 @@
 <?php
 class Img{
-    static $temp='xxx';
-    
-    public static function getImg($id=1,$DBTable='default_img',$font='../../../img/font/Rosamunda Two.ttf'){
+    public $img=1;
+
+    static function getImg($id=1,$DBTable='default_img',$font='../../../img/font/Rosamunda Two.ttf'){
         try{$DB=new SQLi(true);$mob=new UserAgent();$mob=$mob->isMobile();
             $res=$DB->strSQL('SELECT png,content FROM '.$DBTable.' WHERE id ='.$DB->realEscapeStr($id));
             if(!$res){exit();}else{
@@ -23,7 +23,23 @@ class Img{
         }catch(Exception $e){}
     }
 
-    public function insImg($postTable,$postImg){
+    static function getImgDir($post){
+        $dir=Validator::html_cod($post);
+        $count=count(SqlTable::IMG);
+        if(!Validator::paternInt($dir)){return false;
+        }elseif($count>=0 && $count<$dir){return false;
+        }else{return SqlTable::IMG[$dir][2];}
+    }
+
+    static function getImgSection($post){
+        $post=Validator::html_cod($post);
+        $count=count(SqlTable::IMG);
+        if(!Validator::paternInt($post)){return false;
+        }elseif($count>=0 && $count<$post){return false;
+        }else{return SqlTable::IMG[$post][1];}
+    }
+
+    function insImg($postTable,$postImg,$upd=0){
         try{
             $err=false;
             if(PostRequest::issetPostKey([$postTable]) && !empty($_FILES)){
@@ -33,13 +49,21 @@ class Img{
                         $extFile=$this->getImgExt($postImg);
                         if($extFile===false){$err=true;
                         }else{
-                            //self::$temp.=$extFile.$_FILES[$postImg]['tmp_name'] ;
-
-                            $DB=new SQLi(true);
-                            $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name']));
-
-                            self::$temp.=$table.'---'.$file_name;
-
+                            $upd=Validator::html_cod($upd);
+                            if(Validator::paternInt($upd)){
+                                $content=file_get_contents($_FILES[$postImg]['tmp_name']);
+                                unlink($_FILES[$postImg]['tmp_name']);
+                                $DB=new SQLi(true);
+                                $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name']));
+                                $content=$DB->realEscapeStr($content);
+                                if($upd==0){
+                                    if($DB->boolSQL('INSERT INTO '.$table.' VALUES(NULL,'.$file_name.','.$extFile.','.$content.');')){
+                                        $this->img=$DB->lastId();
+                                    }else{$err=true;}
+                                }else{
+                                    //update
+                                }
+                            }else{$err=true;}
                         }
                     }else{$err=true;}
                 }else{$err=true;}
@@ -55,15 +79,17 @@ class Img{
         }else{return SqlTable::IMG[$table][0];}
     }
     private function auditBlackListImg($postName){$err=false;
-      $badf=[".php",".phtml",".php3",".php4",".html"];
+      $badf=[".php",".phtml",".php3",".php4",".html",".txt"];
       foreach($badf as $item){
       if(preg_match("/$item\$/i",$_FILES[$postName]['name'])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл.';$err=true;}
       }return($err)?false:true;
     }
     private function getImgExt($postName){
-        $imgInfo=getimagesize($_FILES[$postName]['tmp_name']);
-        if($imgInfo['mime']=='image/png'){return 1;
-        }elseif($imgInfo['mime']=='image/jpeg'){return'';
-        }else{Validator::$ErrorForm[]='Не доустимое расширение изображения';return false;}
+        if(substr($_FILES[$postName]['type'],0,5)=='image'){
+            $imgInfo=getimagesize($_FILES[$postName]['tmp_name']);
+            if($imgInfo['mime']=='image/png'){return 1;
+            }elseif($imgInfo['mime']=='image/jpeg'){return'NULL';
+            }else{Validator::$ErrorForm[]='Не доустимое расширение изображения';return false;}
+        }else{Validator::$ErrorForm[]='Не доустимый формат изображения';return false;}
     }
 }

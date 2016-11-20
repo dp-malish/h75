@@ -14,7 +14,6 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 
             //default:;
         }
-        $main_content.='роут2';
     }elseif(isset($uri_parts[2])&& !isset($uri_parts[3])){
         $main_content.='роут3';
     }
