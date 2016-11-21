@@ -60,7 +60,7 @@ class Img{
                                     if($DB->boolSQL('INSERT INTO '.$table.' VALUES(NULL,'.$file_name.','.$extFile.','.$content.');')){
                                         $this->img=$DB->lastId();
                                     }else{$err=true;}
-                                }else{
+                                }elseif($upd>0){
                                     //update
                                 }
                             }else{$err=true;}
