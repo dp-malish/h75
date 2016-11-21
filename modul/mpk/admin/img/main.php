@@ -6,4 +6,8 @@ if(PostRequest::issetPostArr()){
         else{if(count(Validator::$ErrorForm)>0)$main_content.=Validator::$ErrorForm[0];else $main_content.='Неизвестная ошибка...';}
     }
 }
-$main_content.='<div class="fon_c"><h3>Добавить рисунок</h3>'.$Cash->SendHTML('../models/admin/AddImg.php').'</div>';
+if($uri_parts[1]=='картинки'){
+    $main_content.='<div class="fon_c"><h3>Добавить рисунок</h3>'.$Cash->SendHTML('../models/admin/AddImg.php').'</div>';
+}elseif($uri_parts[1]=='картинки-изменить'){
+    $main_content.='<div class="fon_c"><h3>Изменить рисунок</h3>'.$Cash->SendHTML('../models/admin/AddImg.php').'</div>';
+}
