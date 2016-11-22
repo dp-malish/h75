@@ -9,5 +9,5 @@ if(PostRequest::issetPostArr()){
 if($uri_parts[1]=='картинки'){
     $main_content.='<div class="fon_c"><h3>Добавить рисунок</h3>'.$Cash->SendHTML('../models/admin/AddImg.php').'</div>';
 }elseif($uri_parts[1]=='картинки-изменить'){
-    $main_content.='<div class="fon_c"><h3>Изменить рисунок</h3>'.$Cash->SendHTML('../models/admin/AddImg.php').'</div>';
+    $main_content.='<div class="fon_c"><h3>Изменить рисунок</h3>'.$Cash->SendHTML('../models/admin/UpdImg.php').'</div>';
 }

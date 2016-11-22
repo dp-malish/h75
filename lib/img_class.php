@@ -39,11 +39,22 @@ class Img{
         }else{return SqlTable::IMG[$post][1];}
     }
 
+    static function getMaxIdDir($post){
+        $post=Validator::html_cod($post);
+        $table=self::getImgTableName($post);
+        if($table){
+            $dir=self::getImgDir($post);
+            $DB=new SQLi(true);
+            $maxId=$DB->intSQL('SELECT id FROM '.$table.' DESC LIMIT 1');
+            if($maxId)return [$maxId,$dir];else false;
+        }else false;
+    }
+
     function insImg($postTable,$postImg,$upd=0){
         try{
             $err=false;
             if(PostRequest::issetPostKey([$postTable]) && !empty($_FILES)){
-                $table=$this->getImgTableName($_POST[$postTable]);
+                $table=self::getImgTableName($_POST[$postTable]);
                 if($table){
                     if($this->auditBlackListImg($postImg)){
                         $extFile=$this->getImgExt($postImg);
@@ -71,7 +82,7 @@ class Img{
             return($err)?false:true;
         }catch(Exception $e){return false;}
     }
-    private function getImgTableName($post){
+    static function getImgTableName($post){
         $table=Validator::html_cod($post);
         $count=count(SqlTable::IMG);
         if(!Validator::paternInt($table)){return false;
