@@ -7,10 +7,10 @@
         for($i=0;$i<count(SqlTable::IMG);$i++){echo'<option value="'.$i.'">'.SqlTable::IMG[$i][1].'</option>';}?>
     </select>
 
-    <input type="number" name="imgnumber" value="1" min="1">
-    <div id="showimg">
-d
+    <input type="number" id="imgnumber" name="imgnumber" value="1" min="1">
+    <div id="showimg" class="ac">
     </div>
+    <div class="cl"></div>
     <div id="karuselimg">
 d
     </div>
@@ -21,18 +21,50 @@ d
 
 
 <script>
+var imgOpt=[],imgOptE={"dir":"/","maxid":1};
 
+//imgOpt[4]={'dir':'пять'};
+/*
+alert(imgOptE.dir);
+alert(imgOptE.maxid);
+
+imgOptE.dir="/////";
+imgOptE.maxid=100;
+alert(imgOptE.dir);
+alert(imgOptE.maxid);
+
+imgOpt[4]=imgOptE;
+alert(imgOpt[4].dir);
+
+alert(imgOpt.length);
+alert(imgOpt[4]);
+imgOpt[5].dir="sdfghjkl";
+alert(imgOpt[5].dir);*/
     document.getElementById("tableimg").addEventListener("change",function(){
-        var sendurl="t="+tableimg.value;
-         /*ajaxPostSend(sendurl,answerFeedback);*/
-alert(sendurl);
+        if(tableimg.value!=""){
+            if(imgOpt[tableimg.value]==undefined){
+                answerFeedback.t=tableimg.value;
+                var sendurl="t="+tableimg.value;
+                ajaxPostSend(sendurl,answerFeedback,true,true,'/img/site/admin.php');
+            }else{alert('есть уже')}
+//alert(sendurl);
+        }
+
+
     },false);
 
     function answerFeedback(arr){
-        alert(arr.answer);
-        document.images.imgcaptcha.src="/img/site/captcha.php?id="+Math.random();var f=document.getElementById("baby-words-form");var theDiv=document.createElement("div");theDiv.className="fon_c";theDiv.innerHTML='<div class="header_c"><h5>'+f.name.value+" - "+f.age.value+"</h5></div><div><p>"+nl2br(f.sms.value)+"</p></div>";document.getElementById("allsms").parentNode.appendChild(theDiv);start_show(1,theDiv);f.sms.removeAttribute("value");f.sms.value="";f.captcha.value="";}
+
+        imgOptE.dir=arr.dir;
+        imgOptE.maxid=arr.maxid;
+        imgOpt[answerFeedback.t]=imgOptE;
+        imgnumber.value=arr.maxid;
+        imgnumber.setAttribute("max",arr.maxid);
+        showimg.innerHTML="<img src='"+arr.dir+arr.maxid+"' alt=''>";
+        showimg.firstChild.style.width="200px";
+    }
 
 
-    function FileUpload(){if(document.getElementById('tableimg').value==''){alert("Не выбрана таблица ;-)");return false;}else{if(imgfile.value==""){alert("Файл не выбран ;-)");return false;}else return true;}}
-    document.getElementById('addimg').setAttribute("action",decodeURI(window.location.pathname));
+    /*function FileUpload(){if(document.getElementById('tableimg').value==''){alert("Не выбрана таблица ;-)");return false;}else{if(imgfile.value==""){alert("Файл не выбран ;-)");return false;}else return true;}}*/
+
 </script>

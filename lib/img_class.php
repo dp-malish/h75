@@ -45,9 +45,9 @@ class Img{
         if($table){
             $dir=self::getImgDir($post);
             $DB=new SQLi(true);
-            $maxId=$DB->intSQL('SELECT id FROM '.$table.' DESC LIMIT 1');
-            if($maxId)return [$maxId,$dir];else false;
-        }else false;
+            $maxId=$DB->intSQL('SELECT id FROM '.$table.' ORDER BY id DESC LIMIT 1');
+            if($maxId)return[$dir,$maxId];else{Validator::$ErrorForm[]='Неизвестная ошибка!';return false;}
+        }else{Validator::$ErrorForm[]='Ошибка!';return false;}
     }
 
     function insImg($postTable,$postImg,$upd=0){
@@ -82,11 +82,11 @@ class Img{
             return($err)?false:true;
         }catch(Exception $e){return false;}
     }
-    static function getImgTableName($post){
+    public static function getImgTableName($post){
         $table=Validator::html_cod($post);
         $count=count(SqlTable::IMG);
-        if(!Validator::paternInt($table)){return false;
-        }elseif($count>=0 && $count<$table){return false;
+        if(!Validator::paternInt($table)){Validator::$ErrorForm[]='не таблица...';return false;
+        }elseif($count>=0 && $count<$table){Validator::$ErrorForm[]='не таблица';return false;
         }else{return SqlTable::IMG[$table][0];}
     }
     private function auditBlackListImg($postName){$err=false;
