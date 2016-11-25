@@ -11,60 +11,46 @@
     <div id="showimg" class="ac">
     </div>
     <div class="cl"></div>
-    <div id="karuselimg">
-d
-    </div>
+    <div id="htmlimg" class="ac"></div>
+    <div id="karuselimg"></div>
 
     <input type="file" id="imgfile" name="imgfile" accept="image/jpeg,image/png">
     <input type="submit" value="Заменить (jpg/jpeg/png8)">
 </form>
 
 
-<script>
-var imgOpt=[],imgOptE={"dir":"/","maxid":1};
+<script>var imgOpt=[];
 
-//imgOpt[4]={'dir':'пять'};
-/*
-alert(imgOptE.dir);
-alert(imgOptE.maxid);
-
-imgOptE.dir="/////";
-imgOptE.maxid=100;
-alert(imgOptE.dir);
-alert(imgOptE.maxid);
-
-imgOpt[4]=imgOptE;
-alert(imgOpt[4].dir);
-
-alert(imgOpt.length);
-alert(imgOpt[4]);
-imgOpt[5].dir="sdfghjkl";
-alert(imgOpt[5].dir);*/
     document.getElementById("tableimg").addEventListener("change",function(){
         if(tableimg.value!=""){
             if(imgOpt[tableimg.value]==undefined){
                 answerFeedback.t=tableimg.value;
                 var sendurl="t="+tableimg.value;
                 ajaxPostSend(sendurl,answerFeedback,true,true,'/img/site/admin.php');
-            }else{alert('есть уже')}
-//alert(sendurl);
-        }
-
-
+            }else{
+                preView();
+            }
+        }else{showimg.innerHTML="";imgnumber.value=1;}
     },false);
 
     function answerFeedback(arr){
-
-        imgOptE.dir=arr.dir;
-        imgOptE.maxid=arr.maxid;
-        imgOpt[answerFeedback.t]=imgOptE;
-        imgnumber.value=arr.maxid;
-        imgnumber.setAttribute("max",arr.maxid);
-        showimg.innerHTML="<img src='"+arr.dir+arr.maxid+"' alt=''>";
-        showimg.firstChild.style.width="200px";
+        var obj={};
+        obj.dir=arr.dir;
+        obj.maxid=arr.maxid;
+        imgOpt[answerFeedback.t]=obj;
+        preView();
     }
 
+    function preView(){
+        if(imgOpt[tableimg.value]!==undefined){
+            imgnumber.value=imgOpt[tableimg.value].maxid;
+            imgnumber.setAttribute("max",imgOpt[tableimg.value].maxid);
+            var img_cod='<img src="'+imgOpt[tableimg.value].dir+imgOpt[tableimg.value].maxid+'" alt="">';
+            showimg.innerHTML=img_cod;
+            showimg.firstChild.style.maxWidth="250px";
+            htmlimg.innerHTML="<xmp>"+img_cod+"</xmp>";
+        }
+    }
 
-    /*function FileUpload(){if(document.getElementById('tableimg').value==''){alert("Не выбрана таблица ;-)");return false;}else{if(imgfile.value==""){alert("Файл не выбран ;-)");return false;}else return true;}}*/
 
 </script>
