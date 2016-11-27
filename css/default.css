@@ -109,6 +109,9 @@ img {
 .link{
     cursor:pointer;
 }
+.scrh{overflow:hidden}
+.scrx{overflow-x:scroll}
+.scry{overflow-y:scroll}
 /*Video*/
 .video-responsive {
     position: relative;
@@ -123,3 +126,15 @@ img {
     height: 100%;
     border: 0}
 /* /Video */
+/*Admin*/
+.karuselimg{
+    overflow:hidden;
+    overflow-x:scroll;
+    white-space:nowrap;
+}
+.karuselimg img{
+    display:inline-block;
+    vertical-align:top;
+    width:140px;
+    height:inherit;
+}

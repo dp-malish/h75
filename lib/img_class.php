@@ -72,7 +72,10 @@ class Img{
                                         $this->img=$DB->lastId();
                                     }else{$err=true;}
                                 }elseif($upd>0){
-                                    //update
+                                    $upd=$DB->realEscapeStr($upd);
+                                    if($DB->boolSQL('UPDATE '.$table.' SET name_file='.$file_name.',png='.$extFile.',content='.$content.' WHERE id='.$upd.';')){
+                                        $this->img=$upd;
+                                    }else{$err=true;}
                                 }
                             }else{$err=true;}
                         }
