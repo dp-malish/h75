@@ -1,7 +1,6 @@
 <?php
 class Img{
     public $img=1;
-
     static function getImg($id=1,$DBTable='default_img',$font='../../../img/font/Rosamunda Two.ttf'){
         try{$DB=new SQLi(true);$mob=new UserAgent();$mob=$mob->isMobile();
             $res=$DB->strSQL('SELECT png,content FROM '.$DBTable.' WHERE id ='.$DB->realEscapeStr($id));
@@ -22,7 +21,6 @@ class Img{
             }
         }catch(Exception $e){}
     }
-
     static function getImgDir($post){
         $dir=Validator::html_cod($post);
         $count=count(SqlTable::IMG);
@@ -30,7 +28,6 @@ class Img{
         }elseif($count>=0 && $count<$dir){return false;
         }else{return SqlTable::IMG[$dir][2];}
     }
-
     static function getImgSection($post){
         $post=Validator::html_cod($post);
         $count=count(SqlTable::IMG);
@@ -38,7 +35,6 @@ class Img{
         }elseif($count>=0 && $count<$post){return false;
         }else{return SqlTable::IMG[$post][1];}
     }
-
     static function getMaxIdDir($post){
         $post=Validator::html_cod($post);
         $table=self::getImgTableName($post);
@@ -49,7 +45,6 @@ class Img{
             if($maxId)return[$dir,$maxId];else{Validator::$ErrorForm[]='Неизвестная ошибка!';return false;}
         }else{Validator::$ErrorForm[]='Ошибка!';return false;}
     }
-
     function insImg($postTable,$postImg,$upd=0){
         try{
             $err=false;
@@ -93,10 +88,10 @@ class Img{
         }else{return SqlTable::IMG[$table][0];}
     }
     private function auditBlackListImg($postName){$err=false;
-      $badf=[".php",".phtml",".php3",".php4",".html",".txt"];
-      foreach($badf as $item){
-      if(preg_match("/$item\$/i",$_FILES[$postName]['name'])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл.';$err=true;}
-      }return($err)?false:true;
+        $badf=[".php",".phtml",".php3",".php4",".html",".txt"];
+        foreach($badf as $item){
+            if(preg_match("/$item\$/i",$_FILES[$postName]['name'])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл.';$err=true;}
+        }return($err)?false:true;
     }
     private function getImgExt($postName){
         if(substr($_FILES[$postName]['type'],0,5)=='image'){
