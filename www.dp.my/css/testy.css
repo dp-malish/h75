@@ -1,4 +1,4 @@
-.test{min-height:400px}
+/*.test{min-height:400px}
 .test img{position:absolute;top:0;left:0;height:100%;width:100%;z-index:-1}
 .testbody{
     position:relative;
@@ -9,6 +9,7 @@
     padding:1px;
     color: #fff;
     font-size:150%;
+    min-height:20px;
 }
 .testquestion{
     text-align:center;
@@ -16,23 +17,29 @@
     padding:1px;
     color: #fff;
     font-size:140%;
-    /*background-color: #004e6f;*/
+    min-height:50px;
+}
+.testwarning::before{content: url(../img/site/pngext.php?i=kievstar)}*/
+/*
+.testwarning{
+    color: #ff8250;
+
 }
 .testanswer{
     margin:13px 0;
     padding:1px;
     text-align:center;
-    /*background-color: #004;*/
+
 }
 .testanswer input{
     height:40px;
     width:90px;
     font-size:150%;
     text-align:center;
-}
+}*/
 .testanswerbtn{
     padding-top:6px;
-    margin:0 auto;
+    margin:23px auto 0;
     width:200px;
     height:38px;
     border-radius:9px;
@@ -45,14 +52,32 @@
     cursor:pointer;
 }
 .testanswerbtn:hover{background:linear-gradient(to top,#FF8E00,#ffe100);}
-
+/*
 .testflash{
-    position:absolute;top:0;left:0;height:100%;width:100%;z-index:10;
+    position:absolute;top:0;left:0;height:100%;width:100%;z-index:-10;
     padding:10% 0;
     text-align:center;
 }
+*/
+/********************************************/
 
+.testboard{
+    position:relative;
+    margin:4% auto;
+    height:75%;
+    width:75%;
+}
+@media screen and (max-width:799px){
+    .testboard{
+        margin:2%;
+        height:96%;
+        width:96%;
+    }
+}
+.testboard img{position:absolute;top:0;left:0;height:100%;width:100%;z-index:1000}
 
-
-
-
+.testbody{
+    position:relative;
+    padding:27px 35px 21px;
+    z-index: 1001;
+}
