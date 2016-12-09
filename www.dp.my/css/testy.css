@@ -72,9 +72,23 @@
         margin:2%;
         height:96%;
         width:96%;
+        color:#fff;
     }
 }
 .testboard img{position:absolute;top:0;left:0;height:100%;width:100%;z-index:1000}
+.testres{
+    min-height:18px;
+    position:relative;
+    padding:27px 35px 0;
+    z-index:1001;
+}
+
+.testquestion{
+    min-height:28px;
+    position:relative;
+    padding:7px 35px 0;
+    z-index:1001;
+}
 
 .testbody{
     position:relative;

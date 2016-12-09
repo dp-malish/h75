@@ -2,6 +2,8 @@
 
     <link rel="stylesheet" type="text/css" href="/css/testy.css">
 
+    <link rel="stylesheet" type="text/css" href="/css/loader.css">
+
     <script async src="/js/jq.php?v1" type="text/javascript"></script><script async src="/js/common.php?v1"></script><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="description" content="Изучение математики стало интерактивнее. Методики обучения вычитанию реализованы для облегчения привлечения дитя к арифметике. При выполнении задания необходимо выбрать ответ..."><meta name="keywords" content="математика, вычитание, методики вычитания, математика вычитание, обучение, варианты ответа, с вариантами ответа"><title>Вычитание с вариантами ответа - математика - сайт для детей</title></head><body><div id="bh" class="maxw"><div class="cl"></div></div><div id="header" class="maxw"><header><div id="logo" class="fl rel"><a href="/"><img src="/img/site/png.php?img=logo" alt="Логотип" title="На главную"></a><div class="cl"></div></div>
         <div class="h_field"><!--сказ--><div id="skazki" class="fr v_menu"><div class="v_menu_link"><div class="ac"><a href="/сказки/"><img src="/img/site/jpg.php?img=skazki" alt="Сказки"></a></div><p>Выберите раздел:</p><nav><ul><li><a href="/сказки/русские/">Русский кинематограф</a></li><li><a href="/сказки/зарубежные/">Зарубежный кинематограф</a></li></ul></nav></div><div class="v_menu_btn">Сказки</div></div><!--мульт--><div id="mult" class="fr v_menu"><div class="v_menu_link"><div class="ac"><a href="/мультики/"><img src="/img/site/jpg.php?img=vinni_mult" alt="Мультфильмы"></a></div><p>Выберите раздел:</p><nav><ul><li><a href="/мультики/российские/">Российские - современные</a></li><li><a href="/мультики/советские/">Советские</a></li><li><a href="/мультики/для-малышей/">Для малышей</a></li></ul></nav></div><div class="v_menu_btn">Мультфильмы</div></div><!--/мульт--><div class="cl"></div></div>
         <div class="h_field">&nbsp;<div class="cl"></div></div>
@@ -20,6 +22,16 @@
                         <div class="testflash">jo</div>
                     </div>
                 <div class="cl"></div></div>-->
+                <!--<div id="floatBarsG">
+                    <div id="floatBarsG_1" class="floatBarsG"></div>
+                    <div id="floatBarsG_2" class="floatBarsG"></div>
+                    <div id="floatBarsG_3" class="floatBarsG"></div>
+                    <div id="floatBarsG_4" class="floatBarsG"></div>
+                    <div id="floatBarsG_5" class="floatBarsG"></div>
+                    <div id="floatBarsG_6" class="floatBarsG"></div>
+                    <div id="floatBarsG_7" class="floatBarsG"></div>
+                    <div id="floatBarsG_8" class="floatBarsG"></div>
+                </div>-->
 
                 <script src="/js/test/test_common.js"></script>
 
