@@ -37,11 +37,10 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
             if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
                 switch($uri_parts0_id[0]){
 //l_menu
-                    case'раскраски':$MySQLsel=new SQL_select();
-                        include($root.'/modul/l/game/raskras/main_raskras.php');break;
-                    case'лабиринты':$DB=new SQLi();include($root.'/modul/l/game/labirint/main_lab.php');break;
+                    case'тесты':include'../modul/dp/l/test/main.php';break;//-все
+                    case'лабиринты':$DB=new SQLi();include $root.'/modul/l/game/labirint/main_lab.php';break;
                     case'обучающие':include $root.'/modul/l/slide/main_slide.php';break;//-слайды
-                    case'устами':$DB=new SQLi();include($root.'/modul/l/umor/ustami_mlad.php');break;//-младенца
+                    case'устами':$DB=new SQLi();include $root.'/modul/l/umor/ustami_mlad.php';break;//-младенца
 //r_menu
                     case'скороговорки':$DB=new SQLi();include $root.'/modul/r/skorogovorki/main_skorogovorki.php';break;
                     case'детское':include'../modul/dp/r/uhod_za_mladencem/main.php';break;//здоровье

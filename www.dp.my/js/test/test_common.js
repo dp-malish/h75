@@ -14,6 +14,10 @@ teststart.addEventListener("click",startTest);
 
 function startTest(){
 
+
+    alert(this.dataset.test);
+
+
     var fon=document.createElement("div");//тёмный фон
     fon.setAttribute("id","modalload");
     fon.setAttribute("class","modalload ac");
