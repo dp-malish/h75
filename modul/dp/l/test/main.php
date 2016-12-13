@@ -12,7 +12,7 @@ $DB=new SQLi();
 		if($v['img_s']!=''){$img_s='<a href="/'.$uri_parts[0].'/'.$v['link'].'"><img class="fl five br" src="/img/'.$img_dir.'/dbpic.php?id='.$v['img_s'].'" alt="'.$v['img_alt_s'].'" title="'.$v['img_title_s'].' - узнать подробнее..."></a>';}else{$img_s='';}
 		$main_content.='<div class="fon_c"><section>'.$img_s.'<a href="/'.$uri_parts[0].'/'.$v['link'].'"><h4>'.$v['caption'].'</h4></a>'.$v['short_text'].'</section><div class="cl"></div></div>';
 	}
-	$main_content.='<div class="cl"></div></article>'.Str_navigation::$navigation;
+	$main_content.='<div class="cl"></div></article>';
 	$description.='подробнее...';
 
 
