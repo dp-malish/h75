@@ -17,5 +17,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/color.css">
 
+    <link rel="stylesheet" type="text/css" href="/css/temp.css">
+
     <?php
     //echo $jscript.$css.'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';?></head>

@@ -5,18 +5,18 @@ A:active{color:#5c3317}
 A:visited{color:#520c0e}
 A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 
-body{background:#fafafa}
-
-#wrap{
-	/*background:rgba(253, 222, 108,0.7);*/
-	background:#fafafa url("../img/site/fon.jpg")100% /*100%*/ no-repeat;
+body{
+	background:#fafafa url("../img/site/background.jpg")no-repeat fixed left bottom;
 	background-size: cover;
+}
+.h_field{
+	background:rgba(254, 255, 244,0.92);
 }
 #m_col{
 	/*background:#fafafa url("../img/site/fon.jpg") repeat-y fixed top;*/
 }
 .fon_c,.fon_c0{/*общий фон обводки*/
 	background:#FEFEE4;
-
+	background:rgba(254, 255, 244,0.92);
 }
 .border,.fon_c{border:#aa5901 1px solid}
