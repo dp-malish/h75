@@ -13,7 +13,7 @@ html,body{height:100%;
 .maxw{
 	margin:2px auto;
 	min-width:240px;
-	max-width:1200px
+	max-width:1250px
 }
 
 #bh{
@@ -25,8 +25,7 @@ html,body{height:100%;
 }
 	#logo{
 	width:240px;
-/*	overflow:hidden;*/
-	min-height:5px;
+	min-height:110px;
 	text-align:center
 	}
 
@@ -47,7 +46,6 @@ html,body{height:100%;
 	min-width:240px;
 	max-width:1260px;
 	overflow:hidden;
-	min-height:100px;
 	}
 @media screen and (max-width:540px){
 	.h_field{min-height:10px;}

@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css">
 
     <link rel="stylesheet" type="text/css" href="/css/color.css">
+    <link rel="stylesheet" type="text/css" href="/css/menu.css">
 
     <link rel="stylesheet" type="text/css" href="/css/temp.css">
 

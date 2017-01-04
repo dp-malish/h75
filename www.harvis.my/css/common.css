@@ -13,7 +13,7 @@ ul{list-style:none}
 
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}
 
-
+.tel{text-align:center;}
 .telkiev::before{content: url(../img/site/pngext.php?i=kievstar)}
 .vodafon::before{content: url(../img/site/pngext.php?i=vodafon)}
 
