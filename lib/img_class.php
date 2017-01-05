@@ -1,10 +1,20 @@
 <?php
 class Img{
     public $img=1;
+    static function badImg(){
+        $im=imagecreatetruecolor(80,30);
+        $bgc=imagecolorallocate($im,235,255,205);
+        $tc=imagecolorallocate($im,0,0,100);
+        imagefilledrectangle($im,0,0,80,30,$bgc);
+        imagestring($im,5,4,7,'No image',$tc);
+        header("Content-type: image/png");header('Cache-Control: public, max-age=100');
+        imagepng($im,NULL,2);
+    }
+    //SQL
     static function getImg($id=1,$DBTable='default_img',$font='../../../img/font/Rosamunda Two.ttf'){
         try{$DB=new SQLi(true);$mob=new UserAgent();$mob=$mob->isMobile();
             $res=$DB->strSQL('SELECT png,content FROM '.$DBTable.' WHERE id ='.$DB->realEscapeStr($id));
-            if(!$res){exit();}else{
+            if(!$res){self::badImg();}else{
                 ($res['png']=='1')?header('Content-Type: image/png'):header('Content-Type: image/jpeg');
                 header('Cache-Control: public, max-age=29030400');
                 $im=imagecreatefromstring($res['content']);
@@ -100,5 +110,38 @@ class Img{
             }elseif($imgInfo['mime']=='image/jpeg'){return'NULL';
             }else{Validator::$ErrorForm[]='Не доустимое расширение изображения';return false;}
         }else{Validator::$ErrorForm[]='Не доустимый формат изображения';return false;}
+    }//End SQL
+    static function getImgJpg($img,$dir){
+        $ext=false;
+        if(file_exists($dir.$img.'.jpg'))$ext='.jpg';
+        elseif(file_exists($dir.$img.'.jpeg'))$ext='.jpeg';
+        else self::badImg();
+        if($ext){
+            $mob=new UserAgent();
+            $im=imagecreatefromjpeg($dir.$img.$ext);
+            header("Content-type: image/jpeg");header('Cache-Control: public, max-age=29030400');
+            ($mob->isMobile())?imagejpeg($im,NULL,49):imagejpeg($im,NULL,70);
+            imagedestroy($im);
+        }
+    }
+    static function getImgPng8($img,$dir){
+        $im=@imagecreatefrompng($dir.$img.'.png');
+        if($im){
+            $mob=new UserAgent();
+            header('Content-Type: image/png');header('Cache-Control: public, max-age=29030400');
+            ($mob->isMobile())?imagepng($im,NULL,6):imagepng($im,NULL,3);
+            imagedestroy($im);
+        }else self::badImg();
+    }
+    static function getImgPng24($img,$dir){
+        if(file_exists($dir.$img.'.png')){
+            $i=@imagecreatefrompng($dir.$img.'.png');
+            $mob=new UserAgent();
+            imageAlphaBlending($i,true);
+            imageSaveAlpha($i,true);
+            header('Content-Type: image/png');header('Cache-Control: public, max-age=29030400');
+            ($mob->isMobile())?imagepng($i,NULL,6):imagepng($i,NULL,3);
+            imagedestroy($i);
+        }else self::badImg();
     }
 }

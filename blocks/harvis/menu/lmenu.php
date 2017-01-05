@@ -1,0 +1,2 @@
+<?php
+$lm='<div class="l_menu rel"><nav><ul><li><a href="#">Камины</a></li><li><a href="#">Барбеккю</a></li><li><a href="#">Сауны</a></li><li><a href="#">Бассейны</a></li><li><a href="#">Мрамор</a></li><li><a href="#">Плитка</a></li></ul></nav></div>';

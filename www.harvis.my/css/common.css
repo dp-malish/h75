@@ -7,7 +7,9 @@ ul{list-style:none}
 @media screen and (max-width: 920px){.fon,.fon_c{margin:0 0 7px}}
 #l_col .fon,#l_col .fon_c,#r_col .fon,#r_col .fon_c{margin:0 0 7px}
 
-
+@media screen and (max-width:800px){
+    .hfc,.hsc{display:none}
+}
 
 
 
