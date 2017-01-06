@@ -151,4 +151,8 @@ class User{
         }else{$err=true;}
         return($err?false:true);
     }
+    public function loginAdminFormExit(){
+        $this->setCookieAdminForm(0,0,0);
+        Route::location();
+    }
 }

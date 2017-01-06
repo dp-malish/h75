@@ -2,8 +2,8 @@
 $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
 Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
-set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/mpk');spl_autoload_extensions("_class.php");spl_autoload_register();
-//$Cash=new Cache_File('../cache_all/mpk/');$bot=new UserAgent();
+set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/harvis');spl_autoload_extensions("_class.php");spl_autoload_register();
+$Cash=new Cache_File('../cache_all/harvis/');//$bot=new UserAgent();
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
     try{$uri=urldecode($uri);
@@ -11,22 +11,22 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
         if($count_uri_parts>4){throw new Exception();}else{
             $uri_parts0_id=explode('-',$uri_parts[0],2);
             $count_uri0_parts=count($uri_parts0_id);
-            /*if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
-                $setAdminCook='mpk'.Data::DatePass();
+            if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
+                $setAdminCook='katrin'.Data::DatePass();
                 switch($uri_parts[0]){
                     case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
-                    case'set':include'../modul/mpk/admin/main.php';break;
-                    case'новости':include'../modul/mpk/news.php';break;
-                    default:include'../modul/mpk/def.php';
+                    case'set':include'../modul/harvis/admin/main.php';break;
+                    //case'новости':include'../modul/harvis/news.php';break;
+                    default:include'../modul/harvis/def.php';
                 }
             }
             if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
                 switch($uri_parts0_id[0]){
 
-                    //case'детское':include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
+                    //case'детское':include'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
                     default:include'../modul/harvis/def.php';
                 }
-            }*/
+            }
         }
     }catch(Exception $e){$module='404';}
 }else{$index=1;}if($module=='404'){Route::modul404();}
