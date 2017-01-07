@@ -1,43 +1,32 @@
 <?php
-class Validator {
-	public static $ErrorForm=[];
-	public static $captcha=null;
+class Validator{
+	static $ErrorForm=[];static $captcha=null;
 
-	public static function html_cod($str){return trim(htmlspecialchars($str,ENT_QUOTES));}
-	public static function issetCookie($str){return(isset($_COOKIE[$str]))?self::html_cod($_COOKIE[$str]):false;}
-	public static function getIp(){return self::html_cod($_SERVER['REMOTE_ADDR']);}
+	static function html_cod($s){return trim(htmlspecialchars($s,ENT_QUOTES));}
+	static function issetCookie($str){return(isset($_COOKIE[$str]))?self::html_cod($_COOKIE[$str]):false;}
+	static function getIp(){return self::html_cod($_SERVER['REMOTE_ADDR']);}
 	//**************************
-	/*Длинна строки. Параметр: текст, заданная длинна
-	Если $dlina=0 возвращает длинну строки иначе
+	/*Если $dlina=0 возвращает длинну строки иначе
 	проверка на пустую строку(0) или превышающую $dlina (2)
 	Если стр в допуске возвращает (1)*/
-	public static function LengthStr($str,$dlina){
-	if($str==''){$res=0;}else{
-		$res=mb_strlen($str,'UTF-8');
+	static function LengthStr($s,$dlina=0){
+	if($s==''){$res=0;}else{
+		$res=mb_strlen($s,'UTF-8');
 		if($dlina>0){$res<=$dlina?$res=1:$res=2;}
-	}//Если стр пуста
-	return $res;
+	}return $res;
 	}
-	//**************************
 	//preg_match  true:хорошо  false:плохо
-	public static function paternInt($str){return(preg_match("/^[0-9]+$/u",$str))?true:false;}
-	public static function paternIntMinus($str){return(preg_match("/^[0-9\-]+$/u",$str))?true:false;}
-	public static function paternStrLink($str){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-]+$/u",$str))?true:false;}
-	public static function paternStrRusText($str){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-\–\n\s\(\)\.,!?:;]+$/u",$str))?true:false;}
+	static function paternInt($s){return(preg_match("/^[0-9]+$/u",$s))?true:false;}
+	static function paternIntMinus($s){return(preg_match("/^[0-9\-]+$/u",$s))?true:false;}
+	static function paternStrLink($s){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-]+$/u",$s))?true:false;}
+	static function paternStrRusText($s){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-\–\n\s\(\)\.,!?:;«»]+$/u",$s))?true:false;}
 	//**************************
-	public static function auditFIO($str){
-		$str=Validator::html_cod($str);
-		$l=self::LengthStr($str,130);
+	static function auditFIO($s){$s=Validator::html_cod($s);$l=self::LengthStr($s,130);
 		if($l==0){self::$ErrorForm[]='Незаполненное поле ФИО';return false;}
 		elseif($l==2){self::$ErrorForm[]='Максимальная длина поля ФИО - 100 символов';return false;}
-		else{
-			if(self::paternStrRusText($str)){return	$str;}else{
-				self::$ErrorForm[]='В поле ФИО используются недопустимые символы';
-				return false;
-			}
-		}
+		else{if(self::paternStrRusText($s)){return $s;}else{self::$ErrorForm[]='В поле ФИО используются недопустимые символы';return false;}}
 	}
-	public static function auditMail($str){
+	static function auditMail($str){
 		$str=Validator::html_cod($str);
 		$l=self::LengthStr($str,130);
 		if($l==0){self::$ErrorForm[]='Неверно заполненно поле email';return false;}
@@ -45,12 +34,11 @@ class Validator {
 		else{
 			$str=mb_strtolower($str);
 			if(mb_substr_count($str,'@','UTF-8')==1){return $str;}else{
-				self::$ErrorForm[]='Не корректно заполненно поле email';
-				return false;
+				self::$ErrorForm[]='Не корректно заполненно поле email';return false;
 			}
 		}
 	}
-	public static function auditText($str,$errField,$dlina=130){
+	static function auditText($str,$errField,$dlina=130){
 		$str=Validator::html_cod($str);
 		$l=self::LengthStr($str,$dlina);
 		$printDlina=$dlina-10;
@@ -63,7 +51,7 @@ class Validator {
 			}
 		}
 	}
-	public static function auditTextArea($str,$errField,$dlina=1030){
+	static function auditTextArea($str,$errField,$dlina=1030){
 		$str=Validator::html_cod($str);
 		$l=self::LengthStr($str,$dlina);
 		$printDlina=$dlina-30;
@@ -71,7 +59,7 @@ class Validator {
 		elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$errField.' - '.$printDlina.' символов';return false;}
 		else{return	$str;}
 	}
-	public static function auditCaptcha($str){
+	static function auditCaptcha($str){
 		$err=false;
 		$captcha=null;
 		$str=self::html_cod($str);
