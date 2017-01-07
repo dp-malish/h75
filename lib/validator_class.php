@@ -1,23 +1,12 @@
 <?php
 class Validator {
-
 	public static $ErrorForm=[];
 	public static $captcha=null;
 
-	//Первым делом применять к входящим данным
-	public static function html_cod($str){
-	$res=htmlspecialchars($str, ENT_QUOTES);
-	$res=trim($res);
-	return $res;
-	}
-	public static function issetCookie($str){
-		return(isset($_COOKIE[$str]))?self::html_cod($_COOKIE[$str]):false;
-	}
-	public static function getIp(){
-		return self::html_cod($_SERVER['REMOTE_ADDR']);
-	}
-	//**************************	
-	
+	public static function html_cod($str){return trim(htmlspecialchars($str,ENT_QUOTES));}
+	public static function issetCookie($str){return(isset($_COOKIE[$str]))?self::html_cod($_COOKIE[$str]):false;}
+	public static function getIp(){return self::html_cod($_SERVER['REMOTE_ADDR']);}
+	//**************************
 	/*Длинна строки. Параметр: текст, заданная длинна
 	Если $dlina=0 возвращает длинну строки иначе
 	проверка на пустую строку(0) или превышающую $dlina (2)
@@ -25,25 +14,16 @@ class Validator {
 	public static function LengthStr($str,$dlina){
 	if($str==''){$res=0;}else{
 		$res=mb_strlen($str,'UTF-8');
-		if($dlina>0){$res <= $dlina ? $res=1 : $res=2;}
+		if($dlina>0){$res<=$dlina?$res=1:$res=2;}
 	}//Если стр пуста
 	return $res;
 	}
 	//**************************
 	//preg_match  true:хорошо  false:плохо
-	public static function paternInt($str){
-		return(preg_match("/^[0-9]+$/u",$str))?true:false;
-	}
-	public static function paternIntMinus($str){
-		return(preg_match("/^[0-9\-]+$/u",$str))?true:false;
-	}
-	public static function paternStrLink($str){
-		return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-]+$/u",$str))?true:false;
-	}
-	public static function paternStrRusText($str){
-		return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-\n\s\(\)\.,!?:;]+$/u",$str))?true:false;
-	}
-
+	public static function paternInt($str){return(preg_match("/^[0-9]+$/u",$str))?true:false;}
+	public static function paternIntMinus($str){return(preg_match("/^[0-9\-]+$/u",$str))?true:false;}
+	public static function paternStrLink($str){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-]+$/u",$str))?true:false;}
+	public static function paternStrRusText($str){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-\–\n\s\(\)\.,!?:;]+$/u",$str))?true:false;}
 	//**************************
 	public static function auditFIO($str){
 		$str=Validator::html_cod($str);
@@ -73,7 +53,7 @@ class Validator {
 	public static function auditText($str,$errField,$dlina=130){
 		$str=Validator::html_cod($str);
 		$l=self::LengthStr($str,$dlina);
-		$printDlina=$dlina-30;
+		$printDlina=$dlina-10;
 		if($l==0){self::$ErrorForm[]='Незаполненное поле '.$errField;return false;}
 		elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$errField.' - '.$printDlina.' символов';return false;}
 		else{
@@ -92,21 +72,16 @@ class Validator {
 		else{return	$str;}
 	}
 	public static function auditCaptcha($str){
-
 		$err=false;
 		$captcha=null;
-
 		$str=self::html_cod($str);
 		if(self::paternInt($str)){
 			self::$captcha=$str;
 			$captcha=Captcha::dp_md_hash($str);
 		}else{$err=true;}
-
 		$cook=self::issetCookie('dp_ses');
 		if(!$cook){$err=true;}elseif($captcha!=$cook){$err=true;}
-
 		if($err){self::$ErrorForm[]='Не верно введена капча';}
-
 		return(!$err)?true:false;
 	}
 }
