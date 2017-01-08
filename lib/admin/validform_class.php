@@ -18,4 +18,20 @@ class ValidForm extends Validator{
             if(self::paternInt($s)){return $s;}else{self::$ErrorForm[]='В поле '.$f.' используются недопустимые символы';return false;}
         }
     }
+    static function str($s,$f,$dlina=255){
+        $s=Validator::html_cod($s);
+        $l=self::LengthStr($s,$dlina);
+        if($l==0){return'';}
+        elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$f.' - '.$dlina.' символов';return false;}
+        else{
+            if(self::paternStrRusText($s)){return $s;}else{self::$ErrorForm[]='В поле '.$f.' используются недопустимые символы';return false;}
+        }
+    }
+    static function text($s,$f,$dlina=1000){
+        $s=Validator::html_cod($s);
+        $l=self::LengthStr($s,$dlina);
+        if($l==0){return'';}
+        elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$f.' - '.$dlina.' символов';return false;}
+        else{return	$s;}
+    }
 }

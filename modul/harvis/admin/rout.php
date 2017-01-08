@@ -10,7 +10,12 @@ try{if($count_uri_parts>3){throw new Exception();}else{
         $main_content='<div class="fon_c"><h3>Настройки</h3>
 <ul>
 <li><a href="/'.$uri_parts[0].'/общие-страницы/">Общие страницы</a></li>
-</ul></div>';
+</ul>
+<br>
+<ul>
+<li><a href="/'.$uri_parts[0].'/статьи/">Статьи</a></li>
+</ul>
+</div>';
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         switch($uri_parts[1]){
 
@@ -19,6 +24,7 @@ try{if($count_uri_parts>3){throw new Exception();}else{
             //*************************
 
             case 'общие-страницы':include'../modul/'.$dir_site.'/admin/section/def.php';break;
+            case 'статьи':include'../modul/'.$dir_site.'/admin/section/article.php';break;
 
             default:$main_content.='Нет такой страницы )))';
         }
