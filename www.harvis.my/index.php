@@ -1,7 +1,5 @@
 <?php
-$site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
-Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
-
+$site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/harvis'.PATH_SEPARATOR.'../lib/admin');spl_autoload_extensions("_class.php");spl_autoload_register();
 $Cash=new Cache_File('../cache_all/harvis/');//$bot=new UserAgent();
 
@@ -22,8 +20,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
             }
             if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
                 switch($uri_parts0_id[0]){
-
-                    //case'детское':include'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
+                    case'галерея':include'../modul/harvis/l/gallery.php';break;
                     default:include'../modul/harvis/def.php';
                 }
             }
@@ -36,10 +33,4 @@ if($index){include'../modul/harvis/main.php';}
 require'../blocks/harvis/common/block/slider.php';
 require'../blocks/harvis/menu/lmenu.php';
 
-require'../blocks/harvis/common/head.php';
-require'../blocks/harvis/common/befor_header.php';
-require'../blocks/harvis/common/header.php';
-require'../blocks/harvis/common/after_header.php';
-require'../blocks/harvis/common/left_column.php';
-require'../blocks/harvis/common/body_one.php';
-require'../blocks/harvis/common/foot.php';
+require'../blocks/harvis/common/head.php';require'../blocks/harvis/common/befor_header.php';require'../blocks/harvis/common/header.php';require'../blocks/harvis/common/after_header.php';require'../blocks/harvis/common/left_column.php';require'../blocks/harvis/common/body_one.php';require'../blocks/harvis/common/foot.php';

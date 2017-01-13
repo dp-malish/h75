@@ -17,6 +17,11 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 <li><a href="/'.$uri_parts[0].'/статьи/">Статьи</a></li>
 <li><a href="/'.$uri_parts[0].'/статьи/?update">Статьи редактировать</a></li>
 </ul>
+<br>
+<ul>
+<li><a href="/'.$uri_parts[0].'/галерея/">Галерея</a></li>
+<!--<li><a href="/'.$uri_parts[0].'/статьи/?update">Статьи редактировать</a></li>-->
+</ul>
 </div>';
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         switch($uri_parts[1]){
@@ -27,6 +32,7 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 
             case 'общие-страницы':include'../modul/'.$dir_site.'/admin/section/def.php';break;
             case 'статьи':include'../modul/'.$dir_site.'/admin/section/article.php';break;
+            case 'галерея':include'../modul/'.$dir_site.'/admin/section/gallery.php';break;
 
             default:$main_content.='Нет такой страницы )))';
         }

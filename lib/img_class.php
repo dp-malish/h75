@@ -53,7 +53,7 @@ class Img{
             $DB=new SQLi(true);
             $maxId=$DB->intSQL('SELECT id FROM '.$table.' ORDER BY id DESC LIMIT 1');
             if($maxId)return[$dir,$maxId];else{Validator::$ErrorForm[]='Неизвестная ошибка!';return false;}
-        }else{Validator::$ErrorForm[]='Ошибка!';return false;}
+        }else{Validator::$ErrorForm[]='Ошибочка!';return false;}
     }
     function insImg($postTable,$postImg,$upd=0){
         try{
