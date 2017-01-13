@@ -10,10 +10,12 @@ try{if($count_uri_parts>3){throw new Exception();}else{
         $main_content='<div class="fon_c"><h3>Настройки</h3>
 <ul>
 <li><a href="/'.$uri_parts[0].'/общие-страницы/">Общие страницы</a></li>
+<li><a href="/'.$uri_parts[0].'/общие-страницы/?update">Общие страницы редактировать</a></li>
 </ul>
 <br>
 <ul>
 <li><a href="/'.$uri_parts[0].'/статьи/">Статьи</a></li>
+<li><a href="/'.$uri_parts[0].'/статьи/?update">Статьи редактировать</a></li>
 </ul>
 </div>';
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){

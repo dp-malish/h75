@@ -1,12 +1,8 @@
 <?php
-class Cache_File{
-
-	protected $dir;
-	function __construct($dir='cache_all/'){$this->dir=$dir;}
-
-	public function IsSetCacheFile($cache_file){$cache_file=$this->dir.$cache_file;
+class Cache_File{protected $dir;
+function __construct($dir='cache_all/'){$this->dir=$dir;}
+public function IsSetCacheFile($cache_file){$cache_file=$this->dir.$cache_file;
 if(file_exists($cache_file))return file_get_contents($cache_file);else return 0;}
-
 public function IsSetCacheFileTime($cache_time,$cache_file){
 $cache_file=$this->dir.$cache_file;
 if(file_exists($cache_file)){
@@ -26,6 +22,12 @@ $handle=fopen($cache_file,'w');
 fwrite($handle,ob_get_contents());fclose($handle);ob_end_flush();}
 //-------------------------------
 public function SendHTML($f){ob_start();include $f;$f=ob_get_contents();ob_end_clean();return $f;}
+public function SendHTMLext($f,$params){$f=file_get_contents($f);$l=strlen('#?');$offset=0;
+	foreach($params as $v){
+	$pos=strpos($f,'#?',$offset);
+	$f=substr_replace($f,$v,$pos,$l);
+	$offset=$pos+strlen($v);}return $f;
+}
 //-------------------------------
 public function clearGroupFile($dir,$ext_file='html'){return count(array_map("unlink",glob($this->dir.$dir.'*'.$ext_file)));}
 }

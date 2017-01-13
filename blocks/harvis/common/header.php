@@ -19,7 +19,7 @@
             <nav>
                 <div class="main_nav dwfe">
                     <span><a href="/">Главная</a></span>
-                    <span><a href="#">Статьи</a></span>
+                    <span><a href="/статьи/">Статьи</a></span>
                     <span><a href="#">Контакты</a></span>
                     <span><a href="#">О нас</a></span>
                 </div>

@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                 switch($uri_parts[0]){
                     case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
                     case'set':include'../modul/harvis/admin/main.php';break;
-                    //case'новости':include'../modul/harvis/news.php';break;
+                    case'статьи':include'../modul/harvis/article.php';break;
                     default:include'../modul/harvis/def.php';
                 }
             }
