@@ -3,28 +3,37 @@ $msg=20;
 try{if($count_uri_parts>2){throw new Exception();}else{
 	switch($uri_parts0_id[1]){
 		case'каминов':$bad_link=0;
-			$title='Советы родителям - Уход за младенцем';
-			$description='Советы родителям. Практические советы и наставления по воспитанию и уходу за новорождённым. Рассматриваемые темы: ';
-			$keywords='уход за младенцем, советы родителям';
-			$table_name='uhod_sovet_rodit';
-			$img_dir='uhodzamlad/sovet';
+			$title='Галерея каминов - камины в Мариуполе';
+			$description='Галерея каминов. Фотографии построенных нами каминов. ';
+			$keywords='галерея каминов, камины в Мариуполе';
+			$table_name='gallery_fireplace';
+			$img_dir='fireplace';
+			$caption='Галерея каминов';
 			$back_link_name='Советы родителям';break;
 		default:$module='404';$bad_link=1;
 	}
 if(!isset($uri_parts[1]) && !$bad_link){
-	$main_content.='<div class="fon_c">temp tryam</div>';
 	
-	/*$DB=new SQLi();Str_navigation::navigation($uri_parts[0],$table_name,1,$msg,true);
-	$main_content.='<article><h2>Уход за младенцем</h2>'.Str_navigation::$navigation.'<div class="fon_c"><h3>'.$back_link_name.'</h3>'.$caption1.$caption2.'<div class="cl"></div></div>';
-	$res=$DB->arrSQL('SELECT id,link,link_name,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text FROM '.$table_name.' ORDER BY id DESC LIMIT '.$msg);
+	$DB=new SQLi();//Str_navigation::navigation($uri_parts[0],$table_name,1,$msg,true);
+	$main_content.=Str_navigation::$navigation.'<article><div class="fon_c"><h3>'.$caption.'</h3><div class="cl"></div></div><div class="dwfe">';
+	$res=$DB->arrSQL('SELECT id,caption,img,img_alt,img_title,short_text,price,view,link_turn FROM '.$table_name.' ORDER BY id DESC,link_turn LIMIT '.$msg);
 	foreach($res as $k=>$v){
-		$description.=$v['link_name'].', ';
-		$keywords.=', '.$v['link_name'];
-		if($v['img_s']!=''){$img_s='<a href="/'.$uri_parts[0].'/'.$v['link'].'"><img class="fl five br" src="/img/'.$img_dir.'/dbpic.php?id='.$v['img_s'].'" alt="'.$v['img_alt_s'].'" title="'.$v['img_title_s'].' - узнать подробнее..."></a>';}else{$img_s='';}
-		$main_content.='<div class="fon_c"><section>'.$img_s.'<a href="/'.$uri_parts[0].'/'.$v['link'].'"><h4>'.$v['caption'].'</h4></a>'.$v['short_text'].'</section><div class="cl"></div></div>';
+		/*$description.=$v['link_name'].', ';
+		$keywords.=', '.$v['link_name'];*/
+		if ($v['view']) {
+			$img='<img class="br" src="/img/' . $img_dir . '/dbpic.php?id=' . $v['img'] . '" alt="' . $v['img_alt'] . '" title="' . $v['img_title'] . '">';
+
+
+			$main_content.='<div class="fon_c gallery five_"><section><span class="">'
+				.$img.'</span><h4>'.$v['caption'].'</h4>'.htmlspecialchars_decode($v['short_text'],ENT_QUOTES).
+
+
+				'<span class="price fr">Цена: '.$v['price'].'$</span></section><div class="cl"></div></div>';
+
+		}
 	}
-	$main_content.='<div class="cl"></div></article>'.Str_navigation::$navigation;
-	$description.='подробнее...';*/
+	$main_content.='</div><div class="cl"></div></article>'.Str_navigation::$navigation;
+	//$description.='подробнее...';
 }elseif(isset($uri_parts[1])){
 	if(!$bad_link){
 		if(!preg_match("/^[0-9а-яёa-z\-]+$/u",$uri_parts[1])){$bad_link=1;}else{

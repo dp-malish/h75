@@ -11,7 +11,8 @@ ul{list-style:none}
     .hfc,.hsc{display:none}
 }
 
-
+.gallery{width: 250px}
+.price{background-color:#B2251F;}
 
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}
 
