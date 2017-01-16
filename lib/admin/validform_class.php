@@ -11,7 +11,7 @@ class ValidForm extends Validator{
     }
     static function int($s,$f='меню'){
         $s=self::html_cod($s);
-        $l=self::LengthStr($s,4);
+        $l=self::LengthStr($s,7);
         if($l==0){return'';}
         elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$f.' - превышена';return false;}
         else{

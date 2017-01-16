@@ -1,7 +1,6 @@
 <div class="fon_c"><form id="formgallery" class="form" method="post" onsubmit="return FileUpload();">
-    <input type="hidden" name="selectimg" value="1">
     <select id="tableimg" name="tableimg"><option value="">Выбрать раздел</option><?php
-        for($i=0;$i<count(SqlTable::IMG);$i++){echo'<option value="'.$i.'">'.SqlTable::IMG[$i][1].'</option>';}?>
+        for($i=2;$i<count(SqlTable::IMG);$i++){echo'<option value="'.$i.'">'.SqlTable::IMG[$i][1].'</option>';}?>
     </select><input type="number" name="selectimg" id="selectimg" min="1" required>
     <div id="karuselimg" class="karuselimg"></div><div class="cl"></div>
     <input type="submit" value="Выбрать">
