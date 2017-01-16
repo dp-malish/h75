@@ -1,15 +1,16 @@
 <?php
 $msg=20;
 try{if($count_uri_parts>2){throw new Exception();}else{
+	$bad_link=0;
 	switch($uri_parts0_id[1]){
-		case'каминов':$bad_link=0;
-			$title='Галерея каминов - камины в Мариуполе';
+		case'каминов':$title='Галерея каминов - камины в Мариуполе';
 			$description='Галерея каминов. Фотографии построенных нами каминов. ';
 			$keywords='галерея каминов, камины в Мариуполе';
 			$table_name='gallery_fireplace';
 			$img_dir='fireplace';
 			$caption='Галерея каминов';
-			//$back_link_name='Советы родителям';break;
+			//$back_link_name='Советы родителям';
+			break;
 		default:$module='404';$bad_link=1;
 	}
 if(!isset($uri_parts[1]) && !$bad_link){
@@ -21,7 +22,7 @@ if(!isset($uri_parts[1]) && !$bad_link){
 		/*$description.=$v['link_name'].', ';
 		$keywords.=', '.$v['link_name'];*/
 		if ($v['view']) {
-			$img='<img class="br" src="/img/' . $img_dir . '/dbpic.php?id=' . $v['img'] . '" alt="' . $v['img_alt'] . '" title="' . $v['img_title'] . '">';
+			$img='<img class="br colorbox" src="/img/' . $img_dir . '/dbpic.php?id=' . $v['img'] . '" alt="' . $v['img_alt'] . '" title="' . $v['img_title'] . '">';
 
 
 			$main_content.='<div class="fon_c gallery five_"><section><span class="">'
