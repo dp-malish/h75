@@ -9,7 +9,7 @@ try{if($count_uri_parts>2){throw new Exception();}else{
 			$table_name='gallery_fireplace';
 			$img_dir='fireplace';
 			$caption='Галерея каминов';
-			$back_link_name='Советы родителям';break;
+			//$back_link_name='Советы родителям';break;
 		default:$module='404';$bad_link=1;
 	}
 if(!isset($uri_parts[1]) && !$bad_link){
