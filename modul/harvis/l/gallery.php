@@ -1,6 +1,7 @@
 <?php
 $msg=30;
 try{if($count_uri_parts>2){throw new Exception();}else{$bad_link=0;
+	$jscript='<script async src="/js/jq.php"></script>';
 	switch($uri_parts0_id[1]){
 		case'каминов':$title='Галерея каминов - камины в Мариуполе';
 			$description='Галерея каминов. Фотографии построенных нами каминов. Разнообразные примеры работ на все вкусы...';

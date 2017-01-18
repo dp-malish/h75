@@ -3,7 +3,7 @@ p,ol,ul,ul li{margin:5px}
 ul{list-style:none}
 
 
-.fon,.fon_c{margin:0 0 7px;}
+.fon,.fon_c{margin:0 0 7px}
 @media screen and (max-width: 920px){.fon,.fon_c{margin:0 0 7px}}
 #l_col .fon,#l_col .fon_c,#r_col .fon,#r_col .fon_c{margin:0 0 7px}
 
@@ -17,7 +17,7 @@ ul{list-style:none}
 
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}
 
-.tel{text-align:center;}
+.tel{text-align:center}
 .telkiev::before{content: url(../img/site/pngext.php?i=kievstar)}
 .vodafon::before{content: url(../img/site/pngext.php?i=vodafon)}
 

@@ -1,14 +1,11 @@
-body{
-	/*background:#fafafa url("../img/site/jpg.php?i=fon") repeat-y fixed top;*/
-	padding:0 8px 3px;
-}
+body{padding:0 8px 3px}
 @media screen and (max-width:720px){
-	body{padding:0 0 3px;}
+	body{padding:0 0 3px}
 }
 html,body{height:100%;
 	font:15px Verdana,Geneva,sans-serif;
 	text-align:justify;
-	cursor:default;}
+	cursor:default}
 
 .maxw{
 	margin:2px auto;
@@ -17,7 +14,7 @@ html,body{height:100%;
 }
 
 #bh{
-	min-height:8px;
+	min-height:8px
 }	
 /*++++++++++++++++++++++++++++++++*/
 #header{
@@ -39,16 +36,16 @@ html,body{height:100%;
 			left: 12px;
 			top:-3px;
 			z-index: 3;
-			max-width: 350px;
+			max-width: 350px
 		}
 	}
 	.h_field{
 	min-width:240px;
 	max-width:1260px;
-	overflow:hidden;
+	overflow:hidden
 	}
 @media screen and (max-width:540px){
-	.h_field{min-height:10px;}
+	.h_field{min-height:10px}
 }
 
 #ah{
@@ -63,12 +60,12 @@ html,body{height:100%;
 #l_col{
 	width:238px;
 	float:left;
-	overflow:hidden;
+	overflow:hidden
 }
 #m_col{
 	min-width:238px;
 	max-width:1260px;
-	overflow:hidden;
+	overflow:hidden
 }
 /**************************/
 /*  m_col_child Start */
@@ -84,10 +81,10 @@ html,body{height:100%;
 /*  m_col_child End */
 /**************************/
 #bf{min-height:5px}
-#foot{min-height:45px;}#copy{font-size:70%;}
+#foot{min-height:45px}#copy{font-size:70%}
 
 
-@media screen and (min-width: 801px) and (max-width: 1920px){
+@media screen and(min-width: 801px)and(max-width: 1920px){
 	#share{
 		z-index:333;
 		position:fixed;
@@ -106,10 +103,10 @@ html,body{height:100%;
 	#r_col{width:100%}
 }
 /*Для отображения на устройствах меньше 480px*/
-@media screen and (min-width:240px) and (max-width:319px){
+@media screen and(min-width:240px)and(max-width:319px){
 	#l_col{
 		width:100%;
-		float:none;
+		float:none
 	}
 	#c_col{width:100%}
 	#r_col{width:100%}
