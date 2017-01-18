@@ -21,7 +21,16 @@
 
         <p>caption | заголовок *</p><input type="text" name="caption" id="caption" required placeholder="Заголовок" maxlength="255"><br><br><br>
 
-        <p>img_s | рисунок</p><input type="number" name="img_s" id="img_s" min="1" placeholder="Номер рисунка (маленький)">
+        <p>img_s | рисунок</p><input type="number" name="img_s" id="img_s" min="1" placeholder="Номер рисунка (маленький)" onchange="img_small()">
+        <div id="img_s_view" class="ac"></div>
+                <script type="application/javascript">
+                        function img_small(){
+                                var i=document.getElementById('img_s').value;
+                                var s="/img/site/dbpic.php?id=";
+                                s+=i;
+                                img_s_view.innerHTML='<img src="'+s+'">';
+                        }
+                </script>
 
         <p>img alt_s | описание рисунка</p><input type="text" name="img_alt_s" id="img_alt_s" placeholder="Описание рисунка (маленький)">
 
@@ -29,7 +38,16 @@
 
         <p>short_text | короткий текст</p><textarea type="text" name="short_text" id="short_text" rows="8"></textarea><br><br><br>
 
-        <p>img | рисунок</p><input type="number" name="img" id="img" min="1" placeholder="Номер рисунка">
+        <p>img | рисунок</p><input type="number" name="img" id="img" min="1" placeholder="Номер рисунка" onchange="img_big()">
+                <div id="img_big_view" class="ac"></div>
+                <script type="application/javascript">
+                        function img_big(){
+                                var i=document.getElementById('img').value;
+                                var s="/img/site/dbpic.php?id=";
+                                s+=i;
+                                img_big_view.innerHTML='<img src="'+s+'">';
+                        }
+                </script>
 
         <p>img alt | описание рисунка</p><input type="text" name="img_alt" id="img_alt" placeholder="Описание рисунка">
 
