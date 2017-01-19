@@ -1,22 +1,31 @@
-body{padding:0 8px 3px}
-@media screen and (max-width:720px){
-	body{padding:0 0 3px}
-}
 html,body{height:100%;
 	font:15px Verdana,Geneva,sans-serif;
 	text-align:justify;
-	cursor:default}
+	cursor:default;
+	color: #FFFFFF;
+}
 
 .maxw{
-	margin:2px auto;
+	margin:0 auto;
 	min-width:240px;
-	max-width:1250px
+	max-width:980px
 }
 
 #bh{
 	min-height:8px
 }	
 /*++++++++++++++++++++++++++++++++*/
+.header{
+	background:url("../img/site/bg.jpg") center top repeat-x;
+	min-height:300px;
+}
+.headertop{
+	min-height:60px;
+	border-bottom:#696969 solid thin;
+}
+	#hlm{min-height:5px;min-width:240px}
+	#hrm{min-height:5px;min-width:600px}
+
 #header{
 	min-height:100px
 }
