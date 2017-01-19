@@ -1,5 +1,6 @@
 html,body{height:100%;
-	font:15px Verdana,Geneva,sans-serif;
+	/*font:15px Verdana,Geneva,sans-serif;*/
+	font-family: 'Marck Script', cursive;
 	text-align:justify;
 	cursor:default;
 	color: #FFFFFF;
