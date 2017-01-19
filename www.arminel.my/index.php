@@ -15,13 +15,14 @@
   <link rel="stylesheet" type="text/css" href="/css/menu.css">
 
 <script src="/js/jq_3.1.1.js"></script>
+<script src="/js/cufon_1.09i.js"></script>
   <!--<script async src="/js/common.php"></script>
   <script async src="/js/slider.php"></script><?/*=$jscript.$css.'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';*/?>-->
 </head><body>
 <div class="header rel">
   <div class="headertop rel">
     <div class="maxw">
-      <div class="fl" id="hlm">r</div>
+      <div class="fl" id="hlm"><h3>Проба пробка</h3></div>
       <div class="fr" id="hrm">
         <ul class="hrm">
           <li><a href="#">1</a></li>
@@ -38,5 +39,6 @@
 
 
 <!--http://templates.cooltemplates.ru/Tsentr-krasoty/index.html  //PageArchiver  http://webkitchen.kiev.ua  -->
+<script type="text/javascript">Cufon.replace('h3', { fontFamily: 'PT Sans', hover:true }); Cufon.now(); </script>
 
 </body></html>
