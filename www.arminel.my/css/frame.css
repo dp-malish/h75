@@ -1,44 +1,63 @@
 html,body{height:100%;
-	/*font:15px Verdana,Geneva,sans-serif;*/
-	font-family: 'Marck Script', cursive;
+	font:15px Verdana,Geneva,serif;
 	text-align:justify;
-	cursor:default;
-	color: #FFFFFF;
+	cursor:default
 }
-
+.colorhed span a{
+	font:25px "Monotype Corsiva";
+}
 .maxw{
 	margin:0 auto;
 	min-width:240px;
 	max-width:980px
 }
-
-#bh{
-	min-height:8px
-}	
 /*++++++++++++++++++++++++++++++++*/
 .header{
-	background:url("../img/site/bg.jpg") center top repeat-x;
-	min-height:300px;
+	background:url("../img/site/bg.jpg")center top repeat-x;
+	min-height:500px;
 }
 .headertop{
-	min-height:60px;
+	min-height:58px;
+	border-bottom:#353535 solid thin;
+}
+	#hlm{min-height:1px;width:240px}
+	@media screen and (max-width:560px){
+		#hlm{width:100%}
+	}
+	#hrm{min-height:5px;min-width:240px;max-width:740px;overflow:hidden}
+/*******/
+.headercen{
+/*	min-height:100px;*/
 	border-bottom:#696969 solid thin;
 }
-	#hlm{min-height:5px;min-width:240px}
-	#hrm{min-height:5px;min-width:600px}
-
-#header{
-	min-height:100px
-}
 	#logo{
-	width:240px;
-	min-height:110px;
-	text-align:center
+		float:left;
+		min-width:240px;
+		/*min-height:100px;*/
+		text-align:center
 	}
+		#logo span{font:95px "Monotype Corsiva";}
+		@media screen and (max-width:540px){
+			#logo{width:100%}
+		}
+		@media screen and (max-width:370px){
+			#logo span{font-size:60px}
+		}
+	#logo a{text-decoration:none}
+	#logo a span:nth-child(1){color:#F4F4F4}
+	#logo a:hover span:nth-child(1){text-decoration:underline}
+	#logo a span:nth-child(2){text-decoration:underline;color:#F89A0A}
+	#logo a:hover span:nth-child(2){text-decoration:none}
 
-	@media screen and (max-width:540px){
-		#logo{width:100%}
-	}
+
+
+
+
+/*******/
+
+
+
+
 	/*#logoimg{position: relative}*/
 	@media screen and (min-width: 801px) and (max-width: 1920px){
 		#logoimg{

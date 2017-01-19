@@ -1,2 +1,25 @@
-.hrm{list-style:none}
-.hrm li{display:inline-block;width:20%}
+#hrm span{min-width:100px}
+@media screen and (max-width:900px){
+    #hrm span:nth-child(1){display:none}
+}
+@media screen and (max-width:700px){
+    #hrm span:nth-child(2){display:none}
+}
+#hrm a{display:block;margin:16px 4px 7px;text-decoration:none}
+#hrm a:hover{color:#f78f07}
+/**************************************/
+
+
+/*
+.hrm li{display:inline-block}
+.hrm li a{
+    display:block;
+    color:#fefefe;
+    text-decoration:none;
+    background:#225588;
+    border:1px solid #225588;
+    border-bottom:1px solid #114477;
+    margin:0;
+    padding:10px 14px
+}
+.hrm li a:hover{border-left:1px solid #114477;border-right:1px solid #114477}*/
