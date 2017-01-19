@@ -15,6 +15,6 @@
   <!--<script async src="/js/common.php"></script>
   <script async src="/js/slider.php"></script><?/*=$jscript.$css.'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';*/?>-->
 </head><body>
-
-kl
+http://templates.cooltemplates.ru/Tsentr-krasoty/index.html
+PageArchiver
 </body></html>
