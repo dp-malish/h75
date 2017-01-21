@@ -3,7 +3,7 @@ html,body{height:100%;
 	text-align:justify;
 	cursor:default
 }
-.colorhed span a{
+.colorhed{
 	font:25px "Monotype Corsiva";
 }
 .maxw{
@@ -27,7 +27,7 @@ html,body{height:100%;
 	#hrm{min-height:5px;min-width:240px;max-width:740px;overflow:hidden}
 /*******/
 .headercen{
-/*	min-height:100px;*/
+	/*height:120px;*/
 	border-bottom:#696969 solid thin;
 }
 	#logo{
@@ -45,38 +45,44 @@ html,body{height:100%;
 		}
 	#logo a{text-decoration:none}
 	#logo a span:nth-child(1){color:#F4F4F4}
-	#logo a:hover span:nth-child(1){text-decoration:underline}
+	#logo a:hover span:nth-child(1){text-decoration:underline;;color:#F89A0A}
 	#logo a span:nth-child(2){text-decoration:underline;color:#F89A0A}
-	#logo a:hover span:nth-child(2){text-decoration:none}
+	#logo a:hover span:nth-child(2){text-decoration:none;color:#fff}
 
-
-
+	.h_field{
+		min-width:240px;
+		max-width:740px;
+		overflow:hidden
+	}
+	#tagline{
+		height:82px;
+		display:table;
+		margin:0 1px 0 13px;
+		min-width:240px;
+	}
+	@media screen and (max-width:613px){
+		#tagline{height:13px}
+	}
+	#tagline p{
+		display:table-cell;
+		vertical-align:bottom;
+		font-size:140%;
+		font-style:/*italic*/oblique;
+	}
+.headerbot{
+	min-height:90px;
+	padding-top:25px;
+	padding-bottom:28px;
+}
+	@media screen and (max-width:613px){
+		.headerbot{
+			padding-bottom:10px;
+		}
+	}
+	.headerbot div div{width:240px}
 
 
 /*******/
-
-
-
-
-	/*#logoimg{position: relative}*/
-	@media screen and (min-width: 801px) and (max-width: 1920px){
-		#logoimg{
-			position: absolute;
-			left: 12px;
-			top:-3px;
-			z-index: 3;
-			max-width: 350px
-		}
-	}
-	.h_field{
-	min-width:240px;
-	max-width:1260px;
-	overflow:hidden
-	}
-@media screen and (max-width:540px){
-	.h_field{min-height:10px}
-}
-
 #ah{
 	min-height:1px
 }

@@ -1,12 +1,14 @@
-h1,h2,h3,h4,.tegh{color:#b2251a}
+h1,h2,h3,h4,.tegh{color:#000000}
 
-.colorhed,.colorhed span a{color:#ffffff}
+body{background-color:#fefef3}
 
 A:link,.link{color:#5c3317;text-decoration:underline}
 A:active{color:#5c3317}
 A:visited{color:#520c0e}
 A:hover,.link:hover{color:#B2251F;text-decoration:blink}
 
+.colorhed,.colorhed span a,.wt{color:#ffffff}
+.gt{color:#696969}
 
 .fon_c,.fon_c0{/*общий фон обводки*/
 	background:#FEFEE4;

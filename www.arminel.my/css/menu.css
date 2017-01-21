@@ -8,6 +8,11 @@
 #hrm a{display:block;margin:16px 4px 7px;text-decoration:none}
 #hrm a:hover{color:#f78f07}
 /**************************************/
+#categories a{text-decoration:none}
+#categories a:hover{color:#f78f07}
+#categories p a{color:#f78f07}
+#categories p a:hover{text-decoration:underline}
+/**************************************/
 
 
 /*

@@ -14,11 +14,13 @@
   <link rel="stylesheet" type="text/css" href="/css/temp.css">
   <link rel="stylesheet" type="text/css" href="/css/menu.css">
   <link rel="stylesheet" type="text/css" href="/css/color.css">
+  <link rel="stylesheet" type="text/css" href="/css/slider.css">
 
 <!--<script src="/js/jq_3.1.1.js"></script>-->
   <!--<script async src="/js/common.php"></script>
   <script async src="/js/slider.php"></script><?/*=$jscript.$css.'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';*/?>-->
 </head><body>
+<header>
 <div class="header rel">
   <div class="headertop rel">
     <div class="maxw">
@@ -43,12 +45,66 @@
       <span>eL</span>
       </a>
     </div>
+    <div class="h_field rel gt">
+      <div id="tagline">
+        <p>Сайт для всей семьи</p>
+      </div>
+    </div>
     <div class="cl"></div>
   </div>
 
-  <div class="maxw"><p>kbbkkjwbc Б evrv er gre 123 3 45  6 6 6 7 87 i 9 8998  09 090- 0 123 3 45  6 6 6 7 87 i 9 8998  09 090- 0-   45 45 4  34 43 4343 34 34 2 455 6 7 657 65 7 6   45 45 4  34 43 4343 34 34 2 455 6 7 657 65 7 657 5
-   dw</p></div>
-  
+  <div class="maxw rel">
+
+    <div id="main_slider" class="rel">
+      <img src="/img/site/main_slider/jpg.php?i=img1" alt="Бассейн">
+      <img src="/img/site/main_slider/jpg.php?i=img2" alt="Сауна">
+      <img src="/img/site/main_slider/jpg.php?i=img3" alt="Камин">
+      <img src="/img/site/main_slider/jpg.php?i=img4" alt="Камин">
+      <div></div>
+    <span id="btnSlider"><button type="button" value="0">&nbsp;</button><button type="button" value="1">&nbsp;</button><button
+        type="button" value="2">&nbsp;</button><button type="button" value="3">&nbsp;</button></span></div>
+  </div>
+
+  <div class="headerbot maxw rel">
+    <div id="categories" class="dwfe">
+      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      </div>
+      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      </div>
+      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      </div>
+      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="maxw rel">
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
+  <p>kjnjk</p>
 </div>
 
 
