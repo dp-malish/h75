@@ -5,3 +5,4 @@
  * Date: 23.01.2017
  * Time: 1:03
  */
+echo $_SERVER['SERVER_NAME'];

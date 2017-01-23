@@ -41,13 +41,13 @@
   <div class="headercen maxw rel">
     <div class="colorhed" id="logo">
       <a href="/">
-      <span>Warmin</span>
-      <span>eL</span>
+      <span>Tai</span>
+      <span>moD</span>
       </a>
     </div>
     <div class="h_field rel gt">
       <div id="tagline">
-        <p>Сайт для всей семьи</p>
+        <p>Искусство быть Богиней</p>
       </div>
     </div>
     <div class="cl"></div>
@@ -56,10 +56,10 @@
   <div class="maxw rel">
 
     <div id="main_slider" class="rel">
-      <img src="/img/site/main_slider/jpg.php?i=img1" alt="Бассейн">
-      <img src="/img/site/main_slider/jpg.php?i=img2" alt="Сауна">
-      <img src="/img/site/main_slider/jpg.php?i=img3" alt="Камин">
-      <img src="/img/site/main_slider/jpg.php?i=img4" alt="Камин">
+      <img src="/img/site/main_slider/jpg.php?i=img1" alt="ыфа">
+      <img src="/img/site/main_slider/jpg.php?i=img2" alt="фыва">
+      <img src="/img/site/main_slider/jpg.php?i=img3" alt="Кыва">
+      <img src="/img/site/main_slider/jpg.php?i=img4" alt="цуекн">
       <div></div>
     <span id="btnSlider"><button type="button" value="0">&nbsp;</button><button type="button" value="1">&nbsp;</button><button
         type="button" value="2">&nbsp;</button><button type="button" value="3">&nbsp;</button></span></div>
@@ -67,13 +67,13 @@
 
   <div class="headerbot maxw rel">
     <div id="categories" class="dwfe">
-      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
       </div>
-      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      <div><div class="colorhed"><span><a href="#">Личности</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
       </div>
-      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
       </div>
-      <div><div class="colorhed"><span><a href="#">Рубрика 1</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      <div><div class="colorhed"><span><a href="#">Мода</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
       </div>
     </div>
   </div>
@@ -81,6 +81,26 @@
 </header>
 
 <div class="maxw rel">
+  <div id="r_col">
+    <div class="r_menu">
+      <div class="menu_title">Галерея</div>
+        <nav>
+      <ul>
+        <li><a href="#">Кулинарные хитрости</a></li>
+        <li><a href="#">Секреты</a></li>
+      </ul>
+        </nav>
+    </div>
+
+    <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+    <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+  </div>
+
+<h1>2 sdsf 2</h1>
+<h2>2 sdsf 2</h2>
+<h3>2 sdsf 2</h3>
+<h4>2 sdsf 2</h4>
+<h5>2 sdsf 2</h5>
   <p>kjnjk</p>
   <p>kjnjk</p>
   <p>kjnjk</p>
@@ -89,10 +109,9 @@
   <p>kjnjk</p>
   <p>kjnjk</p>
   <p>kjnjk</p>
+
   <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
-  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
-  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
-  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
+  <p>kjnjk jnj jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd jnjjnj jnjjnjjnjjnjjnj jnjjnjjnjjnjjnjvjnjjnj jnjjnjjnj jnjjnjjnjjnj  dd</p>
   <p>kjnjk</p>
   <p>kjnjk</p>
   <p>kjnjk</p>

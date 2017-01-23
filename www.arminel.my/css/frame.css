@@ -3,9 +3,6 @@ html,body{height:100%;
 	text-align:justify;
 	cursor:default
 }
-.colorhed{
-	font:25px "Monotype Corsiva";
-}
 .maxw{
 	margin:0 auto;
 	min-width:240px;
@@ -82,38 +79,21 @@ html,body{height:100%;
 	.headerbot div div{width:240px}
 
 
-/*******/
-#ah{
-	min-height:1px
-}
 /**************************/
-/**************************/
-#wrap{
-	min-height:100px;
-	padding:5px 5px 0
-}
-#l_col{
-	width:238px;
-	float:left;
+#r_col{
+	width:240px;
+	float:right;
 	overflow:hidden
 }
 #m_col{
-	min-width:238px;
-	max-width:1260px;
+	min-width:240px;
+	max-width:740px;
 	overflow:hidden
 }
 /**************************/
-/*  m_col_child Start */
-#c_col{
-	min-width:238px;/*+120px;*/
-	max-width:1020px;
-	overflow:hidden
-}
-#r_col{
-	width:238px;
-	overflow:hidden
-}
-/*  m_col_child End */
+
+
+
 /**************************/
 #bf{min-height:5px}
 #foot{min-height:45px}#copy{font-size:70%}

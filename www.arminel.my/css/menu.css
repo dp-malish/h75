@@ -12,19 +12,47 @@
 #categories a:hover{color:#f78f07}
 #categories p a{color:#f78f07}
 #categories p a:hover{text-decoration:underline}
-/**************************************/
-
-
-/*
-.hrm li{display:inline-block}
-.hrm li a{
-    display:block;
-    color:#fefefe;
-    text-decoration:none;
-    background:#225588;
-    border:1px solid #225588;
-    border-bottom:1px solid #114477;
-    margin:0;
-    padding:10px 14px
+/***************r_menu*********************/
+.r_menu{padding-bottom:7px}
+.menu_title{
+    font-weight:700;
+    border-bottom:#353535 solid thin;
+    min-height:25px;
+    padding:2px 4px;
 }
-.hrm li a:hover{border-left:1px solid #114477;border-right:1px solid #114477}*/
+.r_menu ul{display:block}
+.r_menu ul li{
+    position:relative;
+    /*background:rgba(239,239,239,.95);
+    border:rgba(239,239,239,.98) thin solid;
+    border-bottom-color:#aa5901;
+    border-right-color:#aa5901;
+    transition-duration:1.1s*/
+}
+/*.r_menu ul li:before{
+    padding-top:5px;
+
+}*/
+.r_menu ul li a{
+    display:block;
+    text-decoration:none;
+    line-height:30px;
+    padding:0 2px;
+    border-bottom:#353535 dotted thin;
+    color:#696969
+}
+.r_menu ul li a:before{content: url(../img/site/marker.png)" ";
+    vertical-align:-27%;
+}
+@media screen and (max-width:560px){
+    .r_menu ul li a{
+        line-height:45px;
+    }
+    .r_menu ul li a:before{
+        vertical-align:-20%;
+    }
+}
+.r_menu ul li a:hover{
+    text-decoration:underline;
+    color:#f78f07
+}
