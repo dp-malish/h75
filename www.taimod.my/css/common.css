@@ -18,15 +18,30 @@ ul{list-style:none}
     .hfc,.hsc{display:none}
 }
 
-.gallery{width:240px}
-@media screen and (min-width:1000px){.gallery{width:280px}}
-.price{font-size:110%;font-weight:700;padding:6px}
+
+
+.preview{
+    min-width:230px;
+    max-width:360px;
+    border:#353535 dotted thin;
+    margin:3px;
+
+}
+@media screen and (min-width:920px) and (max-width:1020px){
+    .preview{max-width:320px;background-color:#004e6f}
+}
+@media screen and (min-width:871px) and (max-width:919px){
+    .preview{max-width:300px;background-color:#FF0000}
+}
+@media screen and (min-width:835px) and (max-width:870px){
+    .preview{max-width:280px;background-color:#F45000}
+}
+@media screen and (min-width:200px) and (max-width:870px){
+    .preview{margin:3px 0}
+}
 
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}
 
-.tel{text-align:center}
-.telkiev::before{content: url(../img/site/pngext.php?i=kievstar)}
-.vodafon::before{content: url(../img/site/pngext.php?i=vodafon)}
 
 /*кнопки share*/
 #share .rel{margin:15px 3px}
