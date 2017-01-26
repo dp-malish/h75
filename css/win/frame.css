@@ -72,6 +72,7 @@ body{background:#154714 url("../img/site/jpg.php?img=back_pc")fixed repeat;}
 }
 
 #r_col{
+	float:right;
 	width:240px;
 	overflow:hidden
 }
@@ -79,10 +80,7 @@ body{background:#154714 url("../img/site/jpg.php?img=back_pc")fixed repeat;}
 /*  m_col_child End */
 /**************************/
 /**************************/
-
-#bf{
-	min-height:5px
-}
+#bf{min-height:5px}
 
 #foot{
 	min-height:40px;border-radius:5px
@@ -99,7 +97,7 @@ body{background:#154714 url("../img/site/jpg.php?img=back_pc")fixed repeat;}
 
 /*Для отображения на устройствах меньше 480px*/
 @media screen and (max-width:740px){
-    #logo{max-width:100%}
+    #logo{width:100%}
     .fon,.fon_c{margin:0 0 7px;}
     .tb2_l_col,.tb2_r_col{width:99.1%;}
     #l_col{width:100%;float:none}

@@ -30,6 +30,7 @@ if($index)include'../modul/win/main.php';
 require'../blocks/win/menu/l/remont.php';
 //right - all stranici
 require'../blocks/win/menu/r/web.php';
+require'../blocks/win/menu/r/dop_mat.php';
 
 require'../blocks/win/common/head.php';require'../blocks/win/common/befor_header.php';require'../blocks/win/common/header.php';require'../blocks/win/common/after_header.php';require'../blocks/win/common/left_column.php';
 switch($column){
