@@ -68,7 +68,8 @@ if(!isset($uri_parts[1])&& !$bad_link){
 	foreach($res as $k=>$v){
 		if($v['view']){
 			$img='<a rel="group_one" class="colorbox" href="/img/'.$img_dir.'/dbpic.php?id='.$v['img'].'" title="'.$v['caption'].'"><img class="br" src="/img/'.$img_dir.'/dbpic.php?id='.$v['img'].'" alt="'.$v['img_alt'].'" title="'.$v['img_title'].'"></a>';
-			$main_content.='<div class="fon_c gallery five_"><section><span class="">'.$img.'</span><h4>'.$v['caption'].'</h4>'.htmlspecialchars_decode($v['short_text'],ENT_QUOTES).'<span class="price fr">Цена: '.$v['price'].' $</span></section><div class="cl"></div></div>';
+			$price=($v['price']!=''?'<span class="price fr">Цена: '.$v['price'].' $</span>':'');
+			$main_content.='<div class="fon_c gallery five_"><section><span>'.$img.'</span><h4>'.$v['caption'].'</h4><span class="ac">'.htmlspecialchars_decode($v['short_text'],ENT_QUOTES).$price.'</span></section><div class="cl"></div></div>';
 		}
 	}
 	$main_content.='</div><div class="cl"></div></article>'.Str_navigation::$navigation;
@@ -82,7 +83,8 @@ if(!isset($uri_parts[1])&& !$bad_link){
 				foreach($res as $k=>$v){
 					if($v['view']){
 						$img='<a rel="group_one" class="colorbox" href="/img/'.$img_dir.'/dbpic.php?id='.$v['img'].'" title="'.$v['caption'].'"><img class="br" src="/img/'.$img_dir.'/dbpic.php?id='.$v['img'].'" alt="'.$v['img_alt'].'" title="'.$v['img_title'].'"></a>';
-						$main_content.='<div class="fon_c gallery five_"><section><span class="">'.$img.'</span><h4>'.$v['caption'].'</h4>'.htmlspecialchars_decode($v['short_text'],ENT_QUOTES).'<span class="price fr">Цена: '.$v['price'].' $</span></section><div class="cl"></div></div>';
+						$price=($v['price']!=''?'<span class="price fr">Цена: '.$v['price'].' $</span>':'');
+						$main_content.='<div class="fon_c gallery five_"><section><span class="">'.$img.'</span><h4>'.$v['caption'].'</h4><span class="ac">'.htmlspecialchars_decode($v['short_text'],ENT_QUOTES).$price.'</span></section><div class="cl"></div></div>';
 					}
 				}
 				$main_content.='</div><div class="cl"></div></article>'.Str_navigation::$navigation;

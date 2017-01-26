@@ -1,9 +1,19 @@
 .l_menu,.r_menu{/*общий фон обводки*/
+	margin:0 auto;
+	box-sizing:border-box;
 	border:#004e6f 2px solid;
 	background:#B8D3C9;
 	background:linear-gradient(to top right, #ffe100, #B8D3C9);/*(to top right, #6FCC00, #ffe100);*/
 	border-radius:4px;
 }.r_menu{background:linear-gradient(to top left, #ffe100, #B8D3C9);}/**/
+
+@media screen and (min-width:481px) and (max-width:740px){
+	.l_menu,.r_menu{width:70%}
+}
+@media screen and (max-width:480px){
+	.l_menu,.r_menu{width:100%}
+}
+
 .l_menu{
 	padding-bottom:7px;
 	margin-bottom:7px;
