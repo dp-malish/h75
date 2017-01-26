@@ -5,6 +5,7 @@
     overflow:hidden;/* удалить, если нет max-width, max-height и outline у img*/
     margin:0 0 7px;
     border:#ffffff solid 9px;
+    box-sizing:border-box;
 }
 #main_slider img{
     position:absolute;
@@ -16,7 +17,7 @@
 }
 #main_slider div{
     position:relative;
-    margin-bottom:40%/*  процент от ширины (тут есть калькулятор) */
+    margin-bottom:39%/*  процент от ширины (тут есть калькулятор) */
 }
 #main_slider img:nth-of-type(1){
     z-index:2

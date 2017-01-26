@@ -37,11 +37,20 @@ img{
     display:flex;
     justify-content:space-around;
     align-items:center}
-.dwfe{flex-wrap:wrap}
-.dwfc{
+.dwfc,.dwfce{
     display:flex;
     justify-content:center;
     align-items:center}
+
+.dwft,.dwfte{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start}
+.dwfs,.dwfse{
+    display:flex;
+    justify-content:space-around}
+.dwfe,.dwfce,.dwfte,.dwfse{flex-wrap:wrap}
+
 
 .note{font-size:70%}
 .hide{display:none}

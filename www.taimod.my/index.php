@@ -68,21 +68,27 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
   </div>
 
   <div class="headerbot maxw rel">
-    <div id="categories" class="dwfe">
+    <div id="categories" class="dwfte">
 
-      <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
+      <div><div class="colorhed"><span><a href="#">Мода</a></span></div><p class="gt">Самые последние модные тренды и бьюти-советы на каждый день для истинной женщины, а также советы по стилю - индивидуальности имиджа.</p>
       </div>
-      <div><div class="colorhed"><span><a href="#">Личности</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
-      </div>
-<!--      <div><div class="colorhed"><span><a href="#">Моды</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
-      </div>
-      <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
-      </div>
-      <div><div class="colorhed"><span><a href="#">Моды</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
-      </div>
-      <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Beauty Center is one of free web templates created by TemplateMonster.com team. <a href="#">This website template</a> is optimized for 1280x1024 screen resolution.</p>
-      </div>-->
 
+      <div><div class="colorhed"><span><a href="#">Психология</a></span></div><p class="gt">Психология отношений - интересные советы и ответы на неразрешимые вопросы.</p>
+      </div>
+
+      <div><div class="colorhed"><span><a href="#">Личности</a></span></div><p class="gt">Знаменитые личности, повлиявшие на женскую моду.</p>
+      </div>
+
+      <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Советы, секреты, хитрости, идеи,применяемые в повседневной жизни.</p>
+      </div>
+
+      <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.</p>
+      </div>
+
+
+
+      <div><div class="colorhed"><span><a href="#">Обо всем</a></span></div><p class="gt">Разные увлекательные, полезные тематики или Все обо всем.</p>
+      </div>
 
     </div>
   </div>
@@ -104,47 +110,81 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
 
   </div>
   <div id="m_col">
-    <div class="dwfe">
-      <!--<div class="preview">
+
+    <div class="fon_c ac nav_link"><p><b>1</b> | <a href="/галерея-каминов/2">2</a>&nbsp;&nbsp;<a href="/галерея-каминов/2">&gt;</a>&nbsp;&nbsp;&nbsp;<a href="/галерея-каминов/2" title="Перейти на последнюю страницу">&gt;&gt;</a></p></div>
+
+    <div class="dwfse">
+      <div class="preview">
+        <section>
+        <h3>Заголовок</h3>
         <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
+        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution screen resolution.</p>
         <div class="cl"></div>
+          <div class="previewbtn">
+            <span class=""><a class="btnmore" href="#" title="Узнать подробнее">Подробнее</a></span>
+          </div>
+        </section>
       </div>
       <div class="preview">
         <img class="five fl" src="/img/site/page_try.jpg" alt="">
         <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
         <div class="cl"></div>
+        <div class="previewbtn">
+          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
+        </div>
       </div>
       <div class="preview">
         <img class="five fl" src="/img/site/page_try.jpg" alt="">
         <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
         <div class="cl"></div>
+        <div class="previewbtn">
+          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
+        </div>
       </div>
       <div class="preview">
         <img class="five fl" src="/img/site/page_try.jpg" alt="">
         <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
         <div class="cl"></div>
-      </div>-->
+        <div class="previewbtn">
+          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
+        </div>
+      </div>
+      <div class="preview">
+        <img class="five fl" src="/img/site/page_try.jpg" alt="">
+        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
+        <div class="cl"></div>
+        <div class="previewbtn">
+          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
+        </div>
+      </div>
+      <div class="preview">
+        <img class="five fl" src="/img/site/page_try.jpg" alt="">
+        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
+        <div class="cl"></div>
+        <div class="previewbtn">
+          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
+        </div>
+      </div>
 
     </div>
-    <a href="http://templates.cooltemplates.ru/Tsentr-krasoty/index.html" target="_blank">Шаблон</a>
+    <!--<a href="http://templates.cooltemplates.ru/Tsentr-krasoty/index.html" target="_blank">Шаблон</a>-->
   </div>
   <div class="cl"></div>
 </div>
 
 
 
-<!--<footer>
+<footer>
 <div id="foot">
   <div class="maxw">
     <div class="r_col"></div>
     <div class="m_col">
-      <div id="copy" class="ac gt">Copyright &copy;<?/*=$site;*/?><br>2017<?php /*if (date('Y') > 2017) echo '-' . date('Y');*/?><br><br>Использование материалов сайта без разрешения правообладателя запрещено</div><div class="cl"></div>
+      <div id="copy" class="ac gt">Copyright &copy;<?=$site;?><br>2017<?php if (date('Y') > 2017) echo '-' . date('Y');?><br><br>Использование материалов сайта без разрешения правообладателя запрещено</div><div class="cl"></div>
     </div>
   </div>
 </div>
   <div id="bf"><div id="up"> ^ Наверх</div></div>
-</footer>-->
+</footer>
 <!--http://templates.cooltemplates.ru/Tsentr-krasoty/index.html  //PageArchiver  http://webkitchen.kiev.ua  -->
 
 
