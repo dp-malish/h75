@@ -1,7 +1,7 @@
 <?php
 $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
 <!doctype html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--<meta name="author" content="Александр Баранов">
@@ -82,7 +82,7 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
       <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Советы, секреты, хитрости, идеи,применяемые в повседневной жизни.</p>
       </div>
 
-      <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.</p>
+      <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.<a href="/2">2</a></p>
       </div>
 
 
@@ -96,7 +96,9 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
 </header>
 
 <div class="maxw rel">
+
   <div id="r_col">
+    <div
     <div class="r_menu">
       <div class="menu_title">Лайфаки</div>
         <nav>
@@ -111,14 +113,12 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
   </div>
   <div id="m_col">
 
-    <div class="fon_c ac nav_link"><p><b>1</b> | <a href="/галерея-каминов/2">2</a>&nbsp;&nbsp;<a href="/галерея-каминов/2">&gt;</a>&nbsp;&nbsp;&nbsp;<a href="/галерея-каминов/2" title="Перейти на последнюю страницу">&gt;&gt;</a></p></div>
-
     <div class="dwfse">
       <div class="preview">
         <section>
         <h3>Заголовок</h3>
         <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution screen resolution.</p>
+        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p><a href="http://templates.cooltemplates.ru/Tsentr-krasoty/index.html" target="_blank">Шаблон</a> Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution screen resolution.</p>
         <div class="cl"></div>
           <div class="previewbtn">
             <span class=""><a class="btnmore" href="#" title="Узнать подробнее">Подробнее</a></span>
@@ -168,6 +168,24 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
 
     </div>
     <!--<a href="http://templates.cooltemplates.ru/Tsentr-krasoty/index.html" target="_blank">Шаблон</a>-->
+
+    <div class="nav1">
+      <span>1</span>
+      <span><a href="/2">2</a></span>
+      <span><a href="/2">2</a></span>
+      <span><a href="/2">3</a></span>
+      <span><a href="/2">4</a></span>
+      <span><a href="/2">5</a></span>
+      <span><a href="/2">&gt;</a></span>
+      <span><a href="/2" title="Перейти на последнюю страницу">&gt;&gt;</a></span><span><a href="/2">2</a></span>
+      <span><a href="/2">2</a></span>
+      <span><a href="/2">3</a></span>
+      <span><a href="/2">4</a></span>
+      <span><a href="/2">5</a></span>
+      <span><a href="/2">&gt;</a></span>
+      <span><a href="/2" title="Перейти на последнюю страницу">&gt;&gt;</a></span>
+    </div>
+
   </div>
   <div class="cl"></div>
 </div>

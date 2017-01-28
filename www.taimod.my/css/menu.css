@@ -13,7 +13,12 @@
 #categories p a{color:#f78f07}
 #categories p a:hover{text-decoration:underline}
 /***************r_menu*********************/
-.r_menu{padding-bottom:7px}
+.r_menu{
+    margin:0 auto;
+    padding-bottom:7px}
+@media screen and (min-width:360px) and (max-width:490px){
+    .r_menu{width:70%}
+}
 .menu_title{
     font-weight:700;
     border-bottom:#353535 solid thin;
