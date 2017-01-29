@@ -21,8 +21,22 @@ CREATE TABLE IF NOT EXISTS content(
   right_text text,
   full_text text NOT NULL,
   data TIMESTAMP DEFAULT NOW(),
+  views int(11) DEFAULT 13,
   comment int(11),
   PRIMARY KEY (id),
   UNIQUE KEY link(link),
   KEY (heading,category)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS heading(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  rubrika varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+INSERT INTO `heading` (`id`, `rubrika`) VALUES
+  (1, 'Лайфхаки'),
+  (2, 'Личности'),
+  (3, 'Мода'),
+  (4, 'Обо всем'),
+  (5, 'Психология'),
+  (6, 'Рецепты блюд');
