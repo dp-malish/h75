@@ -1,18 +1,29 @@
 html,body{height:100%;
 	font:15px Verdana,Geneva,serif;
 	text-align:justify;
-	cursor:default
+	cursor:default;
+	position:relative;
 }
 .maxw{
 	margin:0 auto;
 	min-width:240px;
-	max-width:1040px
+	max-width:980px
 }
 /*++++++++++++++++++++++++++++++++*/
-.header{
-	background:#000000 url("../img/site/bg.jpg")center top repeat-x;
-	min-height:500px;
+#bh{
+	position:absolute;
+	z-index:-1;
+	width:100%;
+	text-align:center;
 }
+.header{
+	padding-top:25%;
+	min-height:100px;
+}
+@media screen and (min-width:1200px){
+	.header{padding-top:290px}
+}
+
 .headertop{
 	min-height:58px;
 	border-bottom:#353535 solid thin;
@@ -48,7 +59,7 @@ html,body{height:100%;
 
 	.h_field{
 		min-width:240px;
-		max-width:800px;
+		max-width:740px;
 		overflow:hidden
 	}
 	#tagline{
@@ -97,7 +108,7 @@ html,body{height:100%;
 }
 #m_col,.m_col{
 	min-width:240px;
-	max-width:800px;
+	max-width:740px;
 	overflow:hidden;
 	min-height:1px
 }

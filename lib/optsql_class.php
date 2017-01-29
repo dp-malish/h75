@@ -11,6 +11,7 @@ class Optsql{
             case 'win.my':$this->db_con=['root','root','winteh'];break;
             case 'mpk.my': $this->db_con=['root','root','mpk'];break;
             case 'harvis.my': $this->db_con=['root','root','harvi'];break;
+            case 'taimod.my': $this->db_con=['root','root','taimod'];break;
             default:$this->db_con=['root','root','malish'];
             }
         }else{

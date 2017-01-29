@@ -1,209 +1,40 @@
 <?php
-$site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
-<!doctype html>
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!--<meta name="author" content="Александр Баранов">
-  <link rel="author" href="https://plus.google.com/105678225473161794317">
-  <meta name="copyright" lang="ru" content="Harvis">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <meta name="robots" content="index,follow">
-  <!--<link rel="shortcut icon" href="/img/site/ico.png" type="image/png">-->
-  <link rel="stylesheet" type="text/css" href="/css/default.css">
-  <link rel="stylesheet" type="text/css" href="/css/frame.css">
-  <link rel="stylesheet" type="text/css" href="/css/common.css">
-  <link rel="stylesheet" type="text/css" href="/css/temp.css">
-  <link rel="stylesheet" type="text/css" href="/css/menu.css">
-  <link rel="stylesheet" type="text/css" href="/css/color.css">
-  <link rel="stylesheet" type="text/css" href="/css/slider.css">
+$site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
+Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
-<!--<script src="/js/jq_3.1.1.js"></script>-->
-  <!--<script async src="/js/common.php"></script>
-  <script async src="/js/slider.php"></script><?/*=$jscript.$css.'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';*/?>-->
-</head><body>
-<header>
-<div class="header rel">
-  <div class="headertop rel">
-    <div class="maxw">
-      <div class="fl" id="hlm"></div>
-      <div id="hrm">
-        <div class="dwfe colorhed">
-          <span></span>
-          <span></span>
-          <span><a href="/">Главная</a></span>
-          <span><a href="#">Проект</a></span>
-          <span><a href="/контакты">Контакты</a></span>
-        </div>
-      </div>
-      <div class="cl"></div>
-    </div>
-  </div>
+set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/taimod');spl_autoload_extensions("_class.php");spl_autoload_register();
+$Cash=new Cache_File('../cache_all/taimod/');//$bot=new UserAgent();
 
-  <div class="headercen maxw rel">
-    <div class="colorhed" id="logo">
-      <a href="/">
-      <span>Tai</span>
-      <span>moD</span>
-      </a>
-    </div>
-    <div class="h_field rel gt">
-      <div id="tagline">
-        <p>Искусство быть Богиней</p>
-      </div>
-    </div>
-    <div class="cl"></div>
-  </div>
+if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
+  try{$uri=urldecode($uri);
+    $url_path=parse_url($uri,PHP_URL_PATH);$uri_parts=explode('/',trim($url_path,'/'));$count_uri_parts=count($uri_parts);
+    if($count_uri_parts>4){throw new Exception();}else{
+      $uri_parts0_id=explode('-',$uri_parts[0],2);
+      $count_uri0_parts=count($uri_parts0_id);
+      if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
+        $setAdminCook='lena'.Data::DatePass();
+        switch($uri_parts[0]){
+          case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
+          case'set':include'../modul/mpk/admin/main.php';break;
+          case'новости':include'../modul/mpk/news.php';break;
+          default:include'../modul/mpk/def.php';
+        }
+      }
+      if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
+        switch($uri_parts0_id[0]){
 
-  <div class="maxw rel">
+          //case'детское':include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
+          default:include'../modul/mpk/def.php';
+        }
+      }
+    }
+  }catch(Exception $e){$module='404';}
+}else{$index=1;}if($module=='404'){Route::modul404();}
 
-    <div id="main_slider" class="rel">
-      <img src="/img/site/main_slider/jpg.php?i=img1" alt="ыфа">
-      <img src="/img/site/main_slider/jpg.php?i=img2" alt="фыва">
-      <img src="/img/site/main_slider/jpg.php?i=img3" alt="Кыва">
-      <img src="/img/site/main_slider/jpg.php?i=img4" alt="цуекн">
-      <div></div>
-    <span id="btnSlider"><button type="button" value="0">&nbsp;</button><button type="button" value="1">&nbsp;</button><button
-        type="button" value="2">&nbsp;</button><button type="button" value="3">&nbsp;</button></span></div>
-  </div>
+if($index){include'../modul/taimod/main.php';}
 
-  <div class="headerbot maxw rel">
-    <div id="categories" class="dwfte">
-
-      <div><div class="colorhed"><span><a href="#">Мода</a></span></div><p class="gt">Самые последние модные тренды и бьюти-советы на каждый день для истинной женщины, а также советы по стилю - индивидуальности имиджа.</p>
-      </div>
-
-      <div><div class="colorhed"><span><a href="#">Психология</a></span></div><p class="gt">Психология отношений - интересные советы и ответы на неразрешимые вопросы.</p>
-      </div>
-
-      <div><div class="colorhed"><span><a href="#">Личности</a></span></div><p class="gt">Знаменитые личности, повлиявшие на женскую моду.</p>
-      </div>
-
-      <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Советы, секреты, хитрости, идеи,применяемые в повседневной жизни.</p>
-      </div>
-
-      <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.<a href="/2">2</a></p>
-      </div>
-
-
-
-      <div><div class="colorhed"><span><a href="#">Обо всем</a></span></div><p class="gt">Разные увлекательные, полезные тематики или Все обо всем.</p>
-      </div>
-
-    </div>
-  </div>
-</div>
-</header>
-
-<div class="maxw rel">
-
-  <div id="r_col">
-    <div
-    <div class="r_menu">
-      <div class="menu_title">Лайфаки</div>
-        <nav>
-      <ul>
-        <li><a href="#">Кулинарные хитрости</a></li>
-        <li><a href="#">Секреты</a></li>
-      </ul>
-        </nav>
-    </div>
-
-
-  </div>
-  <div id="m_col">
-
-    <div class="dwfse">
-      <div class="preview">
-        <section>
-        <h3>Заголовок</h3>
-        <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p><a href="http://templates.cooltemplates.ru/Tsentr-krasoty/index.html" target="_blank">Шаблон</a> Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution screen resolution.</p>
-        <div class="cl"></div>
-          <div class="previewbtn">
-            <span class=""><a class="btnmore" href="#" title="Узнать подробнее">Подробнее</a></span>
-          </div>
-        </section>
-      </div>
-      <div class="preview">
-        <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
-        <div class="cl"></div>
-        <div class="previewbtn">
-          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
-        </div>
-      </div>
-      <div class="preview">
-        <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
-        <div class="cl"></div>
-        <div class="previewbtn">
-          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
-        </div>
-      </div>
-      <div class="preview">
-        <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
-        <div class="cl"></div>
-        <div class="previewbtn">
-          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
-        </div>
-      </div>
-      <div class="preview">
-        <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
-        <div class="cl"></div>
-        <div class="previewbtn">
-          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
-        </div>
-      </div>
-      <div class="preview">
-        <img class="five fl" src="/img/site/page_try.jpg" alt="">
-        <p>Beauty Center is one of free web templates created by Template Monster.com team. This website template is optimized for 1280x1024 screen resolution.</p><p>Beauty Center is one of free web templates created by TemplateMonster.com team. This website template is optimized for 1280x1024 screen resolution.</p>
-        <div class="cl"></div>
-        <div class="previewbtn">
-          <span class="fr five"><a class="btnmore" href="rg" title="Узнать подробнее">Подробнее</a></span>
-        </div>
-      </div>
-
-    </div>
-    <!--<a href="http://templates.cooltemplates.ru/Tsentr-krasoty/index.html" target="_blank">Шаблон</a>-->
-
-    <div class="nav1">
-      <span>1</span>
-      <span><a href="/2">2</a></span>
-      <span><a href="/2">2</a></span>
-      <span><a href="/2">3</a></span>
-      <span><a href="/2">4</a></span>
-      <span><a href="/2">5</a></span>
-      <span><a href="/2">&gt;</a></span>
-      <span><a href="/2" title="Перейти на последнюю страницу">&gt;&gt;</a></span><span><a href="/2">2</a></span>
-      <span><a href="/2">2</a></span>
-      <span><a href="/2">3</a></span>
-      <span><a href="/2">4</a></span>
-      <span><a href="/2">5</a></span>
-      <span><a href="/2">&gt;</a></span>
-      <span><a href="/2" title="Перейти на последнюю страницу">&gt;&gt;</a></span>
-    </div>
-
-  </div>
-  <div class="cl"></div>
-</div>
-
-
-
-<footer>
-<div id="foot">
-  <div class="maxw">
-    <div class="r_col"></div>
-    <div class="m_col">
-      <div id="copy" class="ac gt">Copyright &copy;<?=$site;?><br>2017<?php if (date('Y') > 2017) echo '-' . date('Y');?><br><br>Использование материалов сайта без разрешения правообладателя запрещено</div><div class="cl"></div>
-    </div>
-  </div>
-</div>
-  <div id="bf"><div id="up"> ^ Наверх</div></div>
-</footer>
-<!--http://templates.cooltemplates.ru/Tsentr-krasoty/index.html  //PageArchiver  http://webkitchen.kiev.ua  -->
-
-
-</body></html>
+require '../blocks/taimod/common/head.php';
+require '../blocks/taimod/common/header.php';
+require '../blocks/taimod/common/r_col.php';
+require '../blocks/taimod/common/body.php';
+require '../blocks/taimod/common/foot.php';
