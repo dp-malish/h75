@@ -1,7 +1,8 @@
-<?=$left_content_up.$lm2.$left_content?>
+
 <div class="maxw rel">
 
   <div id="r_col">
+    <?=$right_content_up.$right_content?>
     <div class="r_menu">
       <div class="menu_title">Лайфаки</div>
       <nav>

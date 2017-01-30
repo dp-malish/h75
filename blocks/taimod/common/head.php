@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="/css/menu.css">
   <link rel="stylesheet" type="text/css" href="/css/color.css">
   <link rel="stylesheet" type="text/css" href="/css/slider.css">
+  <link rel="stylesheet" type="text/css" href="/css/form.css">
 
   <!--<script src="/js/jq_3.1.1.js"></script>-->
   <!--<script async src="/js/common.php"></script>

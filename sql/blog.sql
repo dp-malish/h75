@@ -3,8 +3,8 @@ CREATE TABLE IF NOT EXISTS content(
   link varchar(255) NOT NULL,
   link_name varchar(255) NOT NULL,
   menu tinyint(4),
-  heading int(8),
-  category int(8),
+  heading varchar(255),
+  category varchar(255),
   link_turn tinyint(4),
   title varchar(255) NOT NULL,
   meta_d varchar(255) NOT NULL,
@@ -28,15 +28,17 @@ CREATE TABLE IF NOT EXISTS content(
   KEY (heading,category)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-CREATE TABLE IF NOT EXISTS heading(
+/*CREATE TABLE IF NOT EXISTS heading(
   id int(11) NOT NULL AUTO_INCREMENT,
+  link varchar(255) NOT NULL,
   rubrika varchar(255) NOT NULL,
-  PRIMARY KEY (id)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-INSERT INTO `heading` (`id`, `rubrika`) VALUES
-  (1, 'Лайфхаки'),
-  (2, 'Личности'),
-  (3, 'Мода'),
-  (4, 'Обо всем'),
-  (5, 'Психология'),
-  (6, 'Рецепты блюд');
+  PRIMARY KEY (id),
+  UNIQUE KEY link(link)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0;
+INSERT INTO heading(id,link,rubrika)VALUES
+  (0,'лайфхаки','Лайфхаки'),
+  (1,'личности','Личности'),
+  (2,'мода','Мода'),
+  (3,'обо-всём','Обо всем'),
+  (4,'психология','Психология'),
+  (5,'рецепты-блюд','Рецепты блюд');*/

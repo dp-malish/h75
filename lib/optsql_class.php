@@ -20,6 +20,7 @@ class Optsql{
                 case'win.my':$this->db_con = ['root','root','winteh_img'];break;
                 case'mpk.my':$this->db_con = ['root','root','mpk_img'];break;
                 case 'harvis.my': $this->db_con=['root','root','harvi_img'];break;
+                case 'taimod.my': $this->db_con=['root','root','taimod_img'];break;
                 default:$this->db_con=['root','root','malish'];
             }
         }
