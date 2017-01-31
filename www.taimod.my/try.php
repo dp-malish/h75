@@ -25,11 +25,11 @@ echo '<br>';
 
 $key_heading='личности';
 
-if(!array_key_exists($key_heading,HEADING)){
+if(array_key_exists($key_heading,HEADING)){
   $key_heading='def';
 }
-/*echo '<br><br>';
-echo print_r(HEADING['лайфхаки']);
+echo $key_heading.'<br><br>';
+/*echo print_r(HEADING['лайфхаки']);
 echo '<br><br>'.HEADING[$key_heading]['description'].'<br><br>';*/
 
 const CATEGORY=[

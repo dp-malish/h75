@@ -28,6 +28,8 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
 
       $main_content.='<h3>'.$res['caption'].'</h3><span class="note gt fr mr ml">Опубликовано: '.Data::IntToStrDate($res['data']).'</span><span class="note gt fl mr ml">Категория: <a href="/'.$res['category'].'/">'.SqlTable::CATEGORY[$res['category']]['caption'].'</a></span><div class="cl five_"></div>'.$img.htmlspecialchars_decode($res['full_text'],ENT_QUOTES);
 
+      $right_content.=CategoryMenu::rMenu($res['category']);
+
     }else $bad_link=1;
   }else $bad_link=1;
 }
