@@ -12,11 +12,6 @@ abstract class SqlTable{
 
     ];
     const HEADING=[
-      'def'=>[
-        'caption'=>'def',
-        'title'=>'def Текст',
-        'description'=>'def Описание статьи',
-        'keywords'=>'def Поисквые слова'],
       'лайфхаки'=>[
         'caption'=>'Лайфхаки',
         'title'=>'Текст',

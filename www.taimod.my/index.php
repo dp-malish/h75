@@ -9,24 +9,16 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
   try{$uri=urldecode($uri);
     $url_path=parse_url($uri,PHP_URL_PATH);$uri_parts=explode('/',trim($url_path,'/'));$count_uri_parts=count($uri_parts);
     if($count_uri_parts>4){throw new Exception();}else{
-      $uri_parts0_id=explode('-',$uri_parts[0],2);
-      $count_uri0_parts=count($uri_parts0_id);
-      if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
+
+
         $setAdminCook='lena'.Data::DatePass();
         switch($uri_parts[0]){
-          case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
+          case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=1;break;
           case'set':include'../modul/taimod/admin/main.php';break;
-          //case'новости':include'../modul/mpk/news.php';break;
-          //default:include'../modul/mpk/def.php';
+          default:include'../modul/taimod/main.php';
         }
-      }
-      if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
-        switch($uri_parts0_id[0]){
-
-          //case'детское':include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
-          //default:include'../modul/mpk/def.php';
-        }
-      }
+      
+      
     }
   }catch(Exception $e){$module='404';}
 }else{$index=1;}if($module=='404'){Route::modul404();}
