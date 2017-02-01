@@ -47,22 +47,22 @@
         <div class="headerbot maxw rel">
             <div id="categories" class="dwfte">
 
-                <div><div class="colorhed"><span><a href="#">Мода</a></span></div><p class="gt">Самые последние модные тренды и бьюти-советы на каждый день для истинной женщины, а также советы по стилю - индивидуальности имиджа.</p>
+                <div><div class="colorhed"><span><a href="/мода/">Мода</a></span></div><p class="gt">Самые последние модные тренды и бьюти-советы на каждый день для истинной женщины, а также советы по стилю - индивидуальности имиджа.</p>
                 </div>
 
                 <div><div class="colorhed"><span><a href="#">Психология</a></span></div><p class="gt">Психология отношений - интересные советы и ответы на неразрешимые вопросы.</p>
                 </div>
 
-                <div><div class="colorhed"><span><a href="#">Личности</a></span></div><p class="gt">Знаменитые личности, повлиявшие на женскую моду.</p>
+                <div><div class="colorhed"><span><a href="/личности/">Личности</a></span></div><p class="gt">Знаменитые личности, повлиявшие на женскую моду.</p>
                 </div>
 
-                <div><div class="colorhed"><span><a href="#">Лайфхаки</a></span></div><p class="gt">Советы, секреты, хитрости, идеи,применяемые в повседневной жизни.</p>
+                <div><div class="colorhed"><span><a href="/лайфхаки/">Лайфхаки</a></span></div><p class="gt">Советы, секреты, хитрости, идеи,применяемые в повседневной жизни.</p>
                 </div>
 
                 <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.</p>
                 </div>
 
-                <div><div class="colorhed"><span><a href="#">Обо всем</a></span></div><p class="gt">Разные увлекательные, полезные тематики или Все обо всем.</p>
+                <div><div class="colorhed"><span><a href="/обо-всём/">Обо всем</a></span></div><p class="gt">Разные увлекательные, полезные тематики или Все обо всем.</p>
                 </div>
 
             </div>

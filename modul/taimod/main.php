@@ -1,5 +1,5 @@
 <?php
-$msg=6;
+$msg=2;
 $title='Креативный женский журнал - Таимод';
 $description='Темы на сегодня: ';
 $keywords='';
@@ -18,7 +18,20 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
     $keywords=$preview->keywords;
     $main_content.='<div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
   }elseif(Validator::paternStrLink($uri_parts[0])){
-    $DB=new SQLi();
+    if(array_key_exists($uri_parts[0],SqlTable::HEADING)){
+      $DB=new SQLi();
+      Str_navigation::navigation($uri_parts[0],'content WHERE heading="'.$uri_parts[0].'"',1,$msg,false,1);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
+      if($res){
+      $preview=new PreView($res);
+      $title=SqlTable::HEADING[$uri_parts[0]]['caption'];
+      $description.=$preview->description;
+      $keywords=$preview->keywords;
+      $main_content.='<h2>'.SqlTable::HEADING[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
+      $right_content.=CategoryMenu::rMenuHead($uri_parts[0]);
+      }else $bad_link=1;
+    }else{
+      $DB=new SQLi();
     $res=$DB->strSQL('SELECT category,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,data,views FROM content WHERE link='.$DB->realEscapeStr($uri_parts[0]));
     if($res){
       $title=$res['title'];
@@ -28,9 +41,10 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
 
       $main_content.='<h3>'.$res['caption'].'</h3><span class="note gt fr mr ml">Опубликовано: '.Data::IntToStrDate($res['data']).'</span><span class="note gt fl mr ml">Категория: <a href="/'.$res['category'].'/">'.SqlTable::CATEGORY[$res['category']]['caption'].'</a></span><div class="cl five_"></div>'.$img.htmlspecialchars_decode($res['full_text'],ENT_QUOTES);
 
-      $right_content.=CategoryMenu::rMenu($res['category']);
+      $right_content.=CategoryMenu::rMenuCat($res['category']);
 
     }else $bad_link=1;
+    }
   }else $bad_link=1;
 }
 

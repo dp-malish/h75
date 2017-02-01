@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS content(
   left_text text,
   right_text text,
   full_text text NOT NULL,
-  data TIMESTAMP DEFAULT NOW(),
+  data int(11),
   views int(11) DEFAULT 13,
   comment int(11),
   PRIMARY KEY (id),
