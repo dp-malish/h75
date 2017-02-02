@@ -24,11 +24,23 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
       if($res){
       $preview=new PreView($res);
-      $title=SqlTable::HEADING[$uri_parts[0]]['caption'];
+      $title=SqlTable::HEADING[$uri_parts[0]]['title'];
       $description.=$preview->description;
       $keywords=$preview->keywords;
       $main_content.='<h2>'.SqlTable::HEADING[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
       $right_content.=CategoryMenu::rMenuHead($uri_parts[0]);
+      }else $bad_link=1;
+    }elseif(array_key_exists($uri_parts[0],SqlTable::CATEGORY)){
+      $DB=new SQLi();
+      Str_navigation::navigation($uri_parts[0],'content WHERE category="'.$uri_parts[0].'"',1,$msg,false,1);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
+      if($res){
+        $preview=new PreView($res);
+        $title=SqlTable::CATEGORY[$uri_parts[0]]['title'];
+        $description.=$preview->description;
+        $keywords=$preview->keywords;
+        $main_content.='<h2>'.SqlTable::HEADING[SqlTable::CATEGORY[$uri_parts[0]]['heading']]['title'].' - '.SqlTable::CATEGORY[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
+        $right_content.=CategoryMenu::rMenuCat($uri_parts[0]);
       }else $bad_link=1;
     }else{
       $DB=new SQLi();

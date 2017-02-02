@@ -33,12 +33,11 @@
         </div>
 
         <div class="maxw rel">
-
             <div id="main_slider" class="rel">
-                <img src="/img/site/main_slider/jpg.php?i=img2" alt="ыфа">
-                <img src="/img/site/main_slider/jpg.php?i=img1" alt="фыва">
-                <img src="/img/site/main_slider/jpg.php?i=img3" alt="Кыва">
-                <img src="/img/site/main_slider/jpg.php?i=img4" alt="цуекн">
+                <img src="/img/site/main_slider/jpg.php?i=img1" alt="Мода">
+                <img src="/img/site/main_slider/jpg.php?i=img2" alt="Психология">
+                <img src="/img/site/main_slider/jpg.php?i=img3" alt="Лайфхаки">
+                <img src="/img/site/main_slider/jpg.php?i=img4" alt="Личности">
                 <div></div>
     <span id="btnSlider"><button type="button" value="0">&nbsp;</button><button type="button" value="1">&nbsp;</button><button
           type="button" value="2">&nbsp;</button><button type="button" value="3">&nbsp;</button></span></div>
@@ -50,7 +49,7 @@
                 <div><div class="colorhed"><span><a href="/мода/">Мода</a></span></div><p class="gt">Самые последние модные тренды и бьюти-советы на каждый день для истинной женщины, а также советы по стилю - индивидуальности имиджа.</p>
                 </div>
 
-                <div><div class="colorhed"><span><a href="#">Психология</a></span></div><p class="gt">Психология отношений - интересные советы и ответы на неразрешимые вопросы.</p>
+                <div><div class="colorhed"><span><a href="/психология/">Психология</a></span></div><p class="gt">Психология отношений - интересные советы и ответы на неразрешимые вопросы.</p>
                 </div>
 
                 <div><div class="colorhed"><span><a href="/личности/">Личности</a></span></div><p class="gt">Знаменитые личности, повлиявшие на женскую моду.</p>
@@ -59,10 +58,10 @@
                 <div><div class="colorhed"><span><a href="/лайфхаки/">Лайфхаки</a></span></div><p class="gt">Советы, секреты, хитрости, идеи,применяемые в повседневной жизни.</p>
                 </div>
 
-                <div><div class="colorhed"><span><a href="#">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.</p>
+                <div><div class="colorhed"><span><a href="/рецепты-блюд/">Рецепты блюд</a></span></div><p class="gt">Подборка вкусных блюд с подробным описанием и фото для идеальной хозяйки.</p>
                 </div>
 
-                <div><div class="colorhed"><span><a href="/обо-всём/">Обо всем</a></span></div><p class="gt">Разные увлекательные, полезные тематики или Все обо всем.</p>
+                <div><div class="colorhed"><span><a href="/обо-всём/">Обо всём</a></span></div><p class="gt">Разные увлекательные, полезные тематики или Все обо всем.</p>
                 </div>
 
             </div>

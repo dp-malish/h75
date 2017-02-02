@@ -9,6 +9,9 @@ abstract class SqlTable{
       ['lic_znamenit_img','Знаменитости','/img/lic_znamenit/dbpic.php?id='],
       ['lic_citati_img','Цитаты','/img/lic_citati/dbpic.php?id='],
 
+      ['moda_hist_img','История моды','/img/moda_hist/dbpic.php?id='],
+      ['moda_style_img','Стиль','/img/moda_style/dbpic.php?id=']
+
 
     ];
     const HEADING=[
@@ -31,7 +34,17 @@ abstract class SqlTable{
         'caption'=>'Обо всём',
         'title'=>'Обо всём',
         'description'=>'Описание статьи обо-всём',
+        'keywords'=>'Поисквые слова'], 
+      'психология'=>[
+        'caption'=>'Психология',
+        'title'=>'психология',
+        'description'=>'Описание статьи психология',
         'keywords'=>'Поисквые слова'],
+      'рецепты-блюд'=>[
+        'caption'=>'Рецепты блюд',
+        'title'=>'Рецепты блюд',
+        'description'=>'Описание статьи рецепты блюд',
+        'keywords'=>'Поисквые слова']
     ];
     const CATEGORY=[
       'кулинарные-хитрости'=>[
@@ -65,6 +78,22 @@ abstract class SqlTable{
         'description'=>'def Описание статьи',
         'keywords'=>'def Поисквые слова',
         'img'=>'/img/lic_citati/dbpic.php?id='
-      ]
+      ],
+      'история-моды'=>[
+        'heading'=>'мода',
+        'caption'=>'История моды',
+        'title'=>'Мода - История моды',
+        'description'=>'def Описание статьи История моды',
+        'keywords'=>'def Поисквые слова История моды',
+        'img'=>'/img/moda_hist/dbpic.php?id='
+      ],
+      'стиль'=>[
+        'heading'=>'мода',
+        'caption'=>'Стиль',
+        'title'=>'Мода - Стиль',
+        'description'=>'def Описание статьи Стиль',
+        'keywords'=>'def Поисквые слова Стиль',
+        'img'=>'/img/moda_style/dbpic.php?id='
+      ]//*****************************
     ];
 }
