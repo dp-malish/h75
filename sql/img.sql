@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS lf_kulinar_hitrost_img(
   PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-CREATE TABLE IF NOT EXISTS lf_secret_img(
+CREATE TABLE IF NOT EXISTS lf_raznoe_img(
   id int(11) NOT NULL AUTO_INCREMENT,
   name_file varchar(255) NOT NULL,
   png tinyint(1) DEFAULT NULL,

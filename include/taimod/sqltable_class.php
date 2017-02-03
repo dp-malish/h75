@@ -3,14 +3,14 @@ abstract class SqlTable{
     const IMG=[
       ['default_img','Общие','/img/site/dbpic.php?id='],
 
-      ['lf_kulinar_hitrost_img','Кулинарные хитрости','/img/lfkulhit/dbpic.php?id='],
-      ['lf_secret_img','Секреты','/img/lfsecret/dbpic.php?id='],
+      ['lf_kulinar_hitrost_img','Лайфхаки - Кулинарные хитрости','/img/lfkulhit/dbpic.php?id='],
+      ['lf_raznoe_img','Лайфхаки - Разное','/img/lfraznoe/dbpic.php?id='],
 
-      ['lic_znamenit_img','Знаменитости','/img/lic_znamenit/dbpic.php?id='],
-      ['lic_citati_img','Цитаты','/img/lic_citati/dbpic.php?id='],
+      ['lic_znamenit_img','Личности - Знаменитости','/img/lic_znamenit/dbpic.php?id='],
+      ['lic_citati_img','Личности - Цитаты','/img/lic_citati/dbpic.php?id='],
 
-      ['moda_hist_img','История моды','/img/moda_hist/dbpic.php?id='],
-      ['moda_style_img','Стиль','/img/moda_style/dbpic.php?id=']
+      ['moda_hist_img','Мода - История моды','/img/moda_hist/dbpic.php?id='],
+      ['moda_style_img','Мода - Стиль','/img/moda_style/dbpic.php?id=']
 
 
     ];
@@ -55,13 +55,13 @@ abstract class SqlTable{
         'keywords'=>'def Поисквые слова',
         'img'=>'/img/lfkulhit/dbpic.php?id='
       ],
-      'секреты'=>[
+      'разное'=>[
         'heading'=>'лайфхаки',
-        'caption'=>'Секреты',
-        'title'=>'Лайфхаки - Секреты',
-        'description'=>'def Описание статьи',
+        'caption'=>'Разное',
+        'title'=>'Лайфхаки - Разное',
+        'description'=>'def Описание статьи Разное',
         'keywords'=>'def Поисквые слова',
-        'img'=>'/img/lfsecret/dbpic.php?id='
+        'img'=>'/img/lfraznoe/dbpic.php?id='
       ],
       'знаменитости'=>[
         'heading'=>'личности',

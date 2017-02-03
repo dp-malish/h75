@@ -15,8 +15,5 @@
   <link rel="stylesheet" type="text/css" href="/css/color.css">
   <link rel="stylesheet" type="text/css" href="/css/slider.css">
   <link rel="stylesheet" type="text/css" href="/css/form.css">
-
-  <!--<script src="/js/jq_3.1.1.js"></script>-->
-  <!--<script async src="/js/common.php"></script>-->
-  <script async src="/js/slider.php"></script><?php
+<script async src="/js/common.php"></script><script async src="/js/slider.php"></script><?php
   echo $jscript.$css.'<meta name="description" content="'.$description.'"><meta name="keywords" content="'.$keywords.'"><title>'.$title.'</title>';?></head>

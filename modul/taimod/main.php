@@ -5,6 +5,7 @@ $description='Темы на сегодня: ';
 $keywords='';
 //$jscript.='';
 //$css.='';
+require'../blocks/taimod/common/slider.php';
 $bad_link=0;
 //********************************************************************
 if(isset($uri_parts[0]) && !isset($uri_parts[1])){
