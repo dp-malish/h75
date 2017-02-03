@@ -6,12 +6,20 @@ abstract class SqlTable{
       ['lf_kulinar_hitrost_img','Лайфхаки - Кулинарные хитрости','/img/lfkulhit/dbpic.php?id='],
       ['lf_raznoe_img','Лайфхаки - Разное','/img/lfraznoe/dbpic.php?id='],
 
-      ['lic_znamenit_img','Личности - Знаменитости','/img/lic_znamenit/dbpic.php?id='],
-      ['lic_citati_img','Личности - Цитаты','/img/lic_citati/dbpic.php?id='],
+        ['lic_znamenit_img','Личности - Знаменитости','/img/lic_znamenit/dbpic.php?id='],
+        ['lic_citati_img','Личности - Цитаты','/img/lic_citati/dbpic.php?id='],
 
       ['moda_hist_img','Мода - История моды','/img/moda_hist/dbpic.php?id='],
-      ['moda_style_img','Мода - Стиль','/img/moda_style/dbpic.php?id=']
+      ['moda_style_img','Мода - Стиль','/img/moda_style/dbpic.php?id='],
 
+        ['cook_first_img','Рецепты блюд - Первые блюда','/img/cook_first/dbpic.php?id='],
+        ['cook_second_img','Рецепты блюд - Вторые блюда','/img/cook_second/dbpic.php?id='],
+        ['cook_snack_img','Рецепты блюд - Закуски','/img/cook_snack/dbpic.php?id='],
+        ['cook_salad_img','Рецепты блюд - Салаты','/img/cook_salad/dbpic.php?id='],
+        ['cook_sauce_img','Рецепты блюд - Соусы','/img/cook_sauce/dbpic.php?id='],
+        ['cook_bake_img','Рецепты блюд - Выпечка','/img/cook_bake/dbpic.php?id='],
+        ['cook_dessert_img','Рецепты блюд - Десерты','/img/cook_dessert/dbpic.php?id='],
+        ['cook_drink_img','Рецепты блюд - Напитки','/img/cook_drink/dbpic.php?id=']
 
     ];
     const HEADING=[
@@ -62,7 +70,7 @@ abstract class SqlTable{
         'description'=>'def Описание статьи Разное',
         'keywords'=>'def Поисквые слова',
         'img'=>'/img/lfraznoe/dbpic.php?id='
-      ],
+      ],//*****************************
       'знаменитости'=>[
         'heading'=>'личности',
         'caption'=>'Знаменитости',
@@ -78,7 +86,7 @@ abstract class SqlTable{
         'description'=>'def Описание статьи',
         'keywords'=>'def Поисквые слова',
         'img'=>'/img/lic_citati/dbpic.php?id='
-      ],
+      ],//*****************************
       'история-моды'=>[
         'heading'=>'мода',
         'caption'=>'История моды',
@@ -94,6 +102,70 @@ abstract class SqlTable{
         'description'=>'def Описание статьи Стиль',
         'keywords'=>'def Поисквые слова Стиль',
         'img'=>'/img/moda_style/dbpic.php?id='
-      ]//*****************************
+      ],//*****************************
+        'первые-блюда'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Первые блюда',
+            'title'=>'Рецепты блюд - Первые блюда',
+            'description'=>'def Описание статьи Первые блюда',
+            'keywords'=>'def Поисквые слова Первые блюда',
+            'img'=>'/img/cook_first/dbpic.php?id='
+        ],
+        'вторые-блюда'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Вторые блюда',
+            'title'=>'Рецепты блюд - Вторые блюда',
+            'description'=>'def Описание статьи Вторые блюда',
+            'keywords'=>'def Поисквые слова Вторые блюда',
+            'img'=>'/img/cook_second/dbpic.php?id='
+        ],
+        'закуски'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Закуски',
+            'title'=>'Рецепты блюд - Закуски',
+            'description'=>'def Описание статьи Закуски',
+            'keywords'=>'def Поисквые слова Закуски',
+            'img'=>'/img/cook_snack/dbpic.php?id='
+        ],
+        'салаты'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Салаты',
+            'title'=>'Рецепты блюд - Салаты',
+            'description'=>'def Описание статьи Салаты',
+            'keywords'=>'def Поисквые слова Салаты',
+            'img'=>'/img/cook_salad/dbpic.php?id='
+        ],
+        'соусы'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Соусы',
+            'title'=>'Рецепты блюд - Соусы',
+            'description'=>'def Описание статьи Соусы',
+            'keywords'=>'def Поисквые слова Соусы',
+            'img'=>'/img/cook_sauce/dbpic.php?id='
+        ],
+        'выпечка'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Выпечка',
+            'title'=>'Рецепты блюд - Выпечка',
+            'description'=>'def Описание статьи Выпечка',
+            'keywords'=>'def Поисквые слова Выпечка',
+            'img'=>'/img/cook_bake/dbpic.php?id='
+        ],
+        'десерты'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Десерты',
+            'title'=>'Рецепты блюд - Десерты',
+            'description'=>'Описание статьи Десерты',
+            'keywords'=>'Поисквые слова Десерты',
+            'img'=>'/img/cook_dessert/dbpic.php?id='
+        ],
+        'напитки'=>[
+            'heading'=>'рецепты-блюд',
+            'caption'=>'Напитки',
+            'title'=>'Рецепты блюд - Напитки',
+            'description'=>'Описание статьи Напитки',
+            'keywords'=>'Поисквые слова Напитки',
+            'img'=>'/img/cook_drink/dbpic.php?id='
+        ]//*****************************
     ];
 }
