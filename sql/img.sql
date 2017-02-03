@@ -135,3 +135,68 @@ CREATE TABLE IF NOT EXISTS moda_style_img(
   content longblob NOT NULL,
   PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+/** cooc **/
+CREATE TABLE IF NOT EXISTS cook_first_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_second_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_snack_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_salad_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_sauce_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_bake_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_dessert_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS cook_drink_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

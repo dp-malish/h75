@@ -47,6 +47,9 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $DB=new SQLi();
     $res=$DB->strSQL('SELECT category,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,data,views FROM content WHERE link='.$DB->realEscapeStr($uri_parts[0]));
     if($res){
+      $user=new User();
+      if($user->loginAdmin()){$main_content.='<div><a href="/'.$set.'/блог/'.$uri_parts[0].'">Специально для Леночки, ссылка на редактирование статьи</a></div>';}
+
       $title=$res['title'];
       $description=$res['meta_d'];
       $keywords=$res['meta_k'];

@@ -19,7 +19,6 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 </div>';
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         switch($uri_parts[1]){
-
             case 'картинки':include'../modul/'.$dir_site.'/admin/img/main.php';break;
             case 'картинки-изменить':include'../modul/'.$dir_site.'/admin/img/main.php';break;
             //*************************
@@ -28,10 +27,12 @@ try{if($count_uri_parts>3){throw new Exception();}else{
             case 'блог':include'../modul/'.$dir_site.'/admin/section/blog.php';break;
             //case 'статьи':include'../modul/'.$dir_site.'/admin/section/article.php';break;
 
-
             default:$main_content.='Нет такой страницы )))';
         }
     }elseif(isset($uri_parts[2])&& !isset($uri_parts[3])){
-        $main_content.='роут3';
+        switch($uri_parts[1]){
+            case 'блог':include'../modul/'.$dir_site.'/admin/section/blog.php';break;
+            default:$main_content.='Нет такой странички )';
+        }
     }
 }}catch(Exception $e){$module='404';}

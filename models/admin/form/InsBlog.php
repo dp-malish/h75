@@ -65,5 +65,8 @@
                 </script>
 
         <p>full_text | полный текст</p><textarea type="text" name="full_text" id="full_text" rows="13" required></textarea>
+                <br><br><br><hr><br><br><br>
+                <p>Дата публикации*</p><input type="date" name="data" required placeholder="Дата публикации" value="#?">
+                <p>Время публикации*</p><input type="time" name="time" required placeholder="Время публикации" value="#?">
 
 <input type="submit" value="Сохранить"></form><p class="note">Примечание: поля, помеченные * звездочкой - обязательны для заполнения</p></div><script type="application/javascript">CKEDITOR.replace('short_text');CKEDITOR.replace('full_text');</script>

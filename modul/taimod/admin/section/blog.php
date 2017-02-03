@@ -1,6 +1,6 @@
 <?php
 $jscript.='<script src="//cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>';
-
+if(!isset($uri_parts[2])){
 $main_content.='<h3>Выбрать категорию</h3><form class="form" method="post"><input type="hidden" name="startcat" value="1"><select name="category">';
 foreach(SqlTable::CATEGORY as $k=>$v){
   $main_content.='<option value="'.$k.'">'.$v['heading'].' | '.$k.'</option>';
@@ -10,7 +10,7 @@ if(PostRequest::issetPostArr()){
 
   if(PostRequest::issetPostKey(['startcat','category'])){
     $x=Validator::html_cod($_POST['category']);
-  $main_content.=$Cash->SendHTMLext('../models/admin/form/InsBlog.php',[SqlTable::CATEGORY[$x]['heading'].' - '.$x,SqlTable::CATEGORY[$x]['img'],$x]);
+  $main_content.=$Cash->SendHTMLext('../models/admin/form/InsBlog.php',[SqlTable::CATEGORY[$x]['heading'].' - '.$x,SqlTable::CATEGORY[$x]['img'],$x,date('Y-m-d'),date('H:i')]);
 
   }elseif(PostRequest::issetPostKey(['category','link','link_name','title','meta_d','meta_k','caption','short_text','full_text'])){
     $link=ValidForm::link($_POST['link']);
@@ -36,17 +36,35 @@ if(PostRequest::issetPostArr()){
 
     $full_text=ValidForm::text($_POST['full_text'],'основной текст',21000);
 
+    $data=ValidForm::text($_POST['data'],'дата',10);
+    $time=ValidForm::text($_POST['time'],'время',10);
+    if($data){
+      $data.=' '.$time;
+      $data=Data::StrDateTimeToInt($data);
+    }
+
     if(empty(Validator::$ErrorForm)){
-      $sql='INSERT INTO content(link,link_name,heading,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,img,img_alt,img_title,full_text,data)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"'.time().'");';
+      $sql='INSERT INTO content(link,link_name,heading,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,img,img_alt,img_title,full_text,data)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);';
       $DB=new SQLi();
-      $sql=$DB->realEscape($sql,[$link,$link_name,$heading,$category,$title,$meta_d,$meta_k,$caption,$img_s,$img_alt_s,$img_title_s,$short_text,$img,$img_alt,$img_title,$full_text]);
-      $main_content.='<div class="fon_c"><p>'.($DB->boolSQL($sql)?'Запись добавлена':'Ошибка базы данных').'</p></div>';
+      $sql=$DB->realEscape($sql,[$link,$link_name,$heading,$category,$title,$meta_d,$meta_k,$caption,$img_s,$img_alt_s,$img_title_s,$short_text,$img,$img_alt,$img_title,$full_text,$data]);
+      $main_content.='<div class="fon_c"><p>'.($DB->boolSQL($sql)?'Запись добавлена: <a target="_blank" href="/'.$link.'">'.$link_name.'</a>':'Ошибка базы данных').'</p></div>';
     }else{$main_content.='<div class="fon_c">';foreach(Validator::$ErrorForm as $v){$main_content.='<p>'.$v.'</p>';}
       $main_content.='</div>';}
   }else{$main_content.='<div class="fon_c"><p>Заполнены не все поля формы...</p></div>';}
 
 }
-
+}else{
+  $DB=new SQLi();
+  $sql='SELECT link_name,heading,category,
+  title,meta_d,meta_k,caption,
+  img_s,img_alt_s,img_title_s,short_text,
+  img,img_alt,img_title,full_text,
+  data,views FROM content WHERE link='.$DB->realEscapeStr($uri_parts[2]);
+  $res=$DB->strSQL($sql);
+  if($res){
+    $main_content.='<div class="fon_c"><p>Редактировать</p></div>';
+  }else $main_content.='<div class="fon_c"><p>Ой беда, беда, огорчение...</p></div>';
+}
 
 /*
 if(!isset($_GET['update'])){
