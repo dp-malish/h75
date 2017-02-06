@@ -1,5 +1,5 @@
 <?php
-$jscript.='<script src="//cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>';
+$jscript.='<script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>';
 if(!isset($uri_parts[2])){
 $main_content.='<h3>Выбрать категорию</h3><form class="form" method="post"><input type="hidden" name="startcat" value="1"><select name="category">';
 foreach(SqlTable::CATEGORY as $k=>$v){
