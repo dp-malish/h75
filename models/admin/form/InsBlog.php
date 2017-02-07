@@ -3,16 +3,32 @@
 
         <p>link | ссылка страницы *</p><input name="link" id="link" type="text" required placeholder="Ссылка страницы">
 
-        <p>link_name &darr; | подпись ссылки &darr; *</p><input name="link_name" type="text" onKeyUp="str_to_link(this)" title="писать с маленькой буквы, чтоб поподала в кейвордс" required placeholder="Подпись ссылки (с маленькой буквы)"><br><br><br><hr><br><br><br>
+        <p>link_name &darr; | подпись ссылки &darr; *</p><input name="link_name" id="link_name" type="text" onKeyUp="str_to_link()" title="писать с маленькой буквы, чтоб поподала в кейвордс" required placeholder="Подпись ссылки (с маленькой буквы)" on><br><br><br><hr><br><br><br>
 
         <script type="text/javascript">
-                function str_to_link(val_input){
-                var str=val_input.value.toLowerCase();
+                function str_to_link(){
+                var str=document.getElementById('link_name').value.toLowerCase();
                 str=str.replace(/ /ig,'-');
-                document.getElementById('link').value=str;}</script>
+                str=str.replace(/---/ig,'-');
+                str=str.replace(/--/ig,'-');
+                str=str.replace(/,/ig,'');
+                str=str.replace(/\./ig,'');
+                str=str.replace(/\?/ig,'');
+                str=str.replace(/!/ig,'');
+                str=str.replace(/\//ig,'');
+                str=str.replace(/\"/ig,'');
+                str=str.replace(/\'/ig,'');
+                str=str.replace(/\(/ig,'');
+                str=str.replace(/\)/ig,'');
+                document.getElementById('link').value=str;}
+                link_name.onblur=function(){
+                   document.getElementById('link_name').value=document.getElementById('link_name').value.toLowerCase();
+                        str_to_link();
+                }
+        </script>
 
 
-        <p>title | титл страницы (Заголовок) *</p><input name="title" id="title" required placeholder="Титл страницы" maxlength="80" onkeyup="titleToCaption()">
+        <p>title | титл страницы (Заголовок) *</p><input name="title" id="title" required placeholder="Титл страницы" maxlength="80" onblur="titleToCaption()">
 
         <p>meta_d | описание страницы полностью *</p><input type="text" name="meta_d" id="meta_d" required placeholder="Описание страницы" maxlength="255">
 
