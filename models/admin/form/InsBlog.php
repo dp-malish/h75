@@ -27,12 +27,11 @@
                 }
         </script>
 
+                <p>title | титл страницы (Заголовок) *</p><input name="title" id="title" required placeholder="Титл страницы" maxlength="80" onblur="titleToCaption()">
 
-        <p>title | титл страницы (Заголовок) *</p><input name="title" id="title" required placeholder="Титл страницы" maxlength="80" onblur="titleToCaption()">
+                <p>Описание страницы полностью * (макс: 255)</p><input type="text" name="meta_d" id="meta_d" required placeholder="Описание страницы - макс 255" maxlength="255">
 
-        <p>meta_d | описание страницы полностью *</p><input type="text" name="meta_d" id="meta_d" required placeholder="Описание страницы" maxlength="255">
-
-        <p>meta_k | поисковые слова *</p><input type="text" name="meta_k" id="meta_k" required placeholder="Поисковые слова" maxlength="255">
+                <p>Поисковые слова через запятую * (макс: 255)</p><input type="text" name="meta_k" id="meta_k" required placeholder="Поисковые слова через запятую - макс 255" maxlength="255">
 
         <input type="hidden" name="caption" id="caption">
         <br><br><br><hr><br><br><br>
