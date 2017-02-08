@@ -20,6 +20,8 @@
                 str=str.replace(/\'/ig,'');
                 str=str.replace(/\(/ig,'');
                 str=str.replace(/\)/ig,'');
+                str=str.replace(/;/ig,'');
+                str=str.replace(/:/ig,'');
                 document.getElementById('link').value=str;}
                 link_name.onblur=function(){
                    document.getElementById('link_name').value=document.getElementById('link_name').value.toLowerCase();
