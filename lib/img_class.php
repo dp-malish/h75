@@ -90,6 +90,35 @@ class Img{
             return($err)?false:true;
         }catch(Exception $e){return false;}
     }
+    function insImgExt($postTable,$postImg){
+        try{
+            $err=false;
+            if(PostRequest::issetPostKey([$postTable]) && !empty($_FILES)){
+                $table=self::getImgTableName($_POST[$postTable]);
+                if($table){
+                    if($this->auditBlackListImg($postImg)){
+                        $extFile=$this->getImgExt($postImg);
+                        if($extFile===false){$err=true;
+                        }else{
+                           
+                                $content=file_get_contents($_FILES[$postImg]['tmp_name']);
+                                unlink($_FILES[$postImg]['tmp_name']);
+                                $DB=new SQLi(true);
+                                $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name']));
+                                $content=$DB->realEscapeStr($content);
+                                
+                                    if($DB->boolSQL('INSERT INTO '.$table.' VALUES(NULL,'.$file_name.','.$extFile.','.$content.');')){
+                                        $this->img=$DB->lastId();
+                                    }else{$err=true;}
+                                
+                            
+                        }
+                    }else{$err=true;}
+                }else{$err=true;}
+            }else{$err=true;}
+            return($err)?false:true;
+        }catch(Exception $e){return false;}
+    }
     public static function getImgTableName($post){
         $table=Validator::html_cod($post);
         $count=count(SqlTable::IMG);
