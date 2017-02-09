@@ -19,7 +19,9 @@ abstract class SqlTable{
         ['cook_sauce_img','Рецепты блюд - Соусы','/img/cook_sauce/dbpic.php?id='],
         ['cook_bake_img','Рецепты блюд - Выпечка','/img/cook_bake/dbpic.php?id='],
         ['cook_dessert_img','Рецепты блюд - Десерты','/img/cook_dessert/dbpic.php?id='],
-        ['cook_drink_img','Рецепты блюд - Напитки','/img/cook_drink/dbpic.php?id=']
+        ['cook_drink_img','Рецепты блюд - Напитки','/img/cook_drink/dbpic.php?id='],
+        ['psych_relationships_img','Психология - Отношения','/img/psych_relationships/dbpic.php?id='],
+        ['psych_human_img','Психология - Человека','/img/psych_human/dbpic.php?id=']
 
     ];
     const HEADING=[
@@ -166,6 +168,24 @@ abstract class SqlTable{
             'description'=>'Описание статьи Напитки',
             'keywords'=>'Поисквые слова Напитки',
             'img'=>'/img/cook_drink/dbpic.php?id='
-        ]//*****************************
+        ],//*****************************
+      'отношения'=>[
+        'heading'=>'психология',
+        'caption'=>'Отношения',
+        'title'=>'Психология - Отношения',
+        'description'=>'Описание статьи Отношения',
+        'keywords'=>'Поисквые слова Отношения',
+        'img'=>'/img/psych_human/dbpic.php?id='
+      ],
+      'человек'=>[
+        'heading'=>'психология',
+        'caption'=>'Человек',
+        'title'=>'Психология - Человека',
+        'description'=>'Описание статьи Человека',
+        'keywords'=>'Поисквые слова Человека',
+        'img'=>'/img/psych_relationships/dbpic.php?id='
+      ],//*****************************
+
+
     ];
 }
