@@ -20,6 +20,7 @@ try{if($count_uri_parts>3){throw new Exception();}else{
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         switch($uri_parts[1]){
             case 'картинки':include'../modul/'.$dir_site.'/admin/img/main.php';break;
+            case 'картинки-пакетно':include'../modul/'.$dir_site.'/admin/img/main.php';break;
             case 'картинки-изменить':include'../modul/'.$dir_site.'/admin/img/main.php';break;
             //*************************
 
