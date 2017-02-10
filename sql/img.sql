@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS psych_human_img(
   PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-/*CREATE TABLE IF NOT EXISTS r_img(
+CREATE TABLE IF NOT EXISTS everything_wise_advice_img(
   id int(11) NOT NULL AUTO_INCREMENT,
   name_file varchar(255) NOT NULL,
   png tinyint(1) DEFAULT NULL,
