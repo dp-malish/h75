@@ -11,17 +11,24 @@ if(PostRequest::issetPostArr()){
         foreach ($_POST as $index => $v) {
             $main_content.=$index.'<br>'.$v.'<br>';// = $v;
         }
-        //var_dump($_FILES['userfile']['type']);
+        var_dump($_FILES['userfile']['type']);
         $main_content.=$_FILES['userfile']['type'][0];
         $main_content.=count($_FILES['userfile']['type']);*/
         //var_dump($_FILES['userfile']['int']);
 
+        $main_content.=$img->insImgExt('tableimg','imgfiles');
+       // $main_content .=count($_FILES['imgfiles']['name']);
+        //$main_content .=count($_FILES['imgfiles']);
+        //print_r($_FILES['imgfiles']);
 
-        if($img->insImgExt('tableimg','imgfiles')) {
+        //var_dump($_FILES['userfile']);
+        /*if($img->insImgExt('tableimg','imgfiles')) {
+
             $main_content .= '<div class="fon_c"><p>Изображение добавлено в раздел "' . Img::getImgSection($_POST['tableimg']) . '"</p></div><h4>html код:</h4><div class="fon_c"><xmp><img class="five" src="' . Img::getImgDir($_POST['tableimg']) . $img->img . '" alt="" title=""></xmp></div><div class="fon_c"><xmp>' . Img::getImgDir($_POST['tableimg']) . $img->img . '</xmp></div>';
-        } else {
-            if (count(Validator::$ErrorForm) > 0) $main_content .= Validator::$ErrorForm[0]; else $main_content .= 'Неизвестная ошибка...';
-        }
+        }*/
+        $main_content .=$_FILES['imgfiles']['name'][2];
+        foreach(Validator::$ErrorForm as $v){$main_content.='<p>'.$v.'</p>';}
+
 
     }
 

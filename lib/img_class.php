@@ -1,6 +1,8 @@
 <?php
 class Img{
     public $img=1;
+    private $badf=[".php",".phtml",".php3",".php4",".html",".txt"];
+
     static function badImg(){
         $im=imagecreatetruecolor(80,30);
         $bgc=imagecolorallocate($im,235,255,205);
@@ -92,31 +94,42 @@ class Img{
     }
     function insImgExt($postTable,$postImg){
         try{
+            $temp=0;
             $err=false;
             if(PostRequest::issetPostKey([$postTable]) && !empty($_FILES)){
                 $table=self::getImgTableName($_POST[$postTable]);
                 if($table){
-                    if($this->auditBlackListImg($postImg)){
-                        $extFile=$this->getImgExt($postImg);
-                        if($extFile===false){$err=true;
-                        }else{
-                           
-                                $content=file_get_contents($_FILES[$postImg]['tmp_name']);
+
+                    $count=count($_FILES[$postImg]['name']);
+
+                    for($i=0;$i<$count;$i++){
+
+                        if($this->auditBlackListImg($postImg,$i)){
+                            $temp++;
+                            /*$extFile=$this->getImgExt($postImg);
+                            if($extFile===false){$err=true;
+                            }else{
+
+                                /*$content=file_get_contents($_FILES[$postImg]['tmp_name']);
                                 unlink($_FILES[$postImg]['tmp_name']);
                                 $DB=new SQLi(true);
                                 $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name']));
                                 $content=$DB->realEscapeStr($content);
-                                
-                                    if($DB->boolSQL('INSERT INTO '.$table.' VALUES(NULL,'.$file_name.','.$extFile.','.$content.');')){
-                                        $this->img=$DB->lastId();
-                                    }else{$err=true;}
-                                
-                            
-                        }
-                    }else{$err=true;}
+
+                                if($DB->boolSQL('INSERT INTO '.$table.' VALUES(NULL,'.$file_name.','.$extFile.','.$content.');')){
+                                    $this->img=$DB->lastId();
+                                }else{$err=true;}
+
+
+                            }*/
+                        }else{$err=true;}
+                    }
+
+                    return $temp.' '.$count;
+
                 }else{$err=true;}
             }else{$err=true;}
-            return($err)?false:true;
+            //return($err)?false:true;
         }catch(Exception $e){return false;}
     }
     public static function getImgTableName($post){
@@ -126,10 +139,13 @@ class Img{
         }elseif($count>=0 && $count<$table){Validator::$ErrorForm[]='не таблица';return false;
         }else{return SqlTable::IMG[$table][0];}
     }
-    private function auditBlackListImg($postName){$err=false;
-        $badf=[".php",".phtml",".php3",".php4",".html",".txt"];
-        foreach($badf as $item){
-            if(preg_match("/$item\$/i",$_FILES[$postName]['name'])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл.';$err=true;}
+    private function auditBlackListImg($postName,$arr=false){$err=false;
+        foreach($this->badf as $v){
+            if($arr===false){
+                if(preg_match("/$v\$/i",$_FILES[$postName]['name'])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл.';$err=true;}
+            }else
+                if(preg_match("/$v\$/i",$_FILES[$postName]['name'][$arr])){Validator::$ErrorForm[]='Вы пытаетесь загрузить недопустимый файл - '.$_FILES[$postName]['name'][$arr];$err=true;
+            }
         }return($err)?false:true;
     }
     private function getImgExt($postName){
