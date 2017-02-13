@@ -1,7 +1,8 @@
 <?php
 class Img{
     public $img=1;
-    private $badf=[".php",".phtml",".php3",".php4",".html",".txt"];
+    public $imgExt=[];
+    private $badf=[".php",".phtml",".php3",".php4",".html",".txt",".lnk"];
 
     static function badImg(){
         $im=imagecreatetruecolor(80,30);
@@ -94,42 +95,30 @@ class Img{
     }
     function insImgExt($postTable,$postImg){
         try{
-            $temp=0;
             $err=false;
             if(PostRequest::issetPostKey([$postTable]) && !empty($_FILES)){
                 $table=self::getImgTableName($_POST[$postTable]);
                 if($table){
-
                     $count=count($_FILES[$postImg]['name']);
-
                     for($i=0;$i<$count;$i++){
-
                         if($this->auditBlackListImg($postImg,$i)){
-                            $temp++;
-                            /*$extFile=$this->getImgExt($postImg);
-                            if($extFile===false){$err=true;
-                            }else{
-
-                                /*$content=file_get_contents($_FILES[$postImg]['tmp_name']);
-                                unlink($_FILES[$postImg]['tmp_name']);
+                            $extFile=$this->getImgExt($postImg,$i);
+                            if($extFile!==false){
+                                $content=file_get_contents($_FILES[$postImg]['tmp_name'][$i]);
+                                unlink($_FILES[$postImg]['tmp_name'][$i]);
                                 $DB=new SQLi(true);
-                                $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name']));
+                                $file_name=$DB->realEscapeStr(Validator::html_cod($_FILES[$postImg]['name'][$i]));
                                 $content=$DB->realEscapeStr($content);
-
                                 if($DB->boolSQL('INSERT INTO '.$table.' VALUES(NULL,'.$file_name.','.$extFile.','.$content.');')){
-                                    $this->img=$DB->lastId();
-                                }else{$err=true;}
-
-
-                            }*/
-                        }else{$err=true;}
+                                    $this->imgExt[]=$DB->lastId();
+                                }else{Validator::$ErrorForm[]='Ошибка базы данных';}
+                            }
+                        }
                     }
-
-                    return $temp.' '.$count;
-
+                    //return $count;
                 }else{$err=true;}
             }else{$err=true;}
-            //return($err)?false:true;
+            return($err)?false:true;
         }catch(Exception $e){return false;}
     }
     public static function getImgTableName($post){
@@ -148,13 +137,22 @@ class Img{
             }
         }return($err)?false:true;
     }
-    private function getImgExt($postName){
-        if(substr($_FILES[$postName]['type'],0,5)=='image'){
-            $imgInfo=getimagesize($_FILES[$postName]['tmp_name']);
-            if($imgInfo['mime']=='image/png'){return 1;
-            }elseif($imgInfo['mime']=='image/jpeg'){return'NULL';
-            }else{Validator::$ErrorForm[]='Не доустимое расширение изображения';return false;}
-        }else{Validator::$ErrorForm[]='Не доустимый формат изображения';return false;}
+    private function getImgExt($postName,$arr=false){$err=false;
+        if($arr===false){
+            if(substr($_FILES[$postName]['type'],0,5)=='image'){
+                $imgInfo=getimagesize($_FILES[$postName]['tmp_name']);
+            }else{Validator::$ErrorForm[]='Не доустимый формат изображения';$err=true;}
+        }else{
+            if(substr($_FILES[$postName]['type'][$arr],0,5)=='image'){
+                $imgInfo=getimagesize($_FILES[$postName]['tmp_name'][$arr]);
+            }else{Validator::$ErrorForm[]='Не доустимый формат изображения - '.$_FILES[$postName]['name'][$arr];$err=true;}
+        }
+        if($err)return false;
+        else{
+            if($imgInfo['mime']=='image/png')return 1;
+            elseif($imgInfo['mime']=='image/jpeg')return'NULL';
+            else{Validator::$ErrorForm[]='Не доустимое расширение изображения - '.($arr!==false?$_FILES[$postName]['name'][$arr]:'');return false;}
+        }
     }//End SQL
     static function getImgJpg($img,$dir){
         $ext=false;

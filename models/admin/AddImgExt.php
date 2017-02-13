@@ -4,38 +4,13 @@
         <?php
         for($i=0;$i<count(SqlTable::IMG);$i++){echo'<option value="'.$i.'">'.SqlTable::IMG[$i][1].'</option>';}?>
     </select>
-    <!--<input type="file" id="imgfile" name="imgfile" accept="image/jpeg,image/png">-->
-    <input name="imgfiles[]" type="file" multiple>
+    <input name="imgfiles[]" type="file" multiple required>
     <input type="submit" value="Загрузить (jpg/jpeg/png8)">
 </form>
 
-<!--<script>function FileUpload(){if(document.getElementById('tableimg').value==''){alert("Не выбрана таблица ;-)");return false;}else{if(imgfile.value==""){alert("Файл не выбран ;-)");return false;}else return true;}}-+
--+
-
-
-
-
-
-
-
-
-
-
-
-
-
--+
-
-
-
-
-
-
-
-
-
-
--+
+<script>function FileUpload(){
+        if(document.getElementById('tableimg').value==''){alert("Не выбрана таблица ;-)");return false;
+        }}
     document.getElementById('addimg').setAttribute("action",decodeURI(window.location.pathname));
     function setSection(){
         var date = new Date(new Date().getTime() + 60 * 5 * 1000);
@@ -44,4 +19,4 @@
     }
     var r=document.cookie.match("(^|;) ?imgsection=([^;]*)(;|$)");
     if(r)document.getElementById('tableimg').options[r[2]].selected=true;
-</script>-->
+</script>
