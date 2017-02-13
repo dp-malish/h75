@@ -176,7 +176,8 @@ abstract class SqlTable{
         'title'=>'Психология - Отношения',
         'description'=>'Описание статьи Отношения',
         'keywords'=>'Поисквые слова Отношения',
-        'img'=>'/img/psych_human/dbpic.php?id='
+
+        'img'=>'/img/psych_relationships/dbpic.php?id='
       ],
       'человек'=>[
         'heading'=>'психология',
@@ -184,7 +185,7 @@ abstract class SqlTable{
         'title'=>'Психология - Человека',
         'description'=>'Описание статьи Человека',
         'keywords'=>'Поисквые слова Человека',
-        'img'=>'/img/psych_relationships/dbpic.php?id='
+        'img'=>'/img/psych_human/dbpic.php?id='
       ],//*****************************
         'мудрые-советы'=>[
             'heading'=>'обо-всём',
