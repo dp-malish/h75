@@ -23,7 +23,7 @@ abstract class SqlTable{
         ['psych_relationships_img','Психология - Отношения','/img/psych_relationships/dbpic.php?id='],
         ['psych_human_img','Психология - Человека','/img/psych_human/dbpic.php?id='],
         ['everything_wise_advice_img','Обо всём - Мудрые советы','/img/everything_wise_advice/dbpic.php?id='],
-        ['everything_interesting_img','Обо всём - Интересное','/img/everything_interesting/dbpic.php?id=']
+        ['everything_interesting_img','Обо всём интересном','/img/everything_interesting/dbpic.php?id=']
 
     ];
     const HEADING=[
