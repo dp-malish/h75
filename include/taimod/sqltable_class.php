@@ -22,7 +22,8 @@ abstract class SqlTable{
         ['cook_drink_img','Рецепты блюд - Напитки','/img/cook_drink/dbpic.php?id='],
         ['psych_relationships_img','Психология - Отношения','/img/psych_relationships/dbpic.php?id='],
         ['psych_human_img','Психология - Человека','/img/psych_human/dbpic.php?id='],
-        ['everything_wise_advice_img','Обо всём - Мудрые советы','/img/everything_wise_advice/dbpic.php?id=']
+        ['everything_wise_advice_img','Обо всём - Мудрые советы','/img/everything_wise_advice/dbpic.php?id='],
+        ['everything_interesting_img','Обо всём - Интересное','/img/everything_interesting/dbpic.php?id=']
 
     ];
     const HEADING=[
@@ -194,8 +195,14 @@ abstract class SqlTable{
             'description'=>'Описание статьи Мудрые советы',
             'keywords'=>'Поисквые слова Мудрые советы',
             'img'=>'/img/everything_wise_advice/dbpic.php?id='
-        ]
-
-
+        ],
+      'обо-всём-нтересом'=>[
+        'heading'=>'обо-всём',
+        'caption'=>'Обо всём нтересом',
+        'title'=>'Обо всём нтересом',
+        'description'=>'Описание статьи обо всём нтересом',
+        'keywords'=>'Поисквые слова обо всём нтересом',
+        'img'=>'/img/everything_interesting/dbpic.php?id='
+      ]
     ];
 }

@@ -224,3 +224,11 @@ CREATE TABLE IF NOT EXISTS everything_wise_advice_img(
   content longblob NOT NULL,
   PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS everything_interesting_img(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name_file varchar(255) NOT NULL,
+  png tinyint(1) DEFAULT NULL,
+  content longblob NOT NULL,
+  PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
