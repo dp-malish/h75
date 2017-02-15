@@ -1,7 +1,7 @@
 var my_protocol = window.location.protocol;
 var my_host = window.location.hostname;
 var referal = document.referrer;
-var uri=window.location.pathname;
+var uri=decodeURI(window.location.pathname);
 var temp_obj;//для проявления объекта
 var loaderImg=new Image();
 loaderImg.src="/img/site/loader.gif";
