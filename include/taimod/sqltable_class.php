@@ -11,6 +11,7 @@ abstract class SqlTable{
 
       ['moda_hist_img','Мода - История моды','/img/moda_hist/dbpic.php?id='],
       ['moda_style_img','Мода - Стиль','/img/moda_style/dbpic.php?id='],
+      ['moda_beauty_tips_img','Мода - Бьюти советы','/img/moda_beauty_tips/dbpic.php?id='],
 
         ['cook_first_img','Рецепты блюд - Первые блюда','/img/cook_first/dbpic.php?id='],
         ['cook_second_img','Рецепты блюд - Вторые блюда','/img/cook_second/dbpic.php?id='],
@@ -106,7 +107,16 @@ abstract class SqlTable{
         'description'=>'def Описание статьи Стиль',
         'keywords'=>'def Поисквые слова Стиль',
         'img'=>'/img/moda_style/dbpic.php?id='
-      ],//*****************************
+      ],
+      'бьюти-советы'=>[
+        'heading'=>'мода',
+        'caption'=>'Бьюти советы',
+        'title'=>'Мода - Бьюти-советы',
+        'description'=>'def Описание статьи бьюти-советы',
+        'keywords'=>'def Поисквые слова Стиль',
+        'img'=>'/img/moda_beauty_tips/dbpic.php?id='
+      ],
+      //*****************************
         'первые-блюда'=>[
             'heading'=>'рецепты-блюд',
             'caption'=>'Первые блюда',
