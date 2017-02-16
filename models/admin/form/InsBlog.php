@@ -73,7 +73,7 @@
         <br><br><br><hr><br><br><br>
 
 
-        <p>img_s | рисунок</p><input type="number" name="img_s" id="img_s" min="1" placeholder="Номер рисунка (маленький)" onchange="img_small()">
+        <p>img_s | рисунок</p><input type="number" name="img_s" id="img_s" min="1" placeholder="Номер рисунка (маленький)" onchange="img_small()" onblur="img_small()">
         <div id="img_s_view" class="ac"></div>
                 <script type="application/javascript">
                         function img_small(){
@@ -91,7 +91,9 @@
 
         <p>short_text | короткий текст</p><textarea type="text" name="short_text" id="short_text" rows="8"></textarea>
                 <br><br><br><hr><br><br><br>
-        <p>img | рисунок</p><input type="number" name="img" id="img" min="1" placeholder="Номер рисунка" onchange="img_big()">
+        <p>img | рисунок</p>
+                <!--<input type="number" name="img" id="img" min="1" placeholder="Номер рисунка" onchange="img_big()">-->
+                <input type="number" name="img" id="img" min="1" placeholder="Номер рисунка" onchange="img_big()">
                 <div id="img_big_view" class="ac"></div>
                 <script type="application/javascript">
                         function img_big(){
