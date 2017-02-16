@@ -42,3 +42,8 @@ INSERT INTO heading(id,link,rubrika)VALUES
   (3,'обо-всём','Обо всем'),
   (4,'психология','Психология'),
   (5,'рецепты-блюд','Рецепты блюд');*/
+DELIMITER //
+CREATE PROCEDURE views_blog()
+  BEGIN
+    UPDATE content SET views=views+greatest(7,round((rand())*20));
+  END;//
