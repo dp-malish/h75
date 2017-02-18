@@ -107,12 +107,12 @@ img{
 #up{
     width:85px;
     border:1px solid #ccc;
-    background:#f7f7f7;
+    background:#D3DDD4;
     text-align:center;
     padding:5px;
     position:fixed;
-    bottom:7px;
-    right:7px;
+    bottom:17px;
+    right:17px;
     cursor:pointer;
     display:none;
     color:#333;
