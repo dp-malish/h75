@@ -58,6 +58,15 @@ class Img{
             if($maxId)return[$dir,$maxId];else{Validator::$ErrorForm[]='Неизвестная ошибка!';return false;}
         }else{Validator::$ErrorForm[]='Ошибочка!';return false;}
     }
+    static function getMaxIdDirExt($post){$res=false;
+        $post=Validator::html_cod($post);
+        $count=count(SqlTable::IMG);        
+        for($i=0;$i<$count;$i++){if(SqlTable::IMG[$i][2]==$post)$res=SqlTable::IMG[$i][0];}
+        if($res){$DB=new SQLi(true);
+            $res=$DB->intSQL('SELECT id FROM '.$res.' ORDER BY id DESC LIMIT 1');
+            if($res)return $res;else{Validator::$ErrorForm[]='Неизвестная ошибка!';return false;}
+        }else return false;
+    }
     function insImg($postTable,$postImg,$upd=0){
         try{
             $err=false;
@@ -121,7 +130,7 @@ class Img{
             return($err)?false:true;
         }catch(Exception $e){return false;}
     }
-    public static function getImgTableName($post){
+    static function getImgTableName($post){
         $table=Validator::html_cod($post);
         $count=count(SqlTable::IMG);
         if(!Validator::paternInt($table)){Validator::$ErrorForm[]='не таблица...';return false;

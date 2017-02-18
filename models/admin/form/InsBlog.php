@@ -6,6 +6,16 @@
         <p>link_name &darr; | подпись ссылки &darr; *</p><input name="link_name" id="link_name" type="text" onKeyUp="str_to_link()" title="писать с маленькой буквы, чтоб поподала в кейвордс" required placeholder="Подпись ссылки (с маленькой буквы)" on><br><br><br><hr><br><br><br>
 
         <script type="text/javascript">
+
+
+                var sendurl="d="+document.getElementById("form").getAttribute("data-img");;
+                ajaxPostSend(sendurl,answerFeedbackMaxId,true,true,'/img/site/admin.php');
+
+
+                function answerFeedbackMaxId(arr){
+                        answerFeedbackMaxId.MaxId=arr.maxid;
+                }
+
                 function str_to_link(){
                 var str=document.getElementById('link_name').value.toLowerCase();
                 str=str.replace(/ /ig,'-');
@@ -85,20 +95,14 @@
                         function addTextImg(){
                                 var editor = CKEDITOR.instances.full_text;
                                 if(editor.mode=='wysiwyg'){
-                                    editor.insertHtml('<img src="/img/lfkulhit/dbpic.php?id=1">');
+                                    var alt,res,s=document.getElementById("form").getAttribute("data-img");
+                                        alt=(title.value=='')?'Атребут':title.value;
+                                    for(var i=document.getElementById('img_s').value;i<=answerFeedbackMaxId.MaxId;i++){
+                                            res=s+i;
+                                            editor.insertHtml('<p><img alt="'+alt+'" src="'+res+'"></p><br>');
+                                    }
                                 }
                                 else alert('Вставка доступна в визуальном режиме!!');
-                                /*var i=document.getElementById('img_s').value;
-                                var s=document.getElementById("form").getAttribute("data-img");
-                                s+=i;*/
-
-                                alert('yu');
-                                /*document.getElementById("full_text").value='<img src="/img/lfkulhit/dbpic.php?id=1">';CKEDITOR.replace('full_text');*/
-                                //var editor = CKEDITOR.instances.full_text.insertHtml('<img src="/img/lfkulhit/dbpic.php?id=1">');
-
-                                alert('yu2');
-                                //document.getElementById("full_text").value='<p>ukhui</p>';
-                                //full_text.innerHTML='<p>ukhui</p>';
                         }
                 </script>
         <input type="hidden" name="img_alt_s" id="img_alt_s">
