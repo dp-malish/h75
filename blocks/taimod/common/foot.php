@@ -1,3 +1,4 @@
+<div id="af"></div>
 <footer>
   <div id="foot">
     <div class="maxw">
@@ -9,5 +10,5 @@
   </div>
   <div id="bf"><div id="up"> ^ Наверх</div></div>
 </footer>
-<script type="application/javascript" src="/js/scroll.php"></script>
+<script type="application/javascript" src="/js/scroll.php?v=1"></script>
 </body></html>

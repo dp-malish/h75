@@ -1,8 +1,8 @@
 <?php
 set_include_path('../../../lib');spl_autoload_extensions('_class.php');spl_autoload_register();
-$xml='def.xml';
+$xml='moda.xml';
 $map=new SiteMap();$DB=new SQLi();
-$res=$DB->arrSQL('SELECT link,data FROM content WHERE heading IS NULL');
+$res=$DB->arrSQL('SELECT link,data FROM content WHERE heading="мода"');
 if($res){
 $map->StartCache();
 echo $map->StartSiteMap();

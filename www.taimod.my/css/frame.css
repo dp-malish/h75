@@ -106,12 +106,13 @@ html,body{height:100%;
 
 
 /**************************/
+#af{min-height:10px}
 #foot{min-height:76px;padding:10px 2px}
 #copy{font-size:70%}
 #bf{height:18px}
 
 
-@media screen and(min-width: 801px)and(max-width: 1920px){
+@media screen and (min-width:801px) and (max-width:1920px){
 	#share{
 		z-index:333;
 		position:fixed;

@@ -6,5 +6,5 @@ if(isset($_GET['clearcss'])){
 }
 $right_content_up.='<div class="r_menu"><div class="menu_title">Очистить кеш</div><ul>
 <li><a href="?clearcss">css'.$clearcss.'</a></li>
-<li><a href="?clearindex">Общие файлы'.$clearindex.'</a></li>
+<!--<li><a href="?clearindex">Общие файлы'.$clearindex.'</a></li>-->
 </ul></div>';

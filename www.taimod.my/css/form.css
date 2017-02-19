@@ -132,7 +132,7 @@ background-color:#fff;
   font-size: 85%;
 }
 
-.vktextarea img{height:16px; width:16px; margin: 2px;user-select: none;}
+.vktextarea img{height:16px; width:16px; margin: 2px;/*user-select: none;*/}
 
 .vktextbtn{
   width: 22px;

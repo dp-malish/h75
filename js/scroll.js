@@ -6,10 +6,10 @@ window.onscroll=function(){//при скролле показывать и пр�
   }
 };
 function scrollUpStart(i){
-  if(i<3)window.scrollTo(0,0);
+  if(i<5)window.scrollTo(0,0);
   else window.scrollTo(0,i)
 }
 document.getElementById('up').onclick=function(){
-  var i,y=43;
-  for(i=window.pageYOffset;i>0;i--){setTimeout('scrollUpStart('+i+')',y++);}
+  var i,y=33;
+  for(i=window.pageYOffset;i>0;i-=4){setTimeout('scrollUpStart('+i+')',y++);}
 };
