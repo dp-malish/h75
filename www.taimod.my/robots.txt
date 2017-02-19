@@ -1,0 +1,5 @@
+User-agent: *
+
+Host: taimod.com
+
+Sitemap: http://taimod.com/sitemap.xml
