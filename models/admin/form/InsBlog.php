@@ -3,19 +3,18 @@
 
         <p>link | ссылка страницы *</p><input name="link" id="link" type="text" required placeholder="Ссылка страницы">
 
-        <p>link_name &darr; | подпись ссылки &darr; *</p><input name="link_name" id="link_name" type="text" onKeyUp="str_to_link()" title="писать с маленькой буквы, чтоб поподала в кейвордс" required placeholder="Подпись ссылки (с маленькой буквы)" on><br><br><br><hr><br><br><br>
+        <p>link_name &darr; | подпись ссылки &darr; *</p><input name="link_name" id="link_name" type="text" onKeyUp="str_to_link()" title="писать с маленькой буквы, чтоб поподала в кейвордс" required placeholder="Подпись ссылки (с маленькой буквы)"><br><br><br><hr><br><br><br>
 
         <script type="text/javascript">
-
-
-                var sendurl="d="+document.getElementById("form").getAttribute("data-img");;
-                ajaxPostSend(sendurl,answerFeedbackMaxId,true,true,'/img/site/admin.php');
-
-
                 function answerFeedbackMaxId(arr){
                         answerFeedbackMaxId.MaxId=arr.maxid;
                 }
-
+                window.addEventListener("load", function(){
+                   try{
+                           var sendurl="d="+document.getElementById("form").getAttribute("data-img");;
+                           ajaxPostSend(sendurl,answerFeedbackMaxId,true,true,'/img/site/admin.php');
+                   }catch(e){alert('Проблема загрузки изображений...')}
+                },true);
                 function str_to_link(){
                 var str=document.getElementById('link_name').value.toLowerCase();
                 str=str.replace(/ /ig,'-');
@@ -95,11 +94,14 @@
                         function addTextImg(){
                                 var editor = CKEDITOR.instances.full_text;
                                 if(editor.mode=='wysiwyg'){
-                                    var alt,res,s=document.getElementById("form").getAttribute("data-img");
-                                        alt=(title.value=='')?'Атребут':title.value;
-                                    for(var i=document.getElementById('img_s').value;i<=answerFeedbackMaxId.MaxId;i++){
-                                            res=s+i;
-                                            editor.insertHtml('<p><img alt="'+alt+'" src="'+res+'"></p><br>');
+                                    var i,alt,res,s=document.getElementById("form").getAttribute("data-img");
+                                    var minImg=parseInt(document.getElementById('img_s').value,10);
+
+                                    alt=(title.value=='')?'Атребут':title.value;
+
+                                    for(i=minImg;i<=answerFeedbackMaxId.MaxId;i++){
+                                       res=s+i;
+                                       editor.insertHtml('<p><img alt="'+alt+'" src="'+res+'"></p><br>');
                                     }
                                 }
                                 else alert('Вставка доступна в визуальном режиме!!');
