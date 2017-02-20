@@ -6,10 +6,15 @@ window.onscroll=function(){//при скролле показывать и пр�
   }
 };
 function scrollUpStart(i){
-  if(i<5)window.scrollTo(0,0);
+  if(i<10)window.scrollTo(0,0);
   else window.scrollTo(0,i)
 }
-document.getElementById('up').onclick=function(){
-  var i,y=33;
-  for(i=window.pageYOffset;i>0;i-=4){setTimeout('scrollUpStart('+i+')',y++);}
-};
+
+window.addEventListener("load", function(){
+  try{
+    document.getElementById('up').onclick=function(){
+    var i,y=33;
+    for(i=window.pageYOffset;i>0;i-=4){setTimeout('scrollUpStart('+i+')',y++);}
+    }
+  }catch(e){}
+},true);

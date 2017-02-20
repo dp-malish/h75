@@ -102,6 +102,6 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
   <div id="bf"><div id="up"> ^ Наверх</div></div>
 </footer>-->
 <!--http://templates.cooltemplates.ru/Tsentr-krasoty/index.html  //PageArchiver  http://webkitchen.kiev.ua  -->
-
+http://black-list-affiliates.blogspot.com/2012/11/blog-post_30.html
 
 </body></html>

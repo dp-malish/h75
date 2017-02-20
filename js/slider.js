@@ -42,11 +42,11 @@ function slider(f,img,button,V,Vo){
 }
 
 // вызов функции слайдера
-(window.onload=function(){
+window.addEventListener("load", function(){
     try{
         var f=document.getElementById("main_slider"),
             img=f.getElementsByTagName("img"),
             button=btnSlider.getElementsByTagName("button");
         slider(f,img,button,"5000","1000");  // '5000' — скорость смены картинок, '1000' — скорость прозрачности
     }catch(e){}
-})
+}, true);
