@@ -103,5 +103,5 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];?>
 </footer>-->
 <!--http://templates.cooltemplates.ru/Tsentr-krasoty/index.html  //PageArchiver  http://webkitchen.kiev.ua  -->
 http://black-list-affiliates.blogspot.com/2012/11/blog-post_30.html
-
+<br><a href="http://1742411.mya5.ru" target="_blank">http://1742411.mya5.ru</a>
 </body></html>
