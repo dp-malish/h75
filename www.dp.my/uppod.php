@@ -167,7 +167,7 @@
 
                     <!--<script type="text/javascript">
 
-                        this.player = new Uppod({m:"video",uid:"videoplayer",file:"https://www.youtube.com/watch?v=l6cSOgNE2_Q",poster:"https://www.youtube.com/watch?v=l6cSOgNE2_Q",st:"uppodvideo"});</script>-->
+                        this.player = new Uppod({m:"video",uid:"videoplayer",file:"https://www.youtube.com/watch?v=l6cSOgNE2_Q",poster:"https://www.youtube.com/watch?v=l6cSOgNE2_Q",st:"uppodvideo",comment:""});</script>-->
 
 
                     <div class="fon_c">
