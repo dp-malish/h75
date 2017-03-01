@@ -1,5 +1,5 @@
 User-agent: *
 
-Host: harvis.in.ua
+Host: harvis.com.ua
 
 Sitemap: http://harvis.com.ua/sitemap.xml
