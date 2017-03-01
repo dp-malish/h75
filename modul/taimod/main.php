@@ -9,7 +9,7 @@ require'../blocks/taimod/common/slider.php';
 $bad_link=0;
 //********************************************************************
 if(isset($uri_parts[0]) && !isset($uri_parts[1])){
-  if(Validator::paternInt($uri_parts[0])){
+  if(Validator::paternInt($uri_parts[0])){//навигация по страинцам если цифра
     $DB=new SQLi();
     Str_navigation::navigation(null,'content',$uri_parts[0],$msg,false,1);
     $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
@@ -18,10 +18,10 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
     $description.=$preview->description;
     $keywords=$preview->keywords;
     $main_content.='<div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
-  }elseif(Validator::paternStrLink($uri_parts[0])){
-    if(array_key_exists($uri_parts[0],SqlTable::HEADING)){
+  }elseif(Validator::paternStrLink($uri_parts[0])){//если текст
+    if(array_key_exists($uri_parts[0],SqlTable::HEADING)){//если текст раздел
       $DB=new SQLi();
-      Str_navigation::navigation($uri_parts[0],'content WHERE heading="'.$uri_parts[0].'"',1,$msg,false,1);
+      Str_navigation::navigation($uri_parts[0],'content WHERE heading='.$DB->realEscapeStr($uri_parts[0]),1,$msg,false,1);
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
       if($res){
       $preview=new PreView($res);
@@ -31,9 +31,9 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $main_content.='<h2>'.SqlTable::HEADING[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
       $right_content.=CategoryMenu::rMenuHead($uri_parts[0]);
       }else $bad_link=1;
-    }elseif(array_key_exists($uri_parts[0],SqlTable::CATEGORY)){
+    }elseif(array_key_exists($uri_parts[0],SqlTable::CATEGORY)){//если текст категория
       $DB=new SQLi();
-      Str_navigation::navigation($uri_parts[0],'content WHERE category="'.$uri_parts[0].'"',1,$msg,false,1);
+      Str_navigation::navigation($uri_parts[0],'content WHERE category='.$DB->realEscapeStr($uri_parts[0]),1,$msg,false,1);
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
       if($res){
         $preview=new PreView($res);
@@ -43,7 +43,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
         $main_content.='<h2>'.SqlTable::HEADING[SqlTable::CATEGORY[$uri_parts[0]]['heading']]['title'].' - '.SqlTable::CATEGORY[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
         $right_content.=CategoryMenu::rMenuCat($uri_parts[0]);
       }else $bad_link=1;
-    }else{
+    }else{//если текст просто ссылка
       $DB=new SQLi();
     $res=$DB->strSQL('SELECT category,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,data,views FROM content WHERE link='.$DB->realEscapeStr($uri_parts[0]));
     if($res){
@@ -61,6 +61,35 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
 
     }else $bad_link=1;
     }
+  }else $bad_link=1;
+}elseif(isset($uri_parts[0]) && isset($uri_parts[1])){
+  if(Validator::paternInt($uri_parts[1])){//навигация по рубрикам и категориям если цифра
+    if(array_key_exists($uri_parts[0],SqlTable::HEADING)){//если текст раздел
+      $DB=new SQLi();
+      Str_navigation::navigation($uri_parts[0],'content WHERE heading='.$DB->realEscapeStr($uri_parts[0]),$uri_parts[1],$msg,false,1);
+      $main_content.=Str_navigation::$navigation;
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
+      if($res){
+        $preview=new PreView($res);
+        $title=SqlTable::HEADING[$uri_parts[0]]['title'];
+        $description.=$preview->description;
+        $keywords=$preview->keywords;
+        $main_content.='<h2>'.SqlTable::HEADING[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
+        $right_content.=CategoryMenu::rMenuHead($uri_parts[0]);
+      }else $bad_link=1;
+    }elseif(array_key_exists($uri_parts[0],SqlTable::CATEGORY)){//если текст категория
+      $DB=new SQLi();
+      Str_navigation::navigation($uri_parts[0],'content WHERE category='.$DB->realEscapeStr($uri_parts[0]),$uri_parts[1],$msg,false,1);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
+      if($res){
+        $preview=new PreView($res);
+        $title=SqlTable::CATEGORY[$uri_parts[0]]['title'];
+        $description.=$preview->description;
+        $keywords=$preview->keywords;
+        $main_content.='<h2>'.SqlTable::HEADING[SqlTable::CATEGORY[$uri_parts[0]]['heading']]['title'].' - '.SqlTable::CATEGORY[$uri_parts[0]]['caption'].'</h2><div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
+        $right_content.=CategoryMenu::rMenuCat($uri_parts[0]);
+      }else $bad_link=1;
+    }else $bad_link=1;
   }else $bad_link=1;
 }
 
