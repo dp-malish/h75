@@ -21,6 +21,7 @@ class Img{
                 ($res['png']=='1')?header('Content-Type: image/png'):header('Content-Type: image/jpeg');
                 header('Cache-Control: public, max-age=29030400');
                 $im=imagecreatefromstring($res['content']);
+                if(!is_null($font)){
                 $x=imagesx($im);$y=imagesy($im);
                 ($x>1000)?$koef_font=25:$koef_font=12;$font_size=(int)($x/$koef_font);
                 ($x>1000)?$rotate=8:$rotate=1;
@@ -28,7 +29,7 @@ class Img{
                 $y=$y-($y*0.03);
                 $color=imagecolorallocate($im,255,215,0);
                 $text=$_SERVER['HTTP_HOST'];
-                imagettftext($im,$font_size,$rotate,$x,$y,$color,$font,$text);
+                imagettftext($im,$font_size,$rotate,$x,$y,$color,$font,$text);}
                 if($res['png']=='1'){($mob)?imagepng($im,NULL,6):imagepng($im,NULL,1);}
                 else{($mob)?imagejpeg($im,NULL,59):imagejpeg($im,NULL,91);}imagedestroy($im);
             }
