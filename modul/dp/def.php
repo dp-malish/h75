@@ -1,7 +1,7 @@
 <?php
-try{if($count_uri_parts>1){throw new Exception();}else{
+try{if($count_uri_parts>1){$module='404';}else{
 if(isset($uri_parts[0])&&!isset($uri_parts[1])){
-	if(!preg_match("/^[0-9а-яёa-z\-]+$/u",$uri_parts[0])){$bad_link=1;}else{
+	if(!preg_match("/^[0-9а-яёa-z\-]+$/u",$uri_parts[0])){$bad_link=1;}else{$DB=new SQLi();
 	$sql='SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text
 FROM default_content WHERE link='.$DB->realEscapeStr($uri_parts[0]);
 	$res=$DB->strSQL($sql);

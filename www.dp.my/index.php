@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                     case'скороговорки':$DB=new SQLi();include $root.'/modul/r/skorogovorki/main_skorogovorki.php';break;
                     case'детское':include'../modul/dp/r/uhod_za_mladencem/main.php';break;//здоровье
                     case'советы':include'../modul/dp/r/uhod_za_mladencem/main.php';break;//родителям
-                    default:$DB=new SQLi();include $root.'/modul/def.php';
+                    default:include'../modul/dp/def.php';
                 }
             }
         }
