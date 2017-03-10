@@ -1,14 +1,1 @@
-<div id="af"></div>
-<footer>
-  <div id="foot">
-    <div id="share" class="nav_link"><!--g+1--><div class="rel fl"><div class="g-plusone" data-annotation="none"></div></div><script type="text/javascript">window.___gcfg={lang:'ru'};(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='https://apis.google.com/js/platform.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script><div class="rel fl"><div class="ya-share2" data-services="collections,twitter,facebook,vkontakte,odnoklassniki,moimir,lj"></div></div><div class="cl"></div></div>
-    <div class="maxw">
-      <div class="r_col"></div>
-      <div class="m_col">
-        <div id="copy" class="ac gt">Copyright &copy;<?=$site;?><br>2017<?php if (date('Y') > 2017) echo '-' . date('Y');?><br><br>Использование материалов сайта без разрешения правообладателя запрещено</div><div class="cl"></div>
-      </div>
-    </div>
-  </div>
-  <div id="bf"><div id="up"> ^ Наверх</div></div>
-</footer>
-</body></html>
+<div id="af"></div><footer><div id="foot"><div id="share" class="nav_link"><!--g+1--><div class="rel fl"><div class="g-plusone" data-annotation="none"></div></div><script type="text/javascript">window.___gcfg={lang:'ru'};(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='https://apis.google.com/js/platform.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script><div class="rel fl"><div class="ya-share2" data-services="collections,twitter,facebook,vkontakte,odnoklassniki,moimir,lj"></div></div><div class="cl"></div></div><div class="maxw"><div class="r_col"></div><div class="m_col"><div id="copy" class="ac gt">Copyright &copy;<?=$site;?><br>2017<?php if (date('Y') > 2017) echo '-' . date('Y');?><br><br>Использование материалов сайта без разрешения правообладателя запрещено</div><div class="cl"></div><div id="informer" class="ac"><a href="https://metrika.yandex.ru/stat/?id=43366719&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/43366719/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="43366719" data-lang="ru" /></a><script type="text/javascript">(function(d,w,c){(w[c]=w[c]||[]).push(function(){try{ w.yaCounter43366719=new Ya.Metrika({ id:43366719,clickmap:true,trackLinks:true,accurateTrackBounce:true,trackHash:true});}catch(e){}});var n=d.getElementsByTagName("script")[0],s=d.createElement("script"),f=function(){n.parentNode.insertBefore(s,n);};s.type="text/javascript";s.async=true;s.src="/js/ya_metrika.php";if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",f,false);}else{f();}})(document,window,"yandex_metrika_callbacks");</script></div></div></div></div><div id="bf"><div id="up"> ^ Наверх</div></div></footer></body></html>
