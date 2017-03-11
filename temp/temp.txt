@@ -1,1 +1,3 @@
 http://1742411.mya5.ru
+
+UPDATE multiki SET player_link= REPLACE(player_link, 'movie', 'watch');
