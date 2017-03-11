@@ -7,12 +7,12 @@ $map->StartCache();
 echo $map->StartSiteMap();
 
 
-echo $map->StaticFileMap('/modul/t/multiki/uri_parts_0.php','мультики/','monthly','0.7');
+echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_0.php','мультики/','monthly','0.7');
 
-echo $map->StaticFileMap('/modul/t/multiki/uri_parts_1.php','мультики/российские/','monthly','0.6');
-echo $map->StaticFileMap('/modul/t/multiki/uri_parts_1.php','мультики/советские/','monthly','0.6');
-echo $map->StaticFileMap('/modul/t/multiki/uri_parts_1.php','мультики/зарубежные/','monthly','0.6');
-echo $map->StaticFileMap('/modul/t/multiki/uri_parts_1.php','мультики/для-малышей/','monthly','0.6');
+echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/российские/','monthly','0.6');
+echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/советские/','monthly','0.6');
+echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/зарубежные/','monthly','0.6');
+echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/для-малышей/','monthly','0.6');
 
 
 $cont=$DB->arrSQL('SELECT id,kind_mult,link,seson,data FROM multiki ORDER BY kind_mult');

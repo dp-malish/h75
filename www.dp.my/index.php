@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                 switch($uri_parts[0]){
                     //case 'sanja':$DB=new SQLi();include $root.'/modul/set/main_set.php';break;
 //top_menu
-                    case'мультики':include $root.'/modul/t/multiki/main_mult.php';break;
+                    case'мультики':include'../modul/dp/t/multiki/main_mult.php';break;
                     case'сказки':$MySQLsel=new SQL_select();
                         include $root.'/modul/t/skazki/main_skazki.php';break;
 //l_menu

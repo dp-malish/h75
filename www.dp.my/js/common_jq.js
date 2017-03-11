@@ -27,10 +27,12 @@ $(document).ready(function () {
         if (vp7 !== undefined) {
             $.ajax({
                 type: 'POST', url: '/ajax/v_st/v_st7.php', cache: false, success: function (data) {
-                    vp7 = data;
+                    alert(data);
+
                     //scr_js.src = "/js/swfobject.php";
-                    scr_js.src = "/js/uppod.php";
-                    document.getElementsByTagName("head")[0].appendChild(scr_js, document.head.lastChild);
+                    //scr_js.src = "/js/uppod.php";
+                    //document.getElementsByTagName("head")[0].appendChild(scr_js, document.head.lastChild);
+                    this.player=new Uppod({m:"video",uid:"v_player",file:data,poster:data,comment:title})
                 }
             });
         }

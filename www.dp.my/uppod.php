@@ -166,8 +166,11 @@
                     <script src="/js/uppod.php"></script>
 
                     <script type="text/javascript">
-
-                        this.player = new Uppod({m:"video",uid:"videoplayer",file:"https://www.youtube.com/watch?v=l6cSOgNE2_Q",poster:"https://www.youtube.com/watch?v=l6cSOgNE2_Q",st:"uppodvideo",comment:""});</script>
+                        /*var xxx="https://www.youtube.com/watch?v=l6cSOgNE2_Q";
+                        xxx="http://www.youtube.com/watch?v=8vPQKM5UOJU";*/
+                        var xxx="https://www.youtube.com/watch?v=2nTfPsLUSK0";
+                        this.player = new Uppod({m:"video",uid:"v_player",file:xxx,poster:xxx,comment:"78"});
+                    </script>
 
 
                     <div class="fon_c">

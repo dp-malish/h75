@@ -1,5 +1,5 @@
 <?php
-if(!defined('MAIN_FILE')){exit;}$DB=new SQLi();
+$DB=new SQLi();
 
 $title=$all_caption.' - '.$title;
 $description=$description.' '.$all_caption.'.';
@@ -28,5 +28,5 @@ if($db_res){$i=0;
         $main_content.='</article><div class="cl"></div></div>';
         if($i==3){$main_content.='<div class="fon">'.$caption1.$caption2.'<div class="cl"></div></div>';}
     }
-}else{include $root.'/modul/t/multiki/bad_content_404.php';}
+}else{include '../modul/dp/t/multiki/bad_content_404.php';}
 $main_content.='</article>'.Str_navigation::$navigation;
