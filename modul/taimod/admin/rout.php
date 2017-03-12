@@ -7,6 +7,9 @@ try{if($count_uri_parts>3){throw new Exception();}else{
     require'../modul/'.$dir_site.'/admin/common/sitemap.php';
 
     if(!isset($uri_parts[1])){
+
+        $main_content.='<div class="fon_c">'.Data::IntToStrDateTime(1489356276).'</div>';
+
         $main_content.='<div class="fon_c"><h3>Настройки</h3>
 <ul>
 <li><a href="/'.$uri_parts[0].'/общие-страницы/">Общие страницы</a></li>
