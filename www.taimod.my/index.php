@@ -15,6 +15,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
         switch($uri_parts[0]){
           case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=1;break;
           case $set:include'../modul/taimod/admin/main.php';break;
+          case 'контакты':include'../modul/taimod/t/contacts.php';break;
           default:include'../modul/taimod/main.php';
         }      
     }
