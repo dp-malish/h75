@@ -7,7 +7,7 @@ class Captcha{
 	const R_FON=180;
 	const G_FONT=180;
 	const B_FONT=180;
-	const DEF_FONT='../../img/font/Rosamunda Two.ttf';
+	const DEF_FONT='/../img/font/Rosamunda Two.ttf';//'/font/Rosamunda Two.ttf';
 
 	function __construct(){
 		$rnd=rand(10000,99999);
