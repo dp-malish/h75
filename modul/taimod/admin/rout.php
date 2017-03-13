@@ -8,11 +8,11 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 
     if(!isset($uri_parts[1])){
         $DB=new SQLi();
-        $res=$DB->arrSQL('SELECT data FROM feedback WHERE readed IS NULL');
+        $res=$DB->arrSQL('SELECT id,data FROM feedback WHERE readed IS NULL');
         $main_content.='<div class="fon_c">';
         if($res){
             $main_content.='<ul class="nav_link">';
-            foreach($res as $k=>$v){$main_content.='<li><a href="#">Вам прислали сообщение в '.Data::IntToStrDateTime($v['data']).'</a></li>';}
+            foreach($res as $k=>$v){$main_content.='<li><a href="/'.$uri_parts[0].'/сообщение/'.$v['id'].'">Вам прислали сообщение в '.Data::IntToStrDateTime($v['data']).'</a></li>';}
             $main_content.='</ul>';
         }else $main_content.='Уведомлений нет...';
         $main_content.='</div>';
@@ -44,7 +44,8 @@ try{if($count_uri_parts>3){throw new Exception();}else{
         }
     }elseif(isset($uri_parts[2])&& !isset($uri_parts[3])){
         switch($uri_parts[1]){
-            case 'блог':include'../modul/'.$dir_site.'/admin/section/blog.php';break;
+            case'блог':include'../modul/'.$dir_site.'/admin/section/blog.php';break;
+            case'сообщение':include'../modul/'.$dir_site.'/admin/section/feedback.php';break;
             default:$main_content.='Нет такой странички )';
         }
     }
