@@ -7,8 +7,16 @@ try{if($count_uri_parts>3){throw new Exception();}else{
     require'../modul/'.$dir_site.'/admin/common/sitemap.php';
 
     if(!isset($uri_parts[1])){
-
-        $main_content.='<div class="fon_c">'.Data::IntToStrDateTime(1489356276).'</div>';
+        $DB=new SQLi();
+        //$sql='SELECT COUNT(id) FROM feedback WHERE readed IS NULL';
+        $res=$DB->arrSQL('SELECT data FROM feedback WHERE readed IS NULL');
+        $main_content.='<div class="fon_c">';
+        if($res){
+            $main_content.='<ul class="nav_link">';
+            foreach($res as $k=>$v){$main_content.='<li><a href="#">Вам прислали сообщение в '.Data::IntToStrDateTime($v['data']).'</a></li>';}
+            $main_content.='</ul>';
+        }else $main_content.='Уведомлений нет...';
+        $main_content.='</div>';
 
         $main_content.='<div class="fon_c"><h3>Настройки</h3>
 <ul>
