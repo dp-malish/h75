@@ -8,7 +8,6 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 
     if(!isset($uri_parts[1])){
         $DB=new SQLi();
-        //$sql='SELECT COUNT(id) FROM feedback WHERE readed IS NULL';
         $res=$DB->arrSQL('SELECT data FROM feedback WHERE readed IS NULL');
         $main_content.='<div class="fon_c">';
         if($res){
@@ -26,6 +25,7 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 <br>
 <ul>
 <li><a href="/'.$uri_parts[0].'/блог/">Блог</a></li>
+<li><a href="/'.$uri_parts[0].'/блог-редактировать/">Блог редактировать</a></li>
 </ul>
 </div>';
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
@@ -37,6 +37,7 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 
             case 'общие-страницы':include'../modul/'.$dir_site.'/admin/section/blog_def.php';break;
             case 'блог':include'../modul/'.$dir_site.'/admin/section/blog.php';break;
+            case 'блог-редактировать':include'../modul/'.$dir_site.'/admin/section/blog_links.php';break;
             //case 'статьи':include'../modul/'.$dir_site.'/admin/section/article.php';break;
 
             default:$main_content.='Нет такой страницы )))';
