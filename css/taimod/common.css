@@ -64,7 +64,12 @@ a.btnmore:hover{color:#696969}
 
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}
 
-
+/*рекламные блоки*/
+.adsbygoogle{
+    display:inline-block;width:240px;/*height:400px*/
+}
+.caprek{width:322px;margin:0 26px}
+@media screen and (min-width:240px) and (max-width:840px){.caprek{width:322px;margin:0 3px}}
 /*кнопки share*/
 #share .rel{margin:15px 3px}
 #informer{margin:6px 0;display:block}
