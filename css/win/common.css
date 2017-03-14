@@ -37,7 +37,11 @@ p{margin:5px;}
 .pricetdone{width:73%;padding:5px}
 .pricetdtwo{width:25%;padding:5px}
 .note{font-size:70%}
-
+/*рекламные блоки*/
+/*.adsbygoogle{}*/
+.caprek{width:322px;margin:0 26px}
+.grek{margin:0 auto; background-color: #7D6D3C}
+@media screen and (min-width:240px) and (max-width:840px){.caprek{width:322px;margin:0 3px}}
 /*кнопки share*/
 #share .rel{margin:15px 3px}
 #informer{margin:6px 0;}
