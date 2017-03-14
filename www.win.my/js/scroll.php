@@ -1,6 +1,6 @@
 <?php
 header("Content-type: text/javascript; charset=UTF-8");header('Cache-Control: public, max-age=14515200');
-ob_start();require'../../js/slider.js';
+ob_start();require'../../js/scroll.js';
 $main_content=ob_get_contents();ob_end_clean();
 $HTTP_ACCEPT_ENCODING=$_SERVER["HTTP_ACCEPT_ENCODING"];
 if(strpos($HTTP_ACCEPT_ENCODING,'x-gzip')!==false)$encoding='x-gzip';
