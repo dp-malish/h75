@@ -5,6 +5,8 @@ Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 set_include_path("../lib");spl_autoload_extensions("_class.php");spl_autoload_register();
 $Cash=new Cache_File();
 
+require '../blocks/win/rek/google.php';
+
 if($_SERVER['REQUEST_URI']!='/'){
 $uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
 	try{$uri=urldecode($uri);

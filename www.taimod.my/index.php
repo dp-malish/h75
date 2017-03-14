@@ -6,7 +6,7 @@ set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../i
 $Cash=new Cache_File('../cache_all/taimod/');//$bot=new UserAgent();
 
 //if(!$bot->isBot()){include'../blocks/taimod/rek/google.php';}
-require'../blocks/taimod/rek/google.php';
+//require'../blocks/taimod/rek/google.php';
 $set='set';$setAdminCook='lena'.Data::DatePass();
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
