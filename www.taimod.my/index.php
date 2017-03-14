@@ -4,9 +4,8 @@ Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
 set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/taimod'.PATH_SEPARATOR.'../lib/admin');spl_autoload_extensions("_class.php");spl_autoload_register();
 $Cash=new Cache_File('../cache_all/taimod/');$bot=new UserAgent();
+if(!$bot->isBot()){include'../blocks/taimod/rek/google.php';}
 
-//if(!$bot->isBot()){include'../blocks/taimod/rek/google.php';}
-require'../blocks/taimod/rek/google.php';
 $set='set';$setAdminCook='lena'.Data::DatePass();
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
@@ -26,8 +25,4 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 
 if($index){include'../modul/taimod/main.php';}
 
-require '../blocks/taimod/common/head.php';
-require '../blocks/taimod/common/header.php';
-require '../blocks/taimod/common/r_col.php';
-require '../blocks/taimod/common/body.php';
-require '../blocks/taimod/common/foot.php';
+require '../blocks/taimod/common/head.php';require '../blocks/taimod/common/header.php';require '../blocks/taimod/common/r_col.php';require '../blocks/taimod/common/body.php';require '../blocks/taimod/common/foot.php';

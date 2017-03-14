@@ -1,2 +1,2 @@
 <?php
-$w240='';$caption1='';$caption2='';
+$w240='<ins class="adsbygoogle" style="display:inline-block;width:240px;height:400px" data-ad-client="ca-pub-0781640196587335" data-ad-slot="7624678510"></ins><script>(adsbygoogle=window.adsbygoogle || []).push({});</script>';$caption1='';$caption2='';

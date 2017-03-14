@@ -1,1 +1,1 @@
-<div class="maxw rel"><div id="r_col"><?=$right_content_up.$w240.$right_content?><div class="cl"></div></div>
+<div class="maxw rel"><div id="r_col"><?=$right_content_up.$right_content.$w240?><div class="cl"></div></div>
