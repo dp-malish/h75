@@ -57,6 +57,8 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
 
       $main_content.='<h3>'.$res['caption'].'</h3><span class="note gt fr mr ml">Опубликовано: '.Data::IntToStrDate($res['data']).'</span><span class="note gt fl mr ml">Категория: <a href="/'.$res['category'].'/">'.SqlTable::CATEGORY[$res['category']]['caption'].'</a></span><div class="cl five_"></div>'.$img.htmlspecialchars_decode($res['full_text'],ENT_QUOTES);
 
+      $main_content.='Поделиться с друзьями:<div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div>';
+
       $right_content.=CategoryMenu::rMenuCat($res['category']);
 
     }else $bad_link=1;
