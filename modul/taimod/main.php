@@ -12,7 +12,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
   if(Validator::paternInt($uri_parts[0])){//навигация по страинцам если цифра
     $DB=new SQLi();
     Str_navigation::navigation(null,'content',$uri_parts[0],$msg,false,1);
-    $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
+    $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE data<"'.time().'" ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
     $preview=new PreView($res);
     $title=$title.' - раздел '.$uri_parts[0];
     $description.=$preview->description;
@@ -22,7 +22,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
     if(array_key_exists($uri_parts[0],SqlTable::HEADING)){//если текст раздел
       $DB=new SQLi();
       Str_navigation::navigation($uri_parts[0],'content WHERE heading='.$DB->realEscapeStr($uri_parts[0]),1,$msg,false,1);
-      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.$msg);
       if($res){
       $preview=new PreView($res);
       $title=SqlTable::HEADING[$uri_parts[0]]['title'];
@@ -34,7 +34,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
     }elseif(array_key_exists($uri_parts[0],SqlTable::CATEGORY)){//если текст категория
       $DB=new SQLi();
       Str_navigation::navigation($uri_parts[0],'content WHERE category='.$DB->realEscapeStr($uri_parts[0]),1,$msg,false,1);
-      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.$msg);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.$msg);
       if($res){
         $preview=new PreView($res);
         $title=SqlTable::CATEGORY[$uri_parts[0]]['title'];
@@ -57,7 +57,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
 
       $main_content.='<h3>'.$res['caption'].'</h3><span class="note gt fr mr ml">Опубликовано: '.Data::IntToStrDate($res['data']).'</span><span class="note gt fl mr ml">Категория: <a href="/'.$res['category'].'/">'.SqlTable::CATEGORY[$res['category']]['caption'].'</a></span><div class="cl five_"></div>'.$img.htmlspecialchars_decode($res['full_text'],ENT_QUOTES);
 
-      $main_content.='Поделиться с друзьями:<div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div>';
+      $main_content.='<div class="cl nav_link mt mb"><div class="b ml mb">Поделиться с друзьями:</div><div class="ya-share2 dfwe" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div></div>';
 
       $right_content.=CategoryMenu::rMenuCat($res['category']);
 
@@ -98,7 +98,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
 if(!isset($uri_parts[0]) || $bad_link==1){
   $DB=new SQLi();
   Str_navigation::navigation(null,'content',1,$msg,false,1);
-  $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content ORDER BY id DESC LIMIT '.$msg);
+  $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE data<"'.time().'" ORDER BY id DESC LIMIT '.$msg);
 
   $preview=new PreView($res);
 
