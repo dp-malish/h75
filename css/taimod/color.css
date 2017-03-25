@@ -8,7 +8,7 @@ A:visited{color:#520c0e}
 A:hover,.link:hover{color:#B2251F;text-decoration:blink}
 
 .colorhed,.colorhed span a,.wt{color:#ffffff}
-.gt{color:#696969}
+.gt,a.gt{color:#696969}
 
 .fon_c,.fon_c0{/*общий фон обводки*/
 	background:#FEFEE4;
