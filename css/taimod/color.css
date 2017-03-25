@@ -9,6 +9,9 @@ A:hover,.link:hover{color:#B2251F;text-decoration:blink}
 
 .colorhed,.colorhed span a,.wt{color:#ffffff}
 .gt,a.gt{color:#696969}
+.yt,a.yt{color:#FFFF00}
+.bt,a.bt{color:#0033CC}
+
 
 .fon_c,.fon_c0{/*общий фон обводки*/
 	background:#FEFEE4;

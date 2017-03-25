@@ -11,7 +11,7 @@ if(PostRequest::issetPostArr()){
 
   if(PostRequest::issetPostKey(['startcat','category'])){
     $x=Validator::html_cod($_POST['category']);
-  $main_content.=$Cash->SendHTMLext('../models/admin/form/InsBlog.php',[SqlTable::CATEGORY[$x]['heading'].' - '.$x,SqlTable::CATEGORY[$x]['img'],$x,date('Y-m-d'),date('H:i')]);
+  $main_content.=$Cash->SendHTMLext('../models/admin/form/InsBlog.php',[SqlTable::CATEGORY[$x]['heading'].' - '.$x,SqlTable::CATEGORY[$x]['img'],$x,date('2020-m-d'),date('H:i')]);
 
   }elseif(PostRequest::issetPostKey(['category','link','link_name','title','meta_d','meta_k','caption','img_s','img_alt_s','img_title_s','short_text','img','full_text'])){
     $link=ValidForm::link($_POST['link']);
