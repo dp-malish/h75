@@ -60,7 +60,6 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $main_content.='<div class="cl nav_link mt mb"><div class="b ml mb">Поделиться с друзьями:</div><div class="ya-share2 dfwe" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div></div>';
 
       $right_content.=CategoryMenu::rMenuCat($res['category']);
-
     }else $bad_link=1;
     }
   }else $bad_link=1;
@@ -70,7 +69,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $DB=new SQLi();
       Str_navigation::navigation($uri_parts[0],'content WHERE heading='.$DB->realEscapeStr($uri_parts[0]),$uri_parts[1],$msg,false,1);
       $main_content.=Str_navigation::$navigation;
-      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
       if($res){
         $preview=new PreView($res);
         $title=SqlTable::HEADING[$uri_parts[0]]['title'];
@@ -82,7 +81,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
     }elseif(array_key_exists($uri_parts[0],SqlTable::CATEGORY)){//если текст категория
       $DB=new SQLi();
       Str_navigation::navigation($uri_parts[0],'content WHERE category='.$DB->realEscapeStr($uri_parts[0]),$uri_parts[1],$msg,false,1);
-      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
+      $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
       if($res){
         $preview=new PreView($res);
         $title=SqlTable::CATEGORY[$uri_parts[0]]['title'];
@@ -94,19 +93,13 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
     }else $bad_link=1;
   }else $bad_link=1;
 }
-
 if(!isset($uri_parts[0]) || $bad_link==1){
   $DB=new SQLi();
   Str_navigation::navigation(null,'content',1,$msg,false,1);
   $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE data<"'.time().'" ORDER BY id DESC LIMIT '.$msg);
-
   $preview=new PreView($res);
-
   $description.=$preview->description;
   $keywords=$preview->keywords;
-
   $main_content.='<div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
 }
-
-
 //$right_content.='<div class="fon_c"><h4>Объявление</h4><p>Ведутся технические работы...</p></div>';
