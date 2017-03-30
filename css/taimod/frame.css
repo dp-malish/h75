@@ -92,7 +92,7 @@ html,body{height:100%;
 	overflow:hidden;
 	min-height:1px
 }
-@media screen and (max-width:490px){
+@media screen and (max-width:613px){
 	#r_col,.r_col{width:100%}
 }
 #m_col,.m_col{

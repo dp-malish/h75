@@ -1,1 +1,96 @@
-#hrm span{min-width:100px}@media screen and (max-width:900px){#hrm span:nth-child(1){display:none}}@media screen and (max-width:700px){#hrm span:nth-child(2){display:none}}#hrm a{display:block;margin:16px 4px 7px;text-decoration:none}#hrm a:hover{color:#f78f07}#categories a{text-decoration:none}#categories a:hover{color:#f78f07}#categories p a{color:#f78f07}#categories p a:hover{text-decoration:underline}.r_menu{margin:0 auto;padding-bottom:7px}@media screen and (min-width:360px) and (max-width:490px){.r_menu{width:70%}}.menu_title{font-weight:700;border-bottom:#353535 solid thin;min-height:25px;padding:2px 4px}.r_menu ul{display:block}.r_menu ul li{position:relative}.r_menu ul li a{display:block;text-decoration:none;line-height:30px;padding:0 2px;border-bottom:#353535 dotted thin;color:#696969}.r_menu ul li a:before{content:url(../img/site/marker.png)" ";vertical-align:-27%}@media screen and (max-width:560px){.r_menu ul li a{line-height:45px}.r_menu ul li a:before{vertical-align:-20%}}.r_menu ul li a:hover{text-decoration:underline;color:#f78f07}
+#hrm span{
+  min-width:100px
+}
+
+@media screen and (max-width:900px){
+  #hrm span:nth-child(1){
+    display:none
+  }
+}
+
+@media screen and (max-width:700px){
+  #hrm span:nth-child(2){
+    display:none
+  }
+}
+
+#hrm a{
+  display:block;
+  margin:16px 4px 7px;
+  text-decoration:none
+}
+
+#hrm a:hover{
+  color:#f78f07
+}
+
+#categories a{
+  text-decoration:none
+}
+
+#categories a:hover{
+  color:#f78f07
+}
+
+#categories p a{
+  color:#f78f07
+}
+
+#categories p a:hover{
+  text-decoration:underline
+}
+
+.r_menu{
+  margin:0 auto;
+  padding-bottom:7px
+}
+
+@media screen and (min-width:360px) and (max-width:613px){
+  .r_menu{
+    width:70%
+  }
+}
+
+.menu_title{
+  font-weight:700;
+  border-bottom:#353535 solid thin;
+  min-height:25px;
+  padding:2px 4px
+}
+
+.r_menu ul{
+  display:block
+}
+
+.r_menu ul li{
+  position:relative
+}
+
+.r_menu ul li a{
+  display:block;
+  text-decoration:none;
+  line-height:30px;
+  padding:0 2px;
+  border-bottom:#353535 dotted thin;
+  color:#696969
+}
+
+.r_menu ul li a:before{
+  content:url(../img/site/marker.png) " ";
+  vertical-align:-27%
+}
+
+@media screen and (max-width:560px){
+  .r_menu ul li a{
+    line-height:45px
+  }
+
+  .r_menu ul li a:before{
+    vertical-align:-20%
+  }
+}
+
+.r_menu ul li a:hover{
+  text-decoration:underline;
+  color:#f78f07
+}
