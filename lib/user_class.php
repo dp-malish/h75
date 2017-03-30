@@ -6,6 +6,8 @@ class User{
 
     private $site;
 
+    public $a_cookie='af';
+
     function __construct(){$this->site=$_SERVER['SERVER_NAME'];}
 
     public function loginUser(){$err=false;
@@ -130,11 +132,11 @@ class User{
     }
 //*********************************************************
     public function loginAdminForm($login,$pass){
-        $cook=Validator::issetCookie('af');
+        $cook=Validator::issetCookie($this->a_cookie);
         if($cook){return($cook==$this->adminCookieForm($login,$pass)?true:false);}else return false;
     }
     public function setCookieAdminForm($login,$pass,$time=172800){
-        setcookie('af',$this->adminCookieForm($login,$pass),time()+$time,'/','.'.$this->site);//два дня
+        setcookie($this->a_cookie,$this->adminCookieForm($login,$pass),time()+$time,'/','.'.$this->site);//два дня
     }
     private function adminCookieForm($login,$pass){
         return md5(md5($login.Opt::COOKIE_SALT.$pass));

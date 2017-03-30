@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS mag_kurs_valut(
   PRIMARY KEY(valuta)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-  INSERT INTO mag_kurs_valut VALUES('usd', 2620);
+  INSERT INTO mag_kurs_valut VALUES('usd', 2720);
 
 CREATE TABLE IF NOT EXISTS mag_ustavnoy_capital(
   data INT NOT NULL,
@@ -119,7 +119,7 @@ FOR EACH ROW
     END IF;
   END;//
 
-INSERT INTO mag_nakladnaya(id,nomer_nakladnoy,dostavka_usd,dostavka_nac_val,data)VALUES(NULL,'146130',NULL,'2600','1477345000');
+#INSERT INTO mag_nakladnaya(id,nomer_nakladnoy,dostavka_usd,dostavka_nac_val,data)VALUES(NULL,'146130',NULL,'2600','1477345000');
 #####################################################################
 CREATE TABLE IF NOT EXISTS mag_razdel(
   id INT(11) NOT NULL AUTO_INCREMENT,

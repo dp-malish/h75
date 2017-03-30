@@ -6,7 +6,7 @@ spl_autoload_extensions('_class.php');spl_autoload_register();
 
 if(PostRequest::issetPostArr()){
     $user=new User();
-    if(!$user->loginAdmin())exit;
+    if(!$user->loginAdmin()){echo '0';exit;}
 
     //magazine
     if(!empty($_POST['namenklatura'])){

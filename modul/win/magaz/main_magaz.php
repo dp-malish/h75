@@ -1,29 +1,19 @@
 <?php
-$title='Магазин - настройки';
+$login='win';
+$pass='123';
+$dir_site='win';
 
 $user=new User();
+$user->a_cookie='am';
 
-try{if($count_uri_parts>2 || !$user->loginAdmin()){throw new Exception();}else{
-
-    $DB=new SQLi();
-    include'left_panel.php';
-    include'right_panel.php';
-
-    if(!isset($uri_parts[1])){
-        include'uri0.php';
-    }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
-        switch($uri_parts[1]){
-
-            case'накладная':include'uri1/nakladnaya.php';break;
-            case'наменклатура':include'uri1/namenklatura.php';break;
-
-            case'раздел':include'uri1/razdel.php';break;
-            default:$module='404';
-        }
-    }
-
-}}catch(Exception $e){$module='404';}
-
-
-
-
+if(!$user->loginAdmin()){$module='404';}else{
+    if(!isset($_COOKIE[$user->a_cookie])){
+        if(PostRequest::issetPostArr()){
+            if($user->loginAdminFormIn($login,$pass)){include'../modul/'.$dir_site.'/magaz/rout.php';
+            }else{$main_content=$Cash->SendHTML('../models/admin/AdminLogin.php');}
+        }else{$main_content=$Cash->SendHTML('../models/admin/AdminLogin.php');}
+    }elseif(!$user->loginAdminForm($login,$pass)){
+        $user->setCookieAdminForm($login,'',0);
+        $main_content=$Cash->SendHTML('../models/admin/AdminLogin.php');
+    }else{include'../modul/'.$dir_site.'/magaz/rout.php';}
+}
