@@ -1,7 +1,7 @@
 <?php
 $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
 Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
-set_include_path("../lib");spl_autoload_extensions("_class.php");spl_autoload_register();
+set_include_path('../lib'.PATH_SEPARATOR.'../lib/admin');spl_autoload_extensions("_class.php");spl_autoload_register();
 $Cash=new Cache_File();$bot=new UserAgent();
 
 ///if(!$bot->isBot()){include'../blocks/win/rek/google.php';}

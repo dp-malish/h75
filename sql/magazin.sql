@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS mag_kurs_valut(
   PRIMARY KEY(valuta)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-  INSERT INTO mag_kurs_valut VALUES('usd', 2720);
+  #INSERT INTO mag_kurs_valut VALUES('usd', 2720);
 
 CREATE TABLE IF NOT EXISTS mag_ustavnoy_capital(
   data INT NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS mag_ustavnoy_capital(
   PRIMARY KEY(data)
   )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-  INSERT INTO mag_ustavnoy_capital VALUES('1477344953',3120);
+  INSERT INTO mag_ustavnoy_capital VALUES('1477354953',3120);
 
 #############################################################################
 
@@ -128,3 +128,14 @@ CREATE TABLE IF NOT EXISTS mag_razdel(
   PRIMARY KEY(id),
   UNIQUE KEY razdel (razdel)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS mag_podrazdel(
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  id_razdel INT(11) NOT NULL,
+  podrazdel VARCHAR(100) NULL,
+  use_podrazdel TINYINT,
+  PRIMARY KEY(id),
+  KEY id_razdel (id_razdel)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+##podrazdel
