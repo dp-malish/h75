@@ -11,18 +11,14 @@
         var sendurl="name="+f.name.value+"&addpodrazdel=1&razdel="+document.getElementById("add-podrazdel").dataset.razdel;
         ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
     },false);
-
-  //alert(document.getElementById("add-podrazdel").dataset.razdel);
-
     function answerFeedback(arr){
         modalloadclose();
         //alert(arr.answer);
-        var f = document.getElementById("add-podrazdel");
-        var theDiv = document.createElement("div");
-        theDiv.className = "fon_c five_";
-      // допилить ссылку
-        theDiv.innerHTML = "<a href='?upd="+arr.answer+"'>"+f.name.value+"</a>";
+        var f=document.getElementById("add-podrazdel");
+        var theDiv=document.createElement("div");
+        theDiv.className="fon_c five_";
+        theDiv.innerHTML="<a href='?upd="+document.getElementById("add-podrazdel").dataset.razdel+"&updpodr="+arr.answer+"'>"+f.name.value+"</a>";
         document.getElementById("allpodrazdel").appendChild(theDiv);
-        start_show(1, theDiv);
+        start_show(1,theDiv);
         f.name.value="";
     }</script>
