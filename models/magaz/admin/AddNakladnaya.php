@@ -39,7 +39,7 @@
         </select>
         <select id="god" class="god fl">
             <?php
-            for($i=2016;$i<2025;$i++){
+            for($i=2017;$i<2025;$i++){
                 echo '<option value="'.$i.'">'.$i.'</option>';
             }
             ?>
