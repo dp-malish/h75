@@ -9,12 +9,14 @@ if(PostRequest::issetPostArr()){
     if(!$user->loginAdmin()){echo '0';exit;}
 
     //magazine
-    if(!empty($_POST['namenklatura'])){
+    /*if(!empty($_POST['namenklatura'])){
         $mag=new Mag_postrequest_admin();
         $res=$mag->getRazdel();
         if($res){}
-    }
+    }*/
 
+
+    
 
     /*elseif(!empty($_POST['getrazdel'])){
         $mag=new Mag_postrequest_admin();
@@ -37,4 +39,4 @@ if(PostRequest::issetPostArr()){
         if($res){echo json_encode(['err'=>false,'answer'=>$res]);
         }else{PostRequest::answerErrJson();}
     }
-}
+}else echo "0";
