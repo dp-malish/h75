@@ -17,44 +17,30 @@
 
     <script type="text/javascript">
         var podRazdel=[];
-
-        document.getElementById("razdel").addEventListener("change",function(evt){
+        document.getElementById("razdel").addEventListener("change",function(){
             var canvas=document.getElementById("razcanvas");
             var raz=document.getElementById("razdel");
             while(canvas.firstChild){
                 canvas.removeChild(canvas.firstChild);
             }
+            answerFeedbackPodRazdel.raz=raz.value;
             if(podRazdel[raz.value]==undefined){
-                answerFeedbackPodRazdel.raz=raz.value;
                 var sendurl="razdel="+raz.value;
                 modalload(true);
                 ajaxPostSend(sendurl,answerFeedbackPodRazdel,true,true,'/ajax/magazin/postrequest_common.php');
-            }else{
-                alert("yes");
-            }
-
-            
+            }else{addPodRazdel();}
         },false);
         function answerFeedbackPodRazdel(arr){
             modalloadclose();
             podRazdel[answerFeedbackPodRazdel.raz]=arr;
             addPodRazdel();
-            //alert(podRazdel[answerFeedbackPodRazdel.raz].answer[0].podrazdel);
-            //alert(podRazdel[answerFeedbackPodRazdel.raz].answer.length);
-
-            /*var obj={};
-            obj.dir=arr.dir;
-            obj.maxid=arr.maxid;
-            imgOpt[answerFeedbackPodRazdel.raz]=obj;*/
-            //preView();ranKarusel()
         }
-
         function addPodRazdel(){
             var canvas=document.getElementById("razcanvas");
             var d=document.createElement("div");
             //d.setAttribute("id","boolBtn");
             //d.setAttribute("class","formbtn");
-            d.innerHTML = "<p>Флаговый фильтр</p>";
+            d.innerHTML = "<p>Выберите название подраздела:</p>";
             canvas.appendChild(d);
 
             var select = document.createElement("select");
@@ -63,12 +49,38 @@
             var newOption;
             newOption = document.createElement('option');
             newOption.setAttribute("value","0");
-            newOption.innerHTML="Выберите раздел";
+            newOption.innerHTML="Выберите подраздел";
             select.appendChild(newOption);
 
+            var i,counti;
+            counti=podRazdel[answerFeedbackPodRazdel.raz].answer.length;
+            for(i=0;i<counti;i++){
+                newOption = document.createElement('option');
+                newOption.setAttribute("value",podRazdel[answerFeedbackPodRazdel.raz].answer[i].id);
+                newOption.innerHTML=podRazdel[answerFeedbackPodRazdel.raz].answer[i].podrazdel;
+                select.appendChild(newOption);
+            }
             d=document.createElement("div");
-            d.innerHTML = "<p>Флаговый фильтр2</p>";
+            d.setAttribute("id","podrazcanvas");
+            d.innerHTML = "<p>Флаговый фильтр</p>";
             canvas.appendChild(d);
+
+            select.addEventListener("change",function(evt){
+                //alert("Ура! - "+answerFeedbackPodRazdel.raz);
+                while(d.firstChild){
+                    d.removeChild(d.firstChild);
+                }
+
+                select = document.createElement("select");
+                select.setAttribute("id","nomenklatura");
+                select.setAttribute("size",5);
+                d.appendChild(select);
+                newOption = document.createElement('option');
+                newOption.setAttribute("value","0");
+                newOption.innerHTML="Выберите подраздел";
+                select.appendChild(newOption);
+
+            },false);
         }
 
 
@@ -94,13 +106,13 @@
         //**********************************
 
 
-    document.getElementById("add-namenklatura").addEventListener("submit",function(evt){
+    /*document.getElementById("add-namenklatura").addEventListener("submit",function(evt){
         var f=this;
         evt.preventDefault();
         //modalload();
         var sendurl="name="+f.name.value+"&namenklatura=1";
         ajaxPostSend(sendurl,answerFeedback,true,true,'/ajax/magazin/postanswer_admin.php');
-    },false);
+    },false);*/
     function answerFeedback(arr){
         //modalloadclose();
         //alert(arr.answer);
