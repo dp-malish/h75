@@ -55,14 +55,15 @@ if(!isset($uri_parts[1]) && !$bad_link){$DB=new SQLi();Str_navigation::navigatio
 				$main_content.='<div class="cl"></div></article>'.Str_navigation::$navigation;
 				$description.='подробнее...';
 			}else{
-$res=$DB->strSQL('SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,ref_link FROM '.$table_name.' WHERE link='.$DB->realEscapeStr($uri_parts[1]));
+				if(UserAgent::$isBot){$res=$DB->strSQL('SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,full_text_for_bot FROM '.$table_name.' WHERE link='.$DB->realEscapeStr($uri_parts[1]));
+					if($res['full_text_for_bot']!=''){$res['full_text']=$res['full_text_for_bot'];}
+				}else{$res=$DB->strSQL('SELECT link,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,ref_link FROM '.$table_name.' WHERE link='.$DB->realEscapeStr($uri_parts[1]));}
 	if($res){
 	$title=$res['title'].' - '.$title;
 	$description=$res['meta_d'];
 	$keywords.=', '.$res['meta_k'];
 	if($res['img']!=''){$img='<img class="fl five br" src="/img/'.$img_dir.'/dbpic.php?id='.$res['img'].'" alt="'.$res['img_alt'].'" title="'.$res['img_title'].'">';}else{$img='';}
-	$main_content.='<article><div class="fon_c"><h4>Уход за младенцем</h4><article><h3>'.$res['caption'].'</h3>'.$caption1.$caption2.'<div class="cl"></div><p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$uri_parts[0].'/\');return false;" rel="nofollow">&#9668;&mdash;</a><br></p>'.$img.$res['full_text'];
-		if(!UserAgent::$isBot){$main_content.=$res['ref_link'];}
+	$main_content.='<article><div class="fon_c"><h4>Уход за младенцем</h4><article><h3>'.$res['caption'].'</h3>'.$caption1.$caption2.'<div class="cl"></div><p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$uri_parts[0].'/\');return false;" rel="nofollow">&#9668;&mdash;</a><br></p>'.$img.$res['full_text'].$res['ref_link'];
 		$main_content.='<p><a href="/'.$uri_parts[0].'/" onclick="button_back(\''.$uri_parts[0].'/\');return false;" rel="nofollow">&#9668;&mdash; Вернуться в меню «'.$back_link_name.'»</a></p></article><div class="cl"></div></div></article>';
 }else{$bad_link=1;}//$res['title']
 			}
