@@ -7,7 +7,6 @@ if(PostRequest::issetPostArr()){
     if(!empty($_POST['razdel'])){
         $mag=new Mag_postrequest_common();
         $res=$mag->getPodRazdel();
-
         if($res){echo json_encode(['err'=>false,'answer'=>$res]);}else{PostRequest::answerErrJson();}
         
     }

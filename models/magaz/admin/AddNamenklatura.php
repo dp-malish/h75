@@ -37,7 +37,11 @@
         },false);
         function answerFeedbackPodRazdel(arr){
             modalloadclose();
-            alert(arr.answer[2].id);
+            podRazdel[answerFeedbackPodRazdel.raz]=arr;
+            addPodRazdel();
+            //alert(podRazdel[answerFeedbackPodRazdel.raz].answer[0].podrazdel);
+            //alert(podRazdel[answerFeedbackPodRazdel.raz].answer.length);
+
             /*var obj={};
             obj.dir=arr.dir;
             obj.maxid=arr.maxid;
