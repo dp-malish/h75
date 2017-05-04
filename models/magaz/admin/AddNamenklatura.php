@@ -62,7 +62,7 @@
             }
             d=document.createElement("div");
             d.setAttribute("id","podrazcanvas");
-            d.innerHTML = "<p>Флаговый фильтр</p>";
+            //d.innerHTML = "<p>Флаговый фильтр</p>";
             canvas.appendChild(d);
 
             select.addEventListener("change",function(evt){
@@ -70,7 +70,41 @@
                 while(d.firstChild){
                     d.removeChild(d.firstChild);
                 }
+//******************************
 
+                var d_litle,btn_atr,input_form;
+
+                d_litle=document.createElement("div");
+                d_litle.setAttribute("id","atr1");
+                d_litle.innerHTML = "<p>Заполнить поле atr1</p>";
+                d.appendChild(d_litle);
+
+                btn_atr=document.createElement("input");
+                d_litle.setAttribute("id","atr1_btn");
+                btn_atr.setAttribute("type","button");
+                btn_atr.setAttribute("value","Заполнить...");
+                d_litle.appendChild(btn_atr);
+
+                btn_atr.addEventListener("click",function(){
+                    input_form=document.createElement("input");
+                    //input_form.setAttribute("id","");
+                    input_form.setAttribute("value","456798");
+
+                    modalloadForm("<p>"+this.parentElement.firstChild.innerHTML+"</p>",input_form);
+                    //alert(this.value);
+                    //alert("er");
+                },false);
+
+
+
+
+
+//******************************
+                d_litle=document.createElement("div");
+                d_litle.setAttribute("id","atr2");
+                d_litle.innerHTML = "<p>atr2</p>";
+                d.appendChild(d_litle);
+                /*
                 select = document.createElement("select");
                 select.setAttribute("id","nomenklatura");
                 select.setAttribute("size",5);
@@ -79,6 +113,7 @@
                 newOption.setAttribute("value","0");
                 newOption.innerHTML="Выберите подраздел";
                 select.appendChild(newOption);
+                */
 
             },false);
         }

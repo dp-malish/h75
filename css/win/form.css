@@ -169,3 +169,26 @@ background-color:#fff;
   cursor: pointer;
 }
 .vkbtnsend:hover{background:linear-gradient(to top, #FF8E00, #ffe100)}
+
+/********************************************/
+
+.modalloadformcanvas input, .modalloadformcanvas textarea, .modalloadformcanvas select{
+  width: 90%;
+  min-height: 33px;
+  box-sizing: border-box;
+  margin: 2px 5%;
+  padding: 2%;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius:3px;
+  box-shadow:0 1px 2px -1px rgba(0,0,0,.2) inset, 0 0 transparent;
+}
+.modalloadformcanvas input:hover, .modalloadformcanvas textarea:hover, .modalloadformcanvas select:hover{
+  border-color:#1c7a05;
+  box-shadow:0 1px 2px -1px rgba(0,0,0,.2) inset, 0 0 transparent;
+}
+.modalloadformcanvas input:focus, .modalloadformcanvas textarea:focus, .modalloadformcanvas select:focus{
+  outline: none;
+  border-color: #1c7a05;
+  box-shadow: 0 1px 2px -1px rgba(0,0,0,.2) inset, 0 0 4px rgba(35,146,243,.5);
+  transition:.2s linear;
+}
