@@ -42,8 +42,17 @@ INSERT INTO heading(id,link,rubrika)VALUES
   (3,'обо-всём','Обо всем'),
   (4,'психология','Психология'),
   (5,'рецепты-блюд','Рецепты блюд');*/
+
+DROP PROCEDURE views_blog;
+
 DELIMITER //
 CREATE PROCEDURE views_blog()
   BEGIN
-    UPDATE content SET views=views+greatest(7,round((rand())*20));
+    UPDATE taimod.content SET views=views+greatest(7,round((rand())*25));
   END;//
+
+DROP EVENT IF EXISTS views_blog_event;
+
+CREATE EVENT views_blog_event
+   ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 MINUTE
+   DO CALL views_blog;
