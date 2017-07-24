@@ -28,6 +28,10 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 <li><a href="/'.$uri_parts[0].'/блог-редактировать/">Блог редактировать</a></li>
 </ul>
 </div>';
+
+        $main_content.='<div class="fon_c"><h3>Поиск гугл по сайту</h3>';
+        $main_content.='</div>';
+
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
         switch($uri_parts[1]){
             case 'картинки':include'../modul/'.$dir_site.'/admin/img/main.php';break;
