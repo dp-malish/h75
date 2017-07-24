@@ -29,7 +29,18 @@ try{if($count_uri_parts>3){throw new Exception();}else{
 </ul>
 </div>';
 
-        $main_content.='<div class="fon_c"><h3>Поиск гугл по сайту</h3>';
+        $main_content.='<div class="fon_c"><h3>Поиск гугл по сайту</h3><script>
+  (function() {
+    var cx = \'002379236511279785072:9kadiruzdq4\';
+    var gcse = document.createElement(\'script\');
+    gcse.type = \'text/javascript\';
+    gcse.async = true;
+    gcse.src = \'https://cse.google.com/cse.js?cx=\' + cx;
+    var s = document.getElementsByTagName(\'script\')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>';
         $main_content.='</div>';
 
     }elseif(isset($uri_parts[1])&& !isset($uri_parts[2])){
