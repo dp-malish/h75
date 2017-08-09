@@ -6,12 +6,12 @@
  * Time: 00:12
  */
 
-define('FPDF_FONTPATH','/Library/WebServer/Documents/derby/font/');
+//define('FPDF_FONTPATH','/Library/WebServer/Documents/derby/font/');
 
-require( 'fpdf.php' );
+require( '../fpdf181/fpdf.php' );
 
 $pdf = new FPDF();
-$pdf->SetFont('Arial','',72);
+$pdf->SetFont('Arial','',52);
 $pdf->AddPage();
-$pdf->Cell(40,10,"Hello World!",15);
+$pdf->Cell(20,10,"Hello World2+5!",55);
 $pdf->Output();
