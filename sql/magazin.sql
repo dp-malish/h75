@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS mag_namenklatura(
   id_razdel INT NULL,
   razdel VARCHAR(100) NULL,
   podrazdel VARCHAR(100) NULL,
-  id_nakladnaya INT NULL,
+  #id_nakladnaya INT NULL,
   shtrihkod INT NULL,
 
   short_name VARCHAR(255) NULL,
