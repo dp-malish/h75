@@ -72,13 +72,49 @@
                 }
 //******************************
 
-                var d_litle,btn_atr,input_form;
+                var d_litle,input_field;
 
                 d_litle=document.createElement("div");
-                d_litle.setAttribute("id","atr1");
-                d_litle.innerHTML = "<p>Заполнить поле atr1</p>";
+                d_litle.setAttribute("id","shtrihkod");
+                d_litle.innerHTML = "<p>Заполните поле штрихкод</p>";
                 d.appendChild(d_litle);
 
+                input_field=document.createElement("input");
+                input_field.setAttribute("id","shtrihkod_val");
+                input_field.setAttribute("type","number");
+                //input_field.setAttribute("value","Заполнить...");
+                input_field.setAttribute("placeholder","Штрихкод");
+                d.appendChild(input_field);
+                //********
+
+                d_litle=document.createElement("div");
+                d_litle.setAttribute("id","short_name");
+                d_litle.innerHTML = "<p>Заполните поле короткое название</p>";
+                d.appendChild(d_litle);
+
+                input_field=document.createElement("input");
+                input_field.setAttribute("id","short_name_val");
+                input_field.setAttribute("maxlength","230");
+                input_field.setAttribute("placeholder","Короткое название");
+                d.appendChild(input_field);
+                //********
+
+                d_litle=document.createElement("div");
+                d_litle.setAttribute("id","full_name");
+                d_litle.innerHTML = "<p>Заполните поле полное название</p>";
+                d.appendChild(d_litle);
+
+                input_field=document.createElement("textarea");
+                input_field.setAttribute("id","full_name_val");
+                input_field.setAttribute("maxlength","1000");
+                input_field.setAttribute("placeholder","Полное название");
+                d.appendChild(input_field);
+                //*********
+                
+
+
+                /*
+                 var d_litle,input_field,btn_atr,input_form;
                 btn_atr=document.createElement("input");
                 d_litle.setAttribute("id","atr1_btn");
                 btn_atr.setAttribute("type","button");
@@ -93,18 +129,18 @@
                     modalloadForm("<p>"+this.parentElement.firstChild.innerHTML+"</p>",input_form);
                     //alert(this.value);
                     //alert("er");
-                },false);
+                },false);*/
 
 
 
 
 
 //******************************
-                d_litle=document.createElement("div");
+                /* d_litle=document.createElement("div");
                 d_litle.setAttribute("id","atr2");
                 d_litle.innerHTML = "<p>atr2</p>";
                 d.appendChild(d_litle);
-                /*
+
                 select = document.createElement("select");
                 select.setAttribute("id","nomenklatura");
                 select.setAttribute("size",5);
