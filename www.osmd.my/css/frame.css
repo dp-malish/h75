@@ -1,10 +1,14 @@
 body{
-	background:#fdde6c url("../img/site/jpg.php?i=fon") repeat-y fixed top;
+	background:#E0C9B9 url("../img/site/jpg.php?i=fon") no-repeat fixed left bottom;
 	padding:0 8px 3px;
 }
-@media screen and (max-width:720px){
-	body{padding:0 0 3px;}
+@media screen and (min-width: 800px) and (max-width: 1250px){
+	body{padding:0 0 3px;background-image:url("../img/site/jpg.php?i=fon_1640")}
 }
+@media screen and (min-width: 10px) and (max-width: 799px){
+	body{padding:0 0 3px;background-image:url("../img/site/jpg.php?i=fon_1250")}
+}
+
 html,body{height:100%;
 	font:15px Verdana,Geneva,sans-serif;
 	text-align:justify;
