@@ -11,6 +11,9 @@ CREATE TABLE IF NOT EXISTS main_people(
   id int(11) NOT NULL AUTO_INCREMENT,
   flat int(11) NOT NULL,
 
+  tel int(11),
+  pass varchar(20),
+
   f varchar(30) NOT NULL,
   i varchar(20) NOT NULL,
   o varchar(20) NOT NULL,
