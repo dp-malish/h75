@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS main_people(
 
   tel int(11),
   pass varchar(20),
+  role INT(4),
 
   f varchar(30) NOT NULL,
   i varchar(20) NOT NULL,
@@ -31,6 +32,8 @@ CREATE TABLE IF NOT EXISTS main_people(
 
   PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+DROP TABLE main_people;
 
 CREATE TABLE IF NOT EXISTS sp_tariff(
   id int(11) NOT NULL AUTO_INCREMENT,
