@@ -17,7 +17,7 @@ html,body{height:100%;
 }
 
 #bh{
-	min-height:15px;
+	min-height:15px
 }	
 
 #header{
@@ -39,13 +39,12 @@ html,body{height:100%;
 	}
 
 #ah{
-	min-height:2px
+	min-height:4px
 }
 /**************************/
 /**************************/
 #wrap{
-	min-height:150px;
-	padding:5px 5px 0
+	min-height:150px
 }
 #l_col{
 	width:238px;

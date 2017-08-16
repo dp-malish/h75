@@ -7,9 +7,9 @@ A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 
 /*body{background:#eae1b8;}*/
 .pesok,.caption{
-	background:#EFA850 url(../img/site/jpg.php?i=pesok);
+	/*background:#EFA850 url(../img/site/jpg.php?i=pesok);*/
 }
-#wrap{
+#wrap,.b_fon{
 	background:rgba(253, 222, 108,0.7);
 }
 .fon_c,.fon_c0{/*общий фон обводки*/
@@ -26,3 +26,5 @@ A:hover,.link:hover{color:#B2251F;text-decoration:blink;}
 	border-bottom: #1c7a05 solid 2px;
 	padding: 3px 9px;
 }
+
+.temp{background-color: #0000FF}

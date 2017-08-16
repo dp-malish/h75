@@ -60,6 +60,9 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 	<!--<link rel="shortcut icon" href="/img/site/ico.png" type="image/png">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="/css.php?v1">-->
+
+
+	<link rel="stylesheet" type="text/css" href="/css/default.css">
 	<link rel="stylesheet" type="text/css" href="/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/css/frame.css">
 	<link rel="stylesheet" type="text/css" href="/css/color.css">
@@ -78,14 +81,14 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 	<div id="bh" class="maxw">
 	<div class="cl"></div>
 	</div>
-	<div id="header" class="maxw">
+	<div id="header" class="maxw b_fon five_ br">
 		<header>
 			<div id="logo" class="fl rel">
-				<a href="/"><img src="/img/site/pngext.php?i=mpk" alt="Логотип" title="На главную"></a>
+				<a href="/"><img src="/img/site/pngext.php?i=logo" alt="Логотип" title="На главную"></a>
 				<div class="cl"></div>
 			</div>
-			<div class="h_field pesok br five_">
-				<h2>Мариупольский профессиональный колледж</h2>
+			<div class="h_field br five_ fon_c0">
+				<h2>Объединение совладельцев многоквартирного дома<br>«Фортуна 119»</h2>
 				<div class="cl"></div>
 			</div>
 			<div id="board_top" class="h_field pesok br five_">
@@ -93,7 +96,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 					<div class="ac">
 
 					</div>
-					<div id="slogan"><p>ООО "<abbr title="Мариупольский профессиональный колледж">МПК</abbr>" - лидер консалтинговой
+					<div class="fon_c0 br"><p>ООО "<abbr title="Мариупольский профессиональный колледж">МПК</abbr>" - лидер консалтинговой
 							отрасли<br>в регионе </p></div>
 					<div class="ac">
 						<b>Режим работы:</b>
@@ -109,38 +112,32 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 			<div class="cl"></div>
 		</header>
 
-
-
-
-
-
-
 	</div>
 	<div id="ah" class="maxw">
 		<div class="cl"></div>
 	</div>
-	<div id="wrap" class="maxw br">
+	
+	
+	<div id="wrap" class="maxw br five_">
 		<div id="l_col" class="rel">
 			<div class="l_menu rel">
 				<div class="l_menu_title">Спецкурсы</div>
 				<nav>
 					<ul>
 						<li><a href="/оператор-компьютерного-набора" title="Оператор компьютерного набора">Оператор ПК</a></li>
-						<li><a href="/учётчик-регистрации-бухгалтерских-данных" title="Учётчик регистрации бухгалтерских данных">Регистрация
-								бух. данных</a></li>
 						<li><a href="/администратор" title="Администратор">Администратор</a></li>
 						<li><a href="/агент-по-поставкам" title="Агент по поставкам">Агент по поставкам</a></li>
 						<li><a href="/кассир" title="Кассир на предприятии, в учреждении, организации">Кассир</a></li>
 						<li><a href="/кассир-торгового-зала" title="Кассир торгового зала">Кассир торгового зала</a></li>
-						<li><a href="/флорист" title="Флорист">Флорист</a></li>
-						<li><a href="/озеленитель" title="Озеленитель">Озеленитель</a></li>
 						<li><a href="/цветовод" title="Цветовод">Цветовод</a></li>
 					</ul>
 				</nav>
 			</div>
 			<div class="cl"></div>
 		</div>
-		<div id="m_col" class="rel"><!--Пр кол-->
+
+
+		<div id="m_col" class="rel temp"><!--Пр кол-->
 			<div id="r_col" class="fr rel">
 				<div class="border fon_c br">
 					<div class="caption"><h3>Новости</h3></div>
@@ -155,7 +152,7 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 			<!--Центр кол-->
 			<div id="c_col" class="rel">
 				<main>
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				</main>
 				<div class="cl"></div>
 			</div><!--Конец Центр кол-->
@@ -164,9 +161,8 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 		<div class="cl"></div>
 	</div><!--end maxw-->
 
-
 	<div class="cl"></div>
-	<div id="foot" class="rel maxw">
+	<div id="foot" class="rel maxw b_fon br five_">
 		<footer>
 
 			<div id="copy" class="ac">Copyright &copy;mpkprof.com.ua<br>Мариупольский профессиональный
