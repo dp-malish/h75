@@ -26,20 +26,59 @@
 .main_nav a:hover{
 	color:#B2251F;
 }
-/***************l_menu*********************/
-.l_menu{
+
+
+/***************flat*********************/
+
+.menu_flat{
 	padding-bottom:7px;
 	margin-bottom:7px;
 	border:#aa5901 1px solid;
 	border-radius:5px;
 
 }
-.l_menu li{
+#menu_flat{padding-top: 10px}
+#menu_flat div{
+	margin: 7px;
+	height: 40px;
+	width: 40px;
+	overflow: hidden;
+	background:rgba(250,229,170,.95);
+	border:rgba(250,229,170,.95) thin solid;
+	border-bottom-color:#aa5901;
+	transition-duration:1.3s;
+	text-align: center;
+}
+#menu_flat div a{
+	display:block;
+	text-decoration:none;
+	line-height:39px;
+	padding:0 2px 0 7px;
+	cursor:pointer;
+}
+
+#menu_flat div:hover{
+	border-right-color:#aa5901;
+	border-left-color:#aa5901;
+	border-top-color:#aa5901;
+	border-bottom-color:rgba(250,229,170,.95);
+	background:rgba(245,169,79,.55);
+}
+/***************flat*********************/
+/***************menu*********************/
+.menu{
+	padding-bottom:7px;
+	margin-bottom:7px;
+	border:#aa5901 1px solid;
+	border-radius:5px;
+
+}
+.menu li{
 	list-style:none;
 	position:relative;
 }
-.l_menu_title{
-	background:#EFA850 url(../img/site/jpg.php?i=pesok);
+.menu_title{
+	background:#EFA850/* url(../img/site/jpg.php?i=pesok)*/;
 	color:#b2251a;
 	font-size:120%;
 	font-weight:600;
@@ -48,16 +87,16 @@
 	min-height:25px;
 	padding:2px;
 }
-.l_menu ul{
+.menu ul{
 	display:block;
 }
-.l_menu ul li{
+.menu ul li{
 	background:rgba(250,229,170,.95);
 	border:rgba(250,229,170,.95) thin solid;
 	border-bottom-color:#aa5901;
 	transition-duration:1.3s;
 }
-.l_menu ul li a{
+.menu ul li a{
 	display:block;
 	text-decoration:none;
 	line-height:30px;
@@ -67,10 +106,11 @@
 @media screen and (min-width:240px) and (max-width:480px){
 	.l_menu ul li a{line-height:45px;font-size:120%}
 }
-.l_menu ul li:hover{
+.menu ul li:hover{
 	border-right-color:#aa5901;
 	border-left-color:#aa5901;
 	border-top-color:#aa5901;
 	border-bottom-color:rgba(250,229,170,.95);
 	background:rgba(245,169,79,.55);
 }
+/***************menu*********************/
