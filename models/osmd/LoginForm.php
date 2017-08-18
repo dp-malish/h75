@@ -2,9 +2,9 @@
   <h4>Вход в личный кабинет</h4>
   <form id="form_login" class="form" method="post">
 
-    <p>* Номер телефона:</p>
+    <p>Номер телефона: *</p>
     <input type="text" name="tel" id="tel" required placeholder="+38(0__) ___-__-__" maxlength="13" value="+380">
-    <p>* Пароль:</p><input type="password" name="pass" required placeholder="**********" maxlength="20">
+    <p>Пароль: *</p><input type="password" name="pass" required placeholder="**********" maxlength="20">
 
     <input type="submit" value="Войти"></form>
   <p class="note">Примечание: поля, помеченные * звездочкой - обязательны для заполнения</p></div>

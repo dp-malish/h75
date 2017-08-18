@@ -1,6 +1,10 @@
 CREATE TABLE IF NOT EXISTS main_flat(
   flat int(11) NOT NULL AUTO_INCREMENT,
-  account int(8) ZEROFILL,
+  account int(8) ZEROFILL,#лицево
+
+  entry SMALLINT,
+  floor SMALLINT,
+
   space_flat DECIMAL (4,2),
   exemption tinyint(1), # льгота
   subsidy int(11),

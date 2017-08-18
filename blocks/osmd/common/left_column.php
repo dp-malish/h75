@@ -1,1 +1,1 @@
-<div id="wrap" class="maxw"><div id="l_col" class="rel"><?=$left_content_up.$remont.$rek_winteh_l.$left_content?><div class="cl"></div></div>
+<div id="wrap" class="maxw br five_"><div id="l_col" class="rel"><?=$left_content_up.$lm_flat.$left_content;?><div class="cl"></div></div>
