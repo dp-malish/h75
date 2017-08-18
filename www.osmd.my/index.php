@@ -140,8 +140,15 @@ require'../blocks/mpk/common/header.php';require'../blocks/mpk/common/after_head
 				<div class="cl"></div>
 			</div>
 			<!--Центр кол-->
-			<div id="c_col" class="rel fon_c br">
+			<div id="c_col" class="rel br">
 				<main>
+
+
+					<?php
+												$main_content=$Cash->SendHTML('../models/osmd/LoginForm.php');
+												echo $main_content;
+					?>
+
 				!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
 					!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
 					!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>

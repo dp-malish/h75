@@ -60,7 +60,7 @@ html,body{height:100%;
 /*  m_col_child Start */
 #c_col{
 	min-width:238px;/*+120px;*/
-	max-width:1010px;
+	max-width:1020px;
 	overflow:hidden
 }
 #r_col{
