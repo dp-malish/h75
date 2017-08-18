@@ -2,7 +2,7 @@
 $login_menu='<div class="border fon_c br">
             <div class="caption"><h3>Личный кабинет</h3></div>
             <ul class="nav_link">
-                <li><a href="#"><p>Вход в личный кабинет</p></a></li>
+                <li><a href="/login"><p>Вход в личный кабинет</p></a></li>
             </ul>
         </div>';
 

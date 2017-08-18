@@ -3,7 +3,7 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
 Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
 set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/mpk');spl_autoload_extensions("_class.php");spl_autoload_register();
-$Cash=new Cache_File('../cache_all/mpk/');$bot=new UserAgent();
+$Cash=new Cache_File('../cache_all/osmd/');$bot=new UserAgent();
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
     try{$uri=urldecode($uri);
@@ -12,11 +12,13 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
             $uri_parts0_id=explode('-',$uri_parts[0],2);
             $count_uri0_parts=count($uri_parts0_id);
             if(isset($uri_parts0_id[0]) && !isset($uri_parts0_id[1])){
-                $setAdminCook='osmd'.Data::DatePass();
+                //$setAdminCook='osmd'.Data::DatePass();
                 switch($uri_parts[0]){
-                    case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
-                    case'set':include'../modul/mpk/admin/main.php';break;
-                    case'новости':include'../modul/mpk/news.php';break;
+                    //case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
+                    //case'set':include'../modul/mpk/admin/main.php';break;
+                    
+                    
+                    case'login':include'../modul/osmd/login.php';break;
                     default:$index=1;//include'../modul/mpk/def.php';
                 }
             }
