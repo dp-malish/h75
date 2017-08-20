@@ -50,7 +50,7 @@ function mylogin(){
         inp.setAttribute('disabled','');
         //**********************
         var url="login=1&mail="+mail.value+"&pass="+pass.value;
-        ajaxPostSend(url,loginUser,true,true,"/ajax/site/user.php");
+        ajaxPostSend(url,loginUser,true,true,"/ajax/site/user_osmd.php");
         setTimeout("submitlogin.removeAttribute('disabled')",2000);
         //**********************
     },false);
@@ -252,7 +252,7 @@ function myReg(){
             var url="reg=1&name="+regname.value+"&chislo="+regchislo.value+"&mesyac="+regmesyac.value+"&god="+reggod.value+"&mail="+regmail.value+"&pass="+regpass.value;
             if(myReg.fio!=undefined)url+="&patronymic="+regpatronymic.value+"&surname="+regsurname.value;
             if(myReg.tel!=undefined)url+="&tel="+regtel.value;
-            ajaxPostSend(url,regUser,true,true,"/ajax/site/user.php");
+            ajaxPostSend(url,regUser,true,true,"/ajax/site/user_osmd.php");
         }
         setTimeout("submitreg.removeAttribute('disabled')",2200);
         //**********************
@@ -323,7 +323,7 @@ function showUserMenu(){
         else{usernamelinkmenu.style.display="block";showUserMenu.show=true;}
     }
 }
-function exitUser(){ajaxPostSend("exit=1",exitUserRes,true,true,"/ajax/site/user.php");}
+function exitUser(){ajaxPostSend("exit=1",exitUserRes,true,true,"/ajax/site/user_osmd.php");}
 function exitUserRes(arr){clearLoginLink();startLoginUser();}
 function privateOffice(){document.location.href = "/личный-кабинет/";}
 //*************************************************************************
@@ -408,7 +408,7 @@ function rememberPass(){
             inp.setAttribute('disabled','');
             //**********************
                 var url="remember=1&chislo="+regchislo.value+"&mesyac="+regmesyac.value+"&god="+reggod.value+"&mail="+remembermail.value;
-                ajaxPostSend(url,rememberPassRes,true,true,"/ajax/site/user.php");
+                ajaxPostSend(url,rememberPassRes,true,true,"/ajax/site/user_osmd.php");
             setTimeout("submitremember.removeAttribute('disabled')",2200);
             //**********************
         },false);

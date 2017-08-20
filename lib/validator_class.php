@@ -20,6 +20,7 @@ class Validator{
 	static function paternIntMinus($s){return(preg_match("/^[0-9\-]+$/u",$s))?true:false;}
 	static function paternStrLink($s){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-]+$/u",$s))?true:false;}
 	static function paternStrRusText($s){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-\–\n\s\(\)\.,!?:;«»]+$/u",$s))?true:false;}
+	static function paternMobTel($s){return(preg_match("/^[0-9\-\+]+$/u",$s))?true:false;}
 	//**************************
 	static function auditFIO($s){$s=Validator::html_cod($s);$l=self::LengthStr($s,130);
 		if($l==0){self::$ErrorForm[]='Незаполненное поле ФИО';return false;}

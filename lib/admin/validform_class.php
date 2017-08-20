@@ -34,4 +34,23 @@ class ValidForm extends Validator{
         elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$f.' - '.$dlina.' символов';return false;}
         else{return	$s;}
     }
+    static function tel($s,$dlina=13){
+        $s=Validator::html_cod($s);
+        $l=self::LengthStr($s,$dlina);
+        if($l==0){return'';}
+        elseif($l==2){self::$ErrorForm[]='Максимальная длина поля телефон - '.$dlina.' символов';return false;}
+        else{
+            if(self::paternMobTel($s)){return $s;}else{self::$ErrorForm[]='В поле телефон используются недопустимые символы';return false;}
+            //return	$s;
+        }
+    }
+    static function pass($s,$l=30,$f='пароль'){
+        $s=self::html_cod($s);
+        $l=self::LengthStr($s,$l);
+        if($l==0){self::$ErrorForm[]='Незаполненное поле '.$f;return false;}
+        elseif($l==2){self::$ErrorForm[]='Максимальная длина поля '.$f.' - 255 символов';return false;}
+        else{
+            if(self::paternStrLink($s)){return $s;}else{self::$ErrorForm[]='В поле '.$f.' используются недопустимые символы';return false;}
+        }
+    }
 }
