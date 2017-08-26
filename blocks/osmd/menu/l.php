@@ -6,7 +6,7 @@ $lm_flat='<div class="menu_flat rel">
 
 
 
-                        for($i=1;$i<81;$i++)$lm_flat.='<div><a href="#">'.$i.'</a></div>';
+                        for($i=1;$i<71;$i++)$lm_flat.='<div><a href="#">'.$i.'</a></div>';
 
 
                 $lm_flat.='</div>

@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS main_people(
   id int(11) NOT NULL AUTO_INCREMENT,
   flat int(11) NOT NULL,
 
-  tel int(11),
+  tel BIGINT UNSIGNED,
   pass varchar(20),
   role INT(4),
 
@@ -25,12 +25,14 @@ CREATE TABLE IF NOT EXISTS main_people(
   i varchar(20) NOT NULL,
   o varchar(20) NOT NULL,
 
-  d_birthday SMALLINT,
-  m_birthday SMALLINT,
-  y_birthday SMALLINT,
+  d_birthday TINYINT (2) ZEROFILL,
+  m_birthday TINYINT (2) ZEROFILL,
+  y_birthday SMALLINT(4) UNSIGNED,
 
   passport_serial varchar(2),
   passport_number varchar(6),
+
+  not_lives tinyint(1),# проживает
 
   exemption tinyint(4), # льгота
 
