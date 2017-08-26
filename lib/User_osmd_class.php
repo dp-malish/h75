@@ -1,10 +1,17 @@
 <?php
 class User_osmd{
 
-    private $site;
+    const COOKIE_ROLE='ors';
+    const COOKIE_USER='ous';
+    const COOKIE_FLAT='ofs';
 
+
+    private $site;
     private $ip;
-    
+
+    public $name;
+    public $patronymic;
+
     public $temp;
 
 
@@ -47,11 +54,20 @@ class User_osmd{
                 $res=$DB->strSQL($sql);
 
                 if($res){
-                    //квартира
-
                     //роль
+                    if($res['role']!=''){
+                        $this->setCookieRole($res['role']);
+                        //Добавить валид пароль
 
+                    }
+                    //user
+                    $this->setCookieUser($res['id']);
+                    //квартира
+                    $this->setCookieFlat($res['flat']);
                     //фио
+                    $this->name=$res['i'];
+                    $this->patronymic=$res['o'];
+                    //--------------------------
 
 
                     $this->temp=$sql;
@@ -60,5 +76,18 @@ class User_osmd{
         }else{$err=true;Validator::$ErrorForm[]='Неверный логин или пароль...';}
         return($err?false:true);
     }
-    
+    private function setCookieRole($val){setcookie(self::COOKIE_ROLE,$val,time()+31622400,'/','.'.$this->site);}
+    //добавить пароль если есть роль
+
+
+    private function setCookieUser($val){setcookie(self::COOKIE_USER,$val,time()+31622400,'/','.'.$this->site);}
+    private function setCookieFlat($val){setcookie(self::COOKIE_FLAT,$val,time()+31622400,'/','.'.$this->site);}
+
+    private function createMd5ValidLoginSes(){}
+    //**********************************************************
+    //**********************************************************
+    //**********************************************************
+
+
+
 }
