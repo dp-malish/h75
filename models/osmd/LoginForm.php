@@ -18,7 +18,5 @@
   function answerLoginFeedback(arr){
     alert(arr.answer);
     
-    //var f=document.getElementById("form_login");
-    
-    
+    location.replace(uri);
   }</script>
