@@ -16,7 +16,7 @@
     ajaxPostSend(sendurl,answerLoginFeedback,true,true,"/ajax/site/user_osmd.php");
   },false);
   function answerLoginFeedback(arr){
-    alert(arr.answer);
+    //alert(arr.answer);
     
     location.replace(uri);
   }</script>

@@ -1,10 +1,7 @@
 <?php
-$user=new User_osmd();
+$User->loginSes();
 
+if($User->easy_pass)
+    $main_content.='<div class="fon_c">'.$User->user.'  -   '.$User->flat.'</div>';
 
-$user->loginSes();
-$main_content.=$Cash->SendHTMLext('../models/osmd/LoginForm.php',[$user->createFormLogin()]);
-
-$user->validEasyPass();
-
-if($user->easy_pass)$main_content.='<div class="fon_c">'.$user->user.'  -   '.$user->flat.'</div>';
+else $main_content.=$Cash->SendHTMLext('../models/osmd/LoginForm.php',[$User->createFormLogin()]);

@@ -9,8 +9,13 @@ class User_osmd{
     const COOKIE_ROLE='ors';
     const COOKIE_USER='ous';
     const COOKIE_FLAT='ofs';
+    const COOKIE_NAME='ons';
+    const COOKIE_PATRONYMIC='ops';
     const COOKIE_EASY_PASS='oep';
     const COOKIE_EASY_PASS_ROLE='oepr';
+
+
+    const ARRAY_ROLE=['','Председатель','Бухгалтер','3','4','5','6','7','8','9','10','11','12','Администратор'];
 
 
     private $site;
@@ -19,12 +24,12 @@ class User_osmd{
     public $easy_pass=true; //Пользователь вощёл будет true
 
 
-    public $role;
+    public $role=0;
     public $user;
-    public $flat;
+    public $flat=0;
 
-    //public $name;
-    //public $patronymic;
+    public $name='';
+    public $patronymic='';
 
     public $temp;
 
@@ -72,17 +77,19 @@ class User_osmd{
                     if($res['role']!=''){
                         $this->setCookieRole($res['role']);
                         //Добавить валид пароль
-                        $this->setCookieEasyPassRole($this->createMd5EasyPassRole($res['id'],$res['role'],$pass));
+                        $this->setCookieEasyPassRole($this->createMd5EasyPassRole($res['id'],$res['flat'],$res['role'],$pass));
                     }
                     //user
                     $this->setCookieUser($res['id']);
                     //квартира
                     $this->setCookieFlat($res['flat']);
                     //фио
-                    //$this->name=$res['i'];
-                    //$this->patronymic=$res['o'];
+                    $this->name=$res['i'];
+                    $this->patronymic=$res['o'];
                     //--------------------------
                     $this->setCookieEasyPass($this->createMd5EasyPass($res['id'],$res['flat']));
+                    $this->setCookieName();
+                    $this->setCookiePatronymic();
 
 
                     $this->temp=$sql;
@@ -95,9 +102,11 @@ class User_osmd{
     private function setCookieRole($val){setcookie(self::COOKIE_ROLE,$val,time()+self::COOKIE_TIME,'/','.'.$this->site);}
     //добавить пароль если есть роль
 
-    //id пользователя и номер квартиры
+    //id пользователя и номер квартиры  ИМЯ И ОТЧЕСТВО
     private function setCookieUser($val){setcookie(self::COOKIE_USER,$val,time()+self::COOKIE_TIME,'/','.'.$this->site);}
     private function setCookieFlat($val){setcookie(self::COOKIE_FLAT,$val,time()+self::COOKIE_TIME,'/','.'.$this->site);}
+    private function setCookieName(){setcookie(self::COOKIE_NAME,$this->name,time()+self::COOKIE_TIME,'/','.'.$this->site);}
+    private function setCookiePatronymic(){setcookie(self::COOKIE_PATRONYMIC,$this->patronymic,time()+self::COOKIE_TIME,'/','.'.$this->site);}
     
     //EasyPass
     private function createMd5EasyPass($user,$flat){return md5(Opt::COOKIE_SALT.$flat.(md5($this->ip.$user)));}
@@ -126,6 +135,10 @@ class User_osmd{
         $this->flat=Validator::issetCookie(self::COOKIE_FLAT);
         if(!Validator::paternInt($this->flat)){$this->easy_pass=false;}
 
+        $this->name=urldecode(Validator::issetCookie(self::COOKIE_NAME));
+        if(!Validator::paternStrLink($this->name)){$this->easy_pass=false;}
+        $this->patronymic=Validator::issetCookie(self::COOKIE_PATRONYMIC);
+        if(!Validator::paternStrLink($this->patronymic)){$this->easy_pass=false;}
 
         if($this->easy_pass){
             //
@@ -141,6 +154,11 @@ class User_osmd{
         if(!Validator::paternInt($this->user)){$this->easy_pass=false;}
         $this->flat=Validator::issetCookie(self::COOKIE_FLAT);
         if(!Validator::paternInt($this->flat)){$this->easy_pass=false;}
+
+        $this->name=Validator::issetCookie(self::COOKIE_NAME);
+        if(!Validator::paternStrLink($this->name)){$this->easy_pass=false;}
+        $this->patronymic=Validator::issetCookie(self::COOKIE_PATRONYMIC);
+        if(!Validator::paternStrLink($this->patronymic)){$this->easy_pass=false;}
 
         
         if($this->easy_pass){

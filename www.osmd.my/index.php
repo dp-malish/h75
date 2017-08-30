@@ -3,7 +3,10 @@ $site=$_SERVER['SERVER_NAME'];$root=$_SERVER['DOCUMENT_ROOT'];
 Error_Reporting(E_ALL & ~E_NOTICE);ini_set('display_errors',1);
 
 set_include_path(get_include_path().PATH_SEPARATOR.'../lib'.PATH_SEPARATOR.'../include/osmd'.PATH_SEPARATOR.'../lib/admin');spl_autoload_extensions("_class.php");spl_autoload_register();
+
 $Cash=new Cache_File('../cache_all/osmd/');$bot=new UserAgent();
+
+$User=new User_osmd();$User->validEasyPass();
 
 if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],ENT_QUOTES);
     try{$uri=urldecode($uri);
