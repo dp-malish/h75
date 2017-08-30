@@ -13,7 +13,7 @@ class User_osmd{
     const COOKIE_PATRONYMIC='ops';
     const COOKIE_EASY_PASS='oep';
     const COOKIE_EASY_PASS_ROLE='oepr';
-
+    const COOKIE_PASS_ROLE='opr';
 
     const ARRAY_ROLE=['','Председатель','Бухгалтер','3','4','5','6','7','8','9','10','11','12','Администратор'];
 
@@ -23,15 +23,12 @@ class User_osmd{
 
     public $easy_pass=true; //Пользователь вощёл будет true
 
-
     public $role=0;
     public $user;
     public $flat=0;
 
     public $name='';
     public $patronymic='';
-
-    public $temp;
 
 
     function __construct(){
@@ -67,7 +64,7 @@ class User_osmd{
             if(empty(Validator::$ErrorForm)){
                 //добавить в БД
                 $DB=new SQLi();
-                $sql='SELECT id,flat,role,f,i,o FROM main_people WHERE tel=? AND pass=?';
+                $sql='SELECT id,flat,role,f,i,o FROM main_people WHERE tel=? AND pass=? AND not_lives IS NULL';
                 $sql=$DB->realEscape($sql,[$tel,$pass]);
 
                 $res=$DB->strSQL($sql);
@@ -77,7 +74,9 @@ class User_osmd{
                     if($res['role']!=''){
                         $this->setCookieRole($res['role']);
                         //Добавить валид пароль
-                        $this->setCookieEasyPassRole($this->createMd5EasyPassRole($res['id'],$res['flat'],$res['role'],$pass));
+                        $md5pass=$this->createMd5PassRole($pass);
+                        $this->setCookiePassRole($md5pass);
+                        $this->setCookieEasyPassRole($this->createMd5EasyPassRole($res['id'],$res['flat'],$res['role'],$md5pass));
                     }
                     //user
                     $this->setCookieUser($res['id']);
@@ -92,7 +91,6 @@ class User_osmd{
                     $this->setCookiePatronymic();
 
 
-                    $this->temp=$sql;
                 }else{$err=true;Validator::$ErrorForm[]='Неверный логин или пароль...';}
             }else{$err=true;}
         }else{$err=true;Validator::$ErrorForm[]='Неверный логин или пароль...';}
@@ -112,10 +110,12 @@ class User_osmd{
     private function createMd5EasyPass($user,$flat){return md5(Opt::COOKIE_SALT.$flat.(md5($this->ip.$user)));}
     private function setCookieEasyPass($val){setcookie(self::COOKIE_EASY_PASS,$val,time()+self::COOKIE_TIME,'/','.'.$this->site);}
 
-    //EasyPassRole
+    //PassRole && EasyPassRole
+    private function createMd5PassRole($pass){return md5(Opt::COOKIE_SALT.$pass.(md5($this->ip)));}
+    private function setCookiePassRole($val){setcookie(self::COOKIE_PASS_ROLE,$val,time()+self::COOKIE_TIME,'/','.'.$this->site);}
+
     private function createMd5EasyPassRole($user,$flat,$role,$pass){return md5(Opt::COOKIE_SALT.$pass.$flat.(md5($this->ip.$user.$role)));}
     private function setCookieEasyPassRole($val){setcookie(self::COOKIE_EASY_PASS_ROLE,$val,time()+self::COOKIE_TIME,'/','.'.$this->site);}
-
     //**********************************************************
     //**********************************************************
     //**********************************************************
@@ -126,7 +126,6 @@ class User_osmd{
         }else{$this->validEasyPassNotRole();}
     }
     private function validEasyPassIsRole(){
-
         $this->role=Validator::issetCookie(self::COOKIE_ROLE);
         if(!Validator::paternInt($this->role)){$this->easy_pass=false;}
 
@@ -135,19 +134,21 @@ class User_osmd{
         $this->flat=Validator::issetCookie(self::COOKIE_FLAT);
         if(!Validator::paternInt($this->flat)){$this->easy_pass=false;}
 
-        $this->name=urldecode(Validator::issetCookie(self::COOKIE_NAME));
+        $this->name=Validator::issetCookie(self::COOKIE_NAME);
         if(!Validator::paternStrLink($this->name)){$this->easy_pass=false;}
         $this->patronymic=Validator::issetCookie(self::COOKIE_PATRONYMIC);
         if(!Validator::paternStrLink($this->patronymic)){$this->easy_pass=false;}
 
+        $md5pass=Validator::issetCookie(self::COOKIE_PASS_ROLE);
+        if(!Validator::paternStrLink($md5pass)){$this->easy_pass=false;}
+
+        $easyPassRole=Validator::issetCookie(self::COOKIE_EASY_PASS_ROLE);
+        if(!Validator::paternStrLink($easyPassRole)){$this->easy_pass=false;}
+
         if($this->easy_pass){
-            //
-
-
-            //if(Validator::issetCookie(self::COOKIE_EASY_PASS)!=$this->createMd5EasyPass($this->user,$this->flat)){$this->easy_pass=false;}
+            if(Validator::issetCookie(self::COOKIE_EASY_PASS)!=$this->createMd5EasyPass($this->user,$this->flat)){$this->easy_pass=false;}
+            if($this->createMd5EasyPassRole($this->user,$this->flat,$this->role,$md5pass)!=$easyPassRole){$this->easy_pass=false;}
         }
-
-
     }
     private function validEasyPassNotRole(){
         $this->user=Validator::issetCookie(self::COOKIE_USER);
@@ -160,14 +161,26 @@ class User_osmd{
         $this->patronymic=Validator::issetCookie(self::COOKIE_PATRONYMIC);
         if(!Validator::paternStrLink($this->patronymic)){$this->easy_pass=false;}
 
-        
         if($this->easy_pass){
-            if(Validator::issetCookie(self::COOKIE_EASY_PASS)!=$this->createMd5EasyPass($this->user,$this->flat)){$this->easy_pass=false;}            
+            if(Validator::issetCookie(self::COOKIE_EASY_PASS)!=$this->createMd5EasyPass($this->user,$this->flat)){$this->easy_pass=false;}
         }
     }
     //**********************************************************
     //**********************************************************
     //**********************************************************
+    function exitLoginUser(){
+        if(Validator::issetCookie(self::COOKIE_ROLE))setcookie(self::COOKIE_ROLE,'',time(),'/','.'.$this->site);
+        setcookie(self::COOKIE_USER,'',time(),'/','.'.$this->site);
+        setcookie(self::COOKIE_FLAT,'',time(),'/','.'.$this->site);
+        setcookie(self::COOKIE_NAME,'',time(),'/','.'.$this->site);
+        setcookie(self::COOKIE_PATRONYMIC,'',time(),'/','.'.$this->site);
+        setcookie(self::COOKIE_EASY_PASS,'',time(),'/','.'.$this->site);
+
+        if(Validator::issetCookie(self::COOKIE_PASS_ROLE))setcookie(self::COOKIE_PASS_ROLE,'',time(),'/','.'.$this->site);
+        if(Validator::issetCookie(self::COOKIE_EASY_PASS_ROLE))setcookie(self::COOKIE_EASY_PASS_ROLE,'',time(),'/','.'.$this->site);
+        $this->easy_pass=false;
+        return true;
+    }
 
 
 }
