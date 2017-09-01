@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS main_flat(
 
 CREATE TABLE IF NOT EXISTS main_people(
   id int(11) NOT NULL AUTO_INCREMENT,
-  flat int(11)UNSIGNED DEFAULT 0 NOT NULL,
+  flat int(11)UNSIGNED DEFAULT 0,
 
   tel BIGINT UNSIGNED,
   pass varchar(20),

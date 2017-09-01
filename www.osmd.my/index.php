@@ -20,7 +20,6 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                     //case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
                     //case'set':include'../modul/mpk/admin/main.php';break;
                     
-                    
                     case'login':include'../modul/osmd/login.php';break;
                     default:$index=1;//include'../modul/mpk/def.php';
                 }
@@ -28,8 +27,9 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
             if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
                 switch($uri_parts0_id[0]){
 
-                    //case'детское':include $root.'/modul/r/uhod_za_mladencem/det_zdorov.php';break;//здоровье
-                    //default:include'../modul/mpk/def.php';
+                    case'ремонтные':include'../modul/osmd/r/remont.php';break;//ремонтные-работы
+
+                    default:$index=1;//include'../modul/mpk/def.php';
                 }
             }
         }
