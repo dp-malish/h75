@@ -6,9 +6,11 @@
  * Time: 14:24
  */
 $main_content.='<div class="fon_c">
-                    <div class="tab_osmd dwf">
-                        <div class="ff ac temp">hg</div>
-                        <div class="ff ac tab_osmd_back">rt</div>
+                    <div class="">
+                    
+                        <div class="tab_osmd ff fl">Запланированные</div>
+                        <div class="tab_osmd ff tab_osmd_back tab_osmd_b_l fr"><a href="#">Произведённые</a></div>
+                        <div class="cl"></div>
                     </div>
                 remont
                 </div>';

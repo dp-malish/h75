@@ -24,19 +24,38 @@ ul{list-style:none}
 
 .temp{background-color: #0000FF}
 .temp2{background-color: #4430FF}
-.tab_osmd div{min-height: 30px}
-.tab_osmd_back{
-	background:#EFA850/* url(../img/site/jpg.php?i=pesok)*/;
-	color:#b2251a;
+/******************************/
+/******************************/
+/******************************/
+.tab_osmd{
+	text-align:center;
 	font-size:120%;
-	font-weight:600;
-	border:#aa5901 1px solid;
-	/*border-left:#aa5901 1px solid;*/
-
-	min-height:25px;
-	padding:2px;
+	line-height:37px;
 }
-
+.tab_osmd a:link{
+	display:block;
+	text-decoration:none;
+	transition-duration:1.3s;
+	height:37px;
+}
+.tab_osmd a:hover{
+	background:rgba(245,169,79,.55);
+}
+.tab_osmd_back{
+	background:rgba(250,229,170,.95);
+	border-bottom:#aa5901 1px solid;
+	font-weight:600;
+	height:100%;
+}
+.tab_osmd_b_l{
+	border-left:#aa5901 1px solid;
+}
+.tab_osmd_b_r{
+	border-right:#aa5901 1px solid;
+}
+/******************************/
+/******************************/
+/******************************/
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}
 .img_btn,.vksmilebox img{
 	margin:5px 7px;
