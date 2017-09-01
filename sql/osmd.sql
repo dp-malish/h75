@@ -41,6 +41,20 @@ CREATE TABLE IF NOT EXISTS main_people(
 
 DROP TABLE main_people;
 
+CREATE TABLE IF NOT EXISTS main_remont(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  vipolnen TINYINT(1),
+  opisanie TEXT,
+  tip_remonta SMALLINT(4) UNSIGNED,
+  smetnaya_stoimost INT,
+  data int(11),
+  PRIMARY KEY (id),
+  KEY vipolnen (vipolnen)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+DROP TABLE main_remont;
+
+# справочники
 CREATE TABLE IF NOT EXISTS sp_tariff(
   id int(11) NOT NULL AUTO_INCREMENT,
   tariff int(11) NOT NULL,
