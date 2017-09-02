@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS main_remont(
   id int(11) NOT NULL AUTO_INCREMENT,
   vipolnen TINYINT(1),
   opisanie TEXT,
-  tip_remonta SMALLINT(4) UNSIGNED,
+  vid_remonta SMALLINT(4) UNSIGNED,
   smetnaya_stoimost INT,
   data int(11),
   PRIMARY KEY (id),

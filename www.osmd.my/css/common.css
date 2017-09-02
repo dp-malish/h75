@@ -32,6 +32,19 @@ ul{list-style:none}
 	font-size:120%;
 	line-height:37px;
 }
+@media screen and (min-width:550px) and (max-width:950px){
+	.tab_osmd{
+		font-size:90%;
+		line-height:33px;
+	}
+}
+@media screen and (min-width:140px) and (max-width:549px){
+	.tab_osmd{
+		font-size:70%;
+		line-height:30px;
+	}
+}
+
 .tab_osmd a:link{
 	display:block;
 	text-decoration:none;
@@ -54,6 +67,50 @@ ul{list-style:none}
 	border-right:#aa5901 1px solid;
 }
 /******************************/
+/*Таблицы*/
+.table_def{
+	width: 100%;
+	margin:10px auto;
+	text-align:center;
+	border-collapse:separate; /* Убираем двойные линии между ячейками */
+}
+.table_def td{
+	border:1px solid #aa5901;/* Параметры рамки */
+}
+.table_def tr:first-child{
+	font-weight:600;
+}
+.table_def tr td:first-child{
+	min-width: 20px;
+	padding: 7px 0;
+}
+@media screen and (min-width:890px) and (max-width:999px){
+	.table_def{font-size:80%}
+}
+
+@media screen and (min-width:850px) and (max-width:889px){
+	.table_def{font-size:70%}
+}
+
+
+
+
+@media screen and (min-width:750px) and (max-width:849px){
+	.table_def{font-size:60%}
+}
+
+@media screen and (min-width:700px) and (max-width:749px){
+	.table_def{font-size:55%}
+}
+
+@media screen and (min-width:600px) and (max-width:699px){
+	.table_def{font-size:65%}
+}
+@media screen and (min-width:140px) and (max-width:599px){
+	.table_def{font-size:58%}
+}
+
+/*End Таблицы*/
 /******************************/
 /******************************/
 .colorbox{cursor: url(../img/site/colorbox/zoomin.cur),pointer !important;}

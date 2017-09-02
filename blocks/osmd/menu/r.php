@@ -10,7 +10,7 @@ if($User->easy_pass){
     $login_menu.='<div class="menu rel">
             <div class="menu_title">'.User_osmd::ARRAY_ROLE[$User->role].'</div>
             <nav>
-            <ul>'.($User->role==1?'<li><a href="#" title="Устав ОСМД">Квартира: '.$User->flat.'</a></li>':'').
+            <ul>'.($User->role==1 || $User->role==13?'<li><a href="/ремонтные-работы-запланированные/добавить" title="Ремонтные работы">Ремонтные работы</a></li>':'').
     //($User->name!=''?'<li><p>Пользователь:</p><p>'.$User->name.' '.$User->patronymic.'</p></li>':'').
     //($User->role!=0?'<li><p>Должность: '.User_osmd::ARRAY_ROLE[$User->role].'</p></li>':'').
     '         </ul>
@@ -31,7 +31,7 @@ $r_menu='<div class="menu rel">
             <nav>
                 <ul>
                     <li><a href="/устав" title="Устав ОСМД Фортуна - 119">Устав ОСМД</a></li>
-                    <li><a href="/ремонтные-работы/" title="Ремонтные работы">Ремонтные работы</a></li>
+                    <li><a href="/ремонтные-работы-запланированные/" title="Ремонтные работы">Ремонтные работы</a></li>
 
                 </ul>
             </nav>

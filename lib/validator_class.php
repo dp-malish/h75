@@ -18,6 +18,7 @@ class Validator{
 	//preg_match  true:хорошо  false:плохо
 	static function paternInt($s){return(preg_match("/^[0-9]+$/u",$s))?true:false;}
 	static function paternIntMinus($s){return(preg_match("/^[0-9\-]+$/u",$s))?true:false;}
+	static function paternFloat($s){return(preg_match("/^[0-9\-\.\,]+$/u",$s))?true:false;}
 	static function paternStrLink($s){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-]+$/u",$s))?true:false;}
 	static function paternStrRusText($s){return(preg_match("/^[0-9А-Яа-яЁёa-zA-Z_\-\–\n\s\(\)\.,!?:;«»]+$/u",$s))?true:false;}
 	static function paternMobTel($s){return(preg_match("/^[0-9\-\+]+$/u",$s))?true:false;}
