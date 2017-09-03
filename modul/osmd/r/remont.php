@@ -85,10 +85,7 @@ try{if($count_uri_parts>2){throw new Exception();}else{
                                 $sql='SELECT vipolnen,opisanie,vid_remonta,smetnaya_stoimost,data FROM main_remont WHERE id='.$DB->realEscapeStr($id);
                                 $res=$DB->strSQL($sql);
                                 if($res){
-                                    $main_content.=$Cash->SendHTMLextPlus('../models/osmd/UpdRemont.php',[$id,]);
-
-                                    //$main_content.='Редактировать!'.$sql;
-                                    
+                                    $main_content.=$Cash->SendHTMLextPlus('../models/osmd/UpdRemont.php',[$id,$res['vid_remonta'],$res['opisanie'],$res['smetnaya_stoimost'],Data::IntToStrMap($res['data']),$res['vipolnen']]);         
                                 }else $module='404';
                             }else $module='404';
                         }else $module='404';

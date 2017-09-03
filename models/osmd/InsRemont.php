@@ -18,11 +18,12 @@
 <script type="application/javascript">
         document.getElementById("form_remont").addEventListener("submit",function(evt){
                 var f=this;
-                evt.preventDefault();
+                evt.preventDefault();modalload(true);
                 var sendurl="add=1&vid_remonta="+f.vid_remonta.value+"&text="+CKEDITOR.instances["short_text"].getData()+"&smeta="+f.smeta.value+"&data="+f.data.value;
                 ajaxPostSend(sendurl,answerLoginFeedback,true,true,"/ajax/admin/add_remont.php");
         },false);
         function answerLoginFeedback(arr){
+                modalloadclose();
                 alert(arr.answer);
                 CKEDITOR.instances["short_text"].setData('');
                 smeta.value="";

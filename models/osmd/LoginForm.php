@@ -12,11 +12,12 @@
   document.getElementById("form_login").addEventListener("submit",function(evt){
     var f=this;
     evt.preventDefault();
+    modalload(true);
     var sendurl="tel="+f.tel.value+"&pass="+f.pass.value+"&ls=#?";
     ajaxPostSend(sendurl,answerLoginFeedback,true,true,"/ajax/site/user_osmd.php");
   },false);
   function answerLoginFeedback(arr){
-    //alert(arr.answer);
+    modalloadclose();
     
     location.replace(uri);
   }</script>
