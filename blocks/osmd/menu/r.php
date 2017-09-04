@@ -11,6 +11,10 @@ if($User->easy_pass){
             <div class="menu_title">'.User_osmd::ARRAY_ROLE[$User->role].'</div>
             <nav>
             <ul>'.($User->role==1 || $User->role==13?'<li><a href="/ремонтные-работы-запланированные/добавить" title="Ремонтные работы">Ремонтные работы</a></li>':'').
+
+        ($User->role==2 || $User->role==13?'<li><a href="/квартплата/" title="Квартплата">Квартплата</a></li>':'').
+        
+        
     //($User->name!=''?'<li><p>Пользователь:</p><p>'.$User->name.' '.$User->patronymic.'</p></li>':'').
     //($User->role!=0?'<li><p>Должность: '.User_osmd::ARRAY_ROLE[$User->role].'</p></li>':'').
     '         </ul>

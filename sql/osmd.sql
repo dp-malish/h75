@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS main_flat(
 
   space_flat DECIMAL (4,2),
 
-  tariff int(11),
+  tariff int(11) NOT NULL,
 
   exemption tinyint(1), # льгота
   subsidy int(11),
@@ -17,22 +17,7 @@ CREATE TABLE IF NOT EXISTS main_flat(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 #DROP TABLE main_flat;
-/*
-DELIMITER //
-CREATE TRIGGER main_flat_upd BEFORE UPDATE ON main_flat
-FOR EACH ROW
-  BEGIN
-    SET @nac_val_old=old.dostavka_nac_val;
-    SET @nac_val_new=new.dostavka_nac_val;
 
-    IF(@nac_val_new IS NOT NULL)THEN
-      IF(@nac_val_old!=@nac_val_new)THEN
-        SET @usd=(SELECT cena FROM mag_kurs_valut WHERE valuta="usd");
-        SET new.dostavka_usd=(new.dostavka_nac_val*100)/@usd;
-      END IF;
-    END IF;
-  END;//
-*/
 
 CREATE TABLE IF NOT EXISTS main_people(
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -83,9 +68,12 @@ CREATE TABLE IF NOT EXISTS main_remont(
 CREATE TABLE IF NOT EXISTS sp_tariff(
   id int(11) NOT NULL AUTO_INCREMENT,
   tariff int(11) NOT NULL,
-  data date NOT NULL,
+  #data date NOT NULL,
+  data int(11),
   PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+#DROP TABLE sp_tariff;
 
 #SELECT tariff FROM sp_tariff WHERE id=(SELECT MAX(id) FROM sp_tariff);
 
@@ -110,6 +98,16 @@ CREATE TABLE IF NOT EXISTS buh_flat(
 
 
   tariff int(11) NOT NULL,
+
+  exemption tinyint(1), # льгота
+  subsidy int(11),
+
+
+  resalt int(11),
+
+
+
   data date NOT NULL,
   PRIMARY KEY (flat,month,year)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+

@@ -21,13 +21,22 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                     //case'set':include'../modul/mpk/admin/main.php';break;
                     
                     case'login':include'../modul/osmd/login.php';break;
+
+
+                    case'квартплата':include'../modul/osmd/buh/kvartplata.php';break;//Начислить квартплату
+                    
                     default:$index=1;//include'../modul/mpk/def.php';
                 }
             }
             if(isset($uri_parts0_id[0]) && isset($uri_parts0_id[1])){
                 switch($uri_parts0_id[0]){
 
+                    case'квартира':include'../modul/osmd/l/flat.php';break;
+
                     case'ремонтные':include'../modul/osmd/r/remont.php';break;//ремонтные-работы
+
+
+                    
 
                     default:$index=1;//include'../modul/mpk/def.php';
                 }
