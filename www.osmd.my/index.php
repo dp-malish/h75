@@ -19,7 +19,8 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
                 switch($uri_parts[0]){
                     //case $setAdminCook:$setAdminCook=new User();$setAdminCook->setCookieAdmin();$index=true;break;
                     //case'set':include'../modul/mpk/admin/main.php';break;
-                    
+
+                    case'новости':include'../modul/osmd/news.php';break;
                     case'login':include'../modul/osmd/login.php';break;
 
 
