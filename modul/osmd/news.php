@@ -36,7 +36,7 @@ if(!isset($uri_parts[1])){
 			$main_content.='<div class="cl"></div></article>'.Str_navigation::$navigation;
 		}else{
 			if($uri_parts[1]=='добавить'){
-				//$main_content.='Добавить новость';
+				$main_content.='Добавить новость';
 				$main_content.=$Cash->SendHTML('../models/admin/form/InsNews.php');
 			}elseif($uri_parts[1]=='редактировать'){
 

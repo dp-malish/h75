@@ -16,8 +16,14 @@
                 <p>meta_k | поисковые слова *</p><input type="text" name="meta_k" id="meta_k" required placeholder="Поисковые слова" maxlength="255">
 
 
+                <input type="file" id="imgfile" name="imgfile" accept="image/jpeg,image/png">
+                <script type="application/javascript">
+                        imgfile.onchange=function(){
+                                var file=document.getElementById("imgfile");
+                                ajaxPostSendFile('/ajax/admin/add_news.php',file);
+                        }
 
-                
+                </script>
 
 
         <script type="text/javascript">function str_to_link(val_input){

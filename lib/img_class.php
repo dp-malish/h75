@@ -2,7 +2,7 @@
 class Img{
     public $img=1;
     public $imgExt=[];
-    private $badf=[".php",".phtml",".php3",".php4",".html",".txt",".lnk"];
+    protected $badf=[".php",".phtml",".php3",".php4",".html",".txt",".lnk"];
 
     static function badImg(){
         $im=imagecreatetruecolor(80,30);
