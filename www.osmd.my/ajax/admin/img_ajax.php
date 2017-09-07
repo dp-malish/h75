@@ -10,18 +10,12 @@ if(PostRequest::issetPostArr()){
   //if($User->role==1 || $User->role==2 || $User->role==13){}
 
 
-echo 'ertrrt'.$_POST['table'];
-    //move_uploaded_file($_FILES["imgfile"]["tmp_name"],$_FILES["imgfile"]["name"])
+//echo 'ertrrt'.$_POST['table'];
+    //move_uploaded_file($_FILES["imgfile"]["tmp_name"],__DIR__.'\\'.$_FILES["imgfile"]["name"]);
+
+echo __DIR__;
 
 
-
-
-    /*if(!empty($_POST['add'])){
-
-      //if($rem->addRemont()){echo json_encode(['err'=>false,'answer'=>'Ремонтные работы запланированы...']);}else{PostRequest::answerErrJson();}
-
-
-    }*/
 
 
 

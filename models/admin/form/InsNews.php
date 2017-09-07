@@ -19,9 +19,16 @@
                 <input type="file" id="imgfile" name="imgfile" accept="image/jpeg,image/png">
                 <script type="application/javascript">
                         imgfile.onchange=function(){
-                                var file=document.getElementById("imgfile");
-                                ajaxPostSendFile('/ajax/admin/add_news.php',file);
+                                //var file=document.getElementById("imgfile");
+                                //ajaxPostSendFile('/ajax/admin/add_news.php',file);
+                          ajaxPostSend('sdsd=1','xxx',false,true,'/ajax/admin/add_news.php')
                         }
+
+                  function xxx(){
+
+                    alert();
+
+                  }
 
                 </script>
 

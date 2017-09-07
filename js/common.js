@@ -79,10 +79,9 @@ function ajaxPostSendFile(url,file){
         form=new FormData();
 
     var upload_file=file.files[0];
-    form.append("table","1");
+    //form.append("table","1");
     form.append("imgfile",upload_file);
-    http.open("post",url,true);
-    http.send(form);
+
 
     http.upload.onprogress = function(event) {
         alert( 'Загружено на сервер ' + event.loaded + ' байт из ' + event.total );
@@ -95,16 +94,9 @@ function ajaxPostSendFile(url,file){
     http.upload.onerror = function() {
         alert( 'Произошла ошибка при загрузке данных на сервер!' );
     }
+    http.open("post",url,true);
+    http.send(form);
 
-
-    http.onreadystatechange=function() {
-        if (http.readyState == 4 && http.status == 200){
-            alert(  http.responseText);
-        }
-    }
-    http.onerror=function () {
-        alert('Извините, данные не были переданы. Проверьте подключение к интернету и обновите страницу...');
-    }
 }
 
 
