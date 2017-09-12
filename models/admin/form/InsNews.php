@@ -26,7 +26,7 @@
 
                   function xxx(){
 
-                    alert();
+                    alert('i');
 
                   }
 
