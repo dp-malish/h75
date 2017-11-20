@@ -1,7 +1,1 @@
-<div id="m_col">
-   <main>
-      <!--<div class="dwfse"></div>-->
-<?=$main_content;?>
-    </main>
-</div>
-<div class="cl"></div></div>
+<div id="m_col"><main><?=$main_content;?></main></div><div class="cl"></div></div>

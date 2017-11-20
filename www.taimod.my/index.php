@@ -24,8 +24,5 @@ if($_SERVER['REQUEST_URI']!='/'){$uri=htmlspecialchars($_SERVER['REQUEST_URI'],E
 }else{$index=1;}if($module=='404'){Route::modul404();}
 
 if($index){include'../modul/taimod/main.php';}
-
-
 require '../modul/taimod/popular.php';
-
 require '../blocks/taimod/common/head.php';require '../blocks/taimod/common/header.php';require '../blocks/taimod/common/r_col.php';require '../blocks/taimod/common/body.php';require '../blocks/taimod/common/foot.php';
