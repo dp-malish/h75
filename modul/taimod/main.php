@@ -45,7 +45,7 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       }else $bad_link=1;
     }else{//если текст просто ссылка
       $DB=new SQLi();
-    $res=$DB->strSQL('SELECT category,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,data,views FROM content WHERE link='.$DB->realEscapeStr($uri_parts[0]));
+    $res=$DB->strSQL('SELECT heading,category,title,meta_d,meta_k,caption,img,img_alt,img_title,full_text,data,views FROM content WHERE link='.$DB->realEscapeStr($uri_parts[0]));
     if($res){
       $jscript='<script async src="/js/view.php"></script>';
       $user=new User();
@@ -55,9 +55,11 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $keywords=$res['meta_k'];
       $img=($res['img']!=''?'<img class="fl five br" src="'.SqlTable::CATEGORY[$res['category']]['img'].$res['img'].'" alt="'.$res['img_alt'].'" title="'.$res['img_title'].'">':'');
 
-      $main_content.='<h3>'.$res['caption'].'</h3><span class="note gt fr mr ml">Опубликовано: '.Data::IntToStrDate($res['data']).'</span><span class="note gt fl mr ml">Категория: <a href="/'.$res['category'].'/">'.SqlTable::CATEGORY[$res['category']]['caption'].'</a></span><div class="cl five_"></div>'.$img.htmlspecialchars_decode($res['full_text'],ENT_QUOTES);
+      $main_content.='<h3>'.$res['caption'].'</h3><span class="note gt fr mr ml">Опубликовано: '.Data::IntToStrDate($res['data']).'</span><span class="note gt fl mr ml nav_link">Рубрика: <a href="/'.$res['heading'].'/">'.SqlTable::HEADING[SqlTable::CATEGORY[$res['category']]['heading']]['caption'].'</a> -> Категория: <a href="/'.$res['category'].'/">'.SqlTable::CATEGORY[$res['category']]['caption'].'</a></span><div class="cl five_"></div>'.$img.htmlspecialchars_decode($res['full_text'],ENT_QUOTES);
 
       $main_content.='<div class="cl nav_link mt mb"><div class="b ml mb">Поделиться с друзьями:</div><div class="ya-share2 dfwe" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus" data-counter=""></div></div>';
+//***************************
+      //require'../modul/taimod/popular_cat.php';
 
       $right_content.=CategoryMenu::rMenuCat($res['category']);
     }else $bad_link=1;
