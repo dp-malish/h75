@@ -20,7 +20,7 @@ try{if($count_uri_parts>2){throw new Exception();}else{$bad_link=0;
 		case'саун':$title='Галерея саун - сауны в Мариуполе';
 			$description='Галерея саун. Фотографии построенных нами саун. Разнообразные примеры работ на все вкусы...';
 			$keywords='галерея саун, фотографии саун, сауны в Мариуполе, построить сауну';
-			$table_name='gallery_barbecue';
+			$table_name='gallery_sauna';
 			$img_dir='sauna';
 			$caption='Галерея саун';
 			break;
