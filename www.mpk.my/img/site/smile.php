@@ -1,2 +1,0 @@
-<?php
-if(isset($_GET['i'])){$i=htmlspecialchars($_GET['i'],ENT_QUOTES);if(preg_match("/[A-z0-9]+/",$i)){$i='../../../img/smile/'.$i.'.png';if(file_exists($i)){header("Content-type: image/png");header('Cache-Control: public, max-age=29030400');$i=imagecreatefrompng($i);imageAlphaBlending($i,true);imageSaveAlpha($i,true);imagepng($i,NULL,3);imagedestroy($i);}}}
