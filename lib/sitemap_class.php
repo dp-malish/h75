@@ -5,12 +5,15 @@ class SiteMap extends Cache_File{
 
     private $root;
     private $site;
+    private $protocol;
 
     private $xml='<?xml version="1.0" encoding="UTF-8"?>';
 
     private $standart='xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
 
     function __construct(){
+
+        $this->protocol=((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT']==443 || $_SERVER['HTTP_X_FORWARDED_PORT']==443)?"https://":"http://";
         $this->root=$_SERVER['DOCUMENT_ROOT'];$this->site=$_SERVER['SERVER_NAME'];
         $this->dir=$this->root.'/';
     }
@@ -20,7 +23,7 @@ class SiteMap extends Cache_File{
         foreach (glob($this->root."/*.xml") as $full_file){
             $search=strpos($full_file,self::MAIN_SITE_MAP);
             if(!$search){
-                $map.='<sitemap><loc>'.Opt::PROTOCOL.$this->site.'/';
+                $map.='<sitemap><loc>'.$this->protocol.$this->site.'/';
                 $temp=explode('/',$full_file);
                 $file=array_pop($temp);
                 $map.=$file.'</loc><lastmod>'.
@@ -42,12 +45,12 @@ class SiteMap extends Cache_File{
 
     public function StaticFileMap($file,$loc,$changefreq='monthly',$priority='0.5'){
         if(mb_substr($file,0,1)!='/')$file='/'.$file;
-        $map='<url><loc>'.Opt::PROTOCOL.$this->site.'/'.$loc.'</loc><lastmod>'.date("Y-m-d",filemtime($this->root.$file)).'</lastmod><changefreq>'.$changefreq.'</changefreq><priority>'.$priority.'</priority></url>';
+        $map='<url><loc>'.$this->protocol.$this->site.'/'.$loc.'</loc><lastmod>'.date("Y-m-d",filemtime($this->root.$file)).'</lastmod><changefreq>'.$changefreq.'</changefreq><priority>'.$priority.'</priority></url>';
         return $map;
     }
 
     public function DBUrlMap($loc,$data,$changefreq='monthly',$priority='0.5'){
-        $map='<url><loc>'.Opt::PROTOCOL.$this->site.'/'.$loc.'</loc><lastmod>'.$data.'</lastmod><changefreq>'.$changefreq.'</changefreq><priority>'.$priority.'</priority></url>';
+        $map='<url><loc>'.$this->protocol.$this->site.'/'.$loc.'</loc><lastmod>'.$data.'</lastmod><changefreq>'.$changefreq.'</changefreq><priority>'.$priority.'</priority></url>';
         return $map;
     }
 }

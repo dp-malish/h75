@@ -2,4 +2,4 @@ User-agent: *
 
 Host: taimod.com
 
-Sitemap: http://taimod.com/sitemap.xml
+Sitemap: https://taimod.com/sitemap.xml
