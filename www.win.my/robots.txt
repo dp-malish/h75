@@ -2,4 +2,4 @@ User-agent: *
 
 Host: winteh.com.ua
 
-Sitemap: http://winteh.com.ua/sitemap.xml
+Sitemap: https://winteh.com.ua/sitemap.xml
