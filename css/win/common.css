@@ -20,9 +20,10 @@ p{margin:5px;}
 	text-align:center
 }
 
-.tel{display:inline}
-.tel a,.tel img{display:inline-block; margin:0}
-@media screen and (min-width:240px) and (max-width:780px){.tel a{margin:25px 0}}
+.tel{font-size: 130%}
+
+/*.tel a,.tel img{display:inline-block; margin:0}
+@media screen and (min-width:240px) and (max-width:780px){.tel a{margin:25px 0}}*/
 
 .telkiev::before{content: url(../img/site/pngext.php?i=kievstar)" "}
 .vodafon::before{content: url(../img/site/pngext.php?i=vodafon)" "}
