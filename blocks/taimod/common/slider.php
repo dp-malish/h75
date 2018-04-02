@@ -10,6 +10,13 @@ switch($uri_parts[0]){
                 <img src="/img/site/main_slider/jpg.php?i=img4" alt="Личности">';
         break;
 
+    case 'рецепты-блюд':
+        $slider.='<img src="/img/site/main_slider/jpg.php?i=recept1" alt="Рецепты">
+                <img src="/img/site/main_slider/jpg.php?i=img2" alt="Психология">
+                <img src="/img/site/main_slider/jpg.php?i=img3" alt="Лайфхаки">
+                <img src="/img/site/main_slider/jpg.php?i=img4" alt="Личности">';
+        break;
+
     default:$slider.='<img src="/img/site/main_slider/jpg.php?i=img1" alt="Мода">
                 <img src="/img/site/main_slider/jpg.php?i=img2" alt="Психология">
                 <img src="/img/site/main_slider/jpg.php?i=img3" alt="Лайфхаки">
