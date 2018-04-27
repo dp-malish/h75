@@ -1,5 +1,0 @@
-User-agent: *
-
-Host: harvis.in.ua
-
-Sitemap: http://harvis.in.ua/sitemap.xml
