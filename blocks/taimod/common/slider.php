@@ -1,8 +1,7 @@
 <?php
 $slider='<div class="maxw rel"><div id="main_slider" class="rel">';
 
-
-switch($uri_parts[0]){
+switch($slider_parts){
     case 'мода':
         $slider.='<img src="/img/site/main_slider/jpg.php?i=moda1" alt="Мода">
                 <img src="/img/site/main_slider/jpg.php?i=moda2" alt="Мода таимод">

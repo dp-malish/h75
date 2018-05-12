@@ -5,7 +5,8 @@ $description='Темы на сегодня: ';
 $keywords='';
 //$jscript.='';
 //$css.='';
-require'../blocks/taimod/common/slider.php';
+$slider_parts='';
+
 $bad_link=0;
 //********************************************************************
 if(isset($uri_parts[0]) && !isset($uri_parts[1])){
@@ -25,6 +26,9 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.$msg);
       if($res){
       $preview=new PreView($res);
+
+      $slider_parts=$uri_parts[0];
+
       $title=SqlTable::HEADING[$uri_parts[0]]['title'];
       $description.=$preview->description;
       $keywords=$preview->keywords;
@@ -37,6 +41,9 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.$msg);
       if($res){
         $preview=new PreView($res);
+
+        $slider_parts=SqlTable::CATEGORY[$uri_parts[0]]['heading'];
+
         $title=SqlTable::CATEGORY[$uri_parts[0]]['title'];
         $description.=$preview->description;
         $keywords=$preview->keywords;
@@ -50,6 +57,11 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $jscript='<script async src="/js/view.php"></script>';
       $user=new User();
       if($user->loginAdmin()){$main_content.='<div><a href="/'.$set.'/блог/'.$uri_parts[0].'">Специально для Леночки, ссылка на редактирование статьи</a></div>';}
+
+
+      $slider_parts=$res['heading'];
+
+
       $title=$res['title'];
       $description=$res['meta_d'];
       $keywords=$res['meta_k'];
@@ -74,6 +86,9 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE heading='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
       if($res){
         $preview=new PreView($res);
+
+        $slider_parts=$uri_parts[0];
+
         $title=SqlTable::HEADING[$uri_parts[0]]['title'];
         $description.=$preview->description;
         $keywords=$preview->keywords;
@@ -86,6 +101,9 @@ if(isset($uri_parts[0]) && !isset($uri_parts[1])){
       $res=$DB->arrSQL('SELECT id,link,link_name,category,title,meta_d,meta_k,caption,img_s,img_alt_s,img_title_s,short_text,data,views FROM content WHERE category='.$DB->realEscapeStr($uri_parts[0]).' AND data<"'.time().'" ORDER BY id DESC LIMIT '.Str_navigation::$start_nav.','.$msg);
       if($res){
         $preview=new PreView($res);
+
+        $slider_parts=SqlTable::CATEGORY[$uri_parts[0]]['heading'];
+
         $title=SqlTable::CATEGORY[$uri_parts[0]]['title'];
         $description.=$preview->description;
         $keywords=$preview->keywords;
@@ -104,4 +122,5 @@ if(!isset($uri_parts[0]) || $bad_link==1){
   $keywords=$preview->keywords;
   $main_content.='<div class="dwfse">'.$preview->content.'</div><div class="cl"></div>'.Str_navigation::$navigation;
 }
+require'../blocks/taimod/common/slider.php';
 //$right_content.='<div class="fon_c"><h4>Объявление</h4><p>Ведутся технические работы...</p></div>';
