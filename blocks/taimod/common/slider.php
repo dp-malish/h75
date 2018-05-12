@@ -5,9 +5,9 @@ $slider='<div class="maxw rel"><div id="main_slider" class="rel">';
 switch($uri_parts[0]){
     case 'мода':
         $slider.='<img src="/img/site/main_slider/jpg.php?i=moda1" alt="Мода">
-                <img src="/img/site/main_slider/jpg.php?i=img2" alt="Психология">
-                <img src="/img/site/main_slider/jpg.php?i=img3" alt="Лайфхаки">
-                <img src="/img/site/main_slider/jpg.php?i=img4" alt="Личности">';
+                <img src="/img/site/main_slider/jpg.php?i=moda2" alt="Мода таимод">
+                <img src="/img/site/main_slider/jpg.php?i=moda3" alt="Мода и стиль">
+                <img src="/img/site/main_slider/jpg.php?i=moda4" alt="Мода история">';
         break;
 
     case 'рецепты-блюд':
