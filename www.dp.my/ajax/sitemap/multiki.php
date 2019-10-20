@@ -11,7 +11,7 @@ echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_0.php','мультик
 
 echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/российские/','monthly','0.6');
 echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/советские/','monthly','0.6');
-echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/зарубежные/','monthly','0.6');
+//echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/зарубежные/','monthly','0.6');
 echo $map->StaticFileMap('../modul/dp/t/multiki/uri_parts_1.php','мультики/для-малышей/','monthly','0.6');
 
 

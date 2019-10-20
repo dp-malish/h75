@@ -1,5 +1,6 @@
 User-agent: *
 
-Host: dp-malish.com
+Host: site.com
 
-Sitemap: http://dp-malish.com/sitemap.xml
+Sitemap: https://site.com/sitemap.xml
+Disallow: /мультики/зарубежные/
